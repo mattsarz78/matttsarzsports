@@ -1,0 +1,31 @@
+﻿@using New_MSS.Models
+@model WeeklyModel
+           
+<label id="@Model.WeekDates.CurrentDate.DayOfWeek">@Model.WeekDates.CurrentDate.ToString("D")</label>
+<table class="noTVTable">
+    <tbody>
+        <tr class="header">
+            <th>Game</th>
+            <th>Network</th>
+            <th>Coverage Notes</th>
+            <th>PPV</th>
+            <th>Time</th>
+        </tr>
+        @foreach (TelevisedGame game in Model.TelevisedGamesList.Where(x => Convert.ToDateTime(x.Time.Date) == Model.WeekDates.CurrentDate))
+        {
+            if (game.Mediaindicator == "W")
+            {
+            <tr class="webGame">
+                @Html.Partial("Weekly/WeekGamesRowDetail", game)
+            </tr>		 
+            }
+            else
+            {
+            <tr>
+                @Html.Partial("Weekly/WeekGamesRowDetail", game)
+            </tr>		 
+            }
+        }
+    </tbody>
+</table>
+<br />

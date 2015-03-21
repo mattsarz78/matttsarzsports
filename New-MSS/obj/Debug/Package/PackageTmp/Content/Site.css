@@ -1,0 +1,115 @@
+﻿html,button,input,select,textarea{color:#222;font-family:sans-serif}
+body{font-size:1em;line-height:1.4}
+::-moz-selection{background:#b3d4fc;text-shadow:none}
+::selection{background:#b3d4fc;text-shadow:none}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+img{vertical-align:middle}
+fieldset{border:0;margin:0;padding:0}
+textarea{resize:vertical}
+.chromeframe{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+audio:not([controls]){display:none;height:0}
+[hidden]{display:none}
+html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+h2{font-size:1.5em;margin:.83em 0}
+h3{font-size:1.17em;margin:1em 0}
+h4{font-size:1em;margin:1.33em 0}
+h5{font-size:.83em;margin:1.67em 0}
+h6{font-size:.67em;margin:2.33em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+blockquote{margin:1em 40px}
+dfn{font-style:italic}
+mark{background:#ff0;color:#000}
+p,pre{margin:1em 0}
+code,kbd,pre,samp{font-family:monospace,serif;_font-family:'courier new',monospace;font-size:1em}
+pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}
+q{quotes:none}
+q:before,q:after{content:'';content:none}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-0.5em}
+sub{bottom:-0.25em}
+dl,menu,ol,ul{margin:1em 0}
+dd{margin:0 0 0 40px}
+menu,ol,ul{padding:0 0 0 40px}
+nav ul,nav ol{list-style:none;list-style-image:none}
+img{border:0;-ms-interpolation-mode:bicubic}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+form{margin:0}
+fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0;white-space:normal;*margin-left:-7px}
+button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}
+button,input{line-height:normal}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible}
+button[disabled],input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+head style a:visited{color:#551a8b}
+head style a:link{color:#00e}
+body{font-family:Arial;font-size:9pt;background-color:White;margin:8px;}
+body style{color:#000}
+.maincontainer{width:960px;margin:0 auto;}
+.fcsgame{background-color:yellow}
+.noGamesRow,.header{text-align:center}
+.archcell{width:200px;height:125px;text-align:center;border:medium;border-style:solid;border-color:Gray;border-width:thin;vertical-align:top}
+.navigate{width:349px;height:354px;float:left;position:relative;top:0;left:0}
+.WebTable{width:450px;border-color:Gray;border-style:solid;border-width:medium}
+.bowlcell{border:medium;border-style:solid;border-color:Gray;border-width:thin}
+.tie-in{width:325px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin}
+.stadium{width:150px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin}
+.tie-in{width:325px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin}
+.stadium{width:150px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin}
+.arena{width:250px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin}
+.date{width:75px;text-align:center;border:medium;border-style:solid;border-color:Gray;border-width:thin}
+.standardtable{border:medium solid Gray;width:900px;margin-right:56px}
+.bowlgame{width:300px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin}
+.confnavigate{width:214px;height:355px;float:left;position:relative}
+.confgame{width:250px;border:medium;border-style:solid;border-color:Gray;border-width:thin;text-align:center}
+footer,nav,section{display:block}
+.confcell{width:200px;height:500px;text-align:center;border:medium;border-style:solid;border-color:Gray;border-width:thin;vertical-align:top}
+.conftable{border-color:Gray;border-width:4px;border-style:solid}
+.tourneytable{border:medium solid Gray;width:700px;margin-right:56px}
+.confimg{height:111px;width:92px;border-width:0}
+.slidingNoTVDiv{display:none}
+.slidingWebDiv{display:none}
+.slidingBowlDiv{display:none}
+.show_hideEligibility{display:block}
+.show_hideNoTV{display:inline-block}
+.show_hideWeb{display:inline-block}
+.webGame{display:table-row}
+.game{width:270px;border:medium;border-style:solid;border-color:Gray;border-width:thin;padding:2px}
+.network a img{border:0}
+.network{width:150px;text-align:center;border:medium;border-style:solid;border-color:Gray;border-width:thin;padding:2px}
+.coverage{width:210px;border:medium;border-color:Gray;border-style:solid;border-width:thin;empty-cells:show;text-align:center}
+.coverage a img{border:0}
+.ppv{width:150px;border:medium;border-style:solid;border-color:Gray;border-width:thin;empty-cells:show;text-align:center}
+.time{width:60px;text-align:right;border:medium;border-color:Gray;border-style:solid;border-width:thin;padding:2px}
+.noTVTable{background-color:white;border-color:White;border-style:ridge;border-width:2px;border-spacing:1px;border-collapse:collapse;font-family:Arial;font-size:9pt}
+.conference{width:100px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin;padding:5px}
+.telecast{width:400px;text-align:center;border:medium;border-color:Gray;border-style:solid;border-width:thin;padding:5px}
+fieldset{border:1px solid #ddd;padding:0 1.4em 1.4em 1.4em;margin:0 0 1.5em 0}
+legend{font-size:1.2em;font-weight:bold}
+textarea{min-height:75px}
+.editor-label{margin:1em 0 0 0}
+.editor-field{margin:.5em 0 0 0}
+.field-validation-error{color:#f00}
+.field-validation-valid{display:none}
+.input-validation-error{border:1px solid #f00;background-color:#fee}
+.validation-summary-errors{font-weight:bold;color:#f00}
+.validation-summary-valid{display:none}
+.overlay{display:none;position:absolute;z-index:100000;opacity:.4;filter:alpha(opacity=40);top:0;left:0;width:100%;height:100%;background-color:#333}
+#RSNLists{font-size:8pt;position:absolute;z-index:99999999;width:250px;margin:10% 25%;background-color:#fff;border:1px solid #000;padding:15px;display:none}
+.FSNLink,.closer{text-decoration:underline;color:Blue;cursor:pointer}
+.FSNrow{border-width:1px;border-style:solid;vertical-align:top}
+.imgLocation{vertical-align:middle}
+.FSNtable{border-width:1px;border-style:solid;margin:auto;font-size:9pt;font-family:Arial}

@@ -1,0 +1,141 @@
+﻿@using New_MSS.Shared;
+@model New_MSS.Models.ConferenceModel
+@if (Model.ConferenceName.ToLower() != "independents")
+{
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "N"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "N");
+    <div id="networkDiv">
+        @Html.Label("Network telecasts")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "NC"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "NC");
+    <div id="PrimaryCableDiv">
+        @Html.Label("Primary National Cable Telecasts")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "C"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "C");
+    <div id="CableDiv">
+        @Html.Label("Primary National Cable Telecasts")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType == "RS"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "RS");
+    <div id="WidelySyndicatedDiv">
+        @Html.Label("Broadly Syndicated and/or Secondary National Cable Telecasts")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "R"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "R");
+    <div id="RegionalDiv">
+        @Html.Label("Regional Telecasts")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType == string.Empty))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType == string.Empty);
+    <div id="NetworkToBeDeterminedDiv">
+        @Html.Label("Network or Platform To Be Determined")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator.TrimEnd() == "W"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator.TrimEnd() == "W");
+    <div id="InternetPPVDiv">
+        @Html.Label("Internet Exclusives")
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+}
+else
+{
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Army"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.Conference.TrimEnd() == "Army");
+    <div id="ArmyDiv">
+        @Html.Label("Army telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("Army", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "BYU"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "BYU");
+    <div id="BYUDiv">
+        @Html.Label("BYU telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("BYU", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Idaho"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Idaho");
+    <div id="IdahoDiv">
+        @Html.Label("Idaho telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("Idaho", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Navy"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Navy");
+    <div id="NavyDiv">
+        @Html.Label("Navy telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("Navy", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "NMSt"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "NMSt");
+    <div id="NewMexicoStDiv">
+        @Html.Label("New Mexico State telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("NewMexicoSt", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Notre Dame"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Notre Dame");
+    <div id="NotreDameDiv">
+        @Html.Label("Notre Dame telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("NotreDame", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Temple"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Temple");
+    <div id="TempleDiv">
+        @Html.Label("Temple telecasts")
+        @Html.Raw(PageHelper.GetTextFromXml("Temple", Model.Year))
+        @Html.Partial("ConferenceTable", games)
+    </div>
+    <br />
+    }
+}

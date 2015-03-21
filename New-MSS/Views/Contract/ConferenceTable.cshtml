@@ -1,0 +1,27 @@
+﻿@model IEnumerable<New_MSS.Models.ConfGame>
+<table class="noTVTable">
+    <tbody>
+        <tr class="header">
+            <th>
+                Game
+            </th>
+            <th>
+                Network
+            </th>
+            <th>
+                Time
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {   
+            <tr>
+                <td class="game">@Html.Raw(@item.Game)
+                </td>
+                <td class="network">@Html.Raw(@item.Network)
+                </td>
+                <td class="time">@Html.Raw(@item.Time)
+                </td>
+            </tr>   
+        }
+    </tbody>
+</table>

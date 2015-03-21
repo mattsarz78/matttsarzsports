@@ -1,0 +1,25 @@
+﻿@model New_MSS.Models.TelevisedGame
+<td class="game">
+    @Html.Raw(Model.Game)
+</td>
+<td class="network">
+    @Html.Raw(Model.Network)
+</td>
+@if (Model.ShowPPVColumn)
+{
+    <td class="coverage">
+        @Html.Raw(Model.CoverageNotes)
+    </td>
+    <td class="ppv">
+        @Html.Raw(Model.PPV)
+    </td>
+}
+else
+{
+    <td class="coverageppv">
+        @Html.Raw(Model.CoverageNotes)
+    </td>
+}
+<td class="time">
+    @Html.Raw(Model.TimeString)
+</td>

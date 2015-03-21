@@ -1,0 +1,1 @@
+﻿$(document).ready(function () { var e = 220; var t = 500; $(window).scroll(function () { if ($(this).scrollTop() > e) { $(".back-to-top").fadeIn(t) } else { $(".back-to-top").fadeOut(t) } }); $(".back-to-top").on("click", function (e) { e.preventDefault(); $("html, body").animate({ scrollTop: 0 }, t); return false }) })

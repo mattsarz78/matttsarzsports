@@ -1,0 +1,12 @@
+﻿body{font-family:Arial;background-color:White;}
+body style{color:#000}
+.maincontainer{max-width:720px;margin:0 auto;zoom: 1;}
+.header, .center{text-align:center}
+.GoogleSearch{margin:0 auto;padding-bottom:10px}
+header .container{height:100%;max-width:720px;margin:0 auto}
+@media print{.DONTPrint{display:none}.DOPrint{display:table}}
+.addthis{display: block;float: left;padding-bottom: 10px;}
+.addthisimage{ float: left;}
+.addthisdiv{width:100%;height:30px;}
+#GooglePartialAd{ text-align: center;}
+

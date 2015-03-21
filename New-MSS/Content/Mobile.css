@@ -1,0 +1,16 @@
+﻿body, .noTVTable, .FSNtable, #RSNLists{font-size:9pt;}
+body{margin:3px;}
+.game{padding:1px;}
+.network{width:90px;padding:0px;}
+.coverage{width:105px;}
+.ppv{width:44.22px;}
+.coverageppv{width:130px;}
+#RSNLists{width:160px;}
+.tableborder{font-size: 7pt;}
+.imageDimensions {height: 33.5px; width: 44.22px; }
+#SeasonLinks{ width: 65%; }
+#Facebook {height: 100px;width: 300px;}
+#Links{ width: 39%;}
+#Twitter{ width: 61%;}
+
+

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="NCAA Football TV, NCAA Basketball TV, Matt Sarzyniak, sports on television" />
+    <meta name="description" content="Since 2005, compiling NCAA Division I football and men's basketball television schedules. Looking for a game?  Check here." />
+    <meta name="author" content="Matt Sarzyniak" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title</title>
+    <script src="@Scripts.Url("~/bundles/modernizr")" async></script>
+</head>
+<body>
+    <div class="overlay">
+    </div>
+    <header class="header DONTPrint">      
+        <div class="container">  
+        @Html.Partial("Google/GoogleSearchBar")
+        @Html.Partial("AddThis/AddThis")
+        @Html.Partial("AddThis/AddThisVar")
+        </div>
+    </header>
+    <div class="maincontainer">
+        <div class="DONTPrint">
+            @RenderSection("Home", required: false)
+            @RenderSection("YearLink", required: false)
+            @RenderSection("BlogLink", required: false)
+            @RenderSection("FlexWindows", required: false)
+            @RenderSection("TextLink", required: false)
+            @RenderSection("Today", required: false)
+        </div>
+		<style type="text/css">body{font-family:Arial;background-color:White;}body style{color:#000}.maincontainer{max-width:720px;margin:0 auto;zoom: 1;}.header,.center{text-align:center}.GoogleSearch{margin:0 auto;padding-bottom:10px}.container{height:100%;max-width:720px;margin:0 auto}@@media print{.DONTPrint{display:none}.DOPrint{display:table}}.addthis{display: block;float: left;padding-bottom: 10px;}.addthisimage{float: left;}.addthisdiv{width:100%;height:30px;}#GooglePartialAd{text-align:center;}header{display:block;}</style>
+		<style media="all and (min-width: 641px)" type="text/css">body{margin: 8px;font-size: 11px;}input,select{font-size: 11px;}</style>
+		<style type="text/css" media="only screen and (max-width: 640px)">body{font-size:.636em;margin:3px;}input,select{font-size:1em;}</style>
+		@RenderSection("styles", required: false)
+        @RenderBody()
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+        <div class="DONTPrint">
+        @Html.Partial("Google/GoogleBottomBanner")
+        </div>
+        @Html.Partial("Google/GAJava")
+		<div>
+			<p><a href="@Url.Content("~/Home/CopyrightAndDisclaimer")">Website Copyright</a></p></div>
+	</div>
+</body>
+</html>

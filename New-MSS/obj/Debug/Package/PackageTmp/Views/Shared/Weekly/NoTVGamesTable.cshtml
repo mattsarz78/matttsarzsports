@@ -1,0 +1,51 @@
+﻿@model New_MSS.Models.WeeklyModel
+           
+@Html.Label(Model.WeekDates.CurrentDate.ToString("D"))
+<table class="noTVTable">
+    <tbody>
+        <tr class="header">
+            <th>
+                Game
+            </th>
+            <th>
+                Conference
+            </th>
+            <th>
+                Television Options
+            </th>
+        </tr>
+        @foreach (var item in Model.NoTVGameList.Where(x => x.DayOfWeek == Model.WeekDates.CurrentDate.DayOfWeek))
+        {
+            if (item.FCS)
+            {
+            <tr style="background-color: Yellow">
+                <td class="game">
+                    @Html.Raw(@item.Game)
+                </td>
+                <td class="conference">
+                    @item.Conference
+                </td>
+                <td class="telecast">
+                    @Html.Raw(@item.TVOptions)
+                </td>
+            </tr>
+            }
+            else
+            {
+            <tr>
+                <td class="game">
+                    @Html.Raw(@item.Game)
+                </td>
+                <td class="conference">
+                    @item.Conference
+                </td>
+                <td class="telecast">
+                    @Html.Raw(@item.TVOptions)
+                </td>
+            </tr>
+            }
+
+        }
+    </tbody>
+</table>
+<br />

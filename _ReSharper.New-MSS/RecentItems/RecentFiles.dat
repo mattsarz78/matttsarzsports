@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Controllers/f:ScheduleController.cs" caret="0" fromTop="0" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Shared/f:CoverageNotesHelper.cs" caret="4090" fromTop="0" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:BC/f:WeeklySchedule.cs" caret="5101" fromTop="16" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:BC/f:ConferenceSchedule.cs" caret="1429" fromTop="34" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:BC/f:WeeklyTextSchedule.cs" caret="624" fromTop="15" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Shared/f:PageHelper.cs" caret="0" fromTop="0" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Contract/f:GameList.cshtml" caret="1864" fromTop="27" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Schedule/f:WeeklyText.cshtml" caret="2117" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Schedule/f:Weekly.cshtml" caret="3622" fromTop="6" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Season/f:Contents.cshtml" caret="1504" fromTop="15" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Home/f:Index.cshtml" caret="3413" fromTop="28" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Home/f:Archive.cshtml" caret="1451" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Home/f:CopyrightAndDisclaimer.cshtml" caret="3047" fromTop="2" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Controllers/f:HomeController.cs" caret="331" fromTop="18" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Shared/f:TimeZoneHelper.cs" caret="2852" fromTop="64" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Shared/f:Bools.cs" caret="5902" fromTop="25" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Shared/f:_Layout.cshtml" caret="2493" fromTop="45" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/f:ASNLinks.xml" caret="8900" fromTop="14" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Schedule/d:CoverageNotes/d:Basketball201415/f:FSNWeek17.cshtml" caret="6132" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2005.xml" caret="6837" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2006.xml" caret="7096" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2007.xml" caret="8168" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2008.xml" caret="8593" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2009.xml" caret="9088" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2010.xml" caret="9493" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2015.xml" caret="17062" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2014.xml" caret="17506" fromTop="11" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2013.xml" caret="17067" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2012.xml" caret="14676" fromTop="18" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2011.xml" caret="11822" fromTop="18" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2008.xml" caret="6969" fromTop="22" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2009.xml" caret="7241" fromTop="20" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2010.xml" caret="7344" fromTop="16" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2011.xml" caret="9949" fromTop="22" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2012.xml" caret="13043" fromTop="14" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Views/d:Schedule/d:CoverageNotes/d:Basketball201415/f:FSNWeek17.cshtml" caret="6132" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2010.xml" caret="7744" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2005.xml" caret="6324" fromTop="16" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2006.xml" caret="6510" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2007.xml" caret="7582" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2008.xml" caret="7963" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2009.xml" caret="8298" fromTop="16" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2010.xml" caret="8535" fromTop="16" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2015.xml" caret="17861" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2006.xml" caret="7096" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2005.xml" caret="6837" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2007.xml" caret="8168" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2008.xml" caret="8593" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2009.xml" caret="9088" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2010.xml" caret="9493" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2011.xml" caret="12709" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2012.xml" caret="15605" fromTop="25" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2013.xml" caret="17995" fromTop="24" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2014.xml" caret="18544" fromTop="24" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2015.xml" caret="18531" fromTop="19" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2015.xml" caret="17053" fromTop="16" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2014.xml" caret="17506" fromTop="11" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2013.xml" caret="17067" fromTop="17" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2012.xml" caret="14676" fromTop="18" />
+    <File id="5467F28A-452A-407E-A918-A6AA5153D950/d:Content/d:ConferenceXml/f:2011.xml" caret="11822" fromTop="18" />
+  </RecentEdits>
+</RecentFiles>
