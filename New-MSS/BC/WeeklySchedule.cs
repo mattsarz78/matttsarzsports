@@ -9,31 +9,48 @@ using New_MSS.Shared;
 
 namespace New_MSS.BC
 {
-    public class WeeklySchedule : PageHelper
+    public class WeeklySchedule : IWeeklySchedule
     {
+        IBools _bools;
+        IPageHelper _ph;
+        ICoverageNotesHelper _cnh;
+        IStoredProcHelper _sph;
+        ISeasonContents _sc;
+        ITimeZoneHelper _tzh;
+
+        public WeeklySchedule(IBools bools, IPageHelper ph, ICoverageNotesHelper cnh, IStoredProcHelper sph, ISeasonContents sc, ITimeZoneHelper tzh)
+        {
+            _bools = bools;
+            _ph = ph;
+            _cnh = cnh;
+            _sph = sph;
+            _sc = sc;
+            _tzh = tzh;
+        }
+
         private class FSNGames
         {
             public string Game { get; set; }
             public string Parm { get; set; }
         }
 
-        public static WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport, ControllerContext controllerContext)
+        public WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport, ControllerContext controllerContext)
         {
-        	var showTVPartialView = Bools.CheckSportYearAttributesBool(sportYear, "hasNoTVGames");
-        	var showPPVColumn = Bools.CheckSportYearAttributesBool(sportYear, "showPPVColumn");
+        	var showTVPartialView = _bools.CheckSportYearAttributesBool(sportYear, "hasNoTVGames");
+            var showPPVColumn = _bools.CheckSportYearAttributesBool(sportYear, "showPPVColumn");
         	var isFootball = sport.ToLower().Contains("football");
-			var fullYearDates = SeasonContents.CreateDateModel(year);
-			var isBowlWeekOrNIT = CheckIfBowlWeekOrNIT(week, fullYearDates);
-			var isNextWeekBowlWeekOrNIT = CheckIfBowlWeekOrNIT(week + 1, fullYearDates);
-        	var hasPostseason = Bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
+			var fullYearDates = _sc.CreateDateModel(year);
+			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
+			var isNextWeekBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week + 1, fullYearDates);
+            var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 			
 			var weeklyFootballModel = new WeeklyModel
                                       	{
-                                      		TimeZoneList = TimeZoneHelper.CreateTimeZoneList(timeZone),
+                                      		TimeZoneList = _tzh.CreateTimeZoneList(timeZone),
 											Week = week.ToString(),
 											SportYear = sportYear,
 											Year = year,
-											FlexScheduleLink = CheckForFlexSchedule(year),
+											FlexScheduleLink = _ph.CheckForFlexSchedule(year),
 											ShowRSNPartialView = CheckForPartialView(week, sportYear, controllerContext),
 											ShowPPVColumn = showPPVColumn,
 											WeekDates = GetWeekDates(week, year),
@@ -43,35 +60,35 @@ namespace New_MSS.BC
 											TelevisedGamesList = FormatTelevisedGames(week, year, timeZone, sport, showPPVColumn),
 											IsBowlWeek = isFootball && isBowlWeekOrNIT,
 											IsNextWeekBowlWeek = isFootball && isNextWeekBowlWeekOrNIT,
-											IsBasketballPostseason = !isFootball && hasPostseason && CheckIfBasketballPostseason(week, fullYearDates),
-											IsNextWeekBasketballPostseason = !isFootball && hasPostseason && CheckIfBasketballPostseason(week + 1, fullYearDates),
+											IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates),
+											IsNextWeekBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week + 1, fullYearDates),
 											IsNIT = !isFootball && hasPostseason && isBowlWeekOrNIT
                                       	};
 
             return weeklyFootballModel;
         }
         
-        private static bool CheckForPartialView(int week, string sportYear, ControllerContext controllerContext)
+        private bool CheckForPartialView(int week, string sportYear, ControllerContext controllerContext)
         {
             ViewEngineResult result = ViewEngines.Engines.FindView(controllerContext, "CoverageNotes/" + sportYear + "/FSNWeek" + week.ToString(), null);
             return (result.View != null);
         }
 
-		private static WeekDates GetWeekDates(int week, string year)
+		private WeekDates GetWeekDates(int week, string year)
 		{
 			var weekDates = new WeekDates();
 
-            var parmList = new StoredProcHelper.StoredProcParmList
+            var parmList = new StoredProcParmList
 			{
-                StoredProcParms = new List<StoredProcHelper.StoredProcParm>
+                StoredProcParms = new List<StoredProcParm>
     		               		                  	{
-    		               		                  		new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                                                        new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year}
+    		               		                  		new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                                                        new StoredProcParm {ParmName = "@Season", ParmValue = year}
     		               		                  	}
 			};
 			using (var conn = new SqlConnection(Constants.ConnString))
 			{
-                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetWeeklyDates"))
+                using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetWeeklyDates"))
 				{
 					while (resultSet.Read())
 					{
@@ -84,23 +101,23 @@ namespace New_MSS.BC
 		}
 
 		
-		private static List<TelevisedGame> FormatTelevisedGames(int week, string year, string timeZone, string sport, bool showPPVColumn)
+		private List<TelevisedGame> FormatTelevisedGames(int week, string year, string timeZone, string sport, bool showPPVColumn)
         {
             var televisedGamesList = new List<TelevisedGame>();
 
             var FSNGamesList = GetFSNGamesList(year);
 
-            var parmList = new StoredProcHelper.StoredProcParmList
+            var parmList = new StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcHelper.StoredProcParm> { 
-                    new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                    new StoredProcHelper.StoredProcParm {ParmName = "@Sport", ParmValue = sport},
-                    new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year},
+                StoredProcParms = new List<StoredProcParm> { 
+                    new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                    new StoredProcParm {ParmName = "@Sport", ParmValue = sport},
+                    new StoredProcParm {ParmName = "@Season", ParmValue = year},
                 }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetTVGames"))
+                using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetTVGames"))
                 {
                     while (resultSet.Read())
                     {
@@ -108,21 +125,21 @@ namespace New_MSS.BC
                         var tvGame = new TelevisedGame
                         {
                             Game = resultSet["Game"].ToString(),
-                            PPV = CoverageNotesHelper.FormatCoverageNotes(resultSet["PPV"].ToString()),
+                            PPV = _cnh.FormatCoverageNotes(resultSet["PPV"].ToString()),
                             Time = FormatTime(gameTime, timeZone),
-                            TimeString = TimeZoneHelper.FormatTelevisedTime(gameTime, "web", timeZone),
+                            TimeString = _tzh.FormatTelevisedTime(gameTime, "web", timeZone),
                             ShowPPVColumn = showPPVColumn,
 							Mediaindicator = sport.Contains("football") ? resultSet["Mediaindicator"].ToString() : string.Empty,
                         };
 
-                        tvGame.Network = tvGame.Mediaindicator == "W" ? CoverageNotesHelper.FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) :
-                            CoverageNotesHelper.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
+                        tvGame.Network = tvGame.Mediaindicator == "W" ? _cnh.FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) :
+                            _cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
                         var parmValue = FSNGamesList.Where(x => x.Game == tvGame.Game.Trim());
                         if (parmValue.Any())
                         {
                             tvGame.CoverageNotes = FormatRSNLink(week, String.Concat(sport, year), parmValue.First());
-                            string additionalNotes = CoverageNotesHelper.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+                            string additionalNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
                             if (additionalNotes != "<label>&nbsp</label>")
                             {
                                 var sb = new StringBuilder();
@@ -132,7 +149,7 @@ namespace New_MSS.BC
                             }
                         }
                         else
-                            tvGame.CoverageNotes = CoverageNotesHelper.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+                            tvGame.CoverageNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
 
                         televisedGamesList.Add(tvGame);
                     }
@@ -141,21 +158,21 @@ namespace New_MSS.BC
             return televisedGamesList;
         }
 
-        private static string FormatRSNLink(int week, string sportYear, FSNGames parm)
+        private string FormatRSNLink(int week, string sportYear, FSNGames parm)
         {
             return String.Concat("<a class=\"FSNLink ", sportYear, "week", week, parm.Parm, "\" >RSN Affiliates</a>");
         }
 
 
-        private static List<FSNGames> GetFSNGamesList(string year)
+        private List<FSNGames> GetFSNGamesList(string year)
         {
             var FSNGamesList = new List<FSNGames>();
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(
-                    new StoredProcHelper.StoredProcParmList
+                using (SqlDataReader resultSet = _sph.RunDataReader(
+                    new StoredProcParmList
                     {
-                        StoredProcParms = new List<StoredProcHelper.StoredProcParm> { new StoredProcHelper.StoredProcParm { ParmName = "@Season", ParmValue = year } }
+                        StoredProcParms = new List<StoredProcParm> { new StoredProcParm { ParmName = "@Season", ParmValue = year } }
                     },
                     conn, "GetRSNGames"))
                 {
@@ -173,26 +190,26 @@ namespace New_MSS.BC
             return FSNGamesList;
         }
 
-        private static DateTime FormatTime(DateTime gameTime, string timeZone)
+        private DateTime FormatTime(DateTime gameTime, string timeZone)
         {
-            return gameTime.TimeOfDay.ToString() == "00:00:00" ? gameTime : TimeZoneHelper.Offset(timeZone, gameTime);
+            return gameTime.TimeOfDay.ToString() == "00:00:00" ? gameTime : _tzh.Offset(timeZone, gameTime);
         }
 
-        private static List<NonTelevisedGame> FormatNoTvGames(int week, string season)
+        private List<NonTelevisedGame> FormatNoTvGames(int week, string season)
         {
             var noTvGamesList = new List<NonTelevisedGame>();
 
-            var parmList = new StoredProcHelper.StoredProcParmList
+            var parmList = new StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcHelper.StoredProcParm>
+                StoredProcParms = new List<StoredProcParm>
                                                          {
-                                                             new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                                                             new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = season}
+                                                             new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                                                             new StoredProcParm {ParmName = "@Season", ParmValue = season}
                                                          }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetNoTVGames"))
+                using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetNoTVGames"))
                 {
                     while (resultSet.Read())
                     {

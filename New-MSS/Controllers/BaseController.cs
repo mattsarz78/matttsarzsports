@@ -2,8 +2,9 @@
 
 namespace New_MSS.Controllers
 {
-    public class BaseController : Controller
+    public class BaseController 
     {
+        public BaseController() { }
 		public string GetYear(string sportYear)
 		{
 			return sportYear.ToLower().Contains("football") ? sportYear.Substring(8, 4) : sportYear.Substring(10, 6);
@@ -16,13 +17,11 @@ namespace New_MSS.Controllers
 
 		public string AddSpaces(string conference)
 		{
-			var expanded = conference;
-			if (conference.StartsWith("Big"))
-				expanded = conference.Replace("Big", "Big ");
-
-			if (conference.StartsWith("Sun"))
-				expanded = conference.Replace("Sun", "Sun ");
-			return expanded;
+            if (conference.Substring(0,3).Contains("Big") || conference.Substring(0,3).Contains("Sun"))
+            {
+                conference = conference.Replace(conference.Substring(0,3), conference.Substring(0,3) +" ");
+            }
+			return conference;
 		}
 
     }

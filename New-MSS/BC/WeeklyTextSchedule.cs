@@ -6,43 +6,58 @@ using New_MSS.Shared;
 
 namespace New_MSS.BC
 {
-    public class WeeklyTextSchedule 
+    public class WeeklyTextSchedule : IWeeklyTextSchedule
     {
-        public static WeeklyModel GetWeeklyTextData(int week, string sportYear, string year, string sport, string timeZone)
+        IBools _bools;
+        IPageHelper _ph;
+        ISeasonContents _sc;
+        IStoredProcHelper _sph;
+        ITimeZoneHelper _tzh;
+
+        public WeeklyTextSchedule(IBools bools, IPageHelper ph, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh)
         {
-			var fullYearDates = SeasonContents.CreateDateModel(year);
-			var isBowlWeekOrNIT = PageHelper.CheckIfBowlWeekOrNIT(week, fullYearDates);
+            _bools = bools;
+            _ph = ph;
+            _sc = sc;
+            _sph = sph;
+            _tzh = tzh;
+        }
+
+        public WeeklyModel GetWeeklyTextData(int week, string sportYear, string year, string sport, string timeZone)
+        {
+			var fullYearDates = _sc.CreateDateModel(year);
+			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
         	var isFootball = sport.Contains("football");
-        	var hasPostseason = Bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
+        	var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
 			var textModel = new WeeklyModel
 								{
 									TelevisedGamesList = CreateGamesList(timeZone, week, year, sport),
-                                    TimeZoneList = TimeZoneHelper.CreateTimeZoneList(timeZone),
+                                    TimeZoneList = _tzh.CreateTimeZoneList(timeZone),
 									Week = week.ToString(),
 									SportYear = sportYear,
 									IsBowlWeek = isFootball && isBowlWeekOrNIT,
-                                    IsBasketballPostseason = !isFootball && hasPostseason && PageHelper.CheckIfBasketballPostseason(week, fullYearDates),
+                                    IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates),
 									IsNIT = !isFootball && isBowlWeekOrNIT
 								};
             
             return textModel;
         }
 
-        private static List<TelevisedGame> CreateGamesList(string timeZone, int week, string year, string sport)
+        private List<TelevisedGame> CreateGamesList(string timeZone, int week, string year, string sport)
         {
             var gameList = new List<TelevisedGame>();
-            var parmList = new StoredProcHelper.StoredProcParmList
+            var parmList = new StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcHelper.StoredProcParm> { 
-                    new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                    new StoredProcHelper.StoredProcParm {ParmName = "@Sport", ParmValue = sport},
-                    new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year},
+                StoredProcParms = new List<StoredProcParm> { 
+                    new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                    new StoredProcParm {ParmName = "@Sport", ParmValue = sport},
+                    new StoredProcParm {ParmName = "@Season", ParmValue = year},
                 }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetTVGames"))
+                using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetTVGames"))
                 {
                     bool ppvExists = PPVColumnExists(resultSet);
                     while (resultSet.Read())
@@ -50,8 +65,8 @@ namespace New_MSS.BC
                         var game = new TelevisedGame { 
 							Game = resultSet["Game"].ToString(), 
 							Network = resultSet["Network"].ToString(),
-							PPV = ppvExists && Bools.IsESPNPPV(resultSet["PPV"].ToString(), resultSet["CoverageNotes"].ToString()) ? "X" : string.Empty,
-							TimeString = Convert.ToDateTime(resultSet["Time"].ToString()).TimeOfDay.ToString() == "00:00:00" ? "TBA" : String.Format("{0:g}", TimeZoneHelper.Offset(timeZone, Convert.ToDateTime(resultSet["Time"].ToString())))
+							PPV = ppvExists && _bools.IsESPNPPV(resultSet["PPV"].ToString(), resultSet["CoverageNotes"].ToString()) ? "X" : string.Empty,
+							TimeString = Convert.ToDateTime(resultSet["Time"].ToString()).TimeOfDay.ToString() == "00:00:00" ? "TBA" : String.Format("{0:g}", _tzh.Offset(timeZone, Convert.ToDateTime(resultSet["Time"].ToString())))
 						};
                         gameList.Add(game);
                     }
@@ -60,7 +75,7 @@ namespace New_MSS.BC
             return gameList;
         }
 
-        private static bool PPVColumnExists(SqlDataReader resultSet)
+        private bool PPVColumnExists(SqlDataReader resultSet)
         {
             for (int i = 0; i < resultSet.FieldCount; i++)
             {

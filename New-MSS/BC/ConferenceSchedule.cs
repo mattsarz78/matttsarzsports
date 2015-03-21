@@ -7,11 +7,24 @@ using New_MSS.Shared;
 
 namespace New_MSS.BC
 {
-    public class ConferenceSchedule 
+    public class ConferenceSchedule : IConferenceSchedule
     {
-        public static List<ConfGame> CreateIndependentsGameList(int year)
+        IBools _bools;
+        ICoverageNotesHelper _cnh;
+        IStoredProcHelper _sph;
+        ITimeZoneHelper _tzh;
+        
+        public ConferenceSchedule(IBools bools, ICoverageNotesHelper cnh, IStoredProcHelper sph, ITimeZoneHelper tzh)
         {
-			var independentsList = Bools.CheckSportYearAttributes(String.Concat("football", year), "independents").Split(Convert.ToChar(",")).ToList();
+            _bools = bools;
+            _cnh = cnh;
+            _sph = sph;
+            _tzh = tzh;
+        }
+
+        public List<ConfGame> CreateIndependentsGameList(int year)
+        {
+			var independentsList = _bools.CheckSportYearAttributes(String.Concat("football", year), "independents").Split(Convert.ToChar(",")).ToList();
         	var indyList = new List<ConfGame>();
         	foreach (var independent in independentsList)
         	{
@@ -21,26 +34,26 @@ namespace New_MSS.BC
             return indyList;
         }
 
-        public static List<ConfGame> CreateConferenceGameList(string conference, string year)
+        public List<ConfGame> CreateConferenceGameList(string conference, string year)
         {
             var confGames = new List<ConfGame>();
-            var parmList = new StoredProcHelper.StoredProcParmList
+            var parmList = new StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcHelper.StoredProcParm> { new StoredProcHelper.StoredProcParm {ParmName = "@Conference", ParmValue = conference},
-                                                             new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year} }
+                StoredProcParms = new List<StoredProcParm> { new StoredProcParm {ParmName = "@Conference", ParmValue = conference},
+                                                             new StoredProcParm {ParmName = "@Season", ParmValue = year} }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (var resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetConferenceGames"))
+                using (var resultSet = _sph.RunDataReader(parmList, conn, "GetConferenceGames"))
                 {
                     while (resultSet.Read())
                     {
                         var confGame = new ConfGame
                         {
                             Game = resultSet[Constants.GAME].ToString(),
-                            Time = TimeZoneHelper.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
+                            Time = _tzh.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
                             MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
-							Network = resultSet[Constants.MEDIAINDICATOR].ToString() == "W" ? CoverageNotesHelper.FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString()) : CoverageNotesHelper.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
+							Network = resultSet[Constants.MEDIAINDICATOR].ToString() == "W" ? _cnh.FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString()) : _cnh.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
 							TvType = resultSet[Constants.MEDIAINDICATOR].ToString() == "T" ? resultSet[Constants.TVTYPE].ToString() : string.Empty,
 							Conference = resultSet[Constants.CONFERENCE].ToString()
                         };

@@ -6,9 +6,16 @@ using New_MSS.Shared;
 
 namespace New_MSS.BC
 {
-    public class SeasonContents : StoredProcHelper
+    public class SeasonContents : ISeasonContents
     {
-		public static List<YearDate> CreateDateModel(string season)
+        IStoredProcHelper _sph;
+
+        public SeasonContents(IStoredProcHelper sph)
+        {
+            _sph = sph;
+        }
+
+		public List<YearDate> CreateDateModel(string season)
         {
             var yearDateList = new List<YearDate>();
             var parmList = new StoredProcParmList { StoredProcParms = new List<StoredProcParm> { 
@@ -16,7 +23,7 @@ namespace New_MSS.BC
             }};
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (var resultSet = RunDataReader(parmList, conn, "GetFullYearDates"))
+                using (var resultSet = _sph.RunDataReader(parmList, conn, "GetFullYearDates"))
                 {
                     while (resultSet.Read())
                     {
@@ -34,7 +41,7 @@ namespace New_MSS.BC
             return yearDateList;
         }
 
-        public static string CreateTitle(string sportYear)
+        public string CreateTitle(string sportYear)
         {
             return sportYear.ToLower().Contains("football")
                        ? String.Concat(sportYear.Substring(8, 4)," Football")

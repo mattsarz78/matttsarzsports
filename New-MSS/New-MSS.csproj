@@ -90,6 +90,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BC\ConferenceSchedule.cs" />
+    <Compile Include="BC\IConferenceSchedule.cs" />
+    <Compile Include="BC\ISeasonContents.cs" />
+    <Compile Include="BC\IWeeklySchedule.cs" />
+    <Compile Include="BC\IWeeklyTextSchedule.cs" />
     <Compile Include="BC\SeasonContents.cs" />
     <Compile Include="BC\WeeklySchedule.cs" />
     <Compile Include="BC\WeeklyTextSchedule.cs" />
@@ -103,11 +107,17 @@
     </Compile>
     <Compile Include="Models\ConferenceModel.cs" />
     <Compile Include="Models\DateModel.cs" />
+    <Compile Include="Models\StoredProcParm.cs" />
     <Compile Include="Models\WeeklyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shared\Bools.cs" />
     <Compile Include="Shared\Constants.cs" />
     <Compile Include="Shared\CoverageNotesHelper.cs" />
+    <Compile Include="Shared\IBools.cs" />
+    <Compile Include="Shared\ICoverageNotesHelper.cs" />
+    <Compile Include="Shared\IPageHelper.cs" />
+    <Compile Include="Shared\IStoredProcHelper.cs" />
+    <Compile Include="Shared\ITimeZoneHelper.cs" />
     <Compile Include="Shared\PageHelper.cs" />
     <Compile Include="Shared\StoredProcHelper.cs" />
     <Compile Include="Shared\TimeZoneHelper.cs" />

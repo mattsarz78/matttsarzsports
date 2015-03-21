@@ -1,24 +1,14 @@
-﻿using System;
+﻿using New_MSS.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace New_MSS.Shared
 {
-    public class StoredProcHelper 
+    public class StoredProcHelper : IStoredProcHelper
     {
-        public class StoredProcParmList
-        {
-            public List<StoredProcParm> StoredProcParms { get; set; }
-        }
-
-        public class StoredProcParm
-        {
-            public string ParmName { get; set; }
-            public string ParmValue { get; set; }
-        }
-
-        public static SqlDataReader RunDataReader(StoredProcParmList parmList, SqlConnection conn, string procName)
+        public SqlDataReader RunDataReader(StoredProcParmList parmList, SqlConnection conn, string procName)
         {
             conn.Open();
             using (var storedProcCommand = new SqlCommand(procName, conn) { CommandType = CommandType.StoredProcedure })

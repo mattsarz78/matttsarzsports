@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace New_MSS.Shared
 {
-    public class TimeZoneHelper 
+    public class TimeZoneHelper : ITimeZoneHelper 
     {
-        public static List<SelectListItem> timeZoneList = new List<SelectListItem>
+        public List<SelectListItem> timeZoneList = new List<SelectListItem>
         { 
             new SelectListItem { Text = "Eastern", Value = "0" },
             new SelectListItem { Text = "Central", Value = "1" },
@@ -18,20 +18,20 @@ namespace New_MSS.Shared
             new SelectListItem { Text = "Hawai'i", Value = "6" }
         };
 
-        public static List<SelectListItem> CreateTimeZoneList(string timeZone)
+        public List<SelectListItem> CreateTimeZoneList(string timeZone)
         {
             foreach (var item in timeZoneList)
                 item.Selected = item.Text == timeZone;
             return timeZoneList;
         }
 
-        public static string DeterminePostDropDownValue(FormCollection fc)
+        public string DeterminePostDropDownValue(FormCollection fc)
         {
             string dropDownListItem = fc.Get("DropDownTimeZone");
             return timeZoneList.First(x => x.Value == dropDownListItem).Text;
         }
 
-		public static DateTime Offset(string timeZone, DateTime gameTime)
+		public DateTime Offset(string timeZone, DateTime gameTime)
 		{
             var st = " Standard Time";
 			var sourceTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Eastern" + st);
@@ -48,7 +48,7 @@ namespace New_MSS.Shared
 			return TimeZoneInfo.ConvertTime(gameTime, sourceTimeZoneInfo, TimeZoneInfo.FindSystemTimeZoneById(destinationTimeZone));
 		}
 
-        public static string FormatTelevisedTime(DateTime gameTimeInput, string caller, string timeZone)
+        public string FormatTelevisedTime(DateTime gameTimeInput, string caller, string timeZone)
         {
             string gameTimeString;
 

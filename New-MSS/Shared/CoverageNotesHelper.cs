@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace New_MSS.Shared
 {
-    public class CoverageNotesHelper 
+    public class CoverageNotesHelper : ICoverageNotesHelper
     {
         public const string NBSP = "<label>&nbsp</label>";
         public const string BR = "<br>";
@@ -18,7 +18,16 @@ namespace New_MSS.Shared
         public const string COVERAGEMAP = "Coverage Map";
         public const string COVERAGEMAP506 = "Coverage Map Courtesy The506.com";
 
-        public static string FormatCoverageNotes(string coverageNotesInput)
+        IBools _bools;
+        IPageHelper _ph;
+
+        public CoverageNotesHelper(IBools bools, IPageHelper ph)
+        {
+            _bools = bools;
+            _ph = ph;
+        }
+
+        public string FormatCoverageNotes(string coverageNotesInput)
         {
             var coverageNotesList = new List<string>();
             var coverageNotesString = new StringBuilder();
@@ -38,9 +47,9 @@ namespace New_MSS.Shared
                     var stringCoverage = new List<string>();
                     foreach (string t in coverageNotes)
                     {
-                        if (Bools.IsImage(t) || Bools.IsImageHyperlink(t))
+                        if (_bools.IsImage(t) || _bools.IsImageHyperlink(t))
                             imgCoverage.Add(t);
-                        else if (Bools.IsTextStreamingLink(t))
+                        else if (_bools.IsTextStreamingLink(t))
                             streamingCoverage.Add(t);
                         else
                             stringCoverage.Add(t);
@@ -65,13 +74,13 @@ namespace New_MSS.Shared
             return coverageNotesReturn;
         }
 
-        private static void FormatString(IEnumerable<string> p, List<string> coverageNotesList)
+        private void FormatString(IEnumerable<string> p, List<string> coverageNotesList)
         {
             foreach (string stringText in p)
                 ConfigureText(coverageNotesList, stringText);
         }
 
-        private static void FormatTextStreaming(IEnumerable<string> p, List<string> coverageNotesList)
+        private void FormatTextStreaming(IEnumerable<string> p, List<string> coverageNotesList)
         {
             int counter = 0;
             foreach (string stream in p)
@@ -83,13 +92,13 @@ namespace New_MSS.Shared
                     ConfigureTextHyperlink(coverageNotesList, stream, null);
             }
         }
-        private static void FormatImages(IEnumerable<string> p, List<string> coverageNotesList)
+        private void FormatImages(IEnumerable<string> p, List<string> coverageNotesList)
         {
             int counter = 0;
             foreach (string imageName in p)
             {
                 counter++;
-                if (Bools.IsImage(imageName))
+                if (_bools.IsImage(imageName))
                 {
                     if (counter % 3 == 0 && (counter == 4 || counter >= 7))
                         ConfigureImage(coverageNotesList, imageName, BR);
@@ -103,28 +112,28 @@ namespace New_MSS.Shared
             }
         }
 
-        private static void ConfigureTextHyperlink(List<string> coverageNotesList, string coverageNote, string breakSymbol)
+        private void ConfigureTextHyperlink(List<string> coverageNotesList, string coverageNote, string breakSymbol)
         {
             string textLink = string.Empty;
 
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
 
-            if (Bools.IsNBC(coverageNote))
+            if (_bools.IsNBC(coverageNote))
                 textLink = "NBCSports.com";
-            else if (Bools.IsBTN(coverageNote) || Bools.IsP12Networks(coverageNote))
+            else if (_bools.IsBTN(coverageNote) || _bools.IsP12Networks(coverageNote))
                 textLink = CHANNELFINDER;
-            else if (Bools.IsSyndAffiliates(coverageNote))
+            else if (_bools.IsSyndAffiliates(coverageNote))
                 textLink = AFFILIATES;
-            else if (Bools.IsCoverageMap(coverageNote))
+            else if (_bools.IsCoverageMap(coverageNote))
                 textLink = COVERAGEMAP;
-            else if (Bools.IsThe506CoverageMap(coverageNote))
+            else if (_bools.IsThe506CoverageMap(coverageNote))
                 textLink = COVERAGEMAP506;
-            else if (Bools.IsGamePlanMap(coverageNote))
+            else if (_bools.IsGamePlanMap(coverageNote))
                 textLink = BLACKOUTMAP;
-			else if (Bools.IsOleMissLHN(coverageNote) || Bools.IsSpecialCoverageNote(coverageNote))
+            else if (_bools.IsOleMissLHN(coverageNote) || _bools.IsSpecialCoverageNote(coverageNote))
 				textLink = "See link for full coverage information";
-			else if (Bools.IsPPVProviders(coverageNote))
+            else if (_bools.IsPPVProviders(coverageNote))
                 textLink = "PPV Information";
             else
             {
@@ -136,7 +145,7 @@ namespace New_MSS.Shared
             coverageNotesList.Add(String.Concat("<a href=\"", coverageNote, "\" target=\"_blank\">", textLink, "</a>"));
         }
 
-        private static void ConfigureImgHyperlink(List<string> coverageNotesList, string coverageNote)
+        private void ConfigureImgHyperlink(List<string> coverageNotesList, string coverageNote)
         {
             string imageUrl = string.Empty;
 
@@ -152,23 +161,23 @@ namespace New_MSS.Shared
 			}
         }
 
-        public static void ConfigureText(List<string> coverageNotesList, string stringText)
+        public void ConfigureText(List<string> coverageNotesList, string stringText)
         {
-            if (Bools.IsHyperlink(stringText))
+            if (_bools.IsHyperlink(stringText))
             {
                 if (coverageNotesList.Count > 0 && coverageNotesList.Last() != BR)
                     coverageNotesList.Add(BR);
 
                 string textLink;
-                if (Bools.IsSyndAffiliates(stringText))
+                if (_bools.IsSyndAffiliates(stringText))
                     textLink = AFFILIATES;
-                else if (Bools.IsCoverageMap(stringText))
+                else if (_bools.IsCoverageMap(stringText))
                     textLink = COVERAGEMAP;
-                else if (Bools.IsThe506CoverageMap(stringText))
+                else if (_bools.IsThe506CoverageMap(stringText))
                     textLink = COVERAGEMAP506;
-                else if (Bools.IsGamePlanMap(stringText))
+                else if (_bools.IsGamePlanMap(stringText))
                     textLink = BLACKOUTMAP;
-                else if (Bools.IsBTN(stringText) || Bools.IsP12Networks(stringText))
+                else if (_bools.IsBTN(stringText) || _bools.IsP12Networks(stringText))
                     textLink = CHANNELFINDER;
                 else
                     textLink = "Live Web Video";
@@ -186,7 +195,7 @@ namespace New_MSS.Shared
             }
         }
 
-        public static void ConfigureImage(List<string> coverageNotesList, string network, string breakSymbol)
+        public void ConfigureImage(List<string> coverageNotesList, string network, string breakSymbol)
         {
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
@@ -194,7 +203,7 @@ namespace New_MSS.Shared
             coverageNotesList.Add(String.Concat("<img class=\"imageDimensions\" src=\"/Images/", network, "\" />"));
         }
 
-        public static List<int> ValidateFieldData(string[] coverageNotes)
+        public List<int> ValidateFieldData(string[] coverageNotes)
         {
             int imgCount = 0;
             int stringCount = 0;
@@ -202,9 +211,9 @@ namespace New_MSS.Shared
 
             foreach (string t in coverageNotes)
             {
-                if (Bools.IsImage(t) || Bools.IsImageHyperlink(t))
+                if (_bools.IsImage(t) || _bools.IsImageHyperlink(t))
                     imgCount++;
-                else if (Bools.IsTextStreamingLink(t))
+                else if (_bools.IsTextStreamingLink(t))
                     streamingCount++;
                 else
                     stringCount++;
@@ -213,7 +222,7 @@ namespace New_MSS.Shared
             return new List<int> { imgCount, streamingCount, stringCount };
         }
 
-        public static string FormatNetworkJpg(string networksString)
+        public string FormatNetworkJpg(string networksString)
         {
             string[] networks = networksString.Split(',');
             var networksList = new List<string>();
