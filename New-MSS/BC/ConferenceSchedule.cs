@@ -7,7 +7,7 @@ using New_MSS.Shared;
 
 namespace New_MSS.BC
 {
-    public class ConferenceSchedule : StoredProcHelper
+    public class ConferenceSchedule 
     {
         public static List<ConfGame> CreateIndependentsGameList(int year)
         {
@@ -24,23 +24,23 @@ namespace New_MSS.BC
         public static List<ConfGame> CreateConferenceGameList(string conference, string year)
         {
             var confGames = new List<ConfGame>();
-            var parmList = new StoredProcParmList
+            var parmList = new StoredProcHelper.StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcParm> { new StoredProcParm {ParmName = "@Conference", ParmValue = conference},
-                                                             new StoredProcParm {ParmName = "@Season", ParmValue = year} }
+                StoredProcParms = new List<StoredProcHelper.StoredProcParm> { new StoredProcHelper.StoredProcParm {ParmName = "@Conference", ParmValue = conference},
+                                                             new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year} }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (var resultSet = RunDataReader(parmList, conn, "GetConferenceGames"))
+                using (var resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetConferenceGames"))
                 {
                     while (resultSet.Read())
                     {
                         var confGame = new ConfGame
                         {
                             Game = resultSet[Constants.GAME].ToString(),
-                            Time = FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
+                            Time = TimeZoneHelper.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
                             MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
-							Network = resultSet[Constants.MEDIAINDICATOR].ToString() == "W" ? FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString()) : FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
+							Network = resultSet[Constants.MEDIAINDICATOR].ToString() == "W" ? CoverageNotesHelper.FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString()) : CoverageNotesHelper.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
 							TvType = resultSet[Constants.MEDIAINDICATOR].ToString() == "T" ? resultSet[Constants.TVTYPE].ToString() : string.Empty,
 							Conference = resultSet[Constants.CONFERENCE].ToString()
                         };

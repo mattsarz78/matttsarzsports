@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace New_MSS.Shared
 {
-    public class StoredProcHelper : TimeZoneHelper
+    public class StoredProcHelper 
     {
         public class StoredProcParmList
         {

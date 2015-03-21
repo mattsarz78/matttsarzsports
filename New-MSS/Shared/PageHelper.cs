@@ -8,7 +8,7 @@ using New_MSS.Models;
 
 namespace New_MSS.Shared
 {
-    public class PageHelper : StoredProcHelper
+    public class PageHelper 
     {
         public static string CheckForFlexSchedule(string year)
         {

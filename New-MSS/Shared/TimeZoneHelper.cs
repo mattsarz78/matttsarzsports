@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace New_MSS.Shared
 {
-    public class TimeZoneHelper : CoverageNotesHelper
+    public class TimeZoneHelper 
     {
         public static List<SelectListItem> timeZoneList = new List<SelectListItem>
         { 

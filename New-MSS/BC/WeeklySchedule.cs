@@ -29,7 +29,7 @@ namespace New_MSS.BC
 			
 			var weeklyFootballModel = new WeeklyModel
                                       	{
-                                      		TimeZoneList = CreateTimeZoneList(timeZone),
+                                      		TimeZoneList = TimeZoneHelper.CreateTimeZoneList(timeZone),
 											Week = week.ToString(),
 											SportYear = sportYear,
 											Year = year,
@@ -61,17 +61,17 @@ namespace New_MSS.BC
 		{
 			var weekDates = new WeekDates();
 
-			var parmList = new StoredProcParmList
+            var parmList = new StoredProcHelper.StoredProcParmList
 			{
-				StoredProcParms = new List<StoredProcParm>
+                StoredProcParms = new List<StoredProcHelper.StoredProcParm>
     		               		                  	{
-    		               		                  		new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                                                        new StoredProcParm {ParmName = "@Season", ParmValue = year}
+    		               		                  		new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                                                        new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year}
     		               		                  	}
 			};
 			using (var conn = new SqlConnection(Constants.ConnString))
 			{
-				using (SqlDataReader resultSet = RunDataReader(parmList, conn, "GetWeeklyDates"))
+                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetWeeklyDates"))
 				{
 					while (resultSet.Read())
 					{
@@ -90,17 +90,17 @@ namespace New_MSS.BC
 
             var FSNGamesList = GetFSNGamesList(year);
 
-            var parmList = new StoredProcParmList
+            var parmList = new StoredProcHelper.StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcParm> { 
-                    new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                    new StoredProcParm {ParmName = "@Sport", ParmValue = sport},
-                    new StoredProcParm {ParmName = "@Season", ParmValue = year},
+                StoredProcParms = new List<StoredProcHelper.StoredProcParm> { 
+                    new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                    new StoredProcHelper.StoredProcParm {ParmName = "@Sport", ParmValue = sport},
+                    new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = year},
                 }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = RunDataReader(parmList, conn, "GetTVGames"))
+                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetTVGames"))
                 {
                     while (resultSet.Read())
                     {
@@ -108,21 +108,21 @@ namespace New_MSS.BC
                         var tvGame = new TelevisedGame
                         {
                             Game = resultSet["Game"].ToString(),
-                            PPV = FormatCoverageNotes(resultSet["PPV"].ToString()),
+                            PPV = CoverageNotesHelper.FormatCoverageNotes(resultSet["PPV"].ToString()),
                             Time = FormatTime(gameTime, timeZone),
-                            TimeString =FormatTelevisedTime(gameTime, "web", timeZone),
+                            TimeString = TimeZoneHelper.FormatTelevisedTime(gameTime, "web", timeZone),
                             ShowPPVColumn = showPPVColumn,
 							Mediaindicator = sport.Contains("football") ? resultSet["Mediaindicator"].ToString() : string.Empty,
                         };
 
-                        tvGame.Network = tvGame.Mediaindicator == "W" ? FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) : 
-                            FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
+                        tvGame.Network = tvGame.Mediaindicator == "W" ? CoverageNotesHelper.FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) :
+                            CoverageNotesHelper.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
                         var parmValue = FSNGamesList.Where(x => x.Game == tvGame.Game.Trim());
                         if (parmValue.Any())
                         {
                             tvGame.CoverageNotes = FormatRSNLink(week, String.Concat(sport, year), parmValue.First());
-                            string additionalNotes = FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+                            string additionalNotes = CoverageNotesHelper.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
                             if (additionalNotes != "<label>&nbsp</label>")
                             {
                                 var sb = new StringBuilder();
@@ -132,7 +132,7 @@ namespace New_MSS.BC
                             }
                         }
                         else
-                            tvGame.CoverageNotes = FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+                            tvGame.CoverageNotes = CoverageNotesHelper.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
 
                         televisedGamesList.Add(tvGame);
                     }
@@ -152,10 +152,10 @@ namespace New_MSS.BC
             var FSNGamesList = new List<FSNGames>();
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = RunDataReader(
-                    new StoredProcParmList
+                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(
+                    new StoredProcHelper.StoredProcParmList
                     {
-                        StoredProcParms = new List<StoredProcParm> { new StoredProcParm { ParmName = "@Season", ParmValue = year } }
+                        StoredProcParms = new List<StoredProcHelper.StoredProcParm> { new StoredProcHelper.StoredProcParm { ParmName = "@Season", ParmValue = year } }
                     },
                     conn, "GetRSNGames"))
                 {
@@ -175,24 +175,24 @@ namespace New_MSS.BC
 
         private static DateTime FormatTime(DateTime gameTime, string timeZone)
         {
-            return gameTime.TimeOfDay.ToString() == "00:00:00" ? gameTime : Offset(timeZone, gameTime);
+            return gameTime.TimeOfDay.ToString() == "00:00:00" ? gameTime : TimeZoneHelper.Offset(timeZone, gameTime);
         }
 
         private static List<NonTelevisedGame> FormatNoTvGames(int week, string season)
         {
             var noTvGamesList = new List<NonTelevisedGame>();
 
-            var parmList = new StoredProcParmList
+            var parmList = new StoredProcHelper.StoredProcParmList
             {
-                StoredProcParms = new List<StoredProcParm>
+                StoredProcParms = new List<StoredProcHelper.StoredProcParm>
                                                          {
-                                                             new StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
-                                                             new StoredProcParm {ParmName = "@Season", ParmValue = season}
+                                                             new StoredProcHelper.StoredProcParm {ParmName = "@Week", ParmValue = week.ToString()},
+                                                             new StoredProcHelper.StoredProcParm {ParmName = "@Season", ParmValue = season}
                                                          }
             };
             using (var conn = new SqlConnection(Constants.ConnString))
             {
-                using (SqlDataReader resultSet = RunDataReader(parmList, conn, "GetNoTVGames"))
+                using (SqlDataReader resultSet = StoredProcHelper.RunDataReader(parmList, conn, "GetNoTVGames"))
                 {
                     while (resultSet.Read())
                     {
