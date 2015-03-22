@@ -27,24 +27,7 @@ namespace New_MSS.Shared
 
         public string GetTextFromXml(string conference, string year)
         {
-            var path = HttpContext.Current.Server.MapPath(@"~/Content/ConferenceXml/" + year + ".xml");
-            var node = String.Empty;
-            if (File.Exists(path))
-            {
-                var doc = XDocument.Load(path);
-                var xElement = doc.Element(Constants.CONFERENCE);
-                if (xElement != null)
-                {
-                    var element = xElement.Element("Football" + year);
-                    if (element != null)
-                    {
-                        var xElement1 = element.Element(conference + "Div");
-                        if (xElement1 != null)
-                            node = xElement1.Value;
-                    }
-                }
-            }
-            return node;
+            return GetXmlText(conference, year);
         }
 
 		public bool CheckIfBowlWeekOrNIT(int week, List<YearDate> fullYearDates)
@@ -58,6 +41,11 @@ namespace New_MSS.Shared
         }
 
         public static string GetTextFromXmlForIndy(string conference, string year)
+        {
+            return GetXmlText(conference, year);
+        }
+
+        private static string GetXmlText(string conference, string year)
         {
             var path = HttpContext.Current.Server.MapPath(@"~/Content/ConferenceXml/" + year + ".xml");
             var node = String.Empty;
