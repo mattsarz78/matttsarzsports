@@ -6,8 +6,8 @@
 		var title = string.Empty;
 		if (item.Week != Model.YearDatesList.Last().Week)
 		{
-			title = String.Concat("Week ", @item.Week.ToString(), " - ", @item.StartDate.ToString("MMMM"),
-			                      " ", @item.StartDate.Day, " to ", @item.EndDate.ToString("MMMM"), " ", @item.EndDate.Day);
+			title = String.Concat("Week ", item.Week.ToString(), " - ", item.StartDate.ToString("MMMM"),
+			                      " ", item.StartDate.Day, " to ", item.EndDate.ToString("MMMM"), " ", item.EndDate.Day);
 		}
 		else
 		{
@@ -23,8 +23,8 @@ else if (Model.IsBasketballWithPostseason)
 		var title = string.Empty;
 		if (item.Week != Model.YearDatesList.Last().Week && item.Week != Model.YearDatesList[Model.YearDatesList.Count - 2].Week)
 		{
-			title = String.Concat("Week ", @item.Week.ToString(), " - ", @item.StartDate.ToString("MMMM"),
-			                      " ", @item.StartDate.Day, " to ", @item.EndDate.ToString("MMMM"), " ", @item.EndDate.Day);
+			title = String.Concat("Week ", item.Week.ToString(), " - ", item.StartDate.ToString("MMMM"),
+			                      " ", item.StartDate.Day, " to ", item.EndDate.ToString("MMMM"), " ", item.EndDate.Day);
 		}
 		else if (item.Week != Model.YearDatesList[Model.YearDatesList.Count - 2].Week)
 		{
@@ -43,8 +43,8 @@ else
 {
 	foreach (var item in Model.YearDatesList)
 	{
-		var title = String.Concat("Week ", @item.Week.ToString(), " - ", @item.StartDate.ToString("MMMM"),
-								  " ", @item.StartDate.Day, " to ", @item.EndDate.ToString("MMMM"), " ", @item.EndDate.Day);
+		var title = String.Concat("Week ", item.Week.ToString(), " - ", item.StartDate.ToString("MMMM"),
+								  " ", item.StartDate.Day, " to ", item.EndDate.ToString("MMMM"), " ", item.EndDate.Day);
 		<a href="/Schedule/Weekly/@Model.Year/@item.Week">@title</a><br/>
 	}
 }
