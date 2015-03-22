@@ -5,7 +5,7 @@ using New_MSS.Shared;
 
 namespace New_MSS.Controllers
 {
-    public class ScheduleController : Controller
+    public class ScheduleController : BaseController
     {
         IBools _bools;
         IWeeklySchedule _ws;
@@ -13,7 +13,6 @@ namespace New_MSS.Controllers
         ITimeZoneHelper _tzh;
         IStoredProcHelper _sph;
         IPageHelper _ph;
-        BaseController _bc;
 
         public ScheduleController()
         {
@@ -23,11 +22,6 @@ namespace New_MSS.Controllers
             _tzh = new TimeZoneHelper();
             _ws = new WeeklySchedule(_bools, _ph, new CoverageNotesHelper(_bools, _ph), _sph, new SeasonContents(_sph), _tzh);
             _wts = new WeeklyTextSchedule(_bools, _ph, new SeasonContents(_sph), _sph, _tzh);
-            _bc = new BaseController();
-        }
-
-        public ScheduleController(IBools bools, IWeeklySchedule ws, IWeeklyTextSchedule wts, ITimeZoneHelper tzh, BaseController bc)
-        {
         }
 
         [HttpGet]
@@ -36,7 +30,7 @@ namespace New_MSS.Controllers
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
 				var weeklyModel = _ws.GetWeeklyData(week, sportYear,
-                    _bc.GetYear(sportYear), "Eastern", _bc.GetSport(sportYear), ControllerContext);
+                    GetYear(sportYear), "Eastern", GetSport(sportYear), ControllerContext);
                 return View(weeklyModel);
             }
             throw new Exception();
@@ -48,7 +42,7 @@ namespace New_MSS.Controllers
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
 				var weeklyModel = _ws.GetWeeklyData(week, sportYear,
-                    _bc.GetYear(sportYear), _tzh.DeterminePostDropDownValue(fc), _bc.GetSport(sportYear), ControllerContext);
+                    GetYear(sportYear), _tzh.DeterminePostDropDownValue(fc), GetSport(sportYear), ControllerContext);
 				return View(weeklyModel);
             }
             throw new Exception();
@@ -60,7 +54,7 @@ namespace New_MSS.Controllers
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
 				var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
-                    _bc.GetYear(sportYear), _bc.GetSport(sportYear), "Eastern");
+                    GetYear(sportYear), GetSport(sportYear), "Eastern");
                 return View(weeklyTextModel);
             }
             throw new Exception();
@@ -72,7 +66,7 @@ namespace New_MSS.Controllers
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
 				var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
-                    _bc.GetYear(sportYear), _bc.GetSport(sportYear), _tzh.DeterminePostDropDownValue(fc));
+                    GetYear(sportYear), GetSport(sportYear), _tzh.DeterminePostDropDownValue(fc));
                 return View(weeklyTextModel);
             }
             throw new Exception();

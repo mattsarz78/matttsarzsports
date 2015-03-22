@@ -6,18 +6,16 @@ using System;
 
 namespace New_MSS.Controllers
 {
-    public class ContractController : Controller
+    public class ContractController : BaseController
     {
         IBools _bools;
         IConferenceSchedule _confSched;
         IPageHelper _ph;
-        BaseController _bc;
         public ContractController()
         {
             _bools = new Bools();
             _ph = new PageHelper();
             _confSched = new ConferenceSchedule(_bools, new CoverageNotesHelper(_bools, _ph), new StoredProcHelper(), new TimeZoneHelper()); 
-            _bc = new BaseController();
         }
 
         public ActionResult GameList(string conference, int year)
@@ -30,10 +28,10 @@ namespace New_MSS.Controllers
                 {
                     ContractText = isIndependents ? string.Empty : _ph.GetTextFromXml(conference, year.ToString()),
                     ConferenceGames = isIndependents ? _confSched.CreateIndependentsGameList(year)
-                                          : _confSched.CreateConferenceGameList(_bc.AddSpaces(conference), year.ToString()),
+                                          : _confSched.CreateConferenceGameList(AddSpaces(conference), year.ToString()),
                     SportYear = sportYear,
                     Year = year.ToString(),
-                    ConferenceName = _bc.AddSpaces(conference),
+                    ConferenceName = AddSpaces(conference),
 					FlexScheduleLink = _ph.CheckForFlexSchedule(year.ToString())
                 };
                 return View(conferenceModel);

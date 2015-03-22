@@ -2,9 +2,8 @@
 
 namespace New_MSS.Controllers
 {
-    public class BaseController 
+    public class BaseController : Controller
     {
-        public BaseController() { }
 		public string GetYear(string sportYear)
 		{
 			return sportYear.ToLower().Contains("football") ? sportYear.Substring(8, 4) : sportYear.Substring(10, 6);
