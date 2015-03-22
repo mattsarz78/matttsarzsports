@@ -11,19 +11,10 @@
     </div>
     <br />
     }
-    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "NC"))
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && (x.TvType.TrimEnd() == "NC" || x.TvType.TrimEnd() == "C")))
     {
-        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "NC");
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && (x.TvType.TrimEnd() == "NC" || x.TvType.TrimEnd() == "C"));
     <div id="PrimaryCableDiv">
-        @Html.Label("Primary National Cable Telecasts")
-        @Html.Partial("ConferenceTable", games)
-    </div>
-    <br />
-    }
-    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "C"))
-    {
-        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "C");
-    <div id="CableDiv">
         @Html.Label("Primary National Cable Telecasts")
         @Html.Partial("ConferenceTable", games)
     </div>
