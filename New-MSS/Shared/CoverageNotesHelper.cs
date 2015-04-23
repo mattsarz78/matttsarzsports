@@ -19,12 +19,10 @@ namespace New_MSS.Shared
         public const string COVERAGEMAP506 = "Coverage Map Courtesy The506.com";
 
         IBools _bools;
-        IPageHelper _ph;
 
-        public CoverageNotesHelper(IBools bools, IPageHelper ph)
+        public CoverageNotesHelper(IBools bools)
         {
             _bools = bools;
-            _ph = ph;
         }
 
         public string FormatCoverageNotes(string coverageNotesInput)

@@ -18,9 +18,9 @@ namespace New_MSS.Controllers
         {
             _sph = new StoredProcHelper();
             _bools = new Bools();
-            _ph = new PageHelper();
+            _ph = new PageHelper(_bools);
             _tzh = new TimeZoneHelper();
-            _ws = new WeeklySchedule(_bools, _ph, new CoverageNotesHelper(_bools, _ph), _sph, new SeasonContents(_sph), _tzh);
+            _ws = new WeeklySchedule(_bools, _ph, new CoverageNotesHelper(_bools), _sph, new SeasonContents(_sph), _tzh);
             _wts = new WeeklyTextSchedule(_bools, _ph, new SeasonContents(_sph), _sph, _tzh);
         }
 

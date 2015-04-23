@@ -14,8 +14,8 @@ namespace New_MSS.Controllers
         public ContractController()
         {
             _bools = new Bools();
-            _ph = new PageHelper();
-            _confSched = new ConferenceSchedule(_bools, new CoverageNotesHelper(_bools, _ph), new StoredProcHelper(), new TimeZoneHelper()); 
+            _ph = new PageHelper(_bools);
+            _confSched = new ConferenceSchedule(_bools, new CoverageNotesHelper(_bools), new StoredProcHelper(), new TimeZoneHelper()); 
         }
 
         public ActionResult GameList(string conference, int year)
@@ -26,7 +26,7 @@ namespace New_MSS.Controllers
             	var isIndependents = conference.ToLower().Contains("independents");
                 var conferenceModel = new ConferenceModel
                 {
-                    ContractText = isIndependents ? string.Empty : _ph.GetTextFromXml(conference, year.ToString()),
+                    ContractTexts = _ph.GetTextFromXml(conference, year.ToString()),
                     ConferenceGames = isIndependents ? _confSched.CreateIndependentsGameList(year)
                                           : _confSched.CreateConferenceGameList(AddSpaces(conference), year.ToString()),
                     SportYear = sportYear,

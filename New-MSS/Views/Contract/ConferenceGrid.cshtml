@@ -64,7 +64,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.Conference.TrimEnd() == "Army");
     <div id="ArmyDiv">
         @Html.Label("Army telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("Army", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Army").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
@@ -74,7 +74,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "BYU");
     <div id="BYUDiv">
         @Html.Label("BYU telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("BYU", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "BYU").Select(x => x.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
@@ -84,7 +84,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Idaho");
     <div id="IdahoDiv">
         @Html.Label("Idaho telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("Idaho", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Idaho").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
@@ -94,7 +94,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Navy");
     <div id="NavyDiv">
         @Html.Label("Navy telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("Navy", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Navy").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
@@ -104,7 +104,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "NMSt");
     <div id="NewMexicoStDiv">
         @Html.Label("New Mexico State telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("NewMexicoSt", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "NMSt").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
@@ -114,7 +114,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Notre Dame");
     <div id="NotreDameDiv">
         @Html.Label("Notre Dame telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("NotreDame", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "NotreDame").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
@@ -124,7 +124,7 @@ else
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Temple");
     <div id="TempleDiv">
         @Html.Label("Temple telecasts")
-        @Html.Raw(PageHelper.GetTextFromXmlForIndy("Temple", Model.Year))
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Temple").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />

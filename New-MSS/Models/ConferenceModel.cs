@@ -7,7 +7,7 @@ namespace New_MSS.Models
         public List<ConfGame> ConferenceGames { get; set; }
         public string ConferenceName { get; set; }
         public string FlexScheduleLink { get; set; }
-        public string ContractText { get; set ; }
+        public List<ContractText> ContractTexts { get; set ; }
         public string SportYear { get; set; }
         public string Year { get; set; }
     }
@@ -21,4 +21,10 @@ namespace New_MSS.Models
         public string MediaIndicator { get; set; }
         public string Conference { get; set; }
     }
+
+	public class ContractText
+	{
+		public string Conference { get; set; }
+		public string ContractXmlText { get; set; }
+	}
 }

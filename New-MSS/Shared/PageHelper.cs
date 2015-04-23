@@ -10,6 +10,13 @@ namespace New_MSS.Shared
 {
     public class PageHelper : IPageHelper
     {
+		IBools _bools;
+
+		public PageHelper(IBools bools)
+        {
+            _bools = bools;
+        }
+
         public string CheckForFlexSchedule(string year)
         {
             var link = string.Empty;
@@ -25,9 +32,19 @@ namespace New_MSS.Shared
 
         }
 
-        public string GetTextFromXml(string conference, string year)
+        public List<ContractText> GetTextFromXml(string conference, string year)
         {
-            return GetXmlText(conference, year);
+        	var confXmlText = new List<ContractText>();
+			if (conference.ToLower() == "independents")
+			{
+				var independentsList = _bools.CheckSportYearAttributes(String.Concat("football", year), "independents").Split(Convert.ToChar(",")).ToList();
+				independentsList.Remove("Notre Dame");
+				independentsList.Add("NotreDame");
+				confXmlText.AddRange(independentsList.Select(independent => GetXmlText(independent, year)));
+				return confXmlText;
+			}
+        	confXmlText.Add(GetXmlText(conference, year));
+        	return confXmlText;
         }
 
 		public bool CheckIfBowlWeekOrNIT(int week, List<YearDate> fullYearDates)
@@ -40,12 +57,7 @@ namespace New_MSS.Shared
             return week == fullYearDates.Last().Week || week == fullYearDates[fullYearDates.Count - 2].Week;
         }
 
-        public static string GetTextFromXmlForIndy(string conference, string year)
-        {
-            return GetXmlText(conference, year);
-        }
-
-        private static string GetXmlText(string conference, string year)
+        private ContractText GetXmlText(string conference, string year)
         {
             var path = HttpContext.Current.Server.MapPath(@"~/Content/ConferenceXml/" + year + ".xml");
             var node = String.Empty;
@@ -64,7 +76,7 @@ namespace New_MSS.Shared
                     }
                 }
             }
-            return node;
+            return new ContractText{ Conference = conference, ContractXmlText = node};
         }
     }
 }
