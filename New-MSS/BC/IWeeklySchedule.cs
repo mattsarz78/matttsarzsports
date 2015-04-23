@@ -5,6 +5,6 @@ namespace New_MSS.BC
 {
     public interface IWeeklySchedule
     {
-        WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport, ControllerContext controllerContext);
+        WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport);
     }
 }

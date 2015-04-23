@@ -6,6 +6,8 @@ using System.Text;
 using System.Web.Mvc;
 using New_MSS.Models;
 using New_MSS.Shared;
+using System.IO;
+using System.Web;
 
 namespace New_MSS.BC
 {
@@ -34,7 +36,7 @@ namespace New_MSS.BC
             public string Parm { get; set; }
         }
 
-        public WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport, ControllerContext controllerContext)
+        public WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport)
         {
         	var showTVPartialView = _bools.CheckSportYearAttributesBool(sportYear, "hasNoTVGames");
             var showPPVColumn = _bools.CheckSportYearAttributesBool(sportYear, "showPPVColumn");
@@ -51,7 +53,7 @@ namespace New_MSS.BC
 											SportYear = sportYear,
 											Year = year,
 											FlexScheduleLink = _ph.CheckForFlexSchedule(year),
-											ShowRSNPartialView = CheckForPartialView(week, sportYear, controllerContext),
+											ShowRSNPartialView = CheckForPartialView(week, sportYear),
 											ShowPPVColumn = showPPVColumn,
 											WeekDates = GetWeekDates(week, year),
 											IsFootball = isFootball,
@@ -68,10 +70,9 @@ namespace New_MSS.BC
             return weeklyFootballModel;
         }
         
-        private bool CheckForPartialView(int week, string sportYear, ControllerContext controllerContext)
+        private bool CheckForPartialView(int week, string sportYear)
         {
-            ViewEngineResult result = ViewEngines.Engines.FindView(controllerContext, "CoverageNotes/" + sportYear + "/FSNWeek" + week.ToString(), null);
-            return (result.View != null);
+            return File.Exists(HttpContext.Current.Server.MapPath("/Views/Schedule/CoverageNotes/" + sportYear + "/FSNWeek" + week.ToString() + ".cshtml"));
         }
 
 		private WeekDates GetWeekDates(int week, string year)
