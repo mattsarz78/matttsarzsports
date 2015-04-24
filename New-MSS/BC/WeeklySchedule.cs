@@ -47,7 +47,6 @@ namespace New_MSS.BC
 			
 			var weeklyFootballModel = new WeeklyModel
                                       	{
-                                      		TimeZoneList = _tzh.CreateTimeZoneList(timeZone),
 											Week = week.ToString(),
 											SportYear = sportYear,
 											Year = year,

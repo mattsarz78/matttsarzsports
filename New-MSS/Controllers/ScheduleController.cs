@@ -2,6 +2,8 @@
 using New_MSS.BC;
 using System;
 using New_MSS.Shared;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace New_MSS.Controllers
 {
@@ -10,7 +12,6 @@ namespace New_MSS.Controllers
         IBools _bools;
         IWeeklySchedule _ws;
         IWeeklyTextSchedule _wts;
-        ITimeZoneHelper _tzh;
         IStoredProcHelper _sph;
         IPageHelper _ph;
 
@@ -19,9 +20,8 @@ namespace New_MSS.Controllers
             _sph = new StoredProcHelper();
             _bools = new Bools();
             _ph = new PageHelper(_bools);
-            _tzh = new TimeZoneHelper();
-            _ws = new WeeklySchedule(_bools, _ph, new CoverageNotesHelper(_bools), _sph, new SeasonContents(_sph), _tzh);
-            _wts = new WeeklyTextSchedule(_bools, _ph, new SeasonContents(_sph), _sph, _tzh);
+            _ws = new WeeklySchedule(_bools, _ph, new CoverageNotesHelper(_bools), _sph, new SeasonContents(_sph), new TimeZoneHelper());
+            _wts = new WeeklyTextSchedule(_bools, _ph, new SeasonContents(_sph), _sph, new TimeZoneHelper());
         }
 
         [HttpGet]
@@ -31,6 +31,7 @@ namespace New_MSS.Controllers
             {
 				var weeklyModel = _ws.GetWeeklyData(week, sportYear,
                     GetYear(sportYear), "Eastern", GetSport(sportYear));
+                weeklyModel.TimeZoneList = CreateTimeZoneList("Eastern");
                 return View(weeklyModel);
             }
             throw new Exception();
@@ -41,9 +42,11 @@ namespace New_MSS.Controllers
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
+                var timeZone = DeterminePostDropDownValue(fc);
 				var weeklyModel = _ws.GetWeeklyData(week, sportYear,
-                    GetYear(sportYear), _tzh.DeterminePostDropDownValue(fc), GetSport(sportYear));
-				return View(weeklyModel);
+                    GetYear(sportYear), timeZone, GetSport(sportYear));
+                weeklyModel.TimeZoneList = CreateTimeZoneList(timeZone);
+                return View(weeklyModel);
             }
             throw new Exception();
         }
@@ -55,6 +58,7 @@ namespace New_MSS.Controllers
             {
 				var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
                     GetYear(sportYear), GetSport(sportYear), "Eastern");
+                weeklyTextModel.TimeZoneList = CreateTimeZoneList("Eastern");
                 return View(weeklyTextModel);
             }
             throw new Exception();
@@ -65,11 +69,38 @@ namespace New_MSS.Controllers
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
-				var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
-                    GetYear(sportYear), GetSport(sportYear), _tzh.DeterminePostDropDownValue(fc));
+                var timeZone = DeterminePostDropDownValue(fc);
+                var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
+                    GetYear(sportYear), GetSport(sportYear), timeZone);
+                weeklyTextModel.TimeZoneList = CreateTimeZoneList(timeZone);
                 return View(weeklyTextModel);
             }
             throw new Exception();
         }
+
+        public List<SelectListItem> timeZoneList = new List<SelectListItem>
+        { 
+            new SelectListItem { Text = "Eastern", Value = "0" },
+            new SelectListItem { Text = "Central", Value = "1" },
+            new SelectListItem { Text = "Mountain", Value = "2" },
+            new SelectListItem { Text = "Arizona", Value = "3" },
+            new SelectListItem { Text = "Pacific", Value = "4" },
+            new SelectListItem { Text = "Alaska", Value = "5" },
+            new SelectListItem { Text = "Hawai'i", Value = "6" }
+        };
+
+        public List<SelectListItem> CreateTimeZoneList(string timeZone)
+        {
+            foreach (var item in timeZoneList)
+                item.Selected = item.Text == timeZone;
+            return timeZoneList;
+        }
+
+        public string DeterminePostDropDownValue(FormCollection fc)
+        {
+            string dropDownListItem = fc.Get("DropDownTimeZone");
+            return timeZoneList.First(x => x.Value == dropDownListItem).Text;
+        }
+
     }
 }

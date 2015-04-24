@@ -33,7 +33,6 @@ namespace New_MSS.BC
 			var textModel = new WeeklyModel
 								{
 									TelevisedGamesList = CreateGamesList(timeZone, week, year, sport),
-                                    TimeZoneList = _tzh.CreateTimeZoneList(timeZone),
 									Week = week.ToString(),
 									SportYear = sportYear,
 									IsBowlWeek = isFootball && isBowlWeekOrNIT,
