@@ -4,15 +4,15 @@
 	ViewBag.ActionName = @Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + Model.Week);
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<input id="sportYear" type="hidden" value="@Model.SportYear" />
+<input id="week" type="hidden" value="@Model.Week" />
 <form action="@ViewBag.ActionName" id="TextForm" method="post">
 <p>
     <p class="DONTPrint">
         Choose your time zone and check the games that you want to print your own customized
         schedule. For those in Arizona and Hawai'i, your states are available as a specific
         choice and adjust based on the week of the season.</p>
-    <div>
         @Html.Partial("TextGames")
-    </div>
 </p>
 <p>
     <a href="#" class="back-to-top">Back to top</a></p>

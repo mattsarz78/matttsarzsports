@@ -3,6 +3,8 @@
 	ViewBag.Title = "Week " + Model.Week;
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<input id="sportYear" type="hidden" value="@Model.SportYear" />
+<input id="week" type="hidden" value="@Model.Week" />
 <form action="@ViewBag.ActionName" id="WeekForm" method="post">
 <div>
 	@if (Model.ShowRSNPartialView)

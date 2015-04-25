@@ -1,5 +1,5 @@
 ﻿@model New_MSS.Models.WeeklyModel
-<div>
+<div id="WeeksBase">
 	@if (!Model.TelevisedGamesList.Any())
  {
 		<p>
@@ -15,7 +15,7 @@
    {
 				<input id="btnWebGames" type="button" value="Hide Web Exclusive Games" class="show_hideWeb" />
    }
-			@Html.DropDownList("DropDownTimeZone", Model.TimeZoneList)
+			@Html.Partial("TimeZoneDropDown")
 		</p>
 
    DateTime endDate = Model.WeekDates.EndDate;

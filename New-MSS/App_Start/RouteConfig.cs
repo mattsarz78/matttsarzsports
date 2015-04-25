@@ -19,6 +19,10 @@ namespace New_MSS.App_Start
 				new { controller = "Contract", action = "GameList", conference = string.Empty, year = 0 });
 			routes.MapRoute("Season", "{controller}/{action}/{sportYear}",
 				new { controller = "Season", action = "Contents", sportYear = string.Empty });
+            routes.MapRoute("ChangeTimeZone", "Schedule/Weekly/{timeZoneValue}/{sportYear}/{week}",
+                new { controller = "Schedule", action = "Weekly", timeZoneValue = string.Empty, sportYear = string.Empty, week = 0 });
+            routes.MapRoute("ChangeTimeZoneText", "Schedule/WeeklyText/{timeZoneValue}/{sportYear}/{week}",
+                new { controller = "Schedule", action = "WeeklyText", timeZoneValue = string.Empty, sportYear = string.Empty, week = 0 });
         }
     }
 }

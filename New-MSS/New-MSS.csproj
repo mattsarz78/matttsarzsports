@@ -1134,6 +1134,7 @@
     <Content Include="Views\Schedule\WeeksNavigation.cshtml" />
     <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <Content Include="Views\Home\CopyrightAndDisclaimer.cshtml" />
+    <Content Include="Views\Schedule\TimeZoneDropDown.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

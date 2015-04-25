@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
 
 namespace New_MSS.Models
 {
@@ -13,7 +12,6 @@ namespace New_MSS.Models
         public List<TelevisedGame> TelevisedGamesList { get; set; }
         public WeekDates WeekDates { get; set; }
         public bool IsFootball { get; set; }
-        public List<SelectListItem> TimeZoneList { get; set; }
         public string Week { get; set; }
         public bool ShowRSNPartialView { get; set; }
         public bool ShowNoTVPartialView { get; set; }
