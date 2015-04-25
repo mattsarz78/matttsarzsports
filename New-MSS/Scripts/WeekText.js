@@ -10,7 +10,6 @@ function WireUpEvents() {
         var week = $('#week').val();
         $.post('/Schedule/WeeklyText', { timeZoneValue: option, week: week, sportYear: sportYear }, function (data) {
             $("#WeekTextGames").html(data);
-            $('option:selected').removeAttr('selected');
             $('#DropDownTimeZone option:eq(' + optionVal + ')').prop('selected', true);
             WireUpEvents();
         });
