@@ -16,11 +16,8 @@ namespace New_MSS.Controllers
 
 		public string AddSpaces(string conference)
 		{
-            if (conference.Substring(0,3).Contains("Big") || conference.Substring(0,3).Contains("Sun"))
-            {
-                conference = conference.Replace(conference.Substring(0,3), conference.Substring(0,3) +" ");
-            }
-			return conference;
+            return (conference.Substring(0, 3).Contains("Big") || conference.Substring(0, 3).Contains("Sun")) ?
+                conference.Replace(conference.Substring(0, 3), conference.Substring(0, 3) + " ") : conference;
 		}
 
     }
