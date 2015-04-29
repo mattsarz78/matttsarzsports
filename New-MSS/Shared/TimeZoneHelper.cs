@@ -6,7 +6,7 @@ namespace New_MSS.Shared
     {
 		public DateTime Offset(string timeZone, DateTime gameTime)
 		{
-            var st = " Standard Time";
+            const string st = " Standard Time";
 			var sourceTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Eastern" + st);
             var destinationTimeZone = "Eastern" + st;
 		    switch (timeZone)

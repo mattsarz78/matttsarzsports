@@ -1,5 +1,4 @@
-﻿@using New_MSS.Shared;
-@model New_MSS.Models.ConferenceModel
+﻿@model New_MSS.Models.ConferenceModel
 @if (Model.ConferenceName.ToLower() != "independents")
 {
     if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "N"))
