@@ -11,17 +11,26 @@ namespace New_MSS.Shared
             var destinationTimeZone = "Eastern" + st;
 		    switch (timeZone)
             {
-                case "Central": destinationTimeZone = "Central" + st; break;
+				case "Atlantic": destinationTimeZone = "Atlantic" + st; break;
+				case "Newfoundland": destinationTimeZone = "Newfoundland" + st; break;
+				case "Central": destinationTimeZone = "Central" + st; break;
                 case "Mountain": destinationTimeZone = "Mountain" + st; break;
                 case "Arizona": destinationTimeZone = "US Mountain" + st; break;
                 case "Pacific": destinationTimeZone = "Pacific" + st; break;
                 case "Alaska": destinationTimeZone = "Alaskan" + st; break;
                 case "Hawai'i": destinationTimeZone = "Hawaiian" + st; break;
             }
-			return TimeZoneInfo.ConvertTime(gameTime, sourceTimeZoneInfo, TimeZoneInfo.FindSystemTimeZoneById(destinationTimeZone));
+			var adjustedTime = TimeZoneInfo.ConvertTime(gameTime, sourceTimeZoneInfo,
+			                                            TimeZoneInfo.FindSystemTimeZoneById(destinationTimeZone));
+			return IsEndOfHour(destinationTimeZone, adjustedTime) ? adjustedTime.AddMinutes(1) : adjustedTime;
 		}
 
-        public string FormatTelevisedTime(DateTime gameTimeInput, string caller, string timeZone)
+    	private bool IsEndOfHour(string destinationTimeZone, DateTime adjustedTime)
+    	{
+    		return adjustedTime.Minute == 59 && !destinationTimeZone.Contains("Eastern") || adjustedTime.Minute == 29 && destinationTimeZone.Contains("Newfoundland");
+    	}
+
+    	public string FormatTelevisedTime(DateTime gameTimeInput, string caller, string timeZone)
         {
             string gameTimeString;
 
