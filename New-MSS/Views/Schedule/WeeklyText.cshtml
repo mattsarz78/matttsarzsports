@@ -1,6 +1,6 @@
 ﻿@model New_MSS.Models.WeeklyModel
 @{
-    ViewBag.Title = "Week " + Model.Week + " Text";
+	ViewBag.Title = String.Format("Week {0} text schedule for {1}", Model.Week, Model.Year);
 	ViewBag.ActionName = @Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + Model.Week);
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -30,7 +30,7 @@
 	<a href="@Url.Content("~/")">Home</a><br/>
 }
 @section styles{
-	<style type="text/css">.game{width:243px;border:medium;border-style:solid;border-color:Gray;border-width:thin}.tablecell{border:medium;border-style:solid;border-color:gray;border-width:thin}.tableborder{border-style:ridge;border-width:2px;border-spacing:1px;border-collapse:collapse;font-family:Arial}.networkcell{width:165px;text-align:center}.ppvcell{width:25px;text-align:center}.timecell{margin:0 auto;padding:0 2px}.gamecell{width:250px}.inputpad{padding-left: 10px;}.back-to-top{position: fixed;bottom: 2em; right: 0px;text-decoration: none;padding: 1em;display: none;}</style>
+	<style type="text/css">.game{width:243px;border:medium;border-style:solid;border-color:Gray;border-width:thin}.tablecell{border:medium;border-style:solid;border-color:gray;border-width:thin}.tableborder{border-style:ridge;border-width:2px;border-spacing:1px;border-collapse:collapse;font-family:Arial}.networkcell{width:165px;text-align:center}.ppvcell{width:25px;text-align:center}.timecell{margin:0 auto;padding:0 2px}.gamecell{width:250px}.inputpad{padding-left: 10px;}.back-to-top{position: fixed;bottom: 2em; right: 0;text-decoration: none;padding: 1em;display: none;}</style>
     <style media="all and (min-width: 641px)" type="text/css">.tableborder{font-size:11px;}.rowStyle{width:580px;}</style>
     <style type="text/css" media="only screen and (max-width: 640px)">.tableborder{font-size:7pt;}.DONTPrint a{line-height:17px;}</style>
 }

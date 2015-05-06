@@ -21,24 +21,20 @@ namespace New_MSS.BC
             var parmList = new StoredProcParmList { StoredProcParms = new List<StoredProcParm> { 
                 new StoredProcParm { ParmName = "@Season", ParmValue = season }
             }};
-            using (var conn = new SqlConnection(Constants.ConnString))
-            {
-                using (var resultSet = _sph.RunDataReader(parmList, conn, "GetFullYearDates"))
-                {
-                    while (resultSet.Read())
-                    {
-                        var yearDate = new YearDate
-                        {
-                            Week = Int32.Parse(resultSet["Week"].ToString()),
-                            StartDate = DateTime.Parse(resultSet["StartDate"].ToString()),
-                            EndDate = DateTime.Parse(resultSet["EndDate"].ToString())
-                        };
+			using (var conn = new SqlConnection(Constants.ConnString))
+			using (var resultSet = _sph.RunDataReader(parmList, conn, "GetFullYearDates"))
+				while (resultSet.Read())
+				{
+					var yearDate = new YearDate
+					{
+						Week = Int32.Parse(resultSet["Week"].ToString()),
+						StartDate = DateTime.Parse(resultSet["StartDate"].ToString()),
+						EndDate = DateTime.Parse(resultSet["EndDate"].ToString())
+					};
 
-                        yearDateList.Add(yearDate);
-                    }
-                }
-            }
-            return yearDateList;
+					yearDateList.Add(yearDate);
+				}
+			return yearDateList;
         }
 
         public string CreateTitle(string sportYear)

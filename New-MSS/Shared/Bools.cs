@@ -99,10 +99,8 @@ namespace New_MSS.Shared
             {
                 var doc = XDocument.Load(path);
                 var xElement = doc.Element(docName).Element(element);
-                if (xElement != null)
-                {
-                    return true;
-                }
+	            if (xElement != null)
+		            return true;
             }
             return false;
         }

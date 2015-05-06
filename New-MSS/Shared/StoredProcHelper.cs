@@ -12,13 +12,11 @@ namespace New_MSS.Shared
             conn.Open();
             using (var storedProcCommand = new SqlCommand(procName, conn) { CommandType = CommandType.StoredProcedure })
             {
-                foreach (var parm in parmList.StoredProcParms)
-                {
-                    storedProcCommand.Parameters.Add(parm.ParmName == "@Week"
-                                                         ? new SqlParameter(parm.ParmName, Int32.Parse(parm.ParmValue))
-                                                         : new SqlParameter(parm.ParmName, parm.ParmValue));
-                }
-                return storedProcCommand.ExecuteReader();
+	            foreach (var parm in parmList.StoredProcParms)
+		            storedProcCommand.Parameters.Add(parm.ParmName == "@Week"
+			            ? new SqlParameter(parm.ParmName, Int32.Parse(parm.ParmValue))
+			            : new SqlParameter(parm.ParmName, parm.ParmValue));
+	            return storedProcCommand.ExecuteReader();
             }
         }
     }

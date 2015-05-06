@@ -42,26 +42,30 @@ namespace New_MSS.BC
                 StoredProcParms = new List<StoredProcParm> { new StoredProcParm {ParmName = "@Conference", ParmValue = conference},
                                                              new StoredProcParm {ParmName = "@Season", ParmValue = year} }
             };
-            using (var conn = new SqlConnection(Constants.ConnString))
-            {
-                using (var resultSet = _sph.RunDataReader(parmList, conn, "GetConferenceGames"))
-                {
-                    while (resultSet.Read())
-                    {
-                        var confGame = new ConfGame
-                        {
-                            Game = resultSet[Constants.GAME].ToString(),
-                            Time = _tzh.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
-                            MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
-							Network = resultSet[Constants.MEDIAINDICATOR].ToString() == "W" ? _cnh.FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString()) : _cnh.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
-							TvType = resultSet[Constants.MEDIAINDICATOR].ToString() == "T" ? resultSet[Constants.TVTYPE].ToString() : string.Empty,
-							Conference = resultSet[Constants.CONFERENCE].ToString()
-                        };
-                        confGames.Add(confGame);
-                    }
-                }
-            }
-            return confGames;
+	        using (var conn = new SqlConnection(Constants.ConnString))
+	        using (var resultSet = _sph.RunDataReader(parmList, conn, "GetConferenceGames"))
+		        while (resultSet.Read())
+		        {
+			        var confGame = new ConfGame
+			        {
+				        Game = resultSet[Constants.GAME].ToString(),
+				        Time =
+					        _tzh.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference",
+						        "Eastern"),
+				        MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
+				        Network =
+					        resultSet[Constants.MEDIAINDICATOR].ToString() == "W"
+						        ? _cnh.FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString())
+						        : _cnh.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
+				        TvType =
+					        resultSet[Constants.MEDIAINDICATOR].ToString() == "T"
+						        ? resultSet[Constants.TVTYPE].ToString()
+						        : string.Empty,
+				        Conference = resultSet[Constants.CONFERENCE].ToString()
+			        };
+			        confGames.Add(confGame);
+		        }
+	        return confGames;
         }
     }
 }

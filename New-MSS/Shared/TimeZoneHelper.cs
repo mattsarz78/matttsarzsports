@@ -8,17 +8,17 @@ namespace New_MSS.Shared
 		{
             const string st = " Standard Time";
 			var sourceTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Eastern" + st);
-            var destinationTimeZone = "Eastern" + st;
+            var destinationTimeZone = string.Format("Eastern{0}", st);
 		    switch (timeZone)
             {
-				case "Atlantic": destinationTimeZone = "Atlantic" + st; break;
-				case "Newfoundland": destinationTimeZone = "Newfoundland" + st; break;
-				case "Central": destinationTimeZone = "Central" + st; break;
-                case "Mountain": destinationTimeZone = "Mountain" + st; break;
-                case "Arizona": destinationTimeZone = "US Mountain" + st; break;
-                case "Pacific": destinationTimeZone = "Pacific" + st; break;
-                case "Alaska": destinationTimeZone = "Alaskan" + st; break;
-                case "Hawai'i": destinationTimeZone = "Hawaiian" + st; break;
+				case "Atlantic": destinationTimeZone = string.Format("Atlantic{0}", st); break;
+				case "Newfoundland": destinationTimeZone = string.Format("Newfoundland{0}", st); break;
+				case "Central": destinationTimeZone = string.Format("Central{0}", st); break;
+                case "Mountain": destinationTimeZone = string.Format("Mountain{0}", st); break;
+                case "Arizona": destinationTimeZone = string.Format("US Mountain{0}", st); break;
+                case "Pacific": destinationTimeZone = string.Format("Pacific{0}", st); break;
+                case "Alaska": destinationTimeZone = string.Format("Alaskan{0}", st); break;
+                case "Hawai'i": destinationTimeZone = string.Format("Hawaiian{0}", st); break;
             }
 			var adjustedTime = TimeZoneInfo.ConvertTime(gameTime, sourceTimeZoneInfo,
 			                                            TimeZoneInfo.FindSystemTimeZoneById(destinationTimeZone));

@@ -86,16 +86,12 @@ namespace New_MSS.BC
     		               		                  	}
 			};
 			using (var conn = new SqlConnection(Constants.ConnString))
-			{
-                using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetWeeklyDates"))
+			using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetWeeklyDates"))
+				while (resultSet.Read())
 				{
-					while (resultSet.Read())
-					{
-						weekDates.StartDate = Convert.ToDateTime(resultSet["StartDate"]);
-						weekDates.EndDate = Convert.ToDateTime(resultSet["EndDate"]);
-					}
+					weekDates.StartDate = Convert.ToDateTime(resultSet["StartDate"]);
+					weekDates.EndDate = Convert.ToDateTime(resultSet["EndDate"]);
 				}
-			}
 			return weekDates;
 		}
 

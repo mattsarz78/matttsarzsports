@@ -3,7 +3,7 @@
 {
 	foreach (var item in Model.YearDatesList)
 	{
-		var title = string.Empty;
+		string title;
 		if (item.Week != Model.YearDatesList.Last().Week)
 		{
 			title = String.Concat("Week ", item.Week.ToString(), " - ", item.StartDate.ToString("MMMM"),
@@ -20,7 +20,7 @@ else if (Model.IsBasketballWithPostseason)
 {
 	foreach (var item in Model.YearDatesList)
 	{
-		var title = string.Empty;
+		string title;
 		if (item.Week != Model.YearDatesList.Last().Week && item.Week != Model.YearDatesList[Model.YearDatesList.Count - 2].Week)
 		{
 			title = String.Concat("Week ", item.Week.ToString(), " - ", item.StartDate.ToString("MMMM"),

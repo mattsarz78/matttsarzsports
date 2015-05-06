@@ -49,11 +49,7 @@ function WireUpEvents() {
     $(".FSNLink").on("click", function () {
         var e = $(this).attr("class").replace("FSNLink ", "");
         var rowPosition;
-        if ($(this).parents('.coverage').get(0) != undefined) {
-            rowPosition = $(this).parents('.coverage').parents('tr').position().top;
-        } else {
-            rowPosition = $(this).parents('.coverageppv').parents('tr').position().top;
-        }
+        rowPosition = $(this).parents('.coverage').get(0) != undefined ? $(this).parents('.coverage').parents('tr').position().top : $(this).parents('.coverageppv').parents('tr').position().top;
         if (rowPosition / $(document).height() <= .95) {
             $(window).scrollTop(rowPosition - ($(window).height() / 2));
             showRSNItens(e);

@@ -54,24 +54,29 @@ namespace New_MSS.BC
                     new StoredProcParm {ParmName = "@Season", ParmValue = year},
                 }
             };
-            using (var conn = new SqlConnection(Constants.ConnString))
-            {
-                using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetTVGames"))
-                {
-                    bool ppvExists = PPVColumnExists(resultSet);
-                    while (resultSet.Read())
-                    {
-                        var game = new TelevisedGame { 
-							Game = resultSet["Game"].ToString(), 
-							Network = resultSet["Network"].ToString(),
-							PPV = ppvExists && _bools.IsESPNPPV(resultSet["PPV"].ToString(), resultSet["CoverageNotes"].ToString()) ? "X" : string.Empty,
-							TimeString = Convert.ToDateTime(resultSet["Time"].ToString()).TimeOfDay.ToString() == "00:00:00" ? "TBA" : String.Format("{0:g}", _tzh.Offset(timeZone, Convert.ToDateTime(resultSet["Time"].ToString())))
-						};
-                        gameList.Add(game);
-                    }
-                }
-            }
-            return gameList;
+	        using (var conn = new SqlConnection(Constants.ConnString))
+	        using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetTVGames"))
+	        {
+		        bool ppvExists = PPVColumnExists(resultSet);
+		        while (resultSet.Read())
+		        {
+			        var game = new TelevisedGame
+			        {
+				        Game = resultSet["Game"].ToString(),
+				        Network = resultSet["Network"].ToString(),
+				        PPV =
+					        ppvExists && _bools.IsESPNPPV(resultSet["PPV"].ToString(), resultSet["CoverageNotes"].ToString())
+						        ? "X"
+						        : string.Empty,
+				        TimeString =
+					        Convert.ToDateTime(resultSet["Time"].ToString()).TimeOfDay.ToString() == "00:00:00"
+						        ? "TBA"
+						        : String.Format("{0:g}", _tzh.Offset(timeZone, Convert.ToDateTime(resultSet["Time"].ToString())))
+			        };
+			        gameList.Add(game);
+		        }
+	        }
+	        return gameList;
         }
 
         private bool PPVColumnExists(SqlDataReader resultSet)

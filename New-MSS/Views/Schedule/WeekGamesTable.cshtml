@@ -1,5 +1,4 @@
-﻿@using New_MSS.Models
-@model WeeklyModel
+﻿@model New_MSS.Models.WeeklyModel
 
 <label id="@Model.WeekDates.CurrentDate.DayOfWeek@Model.WeekDates.CurrentDate.Month@Model.WeekDates.CurrentDate.Day@Model.WeekDates.CurrentDate.Year">@Model.WeekDates.CurrentDate.ToString("D")</label>
 <table class="noTVTable">
@@ -27,7 +26,7 @@
             }
             <th>Time</th>
         </tr>
-        @foreach (TelevisedGame game in Model.TelevisedGamesList.Where(x => Convert.ToDateTime(x.Time.Date) == Model.WeekDates.CurrentDate))
+        @foreach (var game in Model.TelevisedGamesList.Where(x => Convert.ToDateTime(x.Time.Date) == Model.WeekDates.CurrentDate))
         {
             if (Model.IsBowlWeek || Model.IsBasketballPostseason)
             {

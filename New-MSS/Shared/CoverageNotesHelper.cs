@@ -63,11 +63,9 @@ namespace New_MSS.Shared
                 }
             }
 
-            foreach (string item in coverageNotesList)
-            {
-                coverageNotesString.Append(item);
-            }
-            string coverageNotesReturn = coverageNotesString.ToString();
+	        foreach (string item in coverageNotesList)
+		        coverageNotesString.Append(item);
+	        string coverageNotesReturn = coverageNotesString.ToString();
             coverageNotesString.Clear();
             return coverageNotesReturn;
         }
