@@ -1,5 +1,20 @@
 $(document).ready(function () {
-	WireUpEvents();
+    WireUpEvents();
+
+    $(".show_hideNoTV").on("click", function () {
+        $(".slidingNoTVDiv").slideToggle(400, function () {
+            showHideButtonText($(".slidingNoTVDiv"), $("#btnConferenceGames"), "Non-Televised Games");
+        });
+    });
+
+    $(".show_hideWeb").on("click", function () {
+        $(".webGame").slideToggle(400, function () {
+            showHideButtonText($(".webGame"), $("#btnWebGames"), "Web Exclusive Games");
+        });
+        $(".slidingWebDiv").slideToggle(400, function () {
+            showHideButtonText($(".slidingWebDiv"), $("#btnWebGames"), "Web Exclusive Games");
+        });
+    });
 });
 
 function showRSNItens(e) {
@@ -30,21 +45,6 @@ function WireUpEvents() {
     });
 
     $("#RSNLists").children().hide();
-
-    $(".show_hideNoTV").on("click", function () {
-        $(".slidingNoTVDiv").slideToggle(400, function () {
-            showHideButtonText($(".slidingNoTVDiv"), $("#btnConferenceGames"), "Non-Televised Games");
-        });
-    });
-
-    $(".show_hideWeb").on("click", function () {
-        $(".webGame").slideToggle(400, function () {
-            showHideButtonText($(".webGame"), $("#btnWebGames"), "Web Exclusive Games");
-        });
-        $(".slidingWebDiv").slideToggle(400, function () {
-            showHideButtonText($(".slidingWebDiv"), $("#btnWebGames"), "Web Exclusive Games");
-        });
-    });
 
     $(".FSNLink").on("click", function () {
         var e = $(this).attr("class").replace("FSNLink ", "");
