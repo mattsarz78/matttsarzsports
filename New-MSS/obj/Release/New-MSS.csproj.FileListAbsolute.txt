@@ -265,3 +265,4 @@ D:\New-MSS\matttsarzsports\New-MSS\bin\System.Web.WebPages.xml
 D:\New-MSS\matttsarzsports\New-MSS\obj\Release\New-MSS.csprojResolveAssemblyReference.cache
 D:\New-MSS\matttsarzsports\New-MSS\obj\Release\New-MSS.dll
 D:\New-MSS\matttsarzsports\New-MSS\obj\Release\New-MSS.pdb
+D:\New-MSS\matttsarzsports\New-MSS\bin\New-MSS.dll.config
