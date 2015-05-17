@@ -110,25 +110,22 @@ namespace New_MSS.Shared
 
         private void ConfigureTextHyperlink(List<string> coverageNotesList, string coverageNote, string breakSymbol)
         {
-            string textLink = string.Empty;
+            string textLink = ConfigureTextLink(coverageNote);
 
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
 
+            textLink = String.IsNullOrWhiteSpace(textLink) ? ConfigureTexyHyperlinkSpecifics(coverageNote, textLink) : textLink;
+
+            coverageNotesList.Add(String.Concat("<a href=\"", coverageNote, "\" target=\"_blank\">", textLink, "</a>"));
+        }
+
+        private string ConfigureTexyHyperlinkSpecifics(string coverageNote, string textLink)
+        {
             if (_bools.IsNBC(coverageNote))
                 textLink = "NBCSports.com";
-            else if (_bools.IsBTN(coverageNote) || _bools.IsP12Networks(coverageNote))
-                textLink = CHANNELFINDER;
-            else if (_bools.IsSyndAffiliates(coverageNote))
-                textLink = AFFILIATES;
-            else if (_bools.IsCoverageMap(coverageNote))
-                textLink = COVERAGEMAP;
-            else if (_bools.IsThe506CoverageMap(coverageNote))
-                textLink = COVERAGEMAP506;
-            else if (_bools.IsGamePlanMap(coverageNote))
-                textLink = BLACKOUTMAP;
             else if (_bools.IsOleMissLHN(coverageNote) || _bools.IsSpecialCoverageNote(coverageNote))
-				textLink = "See link for full coverage information";
+                textLink = "See link for full coverage information";
             else if (_bools.IsPPVProviders(coverageNote))
                 textLink = "PPV Information";
             else
@@ -137,8 +134,7 @@ namespace New_MSS.Shared
                 if (index > 0)
                     textLink = coverageNote.Substring(5, index + 4);
             }
-
-            coverageNotesList.Add(String.Concat("<a href=\"", coverageNote, "\" target=\"_blank\">", textLink, "</a>"));
+            return textLink;
         }
 
         private void ConfigureImgHyperlink(List<string> coverageNotesList, string coverageNote)
@@ -164,19 +160,8 @@ namespace New_MSS.Shared
                 if (coverageNotesList.Count > 0 && coverageNotesList.Last() != BR)
                     coverageNotesList.Add(BR);
 
-                string textLink;
-                if (_bools.IsSyndAffiliates(stringText))
-                    textLink = AFFILIATES;
-                else if (_bools.IsCoverageMap(stringText))
-                    textLink = COVERAGEMAP;
-                else if (_bools.IsThe506CoverageMap(stringText))
-                    textLink = COVERAGEMAP506;
-                else if (_bools.IsGamePlanMap(stringText))
-                    textLink = BLACKOUTMAP;
-                else if (_bools.IsBTN(stringText) || _bools.IsP12Networks(stringText))
-                    textLink = CHANNELFINDER;
-                else
-                    textLink = "Live Web Video";
+                string textLink = ConfigureTextLink(stringText);
+                textLink = String.IsNullOrWhiteSpace(textLink) ? "Live Web Video" : textLink;
 
                 coverageNotesList.Add(String.Concat("<a href=\"", stringText, "\" target=\"_blank\">", textLink, "</a>"));
             }
@@ -188,6 +173,22 @@ namespace New_MSS.Shared
                 else
                     coverageNotesList.Add(p);
             }
+        }
+
+        private string ConfigureTextLink(string stringText) 
+        {
+            string textLink = string.Empty;
+            if (_bools.IsSyndAffiliates(stringText))
+                textLink = AFFILIATES;
+            else if (_bools.IsCoverageMap(stringText))
+                textLink = COVERAGEMAP;
+            else if (_bools.IsThe506CoverageMap(stringText))
+                textLink = COVERAGEMAP506;
+            else if (_bools.IsGamePlanMap(stringText))
+                textLink = BLACKOUTMAP;
+            else if (_bools.IsBTN(stringText) || _bools.IsP12Networks(stringText))
+                textLink = CHANNELFINDER;
+            return textLink;
         }
 
         public void ConfigureImage(List<string> coverageNotesList, string network, string breakSymbol)
