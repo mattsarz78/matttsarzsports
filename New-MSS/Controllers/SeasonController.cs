@@ -21,19 +21,17 @@ namespace New_MSS.Controllers
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
-            	var season = GetYear(sportYear);
+                var season = GetYear(sportYear);
                 var isFootball = GetSport(sportYear).Contains("football");
-
-            	var dateModel = new DateModel
-            	                	{
-            	                		YearDatesList = _sc.CreateDateModel(season),
-            	                		Year = sportYear.ToLower(),
-            	                		IsFootball = isFootball,
-										Title = _sc.CreateTitle(sportYear),
-                                        IsBasketballWithPostseason = !isFootball && _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason"),
-                                        ConferenceListBase = isFootball ? _bools.CheckSportYearAttributes(sportYear, "conferenceListBase") : string.Empty
-            	                	};
-                return View(dateModel);
+                return View(new DateModel
+                    {
+                        YearDatesList = _sc.CreateDateModel(season),
+                        Year = sportYear.ToLower(),
+                        IsFootball = isFootball,
+                        Title = _sc.CreateTitle(sportYear),
+                        IsBasketballWithPostseason = !isFootball && _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason"),
+                        ConferenceListBase = isFootball ? _bools.CheckSportYearAttributes(sportYear, "conferenceListBase") : string.Empty
+                    });
             }
             throw new Exception();
         }

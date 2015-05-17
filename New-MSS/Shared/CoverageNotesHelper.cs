@@ -183,7 +183,6 @@ namespace New_MSS.Shared
             else
             {
                 string p = String.Concat("<label>", stringText, "</label>");
-
                 if (coverageNotesList.Count > 0 && coverageNotesList.Last() != BR)
                     coverageNotesList.Add(BR + p);
                 else
@@ -195,7 +194,6 @@ namespace New_MSS.Shared
         {
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
-
             coverageNotesList.Add(String.Concat("<img class=\"imageDimensions\" src=\"/Images/", network, "\" />"));
         }
 

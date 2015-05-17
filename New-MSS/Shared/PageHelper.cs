@@ -23,13 +23,11 @@ namespace New_MSS.Shared
             var path = HttpContext.Current.Server.MapPath(@"~/Content/FlexScheduleLinks.xml");
             if (File.Exists(path))
             {
-                var doc = XDocument.Load(path);
-                var xElement = doc.Element("Links").Element("Link" + year);
+                var xElement = XDocument.Load(path).Element("Links").Element("Link" + year);
                 if (xElement != null)
                     link = xElement.Value;
             }
             return link;
-
         }
 
         public List<ContractText> GetTextFromXml(string conference, string year)
@@ -63,8 +61,7 @@ namespace New_MSS.Shared
             var node = String.Empty;
             if (File.Exists(path))
             {
-                var doc = XDocument.Load(path);
-                var xElement = doc.Element(Constants.CONFERENCE);
+                var xElement = XDocument.Load(path).Element(Constants.CONFERENCE);
                 if (xElement != null)
                 {
                     var element = xElement.Element("Football" + year);

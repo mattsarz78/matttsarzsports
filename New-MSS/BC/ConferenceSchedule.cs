@@ -27,10 +27,7 @@ namespace New_MSS.BC
 			var independentsList = _bools.CheckSportYearAttributes(String.Concat("football", year), "independents").Split(Convert.ToChar(",")).ToList();
         	var indyList = new List<ConfGame>();
         	foreach (var independent in independentsList)
-        	{
         		indyList.AddRange(CreateConferenceGameList(independent, year.ToString()));
-        	}
-            
             return indyList;
         }
 
@@ -46,12 +43,10 @@ namespace New_MSS.BC
 	        using (var resultSet = _sph.RunDataReader(parmList, conn, "GetConferenceGames"))
 		        while (resultSet.Read())
 		        {
-			        var confGame = new ConfGame
+			        confGames.Add(new ConfGame
 			        {
 				        Game = resultSet[Constants.GAME].ToString(),
-				        Time =
-					        _tzh.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference",
-						        "Eastern"),
+				        Time = _tzh.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
 				        MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
 				        Network =
 					        resultSet[Constants.MEDIAINDICATOR].ToString() == "W"
@@ -62,8 +57,7 @@ namespace New_MSS.BC
 						        ? resultSet[Constants.TVTYPE].ToString()
 						        : string.Empty,
 				        Conference = resultSet[Constants.CONFERENCE].ToString()
-			        };
-			        confGames.Add(confGame);
+			        });
 		        }
 	        return confGames;
         }

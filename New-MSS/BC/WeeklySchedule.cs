@@ -76,7 +76,6 @@ namespace New_MSS.BC
 		private WeekDates GetWeekDates(int week, string year)
 		{
 			var weekDates = new WeekDates();
-
             var parmList = new StoredProcParmList
 			{
                 StoredProcParms = new List<StoredProcParm>
@@ -158,7 +157,6 @@ namespace New_MSS.BC
             return String.Concat("<a class=\"FSNLink ", sportYear, "week", week, parm.Parm, "\" >RSN Affiliates</a>");
         }
 
-
         private List<FSNGames> GetFSNGamesList(string year)
         {
             var FSNGamesList = new List<FSNGames>();
@@ -173,12 +171,11 @@ namespace New_MSS.BC
                 {
                     while (resultSet.Read())
                     {
-                        var FSNGame = new FSNGames
+                        FSNGamesList.Add(new FSNGames
                         {
                             Game = resultSet["Game"].ToString(),
                             Parm = resultSet["KeyValue"].ToString()
-                        };
-                        FSNGamesList.Add(FSNGame);
+                        });
                     }
                 }
             }
@@ -208,7 +205,7 @@ namespace New_MSS.BC
                 {
                     while (resultSet.Read())
                     {
-                        var noTvGame = new NonTelevisedGame
+                        noTvGamesList.Add(new NonTelevisedGame
                         {
                             Game = resultSet["Game"].ToString(),
                             Conference = resultSet["Conference"].ToString(),
@@ -216,8 +213,7 @@ namespace New_MSS.BC
                             Time = Convert.ToDateTime(resultSet["Time"].ToString()),
                             FCS = resultSet["FCS"].ToString() == "Y",
                             DayOfWeek = Convert.ToDateTime(resultSet["Time"].ToString()).DayOfWeek
-                        };
-                        noTvGamesList.Add(noTvGame);
+                        });
                     }
                 }
             }

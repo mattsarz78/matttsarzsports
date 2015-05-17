@@ -24,7 +24,7 @@ namespace New_MSS.Controllers
             {
                 var sportYear = String.Concat("football", year);
             	var isIndependents = conference.ToLower().Contains("independents");
-                var conferenceModel = new ConferenceModel
+                return View(new ConferenceModel
                 {
                     ContractTexts = _ph.GetTextFromXml(conference, year.ToString()),
                     ConferenceGames = isIndependents ? _confSched.CreateIndependentsGameList(year)
@@ -33,8 +33,7 @@ namespace New_MSS.Controllers
                     Year = year.ToString(),
                     ConferenceName = AddSpaces(conference),
 					FlexScheduleLink = _ph.CheckForFlexSchedule(year.ToString())
-                };
-                return View(conferenceModel);
+                });
             }
             throw new Exception();
         }

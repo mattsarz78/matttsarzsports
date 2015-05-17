@@ -18,10 +18,7 @@ namespace New_MSS.Shared
         {
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ImagesForURLs.xml");
 			if (File.Exists(path))
-			{
-				var doc = XDocument.Load(path);
-                return doc.Root.Elements("Address").Attributes("Link").Any(x => coverageNote.Contains(x.Value));
-			}
+                return XDocument.Load(path).Root.Elements("Address").Attributes("Link").Any(x => coverageNote.Contains(x.Value));
         	return false;
         }
 
@@ -97,8 +94,7 @@ namespace New_MSS.Shared
             var path = HttpContext.Current.Server.MapPath(@"~/Content/" + docName + ".xml");
             if (File.Exists(path))
             {
-                var doc = XDocument.Load(path);
-                var xElement = doc.Element(docName).Element(element);
+                var xElement = XDocument.Load(path).Element(docName).Element(element);
 	            if (xElement != null)
 		            return true;
             }
@@ -109,11 +105,7 @@ namespace New_MSS.Shared
         {
             var path = HttpContext.Current.Server.MapPath(@"~/Content/ASNLinks.xml");
             if (File.Exists(path))
-            {
-                var doc = XDocument.Load(path);
-                var xCollection = doc.Root.Elements();
-            	return xCollection.Any(xItem => xItem.Attribute("link").Value == coverageNote);
-            }
+            	return XDocument.Load(path).Root.Elements().Any(xItem => xItem.Attribute("link").Value == coverageNote);
             return false;
         }
 
@@ -126,11 +118,7 @@ namespace New_MSS.Shared
 		{
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
 			if (File.Exists(path))
-			{
-				var doc = XDocument.Load(path);
-				var xCollection = doc.Root.Elements(p);
-				return xCollection.Any(xItem => Convert.ToBoolean(xItem.Attribute(attributeName).Value));
-			}
+				return XDocument.Load(path).Root.Elements(p).Any(xItem => Convert.ToBoolean(xItem.Attribute(attributeName).Value));
 			return false;
 		}
 
@@ -138,10 +126,7 @@ namespace New_MSS.Shared
 		{
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
 			if (File.Exists(path))
-			{
-				var doc = XDocument.Load(path);
-				return doc.Root.Elements(p).Attributes(attributeName).First().Value;
-			}
+				return XDocument.Load(path).Root.Elements(p).Attributes(attributeName).First().Value;
 			return string.Empty;
 		}
 

@@ -60,7 +60,7 @@ namespace New_MSS.BC
 		        bool ppvExists = PPVColumnExists(resultSet);
 		        while (resultSet.Read())
 		        {
-			        var game = new TelevisedGame
+			        gameList.Add(new TelevisedGame
 			        {
 				        Game = resultSet["Game"].ToString(),
 				        Network = resultSet["Network"].ToString(),
@@ -72,8 +72,7 @@ namespace New_MSS.BC
 					        Convert.ToDateTime(resultSet["Time"].ToString()).TimeOfDay.ToString() == "00:00:00"
 						        ? "TBA"
 						        : String.Format("{0:g}", _tzh.Offset(timeZone, Convert.ToDateTime(resultSet["Time"].ToString())))
-			        };
-			        gameList.Add(game);
+			        });
 		        }
 	        }
 	        return gameList;
@@ -82,10 +81,8 @@ namespace New_MSS.BC
         private bool PPVColumnExists(SqlDataReader resultSet)
         {
             for (int i = 0; i < resultSet.FieldCount; i++)
-            {
                 if (resultSet.GetName(i).Equals("PPV"))
                     return true;
-            }
             return false;
         }
     }

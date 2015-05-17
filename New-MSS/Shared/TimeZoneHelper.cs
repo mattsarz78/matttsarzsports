@@ -33,7 +33,6 @@ namespace New_MSS.Shared
     	public string FormatTelevisedTime(DateTime gameTimeInput, string caller, string timeZone)
         {
             string gameTimeString;
-
             DateTime gameTime = DateTime.Parse(gameTimeInput.ToString());
 			var hours = gameTime.TimeOfDay.ToString() == "00:00:00" ? "TBA" : Offset(timeZone, gameTime).ToString("h:mm tt");
             if (caller == "web")
@@ -41,7 +40,6 @@ namespace New_MSS.Shared
             else
                 gameTimeString = String.Concat("<label>", gameTime.ToString("dddd"), "<br>", gameTime.ToString("M/d"),
                     "<br>",hours,"</label>");
-
             return gameTimeString;
         }
     }

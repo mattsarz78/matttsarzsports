@@ -26,11 +26,7 @@ namespace New_MSS.Controllers
         public ActionResult Weekly(int week, string sportYear)
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
-            {
-				var weeklyModel = _ws.GetWeeklyData(week, sportYear,
-                    GetYear(sportYear), "Eastern", GetSport(sportYear));
-                return View(weeklyModel);
-            }
+                return View(_ws.GetWeeklyData(week, sportYear, GetYear(sportYear), "Eastern", GetSport(sportYear)));
             throw new Exception();
         }
 
@@ -38,11 +34,7 @@ namespace New_MSS.Controllers
         public ActionResult Weekly(string timeZoneValue, int week, string sportYear)
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
-            {
-				var weeklyModel = _ws.GetWeeklyData(week, sportYear,
-                    GetYear(sportYear), timeZoneValue, GetSport(sportYear));
-                return PartialView("WeeksBase", weeklyModel);
-            }
+                return PartialView("WeeksBase", _ws.GetWeeklyData(week, sportYear, GetYear(sportYear), timeZoneValue, GetSport(sportYear)));
             throw new Exception();
         }
 
@@ -50,11 +42,7 @@ namespace New_MSS.Controllers
         public ActionResult WeeklyText(int week, string sportYear)
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
-            {
-				var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
-                    GetYear(sportYear), GetSport(sportYear), "Eastern");
-                return View(weeklyTextModel);
-            }
+                return View(_wts.GetWeeklyTextData(week, sportYear, GetYear(sportYear), GetSport(sportYear), "Eastern"));
             throw new Exception();
         }
 
@@ -62,11 +50,7 @@ namespace New_MSS.Controllers
         public ActionResult WeeklyText(string timeZoneValue, int week, string sportYear)
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
-            {
-                var weeklyTextModel = _wts.GetWeeklyTextData(week, sportYear,
-                    GetYear(sportYear), GetSport(sportYear), timeZoneValue);
-                return PartialView("TextGames", weeklyTextModel);
-            }
+                return PartialView("TextGames", _wts.GetWeeklyTextData(week, sportYear, GetYear(sportYear), GetSport(sportYear), timeZoneValue));
             throw new Exception();
         }
     }

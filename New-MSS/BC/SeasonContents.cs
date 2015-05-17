@@ -25,14 +25,12 @@ namespace New_MSS.BC
 			using (var resultSet = _sph.RunDataReader(parmList, conn, "GetFullYearDates"))
 				while (resultSet.Read())
 				{
-					var yearDate = new YearDate
-					{
-						Week = Int32.Parse(resultSet["Week"].ToString()),
-						StartDate = DateTime.Parse(resultSet["StartDate"].ToString()),
-						EndDate = DateTime.Parse(resultSet["EndDate"].ToString())
-					};
-
-					yearDateList.Add(yearDate);
+                    yearDateList.Add(new YearDate
+                    {
+                        Week = Int32.Parse(resultSet["Week"].ToString()),
+                        StartDate = DateTime.Parse(resultSet["StartDate"].ToString()),
+                        EndDate = DateTime.Parse(resultSet["EndDate"].ToString())
+                    });
 				}
 			return yearDateList;
         }
