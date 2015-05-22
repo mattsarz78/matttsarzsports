@@ -44,22 +44,8 @@ namespace New_MSS.Shared
                     var streamingCoverage = new List<string>();
                     var stringCoverage = new List<string>();
                     foreach (string t in coverageNotes)
-                    {
-                        if (_bools.IsImage(t) || _bools.IsImageHyperlink(t))
-                            imgCoverage.Add(t);
-                        else if (_bools.IsTextStreamingLink(t))
-                            streamingCoverage.Add(t);
-                        else
-                            stringCoverage.Add(t);
-                    }
-
-                    FormatImages(imgCoverage.ToArray(), coverageNotesList);
-                    if (coverageNotesTypeList[0] > 0 && coverageNotesTypeList[1] > 0 && coverageNotesList.Last() != BR)
-                        coverageNotesList.Add(BR);
-                    FormatTextStreaming(streamingCoverage.ToArray(), coverageNotesList);
-                    if ((coverageNotesTypeList[0] > 0 || coverageNotesTypeList[1] > 0) && stringCoverage.Count > 0 && coverageNotesList.Last() != BR)
-                        coverageNotesList.Add(BR);
-                    FormatString(stringCoverage.ToArray(), coverageNotesList);
+                        DetermineCoverageType(t, imgCoverage, streamingCoverage, stringCoverage);
+                    FormatCoverageNotesListTypes(imgCoverage, coverageNotesList, coverageNotesTypeList, streamingCoverage, stringCoverage);
                 }
             }
 
@@ -68,6 +54,29 @@ namespace New_MSS.Shared
 	        string coverageNotesReturn = coverageNotesString.ToString();
             coverageNotesString.Clear();
             return coverageNotesReturn;
+        }
+
+        private void FormatCoverageNotesListTypes(List<string> imgCoverage, List<string> coverageNotesList, List<int> coverageNotesTypeList,
+            List<string> streamingCoverage, List<string> stringCoverage)
+        {
+            FormatImages(imgCoverage.ToArray(), coverageNotesList);
+            if (coverageNotesTypeList[0] > 0 && coverageNotesTypeList[1] > 0 && coverageNotesList.Last() != BR)
+                coverageNotesList.Add(BR);
+            FormatTextStreaming(streamingCoverage.ToArray(), coverageNotesList);
+            if ((coverageNotesTypeList[0] > 0 || coverageNotesTypeList[1] > 0) && stringCoverage.Count > 0 &&
+                coverageNotesList.Last() != BR)
+                coverageNotesList.Add(BR);
+            FormatString(stringCoverage.ToArray(), coverageNotesList);
+        }
+
+        private void DetermineCoverageType(string t, List<string> imgCoverage, List<string> streamingCoverage, List<string> stringCoverage)
+        {
+            if (_bools.IsImage(t) || _bools.IsImageHyperlink(t))
+                imgCoverage.Add(t);
+            else if (_bools.IsTextStreamingLink(t))
+                streamingCoverage.Add(t);
+            else
+                stringCoverage.Add(t);
         }
 
         private void FormatString(IEnumerable<string> p, List<string> coverageNotesList)

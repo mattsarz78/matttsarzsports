@@ -9,7 +9,7 @@ namespace New_MSS.App_Start
         {
             bundles.UseCdn = true;
             const string jQueryCdn = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js";
-            const string modernizerCdn = "http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js";
+            const string modernizerCdn = "http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.8.3.js";
             const string ajaxCdn = "http://ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js";
 
             bundles.Add(new ScriptBundle("~/bundles/jquery", jQueryCdn).Include("~/Scripts/jquery-{version}.js"));

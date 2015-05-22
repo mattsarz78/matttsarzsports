@@ -17,9 +17,7 @@ namespace New_MSS.Shared
         public  bool IsImageHyperlink(string coverageNote)
         {
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ImagesForURLs.xml");
-			if (File.Exists(path))
-                return XDocument.Load(path).Root.Elements("Address").Attributes("Link").Any(x => coverageNote.Contains(x.Value));
-        	return false;
+			return File.Exists(path) && XDocument.Load(path).Root.Elements("Address").Attributes("Link").Any(x => coverageNote.Contains(x.Value));
         }
 
         public  bool IsTextStreamingLink(string coverageNote)
@@ -95,8 +93,7 @@ namespace New_MSS.Shared
             if (File.Exists(path))
             {
                 var xElement = XDocument.Load(path).Element(docName).Element(element);
-	            if (xElement != null)
-		            return true;
+                return xElement != null;
             }
             return false;
         }
@@ -104,9 +101,7 @@ namespace New_MSS.Shared
         private  bool IsASNLink(string coverageNote)
         {
             var path = HttpContext.Current.Server.MapPath(@"~/Content/ASNLinks.xml");
-            if (File.Exists(path))
-            	return XDocument.Load(path).Root.Elements().Any(xItem => xItem.Attribute("link").Value == coverageNote);
-            return false;
+            return File.Exists(path) && XDocument.Load(path).Root.Elements().Any(xItem => xItem.Attribute("link").Value == coverageNote);
         }
 
         public  bool IsFOXSportsGo(string coverageNote)
@@ -117,17 +112,13 @@ namespace New_MSS.Shared
 		public  bool CheckSportYearAttributesBool(string p, string attributeName)
 		{
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
-			if (File.Exists(path))
-				return XDocument.Load(path).Root.Elements(p).Any(xItem => Convert.ToBoolean(xItem.Attribute(attributeName).Value));
-			return false;
+			return File.Exists(path) && XDocument.Load(path).Root.Elements(p).Any(xItem => Convert.ToBoolean(xItem.Attribute(attributeName).Value));
 		}
 
 		public  string CheckSportYearAttributes(string p, string attributeName)
 		{
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
-			if (File.Exists(path))
-				return XDocument.Load(path).Root.Elements(p).Attributes(attributeName).First().Value;
-			return string.Empty;
+			return File.Exists(path) ? XDocument.Load(path).Root.Elements(p).Attributes(attributeName).First().Value : string.Empty;
 		}
 
 		public  bool IsESPNPPV(string ppv, string coverageNotes)
