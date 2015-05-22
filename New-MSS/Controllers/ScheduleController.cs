@@ -10,16 +10,12 @@ namespace New_MSS.Controllers
         IBools _bools;
         IWeeklySchedule _ws;
         IWeeklyTextSchedule _wts;
-        IStoredProcHelper _sph;
-        IPageHelper _ph;
 
         public ScheduleController()
         {
-            _sph = new StoredProcHelper();
             _bools = new Bools();
-            _ph = new PageHelper(_bools);
-            _ws = new WeeklySchedule(_bools, _ph, new CoverageNotesHelper(_bools), _sph, new SeasonContents(_sph), new TimeZoneHelper());
-            _wts = new WeeklyTextSchedule(_bools, _ph, new SeasonContents(_sph), _sph, new TimeZoneHelper());
+            _ws = new WeeklySchedule(_bools, new PageHelper(_bools), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
+            _wts = new WeeklyTextSchedule(_bools, new PageHelper(_bools), new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
         }
 
         [HttpGet]
