@@ -1,0 +1,65 @@
+﻿@model MSS.Models.WeeklyModel
+
+<label id="@Model.WeekDates.CurrentDate.DayOfWeek@Model.WeekDates.CurrentDate.Month@Model.WeekDates.CurrentDate.Day@Model.WeekDates.CurrentDate.Year">@Model.WeekDates.CurrentDate.ToString("D")</label>
+<table class="noTVTable">
+    <tbody>
+        <tr class="header">
+            <th>Game</th>
+            <th>Network</th>
+            @if (Model.IsBowlWeek || Model.IsBasketballPostseason)
+            {
+                if (!Model.IsNIT)
+                {
+                <th>Location</th>
+                }
+            }
+            else
+            {
+                <th>Coverage Notes</th>
+            }
+            @if (!Model.IsBowlWeek && !Model.IsBasketballPostseason)
+            {
+                if (Model.ShowPPVColumn)
+                {
+                <th>PPV</th>
+                }
+            }
+            <th>Time</th>
+        </tr>
+        @foreach (var game in Model.TelevisedGamesList.Where(x => Convert.ToDateTime(x.Time.Date) == Model.WeekDates.CurrentDate))
+        {
+            if (Model.IsBowlWeek || Model.IsBasketballPostseason)
+            {
+                if (Model.IsNIT)
+                {
+            <tr>
+                @Html.Partial("NITGamesRowDetail", game)
+            </tr>		 
+                }
+                else
+                {
+            <tr>
+                @Html.Partial("BowlGamesRowDetail", game)
+            </tr>		 
+                }
+            }
+            else
+            {
+                if (game.Mediaindicator == "W")
+                {
+            <tr class="webGame">
+                @Html.Partial("FootballWeekGamesRowDetail", game)
+            </tr>		 
+                }
+                else
+                {
+            <tr>
+                @Html.Partial("FootballWeekGamesRowDetail", game)
+            </tr>		 
+                }
+
+            }
+        }
+    </tbody>
+</table>
+<br />
