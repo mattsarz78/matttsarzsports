@@ -1,5 +1,4 @@
-﻿using MSS.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace MSS.Models
 {
