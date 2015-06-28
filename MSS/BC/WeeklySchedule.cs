@@ -123,7 +123,7 @@ namespace MSS.BC
                             Time = FormatTime(gameTime, timeZone),
                             TimeString = _tzh.FormatTelevisedTime(gameTime, "web", timeZone),
                             ShowPPVColumn = showPPVColumn,
-							Mediaindicator = sport.Contains("football") ? resultSet["Mediaindicator"].ToString() : string.Empty,
+							Mediaindicator = resultSet["Mediaindicator"].ToString()
                         };
 
                         tvGame.Network = tvGame.Mediaindicator == "W" ? _cnh.FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) :

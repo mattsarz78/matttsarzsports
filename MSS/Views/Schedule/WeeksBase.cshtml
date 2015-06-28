@@ -11,7 +11,7 @@
  {
 		<p>
 			@Html.Partial("WeeksNavigation")
-			@if (Model.IsFootball && !Model.IsBowlWeek)
+			@if (!Model.IsBowlWeek && !Model.IsBasketballPostseason)
    {
 				<input id="btnWebGames" type="button" value="Hide Web Exclusive Games" class="show_hideWeb" />
    }
