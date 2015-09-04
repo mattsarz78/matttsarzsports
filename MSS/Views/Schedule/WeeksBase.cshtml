@@ -18,7 +18,7 @@
 			@Html.Partial("TimeZoneDropDown")
 		</p>
 
-   DateTime endDate = Model.WeekDates.EndDate;
+   DateTime endDate = Model.WeekDates.EndDate.AddDays(1);
    Model.WeekDates.CurrentDate = Model.TelevisedGamesList.Min(x => x.Time).Date.AddDays(-1);
    while ((Model.WeekDates.CurrentDate = Model.WeekDates.CurrentDate.AddDays(1)) <= endDate)
    {

@@ -39,7 +39,7 @@ namespace MSS.Shared
 
         public  bool IsGamePlanMap(string coverageNote)
         {
-            return coverageNote.Contains("http://assets.espn.go.com/gameplan/") || coverageNote.Contains("espngameplan.espn.com");
+			return coverageNote.Contains("http://assets.espn.go.com/gameplan/") || coverageNote.Contains("http://assets.espn.go.com/espn3/") || coverageNote.Contains("espngameplan.espn.com");
         }
 
         public  bool IsThe506CoverageMap(string coverageNote)
