@@ -84,3 +84,6 @@ D:\New-MSS\matttsarzsports\MSS\obj\Debug\MSS.dll
 D:\New-MSS\matttsarzsports\MSS\obj\Debug\MSS.pdb
 D:\New-MSS\matttsarzsports\MSS\bin\Newtonsoft.Json.dll
 D:\New-MSS\matttsarzsports\MSS\bin\Newtonsoft.Json.xml
+D:\New-MSS\matttsarzsports\MSS\bin\Antlr3.Runtime.dll
+D:\New-MSS\matttsarzsports\MSS\bin\Microsoft.Web.Infrastructure.dll
+D:\New-MSS\matttsarzsports\MSS\bin\Antlr3.Runtime.pdb
