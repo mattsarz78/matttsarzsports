@@ -10,7 +10,7 @@ namespace MSS.Shared
     {
         public  bool IsImage(string coverageNote)
         {
-            return coverageNote.ToLower().Contains("jpg") && !coverageNote.Contains("assets.espn")
+            return coverageNote.EndsWith("jpg") && !coverageNote.Contains("assets.espn")
                 && !coverageNote.Contains("espncdn") && !coverageNote.Contains("espngameplan");
         }
 
