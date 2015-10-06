@@ -170,7 +170,7 @@ namespace MSS.Shared
                     coverageNotesList.Add(BR);
 
                 string textLink = ConfigureTextLink(stringText);
-                textLink = String.IsNullOrWhiteSpace(textLink) ? "Live Web Video" : textLink;
+                textLink = String.IsNullOrWhiteSpace(textLink) ? "Live Video" : textLink;
 
                 coverageNotesList.Add(String.Concat("<a href=\"", stringText, "\" target=\"_blank\">", textLink, "</a>"));
             }
