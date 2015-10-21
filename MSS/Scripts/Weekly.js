@@ -6,6 +6,7 @@ $(document).ready(function () {
             showHideButtonText($(".slidingNoTVDiv"), $("#btnConferenceGames"), "Non-Televised Games");
         });
     });
+    $("#Main").css("padding-top", $(".navbar").height());
 });
 
 function showRSNItens(e) {

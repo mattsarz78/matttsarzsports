@@ -6,32 +6,44 @@
 }
 <input id="sportYear" type="hidden" value="@Model.SportYear" />
 <input id="week" type="hidden" value="@Model.Week" />
-<form action="@ViewBag.ActionName" id="TextForm" method="post">
-<p>
-    <p class="DONTPrint">
-        Choose your time zone and check the games that you want to print your own customized
-        schedule. For those in Arizona and Hawai'i, your states are available as a specific
-        choice and adjust based on the week of the season.</p>
-        @Html.Partial("TextGames")
-</p>
-<p>
-    <a href="#" class="back-to-top">Back to top</a></p>
-</form>
-@section YearLink{
-	<a class="DONTPrint" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br/>
-	<a class="DONTPrint" href="@Url.Content("~/Schedule/Weekly/" + Model.SportYear + "/" + Model.Week)">Weekly Schedule</a><br/>
-}
+<nav class="navbar DONTPrint">
+	<div class="container">
+		@Html.Partial("Google/GoogleSearchBar")
+		@Html.Partial("AddThis/AddThis")
+		@Html.Partial("AddThis/AddThisVar")
+		<a href="@Url.Content("~/")">Home</a><br />
+		<a class="DONTPrint" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br />
+		<a class="DONTPrint" href="@Url.Content("~/Schedule/Weekly/" + Model.SportYear + "/" + Model.Week)">Weekly Schedule</a><br />
+		@Html.Partial("WeeksNavigation")
+		<p class="DONTPrint">
+			@Html.Partial("TimeZoneDropDown")
+			<input type="button" id="ClearAll" value="Clear All Checkboxes" class="inputpad" />
+			<input type="button" id="CheckAll" value="Check All Checkboxes" class="inputpad" />
+		</p>
+	</div>
+</nav>
+<div id="Main">
+	<form action="@ViewBag.ActionName" id="TextForm" method="post">
+		<p>
+			<p class="DONTPrint">
+				Choose your time zone and check the games that you want to print your own customized
+				schedule. For those in Arizona and Hawai'i, your states are available as a specific
+				choice and adjust based on the week of the season.
+			</p>
+			@Html.Partial("TextGames")
+		</p>
+		<p>
+			<a href="#" class="back-to-top">Back to top</a>
+		</p>
+	</form>
+</div>
 @section scripts {
-	<script type="text/javascript" src="@Scripts.Url("~/bundles/ajax")" async></script>
-	<script type="text/javascript" src="@Scripts.Url("~/bundles/weektext")" async></script>
-}
-@section Home
-{
-	<a href="@Url.Content("~/")">Home</a><br/>
+<script type="text/javascript" src="@Scripts.Url("~/bundles/ajax")" defer="defer"></script>
+<script type="text/javascript" src="@Scripts.Url("~/bundles/weektext")" defer="defer"></script>
 }
 @section styles{
 	<style type="text/css">.game{width:243px;border:medium;border-style:solid;border-color:Gray;border-width:thin}.tablecell{border:medium;border-style:solid;border-color:gray;border-width:thin}.tableborder{border-style:ridge;border-width:2px;border-spacing:1px;border-collapse:collapse;font-family:Arial}.networkcell{width:165px;text-align:center}.ppvcell{width:25px;text-align:center}.timecell{margin:0 auto;padding:0 2px}.gamecell{width:250px}.inputpad{padding-left: 10px;}.back-to-top{position: fixed;bottom: 2em; right: 0;text-decoration: none;padding: 1em;display: none;}</style>
     <style media="all and (min-width: 641px)" type="text/css">.tableborder{font-size:11px;}.rowStyle{width:580px;}</style>
-    <style type="text/css" media="only screen and (max-width: 640px)">.tableborder{font-size:7pt;}.DONTPrint a{line-height:17px;}</style>
+    <style type="text/css" media="only screen and (max-width: 640px)">.tableborder{font-size:7pt;}.DONTPrint a{line-height:13px;}</style>
 }
 

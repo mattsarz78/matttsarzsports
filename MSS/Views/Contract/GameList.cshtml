@@ -3,37 +3,47 @@
     ViewBag.Title = String.Format("Game List for {0} in {1}",Model.ConferenceName,Model.Year);
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section YearLink{
-	<a href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br/>
-}
-@section FlexWindows{
-    @if (Model.FlexScheduleLink != string.Empty)
-    {
-        <a href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a><br />
-    }
-}
-@section Home
-{
-	<a href="@Url.Content("~/")">Home</a><br/>
-}
 @section scripts{
-    <script async src="@Url.Content("~/Scripts/BackToTop.js")" type="text/javascript"></script>
-}
+<script defer="defer" src="@Url.Content("~/Scripts/BackToTop.js")" type="text/javascript"></script>
+<script defer="defer" type="text/javascript">
+	$(document).ready(function () {
+		$("#Main").css("padding-top", $(".navbar").height());
+	});
+</script>
+	}
 @section styles{
 	<style type="text/css">.game,.network,.time{border:medium;border-style:solid;border-color:Gray;border-width:thin}.network{text-align:center;}.time{width:60px;text-align:right;padding:2px}.game{width:243px;}.noTVTable{background-color:#fff;border-color:#fff;border-style:ridge;border-width:2px;border-spacing:1px;border-collapse:collapse;font-family:Arial}.back-to-top{position: fixed;bottom: 2em; right: 0;text-decoration: none;padding: 1em;display: none;}</style>
     <style media="all and (min-width: 641px)" type="text/css">.game{padding:2px;}.network{width:135px;padding:2px;}.imageDimensions{height:40px;width:55px;}</style>
     <style type="text/css" media="only screen and (max-width: 640px)">.game{padding:1px;}.network{width:90px;padding:0;}.imageDimensions {height: 29px; width: 40px; }</style>
 }
-<div id="head">
-	<p>@Html.Label(Model.ConferenceName + " Broadcast Schedule")</p>
-	<p><label id="contract" for="contract">NOTE: This list includes telecasts that fall under the TV contracts for the conference. Any road non-conference games fall under the home team's telecast rights.</label></p>
-	@if (Model.ConferenceName.ToLower() != "independents")
-	{
-		@Html.Raw(Model.ContractTexts.First().ContractXmlText)
-	}
+<nav class="navbar DONTPrint">
+	<div class="container">
+		@Html.Partial("Google/GoogleSearchBar")
+		@Html.Partial("AddThis/AddThis")
+		@Html.Partial("AddThis/AddThisVar")
+		<a href="@Url.Content("~/")">Home</a><br />
+		<a href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br />
+		@if (Model.FlexScheduleLink != string.Empty)
+		{
+			<a href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a><br />
+		}
+	</div>
+</nav>
+<div id="Main">
+	<div id="head">
+		<p>@Html.Label(Model.ConferenceName + " Broadcast Schedule")</p>
+		<p><label id="contract" for="contract">NOTE: This list includes telecasts that fall under the TV contracts for the conference. Any road non-conference games fall under the home team's telecast rights.</label></p>
+		@if (Model.ConferenceName.ToLower() != "independents")
+		{
+			@Html.Raw(Model.ContractTexts.First().ContractXmlText)
+		}
+	</div>
+	@Html.Partial("ConferenceGrid")
+	<p><a href="#" class="back-to-top">Back to top</a></p>
 </div>
-@Html.Partial("ConferenceGrid")
-<p><a href="#" class="back-to-top">Back to top</a></p>
+
+
+
 
 
 

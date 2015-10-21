@@ -3,36 +3,46 @@
     ViewBag.Title = Model.Title + " TV Schedule By Week";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<p>@Html.Label(Model.Title)</p>
-<div id="content">
-    <div id="SeasonLinks" class="DONTPrint">
-        @Html.Partial("YearDates")
-    </div>
-    @if (Model.IsFootball)
-    {
-        @Html.Partial("ConferenceList/" + Model.ConferenceListBase)
-    }
+<nav class="navbar DONTPrint">
+	<div class="container">
+		@Html.Partial("Google/GoogleSearchBar")
+		@Html.Partial("AddThis/AddThis")
+		@Html.Partial("AddThis/AddThisVar")
+		<a href="@Url.Content("~/")">Home</a><br />
+	</div>
+</nav>
+<div id="Main">
+	<p>@Html.Label(Model.Title)</p>
+	<div id="content">
+		<div id="SeasonLinks" class="DONTPrint">
+			@Html.Partial("YearDates")
+		</div>
+		@if (Model.IsFootball)
+		{
+			@Html.Partial("ConferenceList/" + Model.ConferenceListBase)
+		}
+	</div>
+	<div style="display: inline-block">
+		<p>
+			<span id="Label9">
+				Got a question, complaint, comment or know a game not listed here?
+			</span><a id="HyperLink32" href="mailto:footballsked@gmail.com">Send it here</a>
+		</p>
+	</div>
 </div>
-<div style="display: inline-block">
-    <p>
-        <span id="Label9">Got a question, complaint, comment or know a game not listed here?
-        </span><a id="HyperLink32" href="mailto:footballsked@gmail.com">Send it here</a></p>
-</div>
-@section Home
-{
-	<a href="@Url.Content("~/")">Home</a><br/>
-}
 @section scripts{
-    <script async type="text/javascript">
-        $(document).ready(function () {
-            $("#content").css("min-height", $("#SeasonLinks").height());
-            $("#Conference").css("min-height", $("#SeasonLinks").height());
-        });
-    </script>
+    <script defer="defer" type="text/javascript">
+		$(document).ready(function () {
+			$("#content").css("min-height", $("#SeasonLinks").height());
+			$("#Conference").css("min-height", $("#SeasonLinks").height());
+			$("#Main").css("padding-top", $(".navbar").height());
+		});
+</script>
+
 }
 @section styles {
 	<style type="text/css">#SeasonLinks,#Conference{float:left;display:inline}#SeasonLinks{min-height:250px;}#Conference{width:35%;min-height:380px;}</style>
     <style media="all and (min-width: 641px)" type="text/css">#SeasonLinks{width:55%;}</style>
-    <style type="text/css" media="only screen and (max-width: 640px)">#SeasonLinks{width: 65%;}.DONTPrint a{line-height:17px;}</style>
+    <style type="text/css" media="only screen and (max-width: 640px)">#SeasonLinks{width: 65%;}.DONTPrint a{line-height:13px;}</style>
 }
 
