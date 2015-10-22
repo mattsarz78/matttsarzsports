@@ -5,10 +5,15 @@
 }
 <nav class="navbar DONTPrint">
 	<div class="container">
-		@Html.Partial("Google/GoogleSearchBar")
-		@Html.Partial("AddThis/AddThis")
-		@Html.Partial("AddThis/AddThisVar")
-		<a href="@Url.Content("~/")">Home</a><br />
+		<div>
+			@Html.Partial("AddThis/AddThis")
+			@Html.Partial("Google/GoogleSearchBar")
+			@Html.Partial("AddThis/AddThisVar")
+		</div>
+		<div style="clear:both; padding-bottom: 5px"></div>
+		<div>
+			<a href="@Url.Content("~/")">Home</a><br />
+		</div>
 	</div>
 </nav>
 <div id="Main">

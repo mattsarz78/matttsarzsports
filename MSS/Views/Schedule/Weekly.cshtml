@@ -7,44 +7,36 @@
 <input id="week" type="hidden" value="@Model.Week" />
 <nav class="navbar DONTPrint">
 	<div class="container">
-		@Html.Partial("Google/GoogleSearchBar")
-		@Html.Partial("AddThis/AddThis")
-		@Html.Partial("AddThis/AddThisVar")
-		<table style="border: none">
-			<tr><td style="padding-right: 5px"><a href="@Url.Content("~/")">Home</a></td>
-				<td style="padding-right: 5px"><a href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a></td>
-						</tr>
-			@if (!String.IsNullOrWhiteSpace(Model.FlexScheduleLink) || (DateTime.Now.Date >= Model.WeekDates.StartDate && DateTime.Now.Date <= Model.WeekDates.EndDate))
+		<div>
+			@Html.Partial("AddThis/AddThis")
+			@Html.Partial("Google/GoogleSearchBar")
+			@Html.Partial("AddThis/AddThisVar")
+		</div>
+		<div style="clear:both; padding-bottom: 5px"></div>
+		<div>
+			<a href="@Url.Content("~/")">Home</a><br />
+			<a href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br />
+			@if (!String.IsNullOrWhiteSpace(Model.FlexScheduleLink))
 			{
-				<tr>
-					<td style="padding-right: 5px">
-						@if (!String.IsNullOrWhiteSpace(Model.FlexScheduleLink))
-						{
-							<a href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a>
-						}
-					</td>
-					<td style="padding-right: 5px">
-						@if (DateTime.Now.Date >= Model.WeekDates.StartDate && DateTime.Now.Date <= Model.WeekDates.EndDate)
-						{
-							<a href="#@DateTime.Now.DayOfWeek@DateTime.Now.Month@DateTime.Now.Day@DateTime.Now.Year">Today's Games</a>
-						}
-					</td>
-				</tr>
+			<a href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a><br />
 			}
-			<tr><td><a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + Model.Week)">Customizable Text-Only Page</a></td>
-</tr>
-		</table>
-		@Html.Partial("WeeksNavigation")
-		@if (Model.TelevisedGamesList.Any())
-		{
+			@if (DateTime.Now.Date >= Model.WeekDates.StartDate && DateTime.Now.Date <= Model.WeekDates.EndDate)
+			{
+			<a href="#@DateTime.Now.DayOfWeek@DateTime.Now.Month@DateTime.Now.Day@DateTime.Now.Year">Today's Games</a><br />
+			}
+			<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + Model.Week)">Customizable Text-Only Page</a>
+			@Html.Partial("WeeksNavigation")
+			@if (Model.TelevisedGamesList.Any())
+			{
 			<p>
 				@if (!Model.IsBowlWeek && !Model.IsBasketballPostseason)
 				{
-					<input id="btnWebGames" type="button" value="Hide Web Exclusive Games" class="show_hideWeb" />
+				<input id="btnWebGames" type="button" value="Hide Web Exclusive Games" class="show_hideWeb" />
 				}
 				@Html.Partial("TimeZoneDropDown")
 			</p>
-		}
+			}
+		</div>
 	</div>
 </nav>
 <div id="Main">

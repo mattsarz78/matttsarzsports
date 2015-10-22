@@ -8,18 +8,23 @@
 <input id="week" type="hidden" value="@Model.Week" />
 <nav class="navbar DONTPrint">
 	<div class="container">
-		@Html.Partial("Google/GoogleSearchBar")
-		@Html.Partial("AddThis/AddThis")
-		@Html.Partial("AddThis/AddThisVar")
-		<a href="@Url.Content("~/")">Home</a><br />
-		<a class="DONTPrint" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br />
-		<a class="DONTPrint" href="@Url.Content("~/Schedule/Weekly/" + Model.SportYear + "/" + Model.Week)">Weekly Schedule</a><br />
-		@Html.Partial("WeeksNavigation")
-		<p class="DONTPrint">
-			@Html.Partial("TimeZoneDropDown")
-			<input type="button" id="ClearAll" value="Clear All Checkboxes" class="inputpad" />
-			<input type="button" id="CheckAll" value="Check All Checkboxes" class="inputpad" />
-		</p>
+		<div>
+			@Html.Partial("AddThis/AddThis")
+			@Html.Partial("Google/GoogleSearchBar")
+			@Html.Partial("AddThis/AddThisVar")
+		</div>
+		<div style="clear:both; padding-bottom: 5px"></div>
+		<div>
+			<a href="@Url.Content("~/")">Home</a><br />
+			<a class="DONTPrint" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a><br />
+			<a class="DONTPrint" href="@Url.Content("~/Schedule/Weekly/" + Model.SportYear + "/" + Model.Week)">Weekly Schedule</a><br />
+			@Html.Partial("WeeksNavigation")
+			<p class="DONTPrint">
+				@Html.Partial("TimeZoneDropDown")
+				<input type="button" id="ClearAll" value="Clear All Checkboxes" class="inputpad" />
+				<input type="button" id="CheckAll" value="Check All Checkboxes" class="inputpad" />
+			</p>
+		</div>
 	</div>
 </nav>
 <div id="Main">
