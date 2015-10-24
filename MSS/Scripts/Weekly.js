@@ -1,26 +1,24 @@
 $(document).ready(function () {
     WireUpEvents();
-
-    $(".show_hideNoTV").on("click", function () {
-        $(".slidingNoTVDiv").slideToggle(400, function () {
-            showHideButtonText($(".slidingNoTVDiv"), $("#btnConferenceGames"), "Non-Televised Games");
-        });
-    });
-    $("#Main").css("padding-top", $(".navbar").height());
 });
 
 function showRSNItens(e) {
-	$(".overlay").height($(document).height()).show();
-	$("#RSNLists,.closer").show();
-	$("#" + e).show();
+    $(".overlay").height($(document).height()).show();
+    $("#RSNLists,.closer").show();
+    $("#" + e).show();
 }
 
 function showHideButtonText(e, f, g) {
-	if (e.css("display") == "none") {
-		f.attr("value", "Show " + g);
-	} else {
-		f.attr("value", "Hide " + g);
-	}
+    if (e.css("display") == "none") {
+        f.attr("value", "Show " + g);
+    } else {
+        f.attr("value", "Hide " + g);
+    }
+}
+
+function UnbindEvents() {
+    $("#DropDownTimeZone").unbind("change");
+    $(".FSNLink,.closer,#btnWebGames,#btnConferenceGames").unbind("click");
 }
 
 function WireUpEvents() {
@@ -32,6 +30,7 @@ function WireUpEvents() {
         $.post('/Schedule/Weekly', { timeZoneValue: option, week: week, sportYear: sportYear }, function (data) {
             $("#WeeksBase").html(data);
             $('#DropDownTimeZone option:eq(' + optionVal + ')').prop('selected', true);
+            UnbindEvents();
             WireUpEvents();
         });
     });
@@ -58,7 +57,7 @@ function WireUpEvents() {
         $("#RSNLists").children().hide();
     });
 
-    $(".show_hideWeb").on("click", function () {
+    $("#btnWebGames").on("click", function (event) {
         $(".webGame").slideToggle(400, function () {
             showHideButtonText($(".webGame"), $("#btnWebGames"), "Web Exclusive Games");
         });
@@ -67,7 +66,14 @@ function WireUpEvents() {
         });
     });
 
+    $("#btnConferenceGames").on("click", function () {
+        $(".slidingNoTVDiv").slideToggle(400, function () {
+            showHideButtonText($(".slidingNoTVDiv"), $("#btnConferenceGames"), "Non-Televised Games");
+        });
+    });
+
 }
+
 
 
 

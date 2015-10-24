@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
     WireUpEvents();
-    $("#Main").css("padding-top", $(".navbar").height());
 });
 
 function WireUpEvents() {
