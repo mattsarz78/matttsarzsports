@@ -145,7 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\ABCCoverageMapLinks.xml" />
-    <Content Include="Content\ASNLinks.xml" />
+    <Content Include="Content\ASNLinks.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\ConferenceNames.xml" />
     <Content Include="Content\ConferenceXml\2005.xml" />
     <Content Include="Content\ConferenceXml\2006.xml" />
@@ -1310,6 +1312,25 @@
     <Content Include="Views\Schedule\CoverageNotes\Football2015\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2015\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2015\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek14.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek15.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek16.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek17.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek18.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek19.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
