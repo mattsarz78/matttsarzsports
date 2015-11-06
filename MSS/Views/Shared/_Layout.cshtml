@@ -7,7 +7,7 @@
     <meta name="author" content="Matt Sarzyniak" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@ViewBag.Title</title>
-    <script src="@Scripts.Url("~/bundles/modernizr")" defer="defer"></script>
+    <script src="@Scripts.Url("~/bundles/modernizr")" async></script>
 </head>
 <body>
     <div class="overlay">
@@ -19,7 +19,6 @@
 		</style>
 		@RenderSection("styles", false)
         @RenderBody()
-		<script type="text/javascript" src="@Scripts.Url("~/bundles/jquery")"></script>
         <div class="DONTPrint">
         @Html.Partial("Google/GoogleBottomBanner")
         </div>
@@ -27,6 +26,7 @@
 		<div>
 			<p><a href="@Url.Content("~/Home/CopyrightAndDisclaimer")">Website Copyright</a></p></div>
 	</div>
+	<script type="text/javascript" src="@Scripts.Url("~/bundles/jquery")"></script>
 	@RenderSection("scripts", false)
 </body>
 </html>
