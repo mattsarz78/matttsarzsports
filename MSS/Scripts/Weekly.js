@@ -42,14 +42,15 @@ function WireUpEvents() {
         var e = $(this).attr("class").replace("FSNLink ", "");
         var rowPosition;
         rowPosition = $(this).parents('.coverage').get(0) != undefined ? $(this).parents('.coverage').parents('tr').position().top : $(this).parents('.coverageppv').parents('tr').position().top;
+        var multiplier = 1.2;
         if (rowPosition / $(document).height() <= .95) {
             $(window).scrollTop(rowPosition - ($(window).height() / 2));
             showRSNItens(e);
-            $("#RSNLists").css("margin-top", rowPosition - ($('#RSNLists').height()));
+            multiplier = 1.5;
         } else {
             showRSNItens(e);
-            $("#RSNLists").css("margin-top", rowPosition - ($('#RSNLists').height() * 1.2));
         }
+        $("#RSNLists").css("margin-top", rowPosition - ($('#RSNLists').height() * multiplier));
         $("#GooglePartialAd").show();
     });
 
