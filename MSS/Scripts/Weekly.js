@@ -46,7 +46,7 @@ function WireUpEvents() {
         if (rowPosition / $(document).height() <= .95) {
             $(window).scrollTop(rowPosition - ($(window).height() / 2));
             showRSNItens(e);
-            multiplier = 1.5;
+            multiplier = 1.35;
         } else {
             showRSNItens(e);
         }
