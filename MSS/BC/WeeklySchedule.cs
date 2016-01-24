@@ -37,6 +37,10 @@ namespace MSS.BC
 		public WeeklyModel GetDailyData(string sportYear, string year, string timeZone, string sport)
 		{
 			var dateToQuery = (DateTime.Now.Hour <= 5) ? DateTime.Now.AddDays(-1) : DateTime.Now;
+			var isFootball = sport.ToLower().Contains("football");
+			var fullYearDates = _sc.CreateDateModel(year);
+			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
+
 			var weeklyModel = new WeeklyModel
 			{
 				TelevisedGamesList = FormatTelevisedGames(dateToQuery, year, timeZone, sport),
@@ -47,10 +51,16 @@ namespace MSS.BC
 					EndDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day + 1, 5, 0, 0)
 				},
 				SportYear = sportYear,
-				IsFootball = sport.ToLower().Contains("football")
+				IsFootball = isFootball
 			};
 			weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
-			weeklyModel.ShowRSNPartialView = CheckForPartialView(Convert.ToInt32(weeklyModel.TelevisedGamesList[0].Week), sportYear);
+			var week = Convert.ToInt32(weeklyModel.Week);
+
+			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
+			weeklyModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
+			weeklyModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
+			weeklyModel.IsNIT = !isFootball && hasPostseason && isBowlWeekOrNIT;
+			weeklyModel.ShowRSNPartialView = CheckForPartialView(week, sportYear);
 			return weeklyModel;
 		}
 
