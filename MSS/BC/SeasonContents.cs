@@ -27,7 +27,7 @@ namespace MSS.BC
 				{
                     yearDateList.Add(new YearDate
                     {
-                        Week = Int32.Parse(resultSet["Week"].ToString()),
+                        Week = int.Parse(resultSet["Week"].ToString()),
                         StartDate = DateTime.Parse(resultSet["StartDate"].ToString()),
                         EndDate = DateTime.Parse(resultSet["EndDate"].ToString())
                     });
@@ -38,8 +38,8 @@ namespace MSS.BC
         public string CreateTitle(string sportYear)
         {
             return sportYear.ToLower().Contains("football")
-                       ? String.Concat(sportYear.Substring(8, 4)," Football")
-                       : String.Concat(sportYear.Substring(10, 4),"-",sportYear.Substring(14, 2)," Basketball");
+                       ? string.Concat(sportYear.Substring(8, 4)," Football")
+                       : string.Concat(sportYear.Substring(10, 4),"-",sportYear.Substring(14, 2)," Basketball");
         }
     }
 }

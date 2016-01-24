@@ -36,7 +36,11 @@ namespace MSS.BC
         }
 		public WeeklyModel GetDailyData(string sportYear, string year, string timeZone, string sport)
 		{
-			return new WeeklyModel();
+			var dateToQuery = (DateTime.Now.Hour <= 5) ? DateTime.Now.AddDays(-1) : DateTime.Now;
+			var weeklyModel = new WeeklyModel {
+				TelevisedGamesList = FormatTelevisedGames(dateToQuery, year, timeZone, sport)
+			};
+			return weeklyModel;
 		}
 
 		public WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport)
@@ -98,7 +102,67 @@ namespace MSS.BC
 			return weekDates;
 		}
 
-		
+		private List<TelevisedGame> FormatTelevisedGames(DateTime dateToQuery, string year, string timeZone, string sport)
+		{
+			var startdate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0);
+			var enddate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day + 1, 5, 0, 0);
+			var televisedGamesList = new List<TelevisedGame>();
+
+			var FSNGamesList = GetFSNGamesList(year);
+
+			var parmList = new StoredProcParmList
+			{
+				StoredProcParms = new List<StoredProcParm> {
+					new StoredProcParm {ParmName = "@StartDate", ParmValue = startdate.ToString()},
+					new StoredProcParm {ParmName = "@EndDate", ParmValue = enddate.ToString()},
+					new StoredProcParm {ParmName = "@Season", ParmValue = year},
+					new StoredProcParm {ParmName = "@Sport", ParmValue = sport},
+				}
+			};
+			using (var conn = new SqlConnection(Constants.ConnString))
+			{
+				using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetDailyTVGames"))
+				{
+					while (resultSet.Read())
+					{
+						DateTime gameTime = Convert.ToDateTime(resultSet["Time"].ToString());
+						var tvGame = new TelevisedGame
+						{
+							Game = resultSet["Game"].ToString(),
+							PPV = _cnh.FormatCoverageNotes(resultSet["PPV"].ToString()),
+							Time = FormatTime(gameTime, timeZone),
+							TimeString = _tzh.FormatTelevisedTime(gameTime, "web", timeZone),
+							ShowPPVColumn = false,
+							Mediaindicator = resultSet["Mediaindicator"].ToString()
+						};
+
+						tvGame.Network = tvGame.Mediaindicator == "W" ? _cnh.FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) :
+							_cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
+
+						var parmValue = FSNGamesList.Where(x => x.Game == tvGame.Game.Trim());
+						if (parmValue.Any())
+						{
+							tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt32(resultSet["Week"].ToString()), string.Concat(sport, year), parmValue.First());
+							string additionalNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+							if (additionalNotes != "<label>&nbsp</label>")
+							{
+								var sb = new StringBuilder();
+								sb.Append(additionalNotes);
+								sb.Append(string.Concat("<br>", tvGame.CoverageNotes));
+								tvGame.CoverageNotes = sb.ToString();
+							}
+						}
+						else
+							tvGame.CoverageNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+
+						televisedGamesList.Add(tvGame);
+					}
+				}
+			}
+			return televisedGamesList;
+		}
+
+
 		private List<TelevisedGame> FormatTelevisedGames(int week, string year, string timeZone, string sport, bool showPPVColumn)
         {
             var televisedGamesList = new List<TelevisedGame>();

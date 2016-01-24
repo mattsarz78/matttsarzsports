@@ -170,13 +170,13 @@ namespace MSS.Shared
                     coverageNotesList.Add(BR);
 
                 string textLink = ConfigureTextLink(stringText);
-                textLink = String.IsNullOrWhiteSpace(textLink) ? "Live Video" : textLink;
+                textLink = string.IsNullOrWhiteSpace(textLink) ? "Live Video" : textLink;
 
-                coverageNotesList.Add(String.Concat("<a class=\"linkblock\" href=\"", stringText, "\" target=\"_blank\">", textLink, "</a>"));
+                coverageNotesList.Add(string.Concat("<a class=\"linkblock\" href=\"", stringText, "\" target=\"_blank\">", textLink, "</a>"));
             }
             else
             {
-                string p = String.Concat("<label>", stringText, "</label>");
+                string p = string.Concat("<label>", stringText, "</label>");
                 if (coverageNotesList.Count > 0 && coverageNotesList.Last() != BR)
                     coverageNotesList.Add(BR + p);
                 else
@@ -204,7 +204,7 @@ namespace MSS.Shared
         {
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
-            coverageNotesList.Add(String.Concat("<img class=\"imageDimensions\" src=\"/Images/", network, "\" />"));
+            coverageNotesList.Add(string.Concat("<img class=\"imageDimensions\" src=\"/Images/", network, "\" />"));
         }
 
         public List<int> ValidateFieldData(string[] coverageNotes)
