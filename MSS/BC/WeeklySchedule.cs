@@ -34,8 +34,12 @@ namespace MSS.BC
             public string Game { get; set; }
             public string Parm { get; set; }
         }
+		public WeeklyModel GetDailyData(string sportYear, string year, string timeZone, string sport)
+		{
+			return new WeeklyModel();
+		}
 
-        public WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport)
+		public WeeklyModel GetWeeklyData(int week, string sportYear, string year, string timeZone, string sport)
         {
         	var showTVPartialView = _bools.CheckSportYearAttributesBool(sportYear, "hasNoTVGames");
             var showPPVColumn = _bools.CheckSportYearAttributesBool(sportYear, "showPPVColumn");
@@ -219,5 +223,5 @@ namespace MSS.BC
             }
             return noTvGamesList;
         }
-    }
+	}
 }

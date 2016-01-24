@@ -21,7 +21,15 @@ namespace MSS
                 new { controller = "Schedule", action = "Weekly", timeZoneValue = string.Empty, sportYear = string.Empty, week = 0 });
             routes.MapRoute("ChangeTimeZoneText", "Schedule/WeeklyText/{timeZoneValue}/{sportYear}/{week}",
                 new { controller = "Schedule", action = "WeeklyText", timeZoneValue = string.Empty, sportYear = string.Empty, week = 0 });
-            routes.MapRoute("Season", "{controller}/{action}/{sportYear}",
+			routes.MapRoute("DailySchedule", "Schedule/Daily/{sportYear}",
+				new { controller = "Schedule", action = "Daily", sportYear = string.Empty });
+			routes.MapRoute("DailyTextSchedule", "Schedule/DailyText/{sportYear}",
+				new { controller = "Schedule", action = "DailyText", sportYear = string.Empty });
+			routes.MapRoute("ChangeTimeZoneDaily", "Schedule/Daily/{timeZoneValue}/{sportYear}",
+				new { controller = "Schedule", action = "Daily", timeZoneValue = string.Empty, sportYear = string.Empty });
+			routes.MapRoute("ChangeTimeZoneDailyText", "Schedule/DailyText/{timeZoneValue}/{sportYear}",
+				new { controller = "Schedule", action = "DailyText", timeZoneValue = string.Empty, sportYear = string.Empty });
+			routes.MapRoute("Season", "{controller}/{action}/{sportYear}",
                 new { controller = "Season", action = "Contents", sportYear = string.Empty });
         }
     }

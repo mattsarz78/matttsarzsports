@@ -59,7 +59,21 @@ namespace MSS.Controllers
             return NotFound();
         }
 
-        public IHttpActionResult GetContents(string sportYear)
+		public IHttpActionResult GetDaily(string timeZoneValue, string sportYear)
+		{
+			if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
+				return Ok(_ws.GetDailyData(sportYear, GetYear(sportYear), timeZoneValue, GetSport(sportYear)));
+			return NotFound();
+		}
+
+		public IHttpActionResult GetDailyText(string timeZoneValue, string sportYear)
+		{
+			if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
+				return Ok(_wts.GetDailyTextData(sportYear, GetYear(sportYear), GetSport(sportYear), timeZoneValue));
+			return NotFound();
+		}
+
+		public IHttpActionResult GetContents(string sportYear)
         {
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {

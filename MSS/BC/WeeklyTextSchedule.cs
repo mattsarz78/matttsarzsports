@@ -23,7 +23,12 @@ namespace MSS.BC
             _tzh = tzh;
         }
 
-        public WeeklyModel GetWeeklyTextData(int week, string sportYear, string year, string sport, string timeZone)
+		public WeeklyModel GetDailyTextData(string sportYear, string year, string sport, string timeZone)
+		{
+			return new WeeklyModel();
+		}
+
+		public WeeklyModel GetWeeklyTextData(int week, string sportYear, string year, string sport, string timeZone)
         {
 			var fullYearDates = _sc.CreateDateModel(year);
 			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
