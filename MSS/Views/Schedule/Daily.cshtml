@@ -21,6 +21,7 @@
 			<a href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a><br />
 			}
 				<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + Model.Week)">Customizable Text-Only Page</a>
+				<br />
 				@if (Model.TelevisedGamesList.Any())
 			{
 			<div class="filters">
@@ -41,7 +42,7 @@
 			{
 				@Html.Partial("CoverageNotes/" + Model.SportYear + "/FSNWeek" + Model.Week)
 			}
-			@Html.Partial("DailyBase")
+			@Html.Partial("WeeksBase")
 			@if (!Model.IsBowlWeek)
 			{
 				if (Model.ShowNoTVPartialView)
