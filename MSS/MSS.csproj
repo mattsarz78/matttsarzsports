@@ -1331,6 +1331,9 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\Daily.cshtml" />
+    <Content Include="Views\Schedule\DailyBase.cshtml" />
+    <Content Include="Views\Schedule\DailyGamesTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
