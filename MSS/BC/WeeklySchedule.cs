@@ -45,8 +45,12 @@ namespace MSS.BC
 					CurrentDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0),
 					StartDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0),
 					EndDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day + 1, 5, 0, 0)
-				}
+				},
+				SportYear = sportYear,
+				IsFootball = sport.ToLower().Contains("football")
 			};
+			weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
+			weeklyModel.ShowRSNPartialView = CheckForPartialView(Convert.ToInt32(weeklyModel.TelevisedGamesList[0].Week), sportYear);
 			return weeklyModel;
 		}
 
@@ -140,7 +144,8 @@ namespace MSS.BC
 							Time = FormatTime(gameTime, timeZone),
 							TimeString = _tzh.FormatTelevisedTime(gameTime, "web", timeZone),
 							ShowPPVColumn = false,
-							Mediaindicator = resultSet["Mediaindicator"].ToString()
+							Mediaindicator = resultSet["Mediaindicator"].ToString(),
+							Week = resultSet["Week"].ToString()
 						};
 
 						tvGame.Network = tvGame.Mediaindicator == "W" ? _cnh.FormatCoverageNotes(resultSet["NetworkJPG"].ToString()) :
@@ -149,7 +154,7 @@ namespace MSS.BC
 						var parmValue = FSNGamesList.Where(x => x.Game == tvGame.Game.Trim());
 						if (parmValue.Any())
 						{
-							tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt32(resultSet["Week"].ToString()), string.Concat(sport, year), parmValue.First());
+							tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt32(tvGame.Week), string.Concat(sport, year), parmValue.First());
 							string additionalNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
 							if (additionalNotes != "<label>&nbsp</label>")
 							{

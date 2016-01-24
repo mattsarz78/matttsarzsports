@@ -47,7 +47,8 @@ namespace MSS.Models
         public DateTime Time { get; set; }
         public string TimeString { get; set; }
         public bool ShowPPVColumn { get; set; }
-    }
+		public string Week { get; set; }
+	}
 
     public class WeekDates
     {

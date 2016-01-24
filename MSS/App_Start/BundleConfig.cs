@@ -16,7 +16,8 @@ namespace MSS
             bundles.Add(new ScriptBundle("~/bundles/ajax", ajaxCdn).Include("~/Scripts/MicrosoftAjax.js"));
             bundles.Add(new ScriptBundle("~/bundles/weekly").Include("~/Scripts/Weekly.js", "~/Scripts/BackToTop.js"));
             bundles.Add(new ScriptBundle("~/bundles/weektext").Include("~/Scripts/WeekText.js", "~/Scripts/BackToTop.js"));
-            bundles.Add(new ScriptBundle("~/bundles/modernizr", modernizerCdn).Include("~/Scripts/modernizr-*"));
+			bundles.Add(new ScriptBundle("~/bundles/daily").Include("~/Scripts/Daily.js", "~/Scripts/BackToTop.js"));
+			bundles.Add(new ScriptBundle("~/bundles/modernizr", modernizerCdn).Include("~/Scripts/modernizr-*"));
 
             BundleTable.EnableOptimizations = true;
         }
