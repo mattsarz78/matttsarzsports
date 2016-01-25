@@ -1025,6 +1025,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Daily.js" />
     <Content Include="Scripts\Weekly.js" />
+    <Content Include="Scripts\DailyText.js" />
     <Content Include="Scripts\WeekText.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="Views\Contract\GameList.cshtml">
@@ -1335,6 +1336,7 @@
     <Content Include="Views\Schedule\Daily.cshtml" />
     <Content Include="Views\Schedule\DailyBase.cshtml" />
     <Content Include="Views\Schedule\DailyGamesTable.cshtml" />
+    <Content Include="Views\Schedule\DailyText.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
