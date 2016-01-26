@@ -10,7 +10,7 @@ namespace MSS.Shared
 {
     public class PageHelper : IPageHelper
     {
-		IBools _bools;
+	    readonly IBools _bools;
 
 		public PageHelper(IBools bools)
         {

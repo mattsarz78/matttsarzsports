@@ -63,12 +63,12 @@ namespace MSS.Controllers
 			return PartialView("TextGames", data);
 		}
 
-		private async Task<WeeklyModel> GetWeekly(int week, string sportYear, string timeZoneValue)
+		private async Task<ScheduleModel> GetWeekly(int week, string sportYear, string timeZoneValue)
         {
             var client = new HttpClient();
             var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetWeekly/" + sportYear + @"/" + week + @"/" + timeZoneValue;
             var response = await client.GetAsync(urlHost);
-            var data = await response.Content.ReadAsAsync<WeeklyModel>();
+            var data = await response.Content.ReadAsAsync<ScheduleModel>();
             return data;
         }
 
@@ -77,16 +77,16 @@ namespace MSS.Controllers
             var client = new HttpClient();
             var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetWeeklyText/" + sportYear + @"/" + week + @"/" + timeZoneValue;
             var response = await client.GetAsync(urlHost);
-            var data = await response.Content.ReadAsAsync<WeeklyModel>();
+            var data = await response.Content.ReadAsAsync<ScheduleModel>();
             return data;
         }
 
-		private async Task<WeeklyModel> GetDaily(string sportYear, string timeZoneValue)
+		private async Task<ScheduleModel> GetDaily(string sportYear, string timeZoneValue)
 		{
 			var client = new HttpClient();
 			var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetDaily/" + sportYear + @"/" + timeZoneValue;
 			var response = await client.GetAsync(urlHost);
-			var data = await response.Content.ReadAsAsync<WeeklyModel>();
+			var data = await response.Content.ReadAsAsync<ScheduleModel>();
 			return data;
 		}
 
@@ -95,7 +95,7 @@ namespace MSS.Controllers
 			var client = new HttpClient();
 			var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetDailyText/" + sportYear + @"/" + timeZoneValue;
 			var response = await client.GetAsync(urlHost);
-			var data = await response.Content.ReadAsAsync<WeeklyModel>();
+			var data = await response.Content.ReadAsAsync<ScheduleModel>();
 			return data;
 		}
 	}

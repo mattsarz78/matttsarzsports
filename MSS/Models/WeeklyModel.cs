@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace MSS.Models
 {
-    public class WeeklyModel
+    public class ScheduleModel
     {
         public bool IsBasketballPostseason { get; set; }
 		public bool IsBowlWeek { get; set; }

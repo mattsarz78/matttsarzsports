@@ -49,20 +49,17 @@ namespace MSS.Shared
 
         public  bool IsCoverageMap(string coverageNote)
         {
-			if (IsCoverageMapLink(coverageNote))
+	        if (IsCoverageMapLink(coverageNote))
 			{
 				return true;
 			}
-			else
-			{
-				return coverageNote.Contains("http://assets.espn.go.com/photo/") ||
-					coverageNote.Contains("espncdn") ||
-					coverageNote.Contains("http://www.seminoles.com/blog/Screen%20Shot%202013-11-07%20at%2011.42.17%20AM.png") ||
-					coverageNote.Contains("http://espnmediazone.com/us/files/2013/08/CF_Oct29_Maps_MZ.pdf");
-			}
+	        return coverageNote.Contains("http://assets.espn.go.com/photo/") ||
+	               coverageNote.Contains("espncdn") ||
+	               coverageNote.Contains("http://www.seminoles.com/blog/Screen%20Shot%202013-11-07%20at%2011.42.17%20AM.png") ||
+	               coverageNote.Contains("http://espnmediazone.com/us/files/2013/08/CF_Oct29_Maps_MZ.pdf");
         }
 
-		private bool IsCoverageMapLink(string coverageNote)
+	    private bool IsCoverageMapLink(string coverageNote)
 		{
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ABCCoverageMapLinks.xml");
 			return File.Exists(path) && XDocument.Load(path).Root.Elements().Any(xItem => xItem.Attribute("link").Value == coverageNote);

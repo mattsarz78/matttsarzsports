@@ -111,12 +111,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BC\ConferenceSchedule.cs" />
+    <Compile Include="BC\DailySchedule.cs" />
     <Compile Include="BC\IConferenceSchedule.cs" />
+    <Compile Include="BC\IDailySchedule.cs" />
     <Compile Include="BC\ISeasonContents.cs" />
     <Compile Include="BC\IWeeklySchedule.cs" />
+    <Compile Include="BC\IDailyTextSchedule.cs" />
     <Compile Include="BC\IWeeklyTextSchedule.cs" />
+    <Compile Include="BC\Schedule.cs" />
     <Compile Include="BC\SeasonContents.cs" />
     <Compile Include="BC\WeeklySchedule.cs" />
+    <Compile Include="BC\TextSchedule.cs" />
+    <Compile Include="BC\DailyTextSchedule.cs" />
     <Compile Include="BC\WeeklyTextSchedule.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ContractController.cs" />
@@ -1007,6 +1013,7 @@
     <Content Include="Images\TMAudioSocketClient" />
     <Content Include="Images\TMAudioSocketServer" />
     <None Include="Scripts\jquery-1.10.0.intellisense.js" />
+    <Content Include="Scripts\Schedule.js" />
     <Content Include="Scripts\jquery-1.10.0.js" />
     <Content Include="Scripts\jquery-1.10.0.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
@@ -1024,6 +1031,7 @@
     <Content Include="Scripts\MicrosoftAjax.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\Daily.js" />
+    <Content Include="Scripts\Text.js" />
     <Content Include="Scripts\Weekly.js" />
     <Content Include="Scripts\DailyText.js" />
     <Content Include="Scripts\WeekText.js" />
@@ -1035,7 +1043,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1339,7 +1349,9 @@
     <Content Include="Views\Schedule\DailyText.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

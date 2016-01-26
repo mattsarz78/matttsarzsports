@@ -8,12 +8,14 @@ namespace MSS.Controllers
 {
     public class BaseApiController : ApiController
     {
-        IBools _bools;
-        IConferenceSchedule _confSched;
-        IPageHelper _ph;
-        IWeeklySchedule _ws;
-        IWeeklyTextSchedule _wts;
-        ISeasonContents _sc;
+	    readonly IBools _bools;
+	    readonly IConferenceSchedule _confSched;
+	    readonly IPageHelper _ph;
+	    readonly IWeeklySchedule _ws;
+	    readonly IDailySchedule _ds;
+	    readonly IWeeklyTextSchedule _wts;
+	    readonly IDailyTextSchedule _dts;
+	    readonly ISeasonContents _sc;
 
         public BaseApiController()
         {
@@ -21,8 +23,10 @@ namespace MSS.Controllers
             _ph = new PageHelper(_bools);
             _confSched = new ConferenceSchedule(_bools, new CoverageNotesHelper(_bools), new StoredProcHelper(), new TimeZoneHelper());
             _ws = new WeeklySchedule(_bools, new PageHelper(_bools), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
-            _wts = new WeeklyTextSchedule(_bools, new PageHelper(_bools), new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
-            _sc = new SeasonContents(new StoredProcHelper());
+			_ds = new DailySchedule(_bools, new PageHelper(_bools), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
+			_wts = new WeeklyTextSchedule(_bools, new PageHelper(_bools), new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
+			_dts = new DailyTextSchedule(_bools, new PageHelper(_bools), new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
+			_sc = new SeasonContents(new StoredProcHelper());
         }
 
         public IHttpActionResult GetGameList(string conference, int year)
@@ -62,14 +66,14 @@ namespace MSS.Controllers
 		public IHttpActionResult GetDaily(string timeZoneValue, string sportYear)
 		{
 			if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
-				return Ok(_ws.GetDailyData(sportYear, GetYear(sportYear), timeZoneValue, GetSport(sportYear)));
+				return Ok(_ds.GetDailyData(sportYear, GetYear(sportYear), timeZoneValue, GetSport(sportYear)));
 			return NotFound();
 		}
 
 		public IHttpActionResult GetDailyText(string timeZoneValue, string sportYear)
 		{
 			if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
-				return Ok(_wts.GetDailyTextData(sportYear, GetYear(sportYear), GetSport(sportYear), timeZoneValue));
+				return Ok(_dts.GetDailyTextData(sportYear, GetYear(sportYear), GetSport(sportYear), timeZoneValue));
 			return NotFound();
 		}
 

@@ -18,7 +18,7 @@ namespace MSS.Shared
         public const string COVERAGEMAP = "Coverage Map";
         public const string COVERAGEMAP506 = "Coverage Map Courtesy The506.com";
 
-        IBools _bools;
+	    readonly IBools _bools;
 
         public CoverageNotesHelper(IBools bools)
         {
