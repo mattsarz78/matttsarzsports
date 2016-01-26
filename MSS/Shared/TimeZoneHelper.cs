@@ -56,5 +56,14 @@ namespace MSS.Shared
     	            "<br>", hours, "</label>");
     	    return gameTimeString;
         }
-    }
+
+		public DateTime GetServerTime()
+		{
+			var serverTimeZoneInfo = TimeZoneInfo.Local;
+			var destinationTimeZoneInfo = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time");
+
+			return TimeZoneInfo.ConvertTime(DateTime.Now, serverTimeZoneInfo, destinationTimeZoneInfo);
+
+		}
+	}
 }

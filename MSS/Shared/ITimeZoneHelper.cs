@@ -6,5 +6,6 @@ namespace MSS.Shared
     {
         DateTime Offset(string timeZone, DateTime gameTime);
         string FormatTelevisedTime(DateTime gameTimeInput, string caller, string timeZone);
-    }
+		DateTime GetServerTime();
+	}
 }

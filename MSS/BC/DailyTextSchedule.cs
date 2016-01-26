@@ -12,20 +12,22 @@ namespace MSS.BC
 	    readonly IPageHelper _ph;
 	    readonly ISeasonContents _sc;
 	    readonly IStoredProcHelper _sph;
+		readonly ITimeZoneHelper _tzh;
 
-	    public DailyTextSchedule(IBools bools, IPageHelper ph, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh) 
+		public DailyTextSchedule(IBools bools, IPageHelper ph, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh) 
 			: base(bools, tzh)
         {
             _bools = bools;
             _ph = ph;
             _sc = sc;
             _sph = sph;
-        }
+			_tzh = tzh;
+		}
 
 		public ScheduleModel GetDailyTextData(string sportYear, string year, string sport, string timeZone)
 		{
-			var dateToQuery = (DateTime.Now.Hour <= 5) ? DateTime.Now.AddDays(-1) : DateTime.Now;
-
+			DateTime timeAsEastern = _tzh.GetServerTime();
+			var dateToQuery = (timeAsEastern.Hour <= 4) ? DateTime.Now.AddDays(-1) : DateTime.Now;
 			var fullYearDates = _sc.CreateDateModel(year);
 			var isFootball = sport.Contains("football");
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
