@@ -55,7 +55,7 @@ namespace MSS.BC
 	        using (var conn = new SqlConnection(Constants.ConnString))
 	        using (SqlDataReader resultSet = _sph.RunDataReader(parmList, conn, "GetTVGames"))
 	        {
-				gameList = FillGameList(timeZone, resultSet, true);
+				gameList = FillGameList(timeZone, resultSet, false);
 			}
 			return gameList;
         }
