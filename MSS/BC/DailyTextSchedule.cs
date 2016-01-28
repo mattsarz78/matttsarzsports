@@ -27,7 +27,7 @@ namespace MSS.BC
 		public ScheduleModel GetDailyTextData(string sportYear, string year, string sport, string timeZone)
 		{
 			DateTime timeAsEastern = _tzh.GetServerTime();
-			var dateToQuery = (timeAsEastern.Hour <= 5) ? DateTime.Now.AddDays(-1) : DateTime.Now;
+			var dateToQuery = (timeAsEastern.Hour <= 4) ? DateTime.Now.AddDays(-1) : DateTime.Now;
 			var fullYearDates = _sc.CreateDateModel(year);
 			var isFootball = sport.Contains("football");
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
