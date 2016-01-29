@@ -14,7 +14,8 @@
                 Television Options
             </th>
         </tr>
-        @foreach (var item in Model.NoTVGameList.Where(x => x.DayOfWeek == Model.WeekDates.CurrentDate.DayOfWeek))
+        @foreach (var item in Model.NoTVGameList.Where(x => x.DayOfWeek == Model.WeekDates.CurrentDate.DayOfWeek
+		&& x.Time == Model.WeekDates.CurrentDate))
         {
             if (item.FCS)
             {

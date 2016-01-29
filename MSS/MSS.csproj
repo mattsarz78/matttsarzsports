@@ -165,6 +165,7 @@
     <Content Include="Content\ConferenceXml\2012.xml" />
     <Content Include="Content\ConferenceXml\2013.xml" />
     <Content Include="Content\ConferenceXml\2014.xml" />
+    <Content Include="Content\ConferenceXml\2016.xml" />
     <Content Include="Content\ConferenceXml\2015.xml" />
     <Content Include="Content\FlexScheduleLinks.xml" />
     <Content Include="Content\ImagesForURLs.xml" />
