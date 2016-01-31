@@ -39,11 +39,11 @@ namespace MSS.BC
 				{
 					CurrentDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0),
 					StartDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0),
-					EndDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day + 1, 5, 0, 0)
 				},
 				SportYear = sportYear,
 				IsFootball = isFootball
 			};
+			weeklyModel.WeekDates.EndDate = weeklyModel.WeekDates.StartDate.AddDays(1).AddHours(5);
 			weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
 			var week = Convert.ToInt32(weeklyModel.Week);
 
@@ -58,7 +58,7 @@ namespace MSS.BC
 		private List<TelevisedGame> FormatTelevisedGames(DateTime dateToQuery, string year, string timeZone, string sport)
 		{
 			var startdate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0);
-			var enddate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day + 1, 5, 0, 0);
+			var enddate = startdate.AddDays(1).AddHours(5);
 			List<TelevisedGame> televisedGamesList;
 
 			var parmList = new StoredProcParmList
