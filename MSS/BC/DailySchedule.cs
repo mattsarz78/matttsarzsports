@@ -27,13 +27,14 @@ namespace MSS.BC
 		public ScheduleModel GetDailyData(string sportYear, string year, string timeZone, string sport)
 		{
 			DateTime timeAsEastern = _tzh.GetServerTime();
-			var dateToQuery = (timeAsEastern.Hour <= 4) ? DateTime.Now.AddDays(-1) : DateTime.Now;
+			var dateToQuery = (timeAsEastern.Hour <= 4) ? timeAsEastern.AddDays(-1) : timeAsEastern;
 			var isFootball = sport.ToLower().Contains("football");
 			var fullYearDates = _sc.CreateDateModel(year);
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
 			var weeklyModel = new ScheduleModel
 			{
+				FlexScheduleLink = _ph.CheckForFlexSchedule(year),
 				TelevisedGamesList = FormatTelevisedGames(dateToQuery, year, timeZone, sport),
 				WeekDates = new WeekDates
 				{
