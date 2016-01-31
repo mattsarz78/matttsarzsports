@@ -1037,6 +1037,7 @@
     <Content Include="Scripts\DailyText.js" />
     <Content Include="Scripts\WeekText.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="sitemap.xml" />
     <Content Include="Views\Contract\GameList.cshtml">
       <SubType>Code</SubType>
     </Content>
