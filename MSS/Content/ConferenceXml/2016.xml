@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Conference>
-  <Football2016>
-    <ACCDiv>
-      <![CDATA[<p>
+	<Football2016>
+		<ACCDiv>
+			<![CDATA[<p>
         The ACC has a contract with ABC/ESPN for all of its football television rights.
-        ESPN's broadband service, ESPN3.com, can also access games that are not slated for
+        ESPN's broadband service, ESPN3, can also access games that are not slated for
         telecast.  This contract begins with the 2011-12 athletic year and ends with
         the 2026-27 athletic year.
       </p>
       <p>
         Raycom is the syndication partner of the ACC and they sublicense their content from
         ESPN.  Raycom will manage both over-the-air and regional cable syndication
-        packages. The regional cable package appears to have been sublicensed to FOX Sports
+        packages. The regional cable package appears to have been sublicensed from Raycom to FOX Sports
         Media Group for airing on some FSN affiliates, NESN and Comcast SportsNet Mid-Atlantic.  Raycom&#39;s package of over-the air games are branded as the ACC Network. The ACC
         Network over-the-air telecasts will kickoff at 12:30pm ET, a change from prior seasons.
         ESPN is also able to sublicenese games to other national carriers.
@@ -29,9 +29,9 @@
         three to be played on Black Friday in the afternoon or evening. Specifically, Boston
         College and Syracuse will each host one Friday night game per year.
 			<p>Source: <a href="http://espnmediazone.com/us/press-releases/2010/07/espn-and-acc-reach-exclusive-12-year-agreement/" target="_blank">ESPN MediaZone (2010)</a>, <a href="http://espnmediazone.com/us/press-releases/2012/05/espn-and-acc-extend-exclusive-multi-platform-agreement-through-2026-27/" target="_blank">ESPN MediaZone (2012)</a></p>]]>
-    </ACCDiv>
-    <AmericanDiv>
-      <![CDATA[<p>
+		</ACCDiv>
+		<AmericanDiv>
+			<![CDATA[<p>
         The American Athletic Conference has a contract with ESPN Networks for all of their football television rights.  ABC/ESPN will guarantee the conference a minimum of 28 games to air on ABC, ESPN, ESPN2 and ESPNU.  Games may also appear on ESPNEWS and ESPN3.
       </p>
       <p>
@@ -39,9 +39,9 @@
       </p>
       <p>The contract with ESPN, along with ESPN's sublicense agreement with CBS Sports Network, end after the 2019-2020 athletic year.</p>
 			<p>Source: <a href="http://espnmediazone.com/us/press-releases/2013/03/espn-and-current-big-east-conference-agree-to-multiyear-rights-agreement/" target="_blank">ESPN Mediazone</a>, <a href="http://www.cbspressexpress.com/cbs-sports-network/releases/view?id=36355" target="_blank">CBS Press Express</a></p>]]>
-    </AmericanDiv>
-    <BigTenDiv>
-      <![CDATA[<p>
+		</AmericanDiv>
+		<BigTenDiv>
+			<![CDATA[<p>
         The Big Ten has a contract with ESPN and a secondary TV contract with
         the Big Ten Network (BTN), a FOX Sports Media Group &amp; Big Ten joint venture. ESPN's games can spread over ABC, ESPN, ESPN2, ESPNU and ESPNEWS.  With the addition of Maryland and Rutgers in 2014, the number of games available to ESPN will increase from 41 to an undisclosed number.
       </p>
@@ -53,13 +53,14 @@
       <p>Every Big Ten school must make two appearances on BTN.  At least one of those appearances must be from a conference game.</p>
       <p>
         FOX Sports, under a separate contract, has the rights to the conference championship
-        game. These rights started in 2011 and will end after the 2016 championship game.
-      </p>
+        game. 
+	  </p>
+	  <p>All TV rights deals with the Big Ten expire after the 2016-17 athletic year.</p>
 			<p>Source: <a href="http://www.bigten.org/genrel/062106aad.html" target="_blank">Big Ten regular season</a>, <a href="http://www.bigten.org/sports/m-footbl/spec-rel/111710aaa.html" target="_blank">Big Ten championship game</a></p>]]>
-    </BigTenDiv>
-    <Big12Div>
-      <![CDATA[<p>
-        The Big 12 a pair of contracts with ESPN and FOX Sports Media Group. Both contracts
+		</BigTenDiv>
+		<Big12Div>
+			<![CDATA[<p>
+        The Big 12 have a pair of contracts with ESPN and FOX Sports Media Group. Both contracts
         expire after the 2024-25 athletic year.
       </p>
       <p>
@@ -80,12 +81,12 @@
         airing on Longhorn Network will count towards the ESPN contract.
       </p>
 			<p>Source: <a href="http://www.big12sports.com/ViewArticle.dbml?ATCLID=205680799" target="_blank">Big 12</a>]]>
-    </Big12Div>
-    <C-USADiv>
-      <![CDATA[<p>Conference USA's televise rights for 2016 and future season is currently in negotiation.</p>]]>
-    </C-USADiv>
-    <MACDiv>
-      <![CDATA[<p>
+		</Big12Div>
+		<C-USADiv>
+			<![CDATA[<p>Conference USA's televise rights for 2016 and future seasons are currently in negotiation.</p>]]>
+		</C-USADiv>
+		<MACDiv>
+			<![CDATA[<p>
         The MAC has a national cable contract with ESPN Networks.  The contract runs through the 2026-27 athletic year.  ESPN's contract includes the ability to sublicense games and guranteed coverage for all MAC games.
       </p>
       <p>
@@ -93,10 +94,10 @@
       </p>
       <p>Starting with the 2015 season, Sinclair's American Sports Network, CBS Sports Network and Buckeye Cable will sublicense MAC content from ESPN.  CBSSN will sublicense twelve football games and this agreement ends after the 2018-19 athletic year. American Sports Network will sublicense ten football games for the 2016 season from ESPN.  Buckeye Cable will show at least three football games per season and work to clear the games on other cable systems in the MAC footprint.</P>
 			<p>Source: <a href="http://www.niuhuskies.com/genrel/012809aab.html" target="_blank">Northern Illinois</a>, <a href="http://mac-sports.com/news/2014/8/19/GEN_0819145904.aspx" target="_blank">MAC (contract extension)</a>, <a href="http://mac-sports.com/news/2015/6/2/FB_0602151727.aspx" target="_blank">MAC (CBSSN sublicense)</a>, <a href="http://mac-sports.com/news/2015/9/3/FB_0903152549.aspx" target="_blank">MAC (ASN sublicense)</a>, <a href="http://mac-sports.com/news/2015/9/28/FB_0928150516.aspx" target="_blank">MAC (Buckeye Cable)</a></p>]]>
-    </MACDiv>
-    <MWCDiv>
-      <![CDATA[<p>
-        The MWC has a pair of national cable contracts with CBS Sports Network and ESPN.
+		</MACDiv>
+		<MWCDiv>
+			<![CDATA[<p>
+        The Mountain West has a pair of national cable contracts with CBS Sports Network and ESPN.
       </p>
       <p>
         CBS is considered to be the "primary" TV partner.  CBS will be able to choose the top eight football games each year, then alternate
@@ -109,11 +110,11 @@
         No more than three Boise St. home games can be moved to a weeknight. ESPN will have
         up to 22 football games including the Boise St. home games. ESPN does have the ability
         to trade one Boise St. home game per year to CBS in exchange for a Boise St. road
-        games at a MWC opponent. 
+        games at a Mountain West opponent. 
       </p>
 			<p>The contract for the conference&#39;s championship game is with ESPN starting with the 2015 game & running through the 2019 game.  The game will air on ESPN or ESPN2. CBS declined an option to carry the 2015 game.</p>
       <p>
-        The official regional partner for the MWC is ROOT Sports Rocky Mountain, who will
+        The official regional television partner is ROOT Sports Rocky Mountain, who will
         produce around 10 football games annually.  Campus Insiders also works with the conference to produce games that will be streamed through the Moutain West Digital Network.
       </p>
       <p>
@@ -121,9 +122,9 @@
       </p>
       <p>Hawai'i does not receive money from the MW TV contract unless all other Mountain West schools receive $2.3 million from the conference TV contracts.  Instead, they receive revenue from a contract with Oceanic Cable in Hawai'i.  The contract requires at least seven games per year to be provided to the cable provider.</p>
 			<p>Source: <a href="http://www.cbssports.com/collegefootball/writer/dennis-dodd/21436698/mountain-west-restructures-deal-with-cbs" target="_blank">CBS</a>, <a href="http://espnmediazone.com/us/press-releases/2013/03/espn-and-mountain-west-conference-announce-multiyear-rights-agreement/" target="_blank">ESPN</a>, <a href="http://www.themw.com/news/espn_mwfb_champ" target="_blank">MWC for football championship</a>, <a href="http://www.themw.com/news/genrel-061013aaa" target="_blank">Campus Insiders</a>, <a href="http://broncosports.cstv.com/sports/m-footbl/spec-rel/032613aab.html" target="_blank">Boise St.</a>, <a href="http://broncosports.cstv.com/sports/m-footbl/spec-rel/051513aaa.html" target="_blank">Boise St. for ROOT Sports</a></p>]]>
-    </MWCDiv>
-    <Pac-12Div>
-      <![CDATA[<p>
+		</MWCDiv>
+		<Pac-12Div>
+			<![CDATA[<p>
         The Pac-12 has a pair of rightsholders: ESPN and FOX Sports Media Group. Contracts
         with both entities start with the 2012-13 athletic year and end after the 2023-24
         athletic year.
@@ -151,9 +152,9 @@
       <p>The conference has also created the Pac-12 Networks, a mix of six regional networks and a national networks, to air all other games.</p>
       <p>A school may not appear more than nine times combined in the ESPN and FOX packages.  This is to allow the Pac-12 Networks to air at least one game from every school, assuming a school plays at least one home non-conference game.</p>
 			<p>Source: <a href="http://espnmediazone.com/us/press-releases/2011/05/espn-and-pac-12-reach-wide-ranging-12-year-agreement/" target="_target">ESPN Mediazone, <a href="https://www.facebook.com/notes/fox-sports/fox-sports-media-group-secures-pac-12-multi-platform-media-rights/10150232924355700" target="_target">Facebook for FOX</a></p>]]>
-    </Pac-12Div>
-    <SECDiv>
-      <![CDATA[<p>
+		</Pac-12Div>
+		<SECDiv>
+			<![CDATA[<p>
         The SEC has a network TV contract with CBS, a national cable deal with ESPN Networks
         and a new conference branded network called the SEC Network, which is completely owned by ESPN.
       </p>
@@ -169,9 +170,9 @@
         ESPN Networks has the rights to remaining SEC home games, primarily prime time telecasts.  A content board will be established to determine which games will air on ESPN and the SEC Network.  The plan is to air a tripleheader of games every week.  There will overflow or alternate feeds of the network to allow for multiple games to air in a single telecast window.
       </p>
 			<p>Source: <a href="http://www.gatorzone.com/story.php?id=14419" target="_blank">Florida</a>, <a href="http://www.cbssports.com/collegefootball/writer/jeremy-fowler/22244033/sec-cbs-rework-long-term-contract" target="_blank">CBS Sports</a>, <a href="http://espnmediazone.com/us/press-releases/2013/05/the-southeastern-conference-and-espn-announce-new-tv-network-and-digital-platform/" target="_blank">ESPN Mediazone</a></p>]]>
-    </SECDiv>
-    <SunBeltDiv>
-      <![CDATA[<p>
+		</SECDiv>
+		<SunBeltDiv>
+			<![CDATA[<p>
         The Sun Belt has an eight year contract with ESPN, starting with the 2012-13 athletic
         year and ending with the 2019-20 athletic year. A minimum of two football games
         will air on ESPN or ESPN2. ESPNU will air a minimum of five games on Thursdays or
@@ -179,28 +180,28 @@
         select games throughout the season.
       </p>
 			<p>Source: <a href="http://espnmediazone.com/us/weekly-updates/2011/midweek_20110908/#L" target="_blank">ESPN Mediazone</a>, <a href="http://www.sunbeltsports.org/news/2014/7/16/BB_0716144040.aspx" target="_blank">Sun Belt on ESPN3</a></p>]]>
-    </SunBeltDiv>
-    <ArmyDiv>
-      <![CDATA[<p>Army has a contract for home game telecasts with CBS Sports Network, with the exception of the Army-Navy game which is handled separately. A new contract has been reached between Army and CBSSN, starting in 2015 and covering five seasons, ending after the 2019 season.</p>
+		</SunBeltDiv>
+		<ArmyDiv>
+			<![CDATA[<p>Army has a contract for home game telecasts with CBS Sports Network, with the exception of the Army-Navy game which is handled separately. A new contract has been reached between Army and CBSSN, starting in 2015 and covering five seasons, ending after the 2019 season.</p>
 			<p>Source: <a href="http://onlyfans.cstv.com/schools/army/sports/m-footbl/spec-rel/011515aaa.html" target="_blank">Army (CBS)</a>, <a href="http://www.goarmysports.com/sports/m-footbl/spec-rel/102308aad.html" target="_blank">Army-Navy</a></p>]]>
-    </ArmyDiv>
-    <BYUDiv>
-      <![CDATA[<p>BYU has an eight year deal with ABC/ESPN, ending after the completion of the 2018 season.  At least three home games will air on ABC, ESPN or ESPN2.  A minimum of one game will air on ESPNU and BYUtv, the broadcasting arm of BYU, must air at least one game per season.</p>
+		</ArmyDiv>
+		<BYUDiv>
+			<![CDATA[<p>BYU has an eight year deal with ABC/ESPN, ending after the completion of the 2018 season.  At least three home games will air on ABC, ESPN or ESPN2.  A minimum of one game will air on ESPNU and BYUtv, the broadcasting arm of BYU, must air at least one game per season.</p>
 			<p>Source: <a href="http://espnmediazone.com/us/press-releases/2010/09/espn-and-byu-reach-agreement-for-football-rights-beginning-in-2011/" target="_blank">ESPN Mediazone</a></p>]]>
-    </BYUDiv>
-    <NavyDiv>
-      <![CDATA[<p>
+		</BYUDiv>
+		<NavyDiv>
+			<![CDATA[<p>
         Navy contracts with CBS Sports Network for their home games, except for the Army-Navy game and when Navy is the home team vs. Notre Dame (CBS has that game).  The contract covers through the 2018 football season.  It will remain in force as Navy football moves to the American Athletic Conference in 2015.  Navy&#39;s American Athletic Conference road games will be part of the conference&#39;s rights package with ESPN.  See the conference&#39;s <a href="http://mattsarzsports.com/Contract/GameList/American/2015">page</a> for more information.
       </p>
 			<p>Source: <a href="http://www.navysports.com/sports/m-footbl/spec-rel/091808aab.html" target="_blank">Navy</a>, <a href="http://www.cbssports.com/collegefootball/writer/dennis-dodd/21913073/navy-to-retain-rights-to-home-games-through-17-in-new-big-east" target="_blank">CBS Sports</a></p>]]>
-    </NavyDiv>
-    <NotreDameDiv>
-      <![CDATA[<p>Rights to Notre Dame home games, including neutral site "home" games, are held by NBC.  The contract requires for seven "home" games per year, including neutral site games.  A new, extended contract allows for games to air on cable stations owned by NBC, such as NBC Sports Network.  The extended contract expires after the 2025 season.</p>
+		</NavyDiv>
+		<NotreDameDiv>
+			<![CDATA[<p>Rights to Notre Dame home games, including neutral site "home" games, are held by NBC.  The contract requires for seven "home" games per year, including neutral site games.  A new, extended contract allows for games to air on cable stations owned by NBC, such as NBC Sports Network.  The extended contract expires after the 2025 season.</p>
 			<p>Source: <a href="http://news.nd.edu/news/9528-notre-dame-nbc-extend-football-contract-through-2015/" target="_blank">Notre Dame</a>, <a href="http://news.nd.edu/news/39337-notre-dame-and-nbc-extend-football-contract-to-2025/
 			" target="_blank">Notre Dame (2025 extension)</a></p>]]>
-    </NotreDameDiv>
-    <UMassDiv>
-      <![CDATA[<p>Rights to Massachusetts home games are currently being negotiated for the 2016 and future season.</p>]]>
-    </UMassDiv>
-  </Football2016>
+		</NotreDameDiv>
+		<UMassDiv>
+			<![CDATA[<p>Rights to Massachusetts home games are currently being negotiated for the 2016 and future seasons.</p>]]>
+		</UMassDiv>
+	</Football2016>
 </Conference>
