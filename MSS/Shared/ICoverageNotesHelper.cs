@@ -4,7 +4,7 @@ namespace MSS.Shared
 {
     public interface ICoverageNotesHelper
     {
-        string FormatCoverageNotes(string coverageNotesInput);
+        string FormatCoverageNotes(string year, string coverageNotesInput);
         void ConfigureText(List<string> coverageNotesList, string stringText);
         void ConfigureImage(List<string> coverageNotesList, string network, string breakSymbol);
         List<int> ValidateFieldData(string[] coverageNotes);

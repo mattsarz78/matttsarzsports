@@ -25,7 +25,7 @@ namespace MSS.Shared
             _bools = bools;
         }
 
-        public string FormatCoverageNotes(string coverageNotesInput)
+        public string FormatCoverageNotes(string year, string coverageNotesInput)
         {
             var coverageNotesList = new List<string>();
             var coverageNotesString = new StringBuilder();
@@ -45,7 +45,7 @@ namespace MSS.Shared
                     var stringCoverage = new List<string>();
                     foreach (string t in coverageNotes)
                         DetermineCoverageType(t, imgCoverage, streamingCoverage, stringCoverage);
-                    FormatCoverageNotesListTypes(imgCoverage, coverageNotesList, coverageNotesTypeList, streamingCoverage, stringCoverage);
+                    FormatCoverageNotesListTypes(year, imgCoverage, coverageNotesList, coverageNotesTypeList, streamingCoverage, stringCoverage);
                 }
             }
 
@@ -56,10 +56,10 @@ namespace MSS.Shared
             return coverageNotesReturn;
         }
 
-        private void FormatCoverageNotesListTypes(List<string> imgCoverage, List<string> coverageNotesList, List<int> coverageNotesTypeList,
+        private void FormatCoverageNotesListTypes(string year, List<string> imgCoverage, List<string> coverageNotesList, List<int> coverageNotesTypeList,
             List<string> streamingCoverage, List<string> stringCoverage)
         {
-            FormatImages(imgCoverage.ToArray(), coverageNotesList);
+            FormatImages(year, imgCoverage.ToArray(), coverageNotesList);
             if (coverageNotesTypeList[0] > 0 && coverageNotesTypeList[1] > 0 && coverageNotesList.Last() != BR)
                 coverageNotesList.Add(BR);
             FormatTextStreaming(streamingCoverage.ToArray(), coverageNotesList);
@@ -97,7 +97,7 @@ namespace MSS.Shared
                     ConfigureTextHyperlink(coverageNotesList, stream, null);
             }
         }
-        private void FormatImages(IEnumerable<string> p, List<string> coverageNotesList)
+        private void FormatImages(string year, IEnumerable<string> p, List<string> coverageNotesList)
         {
             int counter = 0;
             foreach (string imageName in p)
@@ -112,7 +112,7 @@ namespace MSS.Shared
                 }
                 else
                 {
-                    ConfigureImgHyperlink(coverageNotesList, imageName);
+                    ConfigureImgHyperlink(year, coverageNotesList, imageName);
                 }
             }
         }
@@ -146,7 +146,7 @@ namespace MSS.Shared
             return textLink;
         }
 
-        private void ConfigureImgHyperlink(List<string> coverageNotesList, string coverageNote)
+        private void ConfigureImgHyperlink(string year, List<string> coverageNotesList, string coverageNote)
         {
             string imageUrl = string.Empty;
 
@@ -154,9 +154,23 @@ namespace MSS.Shared
 			if (File.Exists(path))
 			{
 				var doc = XDocument.Load(path);
-				var xElement = doc.Root.Elements("Address").First(x => coverageNote.Contains(x.Attribute("Link").Value));
-				if (xElement != null)
-					imageUrl = xElement.Attribute("Image").Value;
+				var xElements = doc.Root.Elements("Address").Where(x => coverageNote.Contains(x.Attribute("Link").Value));
+				foreach (var item in xElements)
+				{
+					bool donotuse = false;
+					if (item.Attribute("Yearend") != null)
+					{
+						var years = item.Attribute("Yearend").Value.Split('|').ToList();
+						var yeartocompare = years.First(x => x.Length == year.Length);
+						donotuse = (Convert.ToInt16(year) > Convert.ToInt16(yeartocompare));
+						imageUrl = !donotuse ? item.Attribute("Image").Value : string.Empty;
+						if (imageUrl.Length > 0)
+							break;
+					}
+					else
+						imageUrl = item.Attribute("Image").Value;
+				}
+
 				coverageNotesList.Add(String.Concat("<a href=\"", coverageNote, "\" target=\"_blank\" ><img class=\"imageDimensions\" src=\"/Images/",
 					imageUrl, "\" /></a>"));
 			}

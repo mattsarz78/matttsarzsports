@@ -50,7 +50,7 @@ namespace MSS.BC
 				        MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
 				        Network =
 					        resultSet[Constants.MEDIAINDICATOR].ToString() == "W"
-						        ? _cnh.FormatCoverageNotes(resultSet[Constants.NETWORKJPG].ToString())
+						        ? _cnh.FormatCoverageNotes(year, resultSet[Constants.NETWORKJPG].ToString())
 						        : _cnh.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
 				        TvType =
 					        resultSet[Constants.MEDIAINDICATOR].ToString() == "T"

@@ -79,7 +79,7 @@ namespace MSS.BC
 				var tvGame = new TelevisedGame
 				{
 					Game = resultSet["Game"].ToString(),
-					PPV = _cnh.FormatCoverageNotes(resultSet["PPV"].ToString()),
+					PPV = _cnh.FormatCoverageNotes(year, resultSet["PPV"].ToString()),
 					Time = FormatTime(gameTime, timeZone),
 					TimeString = _tzh.FormatTelevisedTime(gameTime, "web", timeZone),
 					ShowPPVColumn = showPPVColumn,
@@ -88,14 +88,14 @@ namespace MSS.BC
 				};
 
 				tvGame.Network = tvGame.Mediaindicator == "W"
-					? _cnh.FormatCoverageNotes(resultSet["NetworkJPG"].ToString())
+					? _cnh.FormatCoverageNotes(year, resultSet["NetworkJPG"].ToString())
 					: _cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
 				var parmValue = rsnGames.Where(x => x.Game == tvGame.Game.Trim());
 				if (parmValue.Any())
 				{
 					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), String.Concat(sport, year), parmValue.First());
-					string additionalNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+					string additionalNotes = _cnh.FormatCoverageNotes(year, resultSet["CoverageNotes"].ToString());
 					if (additionalNotes != "<label>&nbsp</label>")
 					{
 						var sb = new StringBuilder();
@@ -105,7 +105,7 @@ namespace MSS.BC
 					}
 				}
 				else
-					tvGame.CoverageNotes = _cnh.FormatCoverageNotes(resultSet["CoverageNotes"].ToString());
+					tvGame.CoverageNotes = _cnh.FormatCoverageNotes(year, resultSet["CoverageNotes"].ToString());
 
 				televisedGamesList.Add(tvGame);
 			}
