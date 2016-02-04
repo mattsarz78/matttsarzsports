@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using MSS.Models;
 using MSS.Shared;
+using System.Linq;
 
 namespace MSS.BC
 {
@@ -42,14 +43,17 @@ namespace MSS.BC
 				}
 			};
 
-			textModel.Week = textModel.TelevisedGamesList[0].Week;
-			var week = Convert.ToInt32(textModel.Week);
+			if (textModel.TelevisedGamesList.Any())
+			{
+				textModel.Week = textModel.TelevisedGamesList[0].Week;
+				var week = Convert.ToInt32(textModel.Week);
 
-			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
+				var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
 
-			textModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
-			textModel.IsNIT = !isFootball && isBowlWeekOrNIT;
-			textModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
+				textModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
+				textModel.IsNIT = !isFootball && isBowlWeekOrNIT;
+				textModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
+			}
 
 			return textModel;
 		}

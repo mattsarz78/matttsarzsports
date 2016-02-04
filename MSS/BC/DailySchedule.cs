@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using MSS.Models;
 using MSS.Shared;
 
@@ -45,14 +46,18 @@ namespace MSS.BC
 				IsFootball = isFootball
 			};
 			weeklyModel.WeekDates.EndDate = weeklyModel.WeekDates.StartDate.AddDays(1).AddHours(5);
-			weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
-			var week = Convert.ToInt32(weeklyModel.Week);
+			if (weeklyModel.TelevisedGamesList.Any())
+			{
+				weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
+				var week = Convert.ToInt32(weeklyModel.Week);
 
-			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
-			weeklyModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
-			weeklyModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
-			weeklyModel.IsNIT = !isFootball && hasPostseason && isBowlWeekOrNIT;
-			weeklyModel.ShowRSNPartialView = CheckForPartialView(week, sportYear);
+				var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
+				weeklyModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
+				weeklyModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
+				weeklyModel.IsNIT = !isFootball && hasPostseason && isBowlWeekOrNIT;
+				weeklyModel.ShowRSNPartialView = CheckForPartialView(week, sportYear);
+			}
+			
 			return weeklyModel;
 		}
 

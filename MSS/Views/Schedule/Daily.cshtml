@@ -16,7 +16,10 @@
 			<span class="blockspan">
 				<a class="mobilespan" href="@Url.Content("~/")">Home</a>
 				<a class="mobilespan" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a>
+				@if (Model.TelevisedGamesList.Any())
+				{
 				<a class="mobilespan" href="@Url.Content("~/Schedule/Weekly/" + Model.SportYear + "/" + Model.Week)">Entire Week's Schedule</a>
+				}
 			</span>
 			<span class="blockspan">
 				@if (!String.IsNullOrWhiteSpace(Model.FlexScheduleLink))
