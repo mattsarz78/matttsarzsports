@@ -162,7 +162,7 @@ namespace MSS.Shared
 					{
 						var years = item.Attribute("Yearend").Value.Split('|').ToList();
 						var yeartocompare = years.First(x => x.Length == year.Length);
-						donotuse = (Convert.ToInt16(year) > Convert.ToInt16(yeartocompare));
+						donotuse = (Convert.ToInt32(year) > Convert.ToInt32(yeartocompare));
 						imageUrl = !donotuse ? item.Attribute("Image").Value : string.Empty;
 						if (imageUrl.Length > 0)
 							break;
