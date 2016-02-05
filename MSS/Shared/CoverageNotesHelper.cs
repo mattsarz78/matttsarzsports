@@ -124,9 +124,9 @@ namespace MSS.Shared
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
 
-            textLink = String.IsNullOrWhiteSpace(textLink) ? ConfigureTexyHyperlinkSpecifics(coverageNote, textLink) : textLink;
+            textLink = string.IsNullOrWhiteSpace(textLink) ? ConfigureTexyHyperlinkSpecifics(coverageNote, textLink) : textLink;
 
-            coverageNotesList.Add(String.Concat("<a href=\"", coverageNote, "\" target=\"_blank\">", textLink, "</a>"));
+            coverageNotesList.Add(string.Format("<a href=\"{0}\" target=\"_blank\">{1}</a>", coverageNote, textLink));
         }
 
         private string ConfigureTexyHyperlinkSpecifics(string coverageNote, string textLink)
@@ -171,8 +171,7 @@ namespace MSS.Shared
 						imageUrl = item.Attribute("Image").Value;
 				}
 
-				coverageNotesList.Add(String.Concat("<a href=\"", coverageNote, "\" target=\"_blank\" ><img class=\"imageDimensions\" src=\"/Images/",
-					imageUrl, "\" /></a>"));
+				coverageNotesList.Add(string.Format("<a href=\"{0}\" target=\"_blank\" ><img class=\"imageDimensions\" src=\"/Images/{1}\" /></a>", coverageNote, imageUrl));
 			}
         }
 
@@ -186,11 +185,11 @@ namespace MSS.Shared
                 string textLink = ConfigureTextLink(stringText);
                 textLink = string.IsNullOrWhiteSpace(textLink) ? "Live Video" : textLink;
 
-                coverageNotesList.Add(string.Concat("<a class=\"linkblock\" href=\"", stringText, "\" target=\"_blank\">", textLink, "</a>"));
+                coverageNotesList.Add(string.Format("<a class=\"linkblock\" href=\"{0}\" target=\"_blank\">{1}</a>", stringText, textLink));
             }
             else
             {
-                string p = string.Concat("<label>", stringText, "</label>");
+                string p = string.Format("<label>{0}</label>", stringText);
                 if (coverageNotesList.Count > 0 && coverageNotesList.Last() != BR)
                     coverageNotesList.Add(BR + p);
                 else
@@ -218,7 +217,7 @@ namespace MSS.Shared
         {
             if (!string.IsNullOrWhiteSpace(breakSymbol))
                 coverageNotesList.Add(BR);
-            coverageNotesList.Add(string.Concat("<img class=\"imageDimensions\" src=\"/Images/", network, "\" />"));
+            coverageNotesList.Add(string.Format("<img class=\"imageDimensions\" src=\"/Images/{0}\" />", network));
         }
 
         public List<int> ValidateFieldData(string[] coverageNotes)

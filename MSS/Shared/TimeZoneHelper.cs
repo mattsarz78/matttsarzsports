@@ -52,8 +52,7 @@ namespace MSS.Shared
 			var hours = gameTime.TimeOfDay.ToString() == "00:00:00" ? "TBA" : Offset(timeZone, gameTime).ToString("h:mm tt");
     	    string gameTimeString = caller == "web"
     	        ? hours
-    	        : string.Concat("<label>", gameTime.ToString("dddd"), "<br>", gameTime.ToString("M/d"),
-    	            "<br>", hours, "</label>");
+    	        : string.Format("<label>{0}<br>{1}<br>{2}</label>", gameTime.ToString("dddd"), gameTime.ToString("M/d"), hours);
     	    return gameTimeString;
         }
 

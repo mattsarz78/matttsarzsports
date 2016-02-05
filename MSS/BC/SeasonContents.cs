@@ -38,8 +38,9 @@ namespace MSS.BC
         public string CreateTitle(string sportYear)
         {
             return sportYear.ToLower().Contains("football")
-                       ? string.Concat(sportYear.Substring(8, 4)," Football")
-                       : string.Concat(sportYear.Substring(10, 4),"-",sportYear.Substring(14, 2)," Basketball");
-        }
+                       ? string.Format("{0} Football", sportYear.Substring(8, 4))
+                       : string.Format("{0}-{1} Basketball", sportYear.Substring(10, 4),sportYear.Substring(14, 2));
+
+		}
     }
 }

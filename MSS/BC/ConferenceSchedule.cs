@@ -24,7 +24,7 @@ namespace MSS.BC
 
         public List<ConfGame> CreateIndependentsGameList(int year)
         {
-			var independentsList = _bools.CheckSportYearAttributes(String.Concat("football", year), "independents").Split(Convert.ToChar(",")).ToList();
+			var independentsList = _bools.CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
         	var indyList = new List<ConfGame>();
         	foreach (var independent in independentsList)
         		indyList.AddRange(CreateConferenceGameList(independent, year.ToString()));

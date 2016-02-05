@@ -33,7 +33,7 @@ namespace MSS.Controllers
         {
             if (_bools.CheckXMLDoc("ConferenceNames", conference.ToLower()) || !_bools.CheckXMLDoc("ValidYears", "Year" + year))
             {
-                var sportYear = String.Concat("football", year);
+                var sportYear = string.Format("football{0}", year);
                 var isIndependents = conference.ToLower().Contains("independents");
                 return Ok(new ConferenceModel
                 {

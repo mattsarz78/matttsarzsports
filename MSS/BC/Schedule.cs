@@ -30,7 +30,7 @@ namespace MSS.BC
 
 		public string FormatRSNLink(int week, string sportYear, FSNGames parm)
 		{
-			return String.Concat("<a class=\"FSNLink ", sportYear, "week", week, parm.Parm, "\" >RSN Affiliates</a>");
+			return string.Format("<a class=\"FSNLink {0}week{1}{2}\" >RSN Affiliates</a>", sportYear, week, parm.Parm);
 		}
 
 		public bool CheckForPartialView(int week, string sportYear)
@@ -94,13 +94,13 @@ namespace MSS.BC
 				var parmValue = rsnGames.Where(x => x.Game == tvGame.Game.Trim());
 				if (parmValue.Any())
 				{
-					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), String.Concat(sport, year), parmValue.First());
+					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), string.Format("{0}{1}", sport, year), parmValue.First());
 					string additionalNotes = _cnh.FormatCoverageNotes(year, resultSet["CoverageNotes"].ToString());
 					if (additionalNotes != "<label>&nbsp</label>")
 					{
 						var sb = new StringBuilder();
 						sb.Append(additionalNotes);
-						sb.Append(String.Concat("<br>", tvGame.CoverageNotes));
+						sb.Append(String.Format("<br>{0}", tvGame.CoverageNotes));
 						tvGame.CoverageNotes = sb.ToString();
 					}
 				}

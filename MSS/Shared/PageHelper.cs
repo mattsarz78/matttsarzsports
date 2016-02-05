@@ -35,7 +35,7 @@ namespace MSS.Shared
         	var confXmlText = new List<ContractText>();
 			if (conference.ToLower() == "independents")
 			{
-				var independentsList = _bools.CheckSportYearAttributes(String.Concat("football", year), "independents").Split(Convert.ToChar(",")).ToList();
+				var independentsList = _bools.CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
 				independentsList.Remove("Notre Dame");
 				independentsList.Add("NotreDame");
 				confXmlText.AddRange(independentsList.Select(independent => GetXmlText(independent, year)));
