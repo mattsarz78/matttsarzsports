@@ -73,6 +73,12 @@
 		<loc>http://mattsarzsports.com/Season/Contents/football2015</loc>
 	</url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/football2016</loc>
+  </url>
+  <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/basketball201516</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/football2016</loc>
   </url>
 </urlset>
