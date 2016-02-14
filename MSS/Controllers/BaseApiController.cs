@@ -31,7 +31,7 @@ namespace MSS.Controllers
 
         public IHttpActionResult GetGameList(string conference, int year)
         {
-            if (_bools.CheckXMLDoc("ConferenceNames", conference.ToLower()) || !_bools.CheckXMLDoc("ValidYears", "Year" + year))
+            if (_bools.CheckXMLDoc("ConferenceNames", conference.ToLower()) && _bools.CheckXMLDoc("ValidSportYears", "football" + year))
             {
                 var sportYear = string.Format("football{0}", year);
                 var isIndependents = conference.ToLower().Contains("independents");

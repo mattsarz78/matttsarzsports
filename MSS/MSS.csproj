@@ -203,7 +203,6 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\ValidSportYears.xml" />
-    <Content Include="Content\ValidYears.xml" />
     <Content Include="CoverageNotes\Basketball200910\CBS0102.gif" />
     <Content Include="CoverageNotes\Basketball200910\CBS0123a.gif" />
     <Content Include="CoverageNotes\Basketball200910\CBS0123b.gif" />
