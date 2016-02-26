@@ -8,7 +8,7 @@ namespace MSS
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.UseCdn = true;
-            const string jQueryCdn = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js";
+            const string jQueryCdn = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.min.js";
 			const string modernizerCdn = "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js";
 
             bundles.Add(new ScriptBundle("~/bundles/jquery", jQueryCdn).Include("~/Scripts/jquery-{version}.js"));
