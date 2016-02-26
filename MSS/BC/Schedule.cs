@@ -91,7 +91,7 @@ namespace MSS.BC
 					? _cnh.FormatCoverageNotes(year, resultSet["NetworkJPG"].ToString())
 					: _cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
-				var parmValue = rsnGames.Where(x => x.Game == tvGame.Game.Trim());
+				var parmValue = rsnGames.Where(x => tvGame.Game.Trim().StartsWith(x.Game));
 				if (parmValue.Any())
 				{
 					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), string.Format("{0}{1}", sport, year), parmValue.First());
