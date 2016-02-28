@@ -1342,7 +1342,6 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek16.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek17.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek18.cshtml" />
-    <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek19.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek2.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek3.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201516\FSNWeek4.cshtml" />

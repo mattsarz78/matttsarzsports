@@ -55,5 +55,6 @@ namespace MSS.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public DateTime CurrentDate { get; set; }
+		public string PostseasonInd { get; set; }
     }
 }

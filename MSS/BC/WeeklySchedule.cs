@@ -28,8 +28,8 @@ namespace MSS.BC
 			var showPPVColumn = _bools.CheckSportYearAttributesBool(sportYear, "showPPVColumn");
 			var isFootball = sport.ToLower().Contains("football");
 			var fullYearDates = _sc.CreateDateModel(year);
-			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
-			var isNextWeekBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week + 1, fullYearDates);
+			var isBowlWeek = _ph.CheckIfBowlWeek(week, fullYearDates);
+			var isNextWeekBowlWeekOrNIT = _ph.CheckIfBowlWeek(week + 1, fullYearDates);
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
 			var weeklyFootballModel = new ScheduleModel
@@ -45,12 +45,12 @@ namespace MSS.BC
 				ShowNoTVPartialView = showTVPartialView,
 				NoTVGameList = showTVPartialView ? FormatNoTvGames(week, year) : new List<NonTelevisedGame>(),
 				TelevisedGamesList = FormatTelevisedGames(week, year, timeZone, sport, showPPVColumn),
-				IsBowlWeek = isFootball && isBowlWeekOrNIT,
+				IsBowlWeek = isFootball && isBowlWeek,
 				IsNextWeekBowlWeek = isFootball && isNextWeekBowlWeekOrNIT,
 				IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates),
 				IsNextWeekBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week + 1, fullYearDates),
-				IsNIT = !isFootball && hasPostseason && isBowlWeekOrNIT
-			};
+				IsNIT = !isFootball && hasPostseason && _ph.CheckIfNIT(week, fullYearDates)
+		};
 
 			return weeklyFootballModel;
 		}
@@ -72,6 +72,7 @@ namespace MSS.BC
 				{
 					weekDates.StartDate = Convert.ToDateTime(resultSet["StartDate"]);
 					weekDates.EndDate = Convert.ToDateTime(resultSet["EndDate"]);
+					weekDates.PostseasonInd = resultSet["PostseasonInd"].ToString();
 				}
 			return weekDates;
 		}

@@ -29,7 +29,8 @@ namespace MSS.BC
                     {
                         Week = int.Parse(resultSet["Week"].ToString()),
                         StartDate = DateTime.Parse(resultSet["StartDate"].ToString()),
-                        EndDate = DateTime.Parse(resultSet["EndDate"].ToString())
+                        EndDate = DateTime.Parse(resultSet["EndDate"].ToString()),
+						PostseasonInd = resultSet["PostseasonInd"].ToString()
                     });
 				}
 			return yearDateList;

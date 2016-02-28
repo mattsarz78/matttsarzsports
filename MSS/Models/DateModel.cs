@@ -18,5 +18,6 @@ namespace MSS.Models
         public int Week { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-    }
+		public string PostseasonInd { get; set; }
+	}
 }

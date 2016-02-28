@@ -45,17 +45,23 @@ namespace MSS.Shared
         	return confXmlText;
         }
 
-		public bool CheckIfBowlWeekOrNIT(int week, List<YearDate> fullYearDates)
+		public bool CheckIfBowlWeek(int week, List<YearDate> fullYearDates)
     	{
     		return week == fullYearDates.Last().Week;
     	}
 
 		public bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates)
         {
-            return week == fullYearDates.Last().Week || week == fullYearDates[fullYearDates.Count - 2].Week;
+            return fullYearDates.Any(x => x.Week == week 
+			&& (x.PostseasonInd.Contains("N") || x.PostseasonInd.Contains("I") || x.PostseasonInd.Contains("O")));
         }
 
-        private ContractText GetXmlText(string conference, string year)
+		public bool CheckIfNIT(int week, List<YearDate> fullYearDates)
+		{
+			return fullYearDates.Any(x => x.Week == week && x.PostseasonInd.Contains("I"));
+		}
+
+		private ContractText GetXmlText(string conference, string year)
         {
             var path = HttpContext.Current.Server.MapPath(@"~/Content/ConferenceXml/" + year + ".xml");
             var node = String.Empty;

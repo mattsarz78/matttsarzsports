@@ -21,19 +21,22 @@ else if (Model.IsBasketballWithPostseason)
 	foreach (var item in Model.YearDatesList)
 	{
 		string title;
-		if (item.Week != Model.YearDatesList.Last().Week && item.Week != Model.YearDatesList[Model.YearDatesList.Count - 2].Week)
+		if (string.IsNullOrEmpty(item.PostseasonInd))
 		{
 			title = string.Format("Week {0} - {1} {2} to {3} {4}", item.Week.ToString(), item.StartDate.ToString("MMMM"),
 								  item.StartDate.Day, item.EndDate.ToString("MMMM"), item.EndDate.Day);
 		}
-		else if (item.Week != Model.YearDatesList[Model.YearDatesList.Count - 2].Week)
+		else if (item.PostseasonInd == "I")
 		{
 			title = "NIT";
 		}
-		else
+		else if (item.PostseasonInd == "N")
 		{
 			<br />
 			title = "NCAA Tournament";
+		}
+		else {
+			title = "Other Postseason Tournaments";
 		}
 		<a href="/Schedule/Weekly/@Model.Year/@item.Week">@title</a><br/>
 

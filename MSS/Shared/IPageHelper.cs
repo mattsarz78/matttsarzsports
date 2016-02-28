@@ -7,7 +7,8 @@ namespace MSS.Shared
     {
         string CheckForFlexSchedule(string year);
         List<ContractText> GetTextFromXml(string conference, string year);
-        bool CheckIfBowlWeekOrNIT(int week, List<YearDate> fullYearDates);
+        bool CheckIfBowlWeek(int week, List<YearDate> fullYearDates);
         bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates);
-    }
+		bool CheckIfNIT(int week, List<YearDate> fullYearDates);
+	}
 }

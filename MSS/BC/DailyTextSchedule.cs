@@ -48,7 +48,7 @@ namespace MSS.BC
 				textModel.Week = textModel.TelevisedGamesList[0].Week;
 				var week = Convert.ToInt32(textModel.Week);
 
-				var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
+				var isBowlWeekOrNIT = _ph.CheckIfBowlWeek(week, fullYearDates);
 
 				textModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
 				textModel.IsNIT = !isFootball && isBowlWeekOrNIT;

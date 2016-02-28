@@ -24,7 +24,7 @@ namespace MSS.BC
 		public ScheduleModel GetWeeklyTextData(int week, string sportYear, string year, string sport, string timeZone)
         {
 			var fullYearDates = _sc.CreateDateModel(year);
-			var isBowlWeekOrNIT = _ph.CheckIfBowlWeekOrNIT(week, fullYearDates);
+			var isBowlWeek = _ph.CheckIfBowlWeek(week, fullYearDates);
         	var isFootball = sport.Contains("football");
         	var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
@@ -33,10 +33,10 @@ namespace MSS.BC
 									TelevisedGamesList = CreateGamesList(timeZone, week, year, sport),
 									Week = week.ToString(),
 									SportYear = sportYear,
-									IsBowlWeek = isFootball && isBowlWeekOrNIT,
+									IsBowlWeek = isFootball && isBowlWeek,
                                     IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates),
-									IsNIT = !isFootball && isBowlWeekOrNIT
-								};
+									IsNIT = !isFootball && _ph.CheckIfNIT(week, fullYearDates)
+			};
             
             return textModel;
         }
