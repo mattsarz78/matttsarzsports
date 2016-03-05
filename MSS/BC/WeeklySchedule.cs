@@ -49,7 +49,8 @@ namespace MSS.BC
 				IsNextWeekBowlWeek = isFootball && isNextWeekBowlWeekOrNIT,
 				IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates),
 				IsNextWeekBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week + 1, fullYearDates),
-				IsNIT = !isFootball && hasPostseason && _ph.CheckIfNIT(week, fullYearDates)
+				IsNIT = !isFootball && hasPostseason && _ph.CheckIfNIT(week, fullYearDates),
+				IsOtherMBKEvent = _ph.CheckIfOtherMBKTourney(week, fullYearDates)
 		};
 
 			return weeklyFootballModel;

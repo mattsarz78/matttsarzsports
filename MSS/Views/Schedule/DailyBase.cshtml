@@ -14,7 +14,7 @@
    {
        if (Model.TelevisedGamesList.Any(x => Convert.ToDateTime(x.Time.Date) == Model.WeekDates.CurrentDate))
 	   {
-		   Html.RenderPartial("WeekGamesTable", Model);
+		   Html.RenderPartial("DailyGamesTable", Model);
 	   }
    }
  }

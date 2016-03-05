@@ -8,10 +8,7 @@
             <th>Network</th>
             @if (Model.IsBowlWeek || Model.IsBasketballPostseason)
             {
-                if (!Model.IsNIT)
-                {
                 <th>Location</th>
-                }
             }
             else
             {
@@ -28,20 +25,11 @@
         </tr>
         @foreach (var game in Model.TelevisedGamesList.Where(x => Convert.ToDateTime(x.Time.Date) == Model.WeekDates.CurrentDate))
         {
-            if (Model.IsBowlWeek || Model.IsBasketballPostseason)
+            if (Model.IsBowlWeek)
             {
-                if (Model.IsNIT)
-                {
-            <tr>
-                @Html.Partial("NITGamesRowDetail", game)
-            </tr>		 
-                }
-                else
-                {
             <tr>
                 @Html.Partial("BowlGamesRowDetail", game)
-            </tr>		 
-                }
+            </tr>	
             }
             else
             {

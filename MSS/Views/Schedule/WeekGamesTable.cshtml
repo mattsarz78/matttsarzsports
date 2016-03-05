@@ -8,7 +8,7 @@
             <th>Network</th>
             @if (Model.IsBowlWeek || Model.IsBasketballPostseason)
             {
-                if (!Model.IsNIT)
+                if (!Model.IsNIT && !Model.IsOtherMBKEvent)
                 {
                 <th>Location</th>
                 }
@@ -30,7 +30,7 @@
         {
             if (Model.IsBowlWeek || Model.IsBasketballPostseason)
             {
-                if (Model.IsNIT)
+                if (Model.IsNIT || Model.IsOtherMBKEvent)
                 {
             <tr>
                 @Html.Partial("NITGamesRowDetail", game)

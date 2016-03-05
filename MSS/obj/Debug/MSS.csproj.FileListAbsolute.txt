@@ -118,3 +118,4 @@ D:\New-MSS\matttsarzsports\MSS\bin\System.Web.WebPages.Razor.xml
 D:\New-MSS\matttsarzsports\MSS\bin\System.Web.Optimization.xml
 D:\New-MSS\matttsarzsports\MSS\obj\Debug\MSS.dll
 D:\New-MSS\matttsarzsports\MSS\obj\Debug\MSS.pdb
+D:\New-MSS\matttsarzsports\MSS\obj\Debug\MSS.csprojResolveAssemblyReference.cache

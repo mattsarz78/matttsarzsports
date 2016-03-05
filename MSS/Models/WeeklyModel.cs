@@ -8,7 +8,8 @@ namespace MSS.Models
         public bool IsBasketballPostseason { get; set; }
 		public bool IsBowlWeek { get; set; }
         public bool IsNIT { get; set; }
-        public List<NonTelevisedGame> NoTVGameList { get; set; }
+		public bool IsOtherMBKEvent { get; set; }
+		public List<NonTelevisedGame> NoTVGameList { get; set; }
         public List<TelevisedGame> TelevisedGamesList { get; set; }
         public WeekDates WeekDates { get; set; }
         public bool IsFootball { get; set; }

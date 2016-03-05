@@ -81,5 +81,10 @@ namespace MSS.Shared
             }
             return new ContractText{ Conference = conference, ContractXmlText = node};
         }
-    }
+
+		public bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates)
+		{
+			return fullYearDates.Any(x => x.Week == week && x.PostseasonInd.Contains("O"));
+		}
+	}
 }
