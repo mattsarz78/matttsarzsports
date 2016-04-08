@@ -1,7 +1,7 @@
 ﻿@model MSS.Models.ScheduleModel
 @if (!Model.IsBasketballPostseason && !Model.IsBowlWeek)
 {
-	<p>
+	<div class="pad">
 		@if (int.Parse(Model.Week) == 1)
   {
 			<span style="float: left">
@@ -20,7 +20,7 @@
 			</span>
 	  }
   }
-	</p>
+	</div>
 }
 <br class="mobilehide"/>
 <br />
