@@ -15,7 +15,8 @@
 	<Address Link="thew.tv" Image="ci.jpg" />
 	<Address Link="watchabc.com" Image="watchabc.jpg" />
 	<Address Link="liveextra" Image="nbcle.jpg" />
-	<Address Link="foxsportsgo.com" Image="fsgo.jpg" />
+	<Address Link="foxsportsgo.com" Image="fsgo.jpg" Yearend="2015|201516" />
+	<Address Link="foxsportsgo.com" Image="fsgo-16.jpg" />
   <Address Link="secsports.com/watch" Image="secplus.jpg" />
   <Address Link="thew.tv" Image="thewtv.jpg" />
 </ImagesForURLs>
