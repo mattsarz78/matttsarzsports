@@ -148,34 +148,41 @@ namespace MSS.Shared
 
         private void ConfigureImgHyperlink(string year, List<string> coverageNotesList, string coverageNote)
         {
-            string imageUrl = string.Empty;
 
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ImagesForURLs.xml");
 			if (File.Exists(path))
 			{
 				var doc = XDocument.Load(path);
 				var xElements = doc.Root.Elements("Address").Where(x => coverageNote.Contains(x.Attribute("Link").Value));
-				foreach (var item in xElements)
-				{
-					bool donotuse = false;
-					if (item.Attribute("Yearend") != null)
-					{
-						var years = item.Attribute("Yearend").Value.Split('|').ToList();
-						var yeartocompare = years.First(x => x.Length == year.Length);
-						donotuse = (Convert.ToInt32(year) > Convert.ToInt32(yeartocompare));
-						imageUrl = !donotuse ? item.Attribute("Image").Value : string.Empty;
-						if (imageUrl.Length > 0)
-							break;
-					}
-					else
-						imageUrl = item.Attribute("Image").Value;
-				}
+				string imageUrl = SetImageUrl(year, xElements);
 
 				coverageNotesList.Add(string.Format("<a href=\"{0}\" target=\"_blank\" ><img class=\"imageDimensions\" src=\"/Images/{1}\" /></a>", coverageNote, imageUrl));
 			}
-        }
+		}
 
-        public void ConfigureText(List<string> coverageNotesList, string stringText)
+		private static string SetImageUrl(string year, IEnumerable<XElement> xElements)
+		{
+			string imageUrl = string.Empty;
+			foreach (var item in xElements)
+			{
+				bool donotuse = false;
+				if (item.Attribute("Yearend") != null)
+				{
+					var years = item.Attribute("Yearend").Value.Split('|').ToList();
+					var yeartocompare = years.First(x => x.Length == year.Length);
+					donotuse = (Convert.ToInt32(year) > Convert.ToInt32(yeartocompare));
+					imageUrl = !donotuse ? item.Attribute("Image").Value : string.Empty;
+					if (imageUrl.Length > 0)
+						break;
+				}
+				else
+					imageUrl = item.Attribute("Image").Value;
+			}
+
+			return imageUrl;
+		}
+
+		public void ConfigureText(List<string> coverageNotesList, string stringText)
         {
             if (_bools.IsHyperlink(stringText))
             {

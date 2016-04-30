@@ -19,13 +19,7 @@ namespace MSS.Shared
             string destinationTimeZone = string.Empty;
             switch (timeZone)
             {
-				case "GMT":
-                case "Atlantic":
-                case "Newfoundland":
-                case "Central":
-                case "Mountain":
-                case "Pacific":
-                case "Eastern":
+				default:
                     destinationTimeZone = string.Format(timeZone + st);
                     break;
                 case "Arizona":
