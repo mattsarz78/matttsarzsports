@@ -15,7 +15,7 @@
             </th>
         </tr>
         @foreach (var item in Model.NoTVGameList.Where(x => x.DayOfWeek == Model.WeekDates.CurrentDate.DayOfWeek
-		&& x.Time == Model.WeekDates.CurrentDate))
+		&& x.Time.ToShortDateString() == Model.WeekDates.CurrentDate.ToShortDateString()))
         {
             if (item.FCS)
             {
