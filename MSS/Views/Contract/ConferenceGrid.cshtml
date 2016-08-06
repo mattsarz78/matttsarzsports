@@ -108,19 +108,29 @@ else
     </div>
     <br />
     }
-    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Navy"))
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "UMass"))
     {
-        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Navy");
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "UMass");
     <div id="NavyDiv">
-        @Html.Label("Navy telecasts")
-        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Navy").Select(y => y.ContractXmlText).First())
+        @Html.Label("Massachusetts telecasts")
+        @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "UMass").Select(y => y.ContractXmlText).First())
         @Html.Partial("ConferenceTable", games)
     </div>
     <br />
-    }
-    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "NMSt"))
-    {
-        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "NMSt");
+	}
+	if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Navy"))
+	{
+		var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Navy");
+		<div id="NavyDiv">
+			@Html.Label("Navy telecasts")
+			@Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Navy").Select(y => y.ContractXmlText).First())
+			@Html.Partial("ConferenceTable", games)
+		</div>
+		<br />
+	}
+	if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "NMSt"))
+	{
+		var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "NMSt");
     <div id="NewMexicoStDiv">
         @Html.Label("New Mexico State telecasts")
         @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "NMSt").Select(y => y.ContractXmlText).First())
