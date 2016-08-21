@@ -1364,6 +1364,19 @@
     <Content Include="Views\Schedule\DailyBase.cshtml" />
     <Content Include="Views\Schedule\DailyGamesTable.cshtml" />
     <Content Include="Views\Schedule\DailyText.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
