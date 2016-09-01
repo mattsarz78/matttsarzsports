@@ -39,7 +39,7 @@ namespace MSS.Shared
 
         public  bool IsGamePlanMap(string coverageNote)
         {
-			return coverageNote.Contains("http://assets.espn.go.com/gameplan/") || coverageNote.Contains("http://assets.espn.go.com/espn3/") || coverageNote.Contains("espngameplan.espn.com");
+			return coverageNote.Contains("http://assets.espn.go.com/gameplan/") || coverageNote.Contains("http://assets.espn.go.com/espn3/") || coverageNote.Contains("espngameplan.espn.com") || coverageNote.Contains("blackout");
         }
 
         public  bool IsThe506CoverageMap(string coverageNote)
@@ -54,7 +54,7 @@ namespace MSS.Shared
 				return true;
 			}
 	        return coverageNote.Contains("http://assets.espn.go.com/photo/") ||
-	               coverageNote.Contains("espncdn") ||
+	               (coverageNote.Contains("espncdn") && !coverageNote.Contains("blackout")) ||
 	               coverageNote.Contains("http://www.seminoles.com/blog/Screen%20Shot%202013-11-07%20at%2011.42.17%20AM.png") ||
 	               coverageNote.Contains("http://espnmediazone.com/us/files/2013/08/CF_Oct29_Maps_MZ.pdf");
         }
