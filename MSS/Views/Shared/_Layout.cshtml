@@ -1,36 +1,131 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="keywords" content="NCAA Football TV, NCAA Basketball TV, Matt Sarzyniak, sports on television" />
-    <meta name="description" content="Since 2005, compiling NCAA Division I football and men's basketball television schedules. Looking for a game?  Check here." />
-    <meta name="author" content="Matt Sarzyniak" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewBag.Title</title>
-    <script src="@Scripts.Url("~/bundles/modernizr")" async></script>
+	<meta charset="utf-8" />
+	<meta name="keywords" content="NCAA Football TV, NCAA Basketball TV, Matt Sarzyniak, sports on television" />
+	<meta name="description" content="Since 2005, compiling NCAA Division I football and men's basketball television schedules. Looking for a game?  Check here." />
+	<meta name="author" content="Matt Sarzyniak" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="mattsarz" />
+	<meta name="twitter:title" content="@ViewBag.Title" />
+	<meta name="twitter:description" content="Since 2005, CFB and MBK television & webcast schedules." />
+	<title>@ViewBag.Title</title>
+	<script src="@Scripts.Url("~/bundles/modernizr")" async></script>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<script>
 		(adsbygoogle = window.adsbygoogle || []).push({
 			google_ad_client: "ca-pub-0296554708545211",
 			enable_page_level_ads: true
 		});
-	</script></head>
+	</script>
+</head>
 <body>
-    <div class="overlay">
-    </div>
-    <div class="maincontainer">
-		<style type="text/css">body{font-family:Arial;background-color:White;}body style{color:#000}.maincontainer{max-width:720px;margin:0 auto;zoom: 1;}.header,.center{text-align:center}.GoogleSearch{margin:0 auto;padding-bottom:10px}.container{height:100%;max-width:720px;margin:0 auto}@@media print{.DONTPrint{display:none}.DOPrint{display:table}}.addthis{display: block;float: left;padding: 0 7px 5px 0;}.addthisimage{float: left;}#GooglePartialAd{text-align:center;}header{display:block;}.navbar{position: fixed;top: 0;left: 0;z-index: 9999;width: 100%;background-color: white;padding: 2px 0;}</style>
-		<style media="all and (min-width: 641px)" type="text/css">body{margin: 8px;font-size: 11px;}input,select{font-size: 11px;}</style>
-		<style type="text/css" media="only screen and (max-width: 640px)">body{font-size:.636em;margin:3px;}input,select{font-size:1em;}.search{max-width:120px}
+	<div class="overlay">
+	</div>
+	<div class="maincontainer">
+		<style type="text/css">
+			body {
+				font-family: Arial;
+				background-color: White;
+			}
+
+				body style {
+					color: #000;
+				}
+
+			.maincontainer {
+				max-width: 720px;
+				margin: 0 auto;
+				zoom: 1;
+			}
+
+			.header, .center {
+				text-align: center;
+			}
+
+			.GoogleSearch {
+				margin: 0 auto;
+				padding-bottom: 10px;
+			}
+
+			.container {
+				height: 100%;
+				max-width: 720px;
+				margin: 0 auto;
+			}
+
+			@@media print {
+				.DONTPrint {
+					display: none;
+				}
+
+				.DOPrint {
+					display: table;
+				}
+			}
+
+			.addthis {
+				display: block;
+				float: left;
+				padding: 0 7px 5px 0;
+			}
+
+			.addthisimage {
+				float: left;
+			}
+
+			#GooglePartialAd {
+				text-align: center;
+			}
+
+			header {
+				display: block;
+			}
+
+			.navbar {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 9999;
+				width: 100%;
+				background-color: white;
+				padding: 2px 0;
+			}
+		</style>
+		<style media="all and (min-width: 641px)" type="text/css">
+			body {
+				margin: 8px;
+				font-size: 11px;
+			}
+
+			input, select {
+				font-size: 11px;
+			}
+		</style>
+		<style type="text/css" media="only screen and (max-width: 640px)">
+			body {
+				font-size: .636em;
+				margin: 3px;
+			}
+
+			input, select {
+				font-size: 1em;
+			}
+
+			.search {
+				max-width: 120px;
+			}
 		</style>
 		@RenderSection("styles", false)
-        @RenderBody()
-        <div class="DONTPrint">
-        @Html.Partial("Google/GoogleBottomBanner")
-        </div>
-        @Html.Partial("Google/GAJava")
+		@RenderBody()
+		<div class="DONTPrint">
+			@Html.Partial("Google/GoogleBottomBanner")
+		</div>
+		@Html.Partial("Google/GAJava")
 		<div>
-			<p><a href="@Url.Content("~/Home/CopyrightAndDisclaimer")">Website Copyright</a></p></div>
+			<p><a href="@Url.Content("~/Home/CopyrightAndDisclaimer")">Website Copyright</a></p>
+		</div>
 	</div>
 	<script type="text/javascript" src="@Scripts.Url("~/bundles/jquery")"></script>
 	@RenderSection("scripts", false)
