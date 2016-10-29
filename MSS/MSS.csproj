@@ -1377,6 +1377,24 @@
     <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2016\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek14.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek15.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek16.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek17.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek18.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
