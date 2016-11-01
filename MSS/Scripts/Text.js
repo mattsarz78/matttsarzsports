@@ -6,19 +6,25 @@
 function CommonTextEvents() {
 	$(".checkBoxRow").on("click", function() {
 		if ($(this).is(":checked")) {
-			$(this).parents("tr").css("background-color", "#CCC").removeClass("DONTPrint").addClass("DOPrint");
+		    $(this).parents("tr").css("background-color", "#CCC").removeClass("DONTPrint").addClass("DOPrint");
+		    $(this).prop("checked", true);
 		} else {
 			$(this).parents("tr").css("background-color", "#FFF").addClass("DONTPrint").removeClass("DOPrint");
-		}
+			$(this).prop("checked", false);
+        }
 	});
 
-	$("#ClearAll").on("click", function() {
-		$(".checkBoxRow").attr("checked", false);
+	$("#ClearAll").on("click", function () {
+	    $(".checkBoxRow").each(function () {
+	        $(this).prop("checked", false);
+	    });
 		$("tr").css("background-color", "#FFF").addClass("DONTPrint").removeClass("DOPrint");
 	});
 
 	$("#CheckAll").on("click", function() {
-		$(".checkBoxRow").attr("checked", true);
+	    $(".checkBoxRow").each(function () {
+	        $(this).prop("checked", true);
+	    });
 		$("tr").css("background-color", "#CCC").addClass("DOPrint").removeClass("DONTPrint");
 	});
 }
