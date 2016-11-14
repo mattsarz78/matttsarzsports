@@ -1,6 +1,6 @@
 ﻿@model MSS.Models.ScheduleModel
 
-<label>@Model.TelevisedGamesList[0].Time.ToString("D")</label>
+<label id="@Model.WeekDates.CurrentDate.DayOfWeek@Model.WeekDates.CurrentDate.Month@Model.WeekDates.CurrentDate.Day@Model.WeekDates.CurrentDate.Year">@Model.WeekDates.CurrentDate.ToString("D")</label>
 <table class="noTVTable">
     <tbody>
         <tr class="header">
