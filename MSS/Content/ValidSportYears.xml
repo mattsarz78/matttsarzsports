@@ -24,4 +24,5 @@
   <football2014 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Navy,Notre Dame"/>
 	<football2015 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame"/>
   <football2016 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
+  <football2017 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
 </ValidSportYears>
