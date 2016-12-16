@@ -679,6 +679,7 @@
     <Content Include="Images\myfw.jpg" />
     <Content Include="Images\mylc.jpg" />
     <Content Include="Images\myritv.JPG" />
+    <Content Include="Images\myvlt.jpg" />
     <Content Include="Images\myytv.JPG" />
     <Content Include="Images\nautv.JPG" />
     <Content Include="Images\nbc.jpg" />
@@ -871,6 +872,7 @@
     <Content Include="Images\week1.gif" />
     <Content Include="Images\week2.gif" />
     <Content Include="Images\weiu.jpg" />
+    <Content Include="Images\wemt.jpg" />
     <Content Include="Images\wfie.JPG" />
     <Content Include="Images\wfli.jpg" />
     <Content Include="Images\wfmj.jpg" />
