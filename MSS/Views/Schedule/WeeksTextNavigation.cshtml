@@ -1,0 +1,26 @@
+﻿@model MSS.Models.ScheduleModel
+@if (!Model.IsBasketballPostseason && !Model.IsBowlWeek)
+{
+	<div class="pad">
+		@if (int.Parse(Model.Week) == 1)
+  {
+			<span style="float: left">
+				<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + (int.Parse(Model.Week) + 1))">Next Week</a>
+			</span>
+  }
+		@if (int.Parse(Model.Week) > 1)
+  {
+			<span style="float: left">
+				<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + (int.Parse(Model.Week) - 1))">Previous Week</a>
+			</span>
+	  if (!Model.IsNextWeekBasketballPostseason && !Model.IsNextWeekBowlWeek)
+	  {
+			<span style="float: right">
+				<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + (int.Parse(Model.Week) + 1))">Next Week</a>
+			</span>
+	  }
+  }
+	<br class="mobilehide" />
+	</div>
+}
+<br />

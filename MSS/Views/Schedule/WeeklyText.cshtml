@@ -20,7 +20,7 @@
 				<a class="seasonhome" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a>
 			</span>
 			<a class="DONTPrint" href="@Url.Content("~/Schedule/Weekly/" + Model.SportYear + "/" + Model.Week)">Weekly Schedule</a><br />
-			@Html.Partial("WeeksNavigation")
+			@Html.Partial("WeeksTextNavigation")
 			<p id="TextNav" class="DONTPrint">
 				@Html.Partial("TimeZoneDropDown")
 				<input type="button" id="ClearAll" value="Clear All Games" class="inputpad" />

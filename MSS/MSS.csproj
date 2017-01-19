@@ -1551,6 +1551,7 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\WeeksTextNavigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
