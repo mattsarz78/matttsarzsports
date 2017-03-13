@@ -1,6 +1,29 @@
 ﻿@model MSS.Models.ScheduleModel
 @{
-	ViewBag.Title = String.Format("Week {0} schedule for {1}", Model.Week, Model.Year);
+	string title = string.Empty;
+	if (Model.IsBowlWeek)
+	{
+		title = String.Format("Bowl Schedule for {0}", Model.Year);
+	}
+	else if (Model.IsBasketballPostseason) {
+		if (Model.IsNIT)
+		{
+			title = String.Format("NIT Schedule for {0}", Model.Year);
+		}
+		else if (Model.IsOtherMBKEvent)
+		{
+			title = String.Format("Other MBK Postseason Schedule for {0}", Model.Year);
+		}
+		else
+		{
+			title = String.Format("NCAA Tournament Schedule for {0}", Model.Year);
+		}
+	}
+	else
+	{
+		title = String.Format("Week {0} schedule for {1}", Model.Week, Model.Year);
+	}
+	ViewBag.Title = title;
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <input id="sportYear" type="hidden" value="@Model.SportYear" />
