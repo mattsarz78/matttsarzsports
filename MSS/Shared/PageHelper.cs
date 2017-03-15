@@ -50,6 +50,11 @@ namespace MSS.Shared
     		return week == fullYearDates.Last().Week;
     	}
 
+		public bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates)
+		{
+			return week == fullYearDates.First().Week;
+		}
+
 		public bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates)
         {
             return fullYearDates.Any(x => x.Week == week 

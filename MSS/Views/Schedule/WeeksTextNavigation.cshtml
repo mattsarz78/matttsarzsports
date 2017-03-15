@@ -2,13 +2,13 @@
 @if (!Model.IsBasketballPostseason && !Model.IsBowlWeek)
 {
 	<div class="pad">
-		@if (int.Parse(Model.Week) == 1)
+		@if (Model.IsFirstWeek)
   {
 			<span style="float: left">
 				<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + (int.Parse(Model.Week) + 1))">Next Week</a>
 			</span>
   }
-		@if (int.Parse(Model.Week) > 1)
+		else
   {
 			<span style="float: left">
 				<a href="@Url.Content("~/Schedule/WeeklyText/" + Model.SportYear + "/" + (int.Parse(Model.Week) - 1))">Previous Week</a>

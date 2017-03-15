@@ -26,6 +26,7 @@ namespace MSS.Models
 		public bool IsNextWeekBowlWeek { get; set; }
 
 		public bool IsNextWeekBasketballPostseason { get; set; }
+		public bool IsFirstWeek { get; set; }
 	}
 
     public class NonTelevisedGame

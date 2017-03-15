@@ -30,6 +30,7 @@ namespace MSS.BC
 			var fullYearDates = _sc.CreateDateModel(year);
 			var isBowlWeek = _ph.CheckIfBowlWeek(week, fullYearDates);
 			var isNextWeekBowlWeekOrNIT = _ph.CheckIfBowlWeek(week + 1, fullYearDates);
+			var isFirstWeek = _ph.CheckIfFirstWeek(week, fullYearDates);
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
 			var weeklyFootballModel = new ScheduleModel
@@ -42,6 +43,7 @@ namespace MSS.BC
 				ShowPPVColumn = showPPVColumn,
 				WeekDates = GetWeekDates(week, year),
 				IsFootball = isFootball,
+				IsFirstWeek = isFirstWeek,
 				ShowNoTVPartialView = showTVPartialView,
 				NoTVGameList = showTVPartialView ? FormatNoTvGames(week, year) : new List<NonTelevisedGame>(),
 				TelevisedGamesList = FormatTelevisedGames(week, year, timeZone, sport, showPPVColumn),

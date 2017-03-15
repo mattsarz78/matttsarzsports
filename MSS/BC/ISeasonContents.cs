@@ -7,5 +7,5 @@ namespace MSS.BC
     {
         List<YearDate> CreateDateModel(string season);
         string CreateTitle(string sportYear);
-    }
+	}
 }

@@ -11,5 +11,6 @@ namespace MSS.Shared
         bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates);
 		bool CheckIfNIT(int week, List<YearDate> fullYearDates);
 		bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates);
+		bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates);
 	}
 }
