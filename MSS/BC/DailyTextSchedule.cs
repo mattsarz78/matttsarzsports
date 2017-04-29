@@ -10,16 +10,14 @@ namespace MSS.BC
     public class DailyTextSchedule : TextSchedule, IDailyTextSchedule
     {
 	    readonly IBools _bools;
-	    readonly IPageHelper _ph;
 	    readonly ISeasonContents _sc;
 	    readonly IStoredProcHelper _sph;
 		readonly ITimeZoneHelper _tzh;
 
-		public DailyTextSchedule(IBools bools, IPageHelper ph, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh) 
+		public DailyTextSchedule(IBools bools, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh) 
 			: base(bools, tzh)
         {
             _bools = bools;
-            _ph = ph;
             _sc = sc;
             _sph = sph;
 			_tzh = tzh;
@@ -48,11 +46,11 @@ namespace MSS.BC
 				textModel.Week = textModel.TelevisedGamesList[0].Week;
 				var week = Convert.ToInt32(textModel.Week);
 
-				var isBowlWeekOrNIT = _ph.CheckIfBowlWeek(week, fullYearDates);
+				var isBowlWeekOrNIT = _bools.CheckIfBowlWeek(week, fullYearDates);
 
 				textModel.IsBowlWeek = isFootball && isBowlWeekOrNIT;
 				textModel.IsNIT = !isFootball && isBowlWeekOrNIT;
-				textModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
+				textModel.IsBasketballPostseason = !isFootball && hasPostseason && _bools.CheckIfBasketballPostseason(week, fullYearDates);
 			}
 
 			return textModel;

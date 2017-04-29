@@ -9,22 +9,22 @@ namespace MSS.BC
 {
     public class ConferenceSchedule : IConferenceSchedule
     {
-        IBools _bools;
         ICoverageNotesHelper _cnh;
         IStoredProcHelper _sph;
         ITimeZoneHelper _tzh;
-        
-        public ConferenceSchedule(IBools bools, ICoverageNotesHelper cnh, IStoredProcHelper sph, ITimeZoneHelper tzh)
+        IPageHelper _ph;
+
+        public ConferenceSchedule(ICoverageNotesHelper cnh, IStoredProcHelper sph, ITimeZoneHelper tzh, IPageHelper ph)
         {
-            _bools = bools;
             _cnh = cnh;
             _sph = sph;
             _tzh = tzh;
+            _ph = ph;
         }
 
         public List<ConfGame> CreateIndependentsGameList(int year)
         {
-			var independentsList = _bools.CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
+			var independentsList = _ph.CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
         	var indyList = new List<ConfGame>();
         	foreach (var independent in independentsList)
         		indyList.AddRange(CreateConferenceGameList(independent, year.ToString()));

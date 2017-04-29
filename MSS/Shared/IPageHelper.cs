@@ -6,11 +6,7 @@ namespace MSS.Shared
     public interface IPageHelper
     {
         string CheckForFlexSchedule(string year);
+        string CheckSportYearAttributes(string p, string attributeName);
         List<ContractText> GetTextFromXml(string conference, string year);
-        bool CheckIfBowlWeek(int week, List<YearDate> fullYearDates);
-        bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates);
-		bool CheckIfNIT(int week, List<YearDate> fullYearDates);
-		bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates);
-		bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates);
 	}
 }

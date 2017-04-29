@@ -179,6 +179,5 @@ D:\matttsarzsports\MSS\bin\System.Web.WebPages.xml
 D:\matttsarzsports\MSS\bin\System.Web.WebPages.Deployment.xml
 D:\matttsarzsports\MSS\bin\System.Web.WebPages.Razor.xml
 D:\matttsarzsports\MSS\bin\System.Web.Optimization.xml
-D:\matttsarzsports\MSS\obj\Debug\MSS.csprojResolveAssemblyReference.cache
 D:\matttsarzsports\MSS\obj\Debug\MSS.dll
 D:\matttsarzsports\MSS\obj\Debug\MSS.pdb

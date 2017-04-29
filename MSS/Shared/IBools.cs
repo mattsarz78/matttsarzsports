@@ -1,4 +1,7 @@
-﻿namespace MSS.Shared
+﻿using MSS.Models;
+using System.Collections.Generic;
+
+namespace MSS.Shared
 {
     public interface IBools
     {
@@ -17,9 +20,12 @@
         bool IsSpecialCoverageNote(string coverageNote);
         bool IsP12Networks(string coverageNote);
         bool CheckXMLDoc(string docName, string element);
-        bool IsFOXSportsGo(string coverageNote);
         bool CheckSportYearAttributesBool(string p, string attributeName);
-        string CheckSportYearAttributes(string p, string attributeName);
         bool IsESPNPPV(string ppv, string coverageNotes);
+        bool CheckIfBowlWeek(int week, List<YearDate> fullYearDates);
+        bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates);
+        bool CheckIfNIT(int week, List<YearDate> fullYearDates);
+        bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates);
+        bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates);
     }
 }

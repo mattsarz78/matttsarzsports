@@ -10,12 +10,7 @@ namespace MSS.Shared
 {
     public class PageHelper : IPageHelper
     {
-	    readonly IBools _bools;
-
-		public PageHelper(IBools bools)
-        {
-            _bools = bools;
-        }
+		public PageHelper() {}
 
         public string CheckForFlexSchedule(string year)
         {
@@ -35,7 +30,7 @@ namespace MSS.Shared
         	var confXmlText = new List<ContractText>();
 			if (conference.ToLower() == "independents")
 			{
-				var independentsList = _bools.CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
+				var independentsList = CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
 				independentsList.Remove("Notre Dame");
 				independentsList.Add("NotreDame");
 				confXmlText.AddRange(independentsList.Select(independent => GetXmlText(independent, year)));
@@ -44,27 +39,6 @@ namespace MSS.Shared
         	confXmlText.Add(GetXmlText(conference, year));
         	return confXmlText;
         }
-
-		public bool CheckIfBowlWeek(int week, List<YearDate> fullYearDates)
-    	{
-    		return week == fullYearDates.Last().Week;
-    	}
-
-		public bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates)
-		{
-			return week == fullYearDates.First().Week;
-		}
-
-		public bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates)
-        {
-            return fullYearDates.Any(x => x.Week == week 
-			&& (x.PostseasonInd.Contains("N") || x.PostseasonInd.Contains("I") || x.PostseasonInd.Contains("O")));
-        }
-
-		public bool CheckIfNIT(int week, List<YearDate> fullYearDates)
-		{
-			return fullYearDates.Any(x => x.Week == week && x.PostseasonInd.Contains("I"));
-		}
 
 		private ContractText GetXmlText(string conference, string year)
         {
@@ -87,9 +61,10 @@ namespace MSS.Shared
             return new ContractText{ Conference = conference, ContractXmlText = node};
         }
 
-		public bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates)
-		{
-			return fullYearDates.Any(x => x.Week == week && x.PostseasonInd.Contains("O"));
-		}
-	}
+        public string CheckSportYearAttributes(string p, string attributeName)
+        {
+            var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
+            return File.Exists(path) ? XDocument.Load(path).Root.Elements(p).Attributes(attributeName).First().Value : string.Empty;
+        }
+    }
 }

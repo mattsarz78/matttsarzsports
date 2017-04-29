@@ -3,6 +3,8 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Web;
+using MSS.Models;
+using System.Collections.Generic;
 
 namespace MSS.Shared
 {
@@ -114,21 +116,10 @@ namespace MSS.Shared
             return File.Exists(path) && XDocument.Load(path).Root.Elements().Any(xItem => xItem.Attribute("link").Value == coverageNote);
         }
 
-        public  bool IsFOXSportsGo(string coverageNote)
-        {
-            return coverageNote.ToLower().Contains("foxsportsgo.com");
-        }
-
 		public  bool CheckSportYearAttributesBool(string p, string attributeName)
 		{
 			var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
 			return File.Exists(path) && XDocument.Load(path).Root.Elements(p).Any(xItem => Convert.ToBoolean(xItem.Attribute(attributeName).Value));
-		}
-
-		public  string CheckSportYearAttributes(string p, string attributeName)
-		{
-			var path = HttpContext.Current.Server.MapPath(@"~/Content/ValidSportYears.xml");
-			return File.Exists(path) ? XDocument.Load(path).Root.Elements(p).Attributes(attributeName).First().Value : string.Empty;
 		}
 
 		public  bool IsESPNPPV(string ppv, string coverageNotes)
@@ -137,5 +128,30 @@ namespace MSS.Shared
 				coverageNotes.Contains("espnfc");
 		}
 
+        public bool CheckIfBowlWeek(int week, List<YearDate> fullYearDates)
+        {
+            return week == fullYearDates.Last().Week;
+        }
+
+        public bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates)
+        {
+            return week == fullYearDates.First().Week;
+        }
+
+        public bool CheckIfBasketballPostseason(int week, List<YearDate> fullYearDates)
+        {
+            return fullYearDates.Any(x => x.Week == week
+            && (x.PostseasonInd.Contains("N") || x.PostseasonInd.Contains("I") || x.PostseasonInd.Contains("O")));
+        }
+
+        public bool CheckIfNIT(int week, List<YearDate> fullYearDates)
+        {
+            return fullYearDates.Any(x => x.Week == week && x.PostseasonInd.Contains("I"));
+        }
+
+        public bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates)
+        {
+            return fullYearDates.Any(x => x.Week == week && x.PostseasonInd.Contains("O"));
+        }
     }
 }

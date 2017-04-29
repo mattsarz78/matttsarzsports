@@ -8,15 +8,13 @@ namespace MSS.BC
     public class WeeklyTextSchedule : TextSchedule, IWeeklyTextSchedule
     {
 	    readonly IBools _bools;
-	    readonly IPageHelper _ph;
 	    readonly ISeasonContents _sc;
 	    readonly IStoredProcHelper _sph;
 
-	    public WeeklyTextSchedule(IBools bools, IPageHelper ph, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh) 
+	    public WeeklyTextSchedule(IBools bools, ISeasonContents sc, IStoredProcHelper sph, ITimeZoneHelper tzh) 
 			: base(bools, tzh)
         {
             _bools = bools;
-            _ph = ph;
             _sc = sc;
             _sph = sph;
         }
@@ -24,7 +22,7 @@ namespace MSS.BC
 		public ScheduleModel GetWeeklyTextData(int week, string sportYear, string year, string sport, string timeZone)
         {
 			var fullYearDates = _sc.CreateDateModel(year);
-			var isBowlWeek = _ph.CheckIfBowlWeek(week, fullYearDates);
+			var isBowlWeek = _bools.CheckIfBowlWeek(week, fullYearDates);
         	var isFootball = sport.Contains("football");
         	var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
@@ -34,8 +32,8 @@ namespace MSS.BC
 									Week = week.ToString(),
 									SportYear = sportYear,
 									IsBowlWeek = isFootball && isBowlWeek,
-                                    IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates),
-									IsNIT = !isFootball && _ph.CheckIfNIT(week, fullYearDates)
+                                    IsBasketballPostseason = !isFootball && hasPostseason && _bools.CheckIfBasketballPostseason(week, fullYearDates),
+									IsNIT = !isFootball && _bools.CheckIfNIT(week, fullYearDates)
 			};
             
             return textModel;

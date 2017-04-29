@@ -51,10 +51,10 @@ namespace MSS.BC
 				weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
 				var week = Convert.ToInt32(weeklyModel.Week);
 
-				var isBowlWeek = _ph.CheckIfBowlWeek(week, fullYearDates);
+				var isBowlWeek = _bools.CheckIfBowlWeek(week, fullYearDates);
 				weeklyModel.IsBowlWeek = isFootball && isBowlWeek;
-				weeklyModel.IsBasketballPostseason = !isFootball && hasPostseason && _ph.CheckIfBasketballPostseason(week, fullYearDates);
-				weeklyModel.IsNIT = !isFootball && hasPostseason && _ph.CheckIfNIT(week, fullYearDates);
+				weeklyModel.IsBasketballPostseason = !isFootball && hasPostseason && _bools.CheckIfBasketballPostseason(week, fullYearDates);
+				weeklyModel.IsNIT = !isFootball && hasPostseason && _bools.CheckIfNIT(week, fullYearDates);
 				weeklyModel.ShowRSNPartialView = CheckForPartialView(week, sportYear);
 			}
 			

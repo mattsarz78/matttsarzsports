@@ -1,7 +1,6 @@
 ﻿using MSS.BC;
 using MSS.Models;
 using MSS.Shared;
-using System;
 using System.Web.Http;
 
 namespace MSS.Controllers
@@ -20,12 +19,12 @@ namespace MSS.Controllers
         public BaseApiController()
         {
             _bools = new Bools();
-            _ph = new PageHelper(_bools);
-            _confSched = new ConferenceSchedule(_bools, new CoverageNotesHelper(_bools), new StoredProcHelper(), new TimeZoneHelper());
-            _ws = new WeeklySchedule(_bools, new PageHelper(_bools), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
-			_ds = new DailySchedule(_bools, new PageHelper(_bools), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
-			_wts = new WeeklyTextSchedule(_bools, new PageHelper(_bools), new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
-			_dts = new DailyTextSchedule(_bools, new PageHelper(_bools), new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
+            _ph = new PageHelper();
+            _confSched = new ConferenceSchedule(new CoverageNotesHelper(_bools), new StoredProcHelper(), new TimeZoneHelper(), _ph);
+            _ws = new WeeklySchedule(_bools, new PageHelper(), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
+			_ds = new DailySchedule(_bools, new PageHelper(), new CoverageNotesHelper(_bools), new StoredProcHelper(), new SeasonContents(new StoredProcHelper()), new TimeZoneHelper());
+			_wts = new WeeklyTextSchedule(_bools, new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
+			_dts = new DailyTextSchedule(_bools, new SeasonContents(new StoredProcHelper()), new StoredProcHelper(), new TimeZoneHelper());
 			_sc = new SeasonContents(new StoredProcHelper());
         }
 
@@ -90,7 +89,7 @@ namespace MSS.Controllers
                     IsFootball = isFootball,
                     Title = _sc.CreateTitle(sportYear),
                     IsBasketballWithPostseason = !isFootball && _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason"),
-                    ConferenceListBase = isFootball ? _bools.CheckSportYearAttributes(sportYear, "conferenceListBase") : string.Empty
+                    ConferenceListBase = isFootball ? _ph.CheckSportYearAttributes(sportYear, "conferenceListBase") : string.Empty
                 });
             }
             return NotFound();

@@ -33,27 +33,30 @@ namespace MSS.Shared
                 coverageNotesList.Add(NBSP);
             else
             {
-                string[] coverageNotes = coverageNotesInput.Split(',');
-                if (String.IsNullOrEmpty(coverageNotes[0]))
-                    coverageNotesList.Add(NBSP);
-                else
-                {
-                    List<int> coverageNotesTypeList = ValidateFieldData(coverageNotes);
-
-                    var imgCoverage = new List<string>();
-                    var streamingCoverage = new List<string>();
-                    var stringCoverage = new List<string>();
-                    foreach (string t in coverageNotes)
-                        DetermineCoverageType(t, imgCoverage, streamingCoverage, stringCoverage);
-                    FormatCoverageNotesListTypes(year, imgCoverage, coverageNotesList, coverageNotesTypeList, streamingCoverage, stringCoverage);
-                }
+                OrderCoverageNotes(year, coverageNotesInput, coverageNotesList);
             }
 
-	        foreach (string item in coverageNotesList)
+            foreach (string item in coverageNotesList)
 		        coverageNotesString.Append(item);
 	        string coverageNotesReturn = coverageNotesString.ToString();
             coverageNotesString.Clear();
             return coverageNotesReturn;
+        }
+
+        private void OrderCoverageNotes(string year, string coverageNotesInput, List<string> coverageNotesList)
+        {
+            string[] coverageNotes = coverageNotesInput.Split(',');
+            if (String.IsNullOrEmpty(coverageNotes[0]))
+                coverageNotesList.Add(NBSP);
+            else
+            {
+                var imgCoverage = new List<string>();
+                var streamingCoverage = new List<string>();
+                var stringCoverage = new List<string>();
+                foreach (string t in coverageNotes)
+                    DetermineCoverageType(t, imgCoverage, streamingCoverage, stringCoverage);
+                FormatCoverageNotesListTypes(year, imgCoverage, coverageNotesList, ValidateFieldData(coverageNotes), streamingCoverage, stringCoverage);
+            }
         }
 
         private void FormatCoverageNotesListTypes(string year, List<string> imgCoverage, List<string> coverageNotesList, List<int> coverageNotesTypeList,
@@ -253,7 +256,18 @@ namespace MSS.Shared
             var networksStringBuilder = new StringBuilder();
 
             var coverageNotesTypeList = ValidateFieldData(networks);
+            OrderNetworks(networks, networksList, coverageNotesTypeList);
 
+            foreach (string item in networksList)
+                networksStringBuilder.Append(item);
+
+            string networksReturn = networksStringBuilder.ToString();
+            networksStringBuilder.Clear();
+            return networksReturn;
+        }
+
+        private void OrderNetworks(string[] networks, List<string> networksList, List<int> coverageNotesTypeList)
+        {
             if ((coverageNotesTypeList[0] == 1 && coverageNotesTypeList[2] == 0))
                 ConfigureImage(networksList, networks[0], null);
             else if (coverageNotesTypeList[0] > 1 && coverageNotesTypeList[2] == 0)
@@ -268,13 +282,6 @@ namespace MSS.Shared
             }
             else
                 ConfigureText(networksList, networks[0]);
-
-            foreach (string item in networksList)
-                networksStringBuilder.Append(item);
-
-			string networksReturn = networksStringBuilder.ToString();
-            networksStringBuilder.Clear();
-            return networksReturn;
         }
     }
 }
