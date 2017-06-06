@@ -700,6 +700,8 @@
     <Content Include="Images\nbcdcns.jpg" />
     <Content Include="Images\nbcle.jpg" />
     <Content Include="Images\nbcnd.JPG" />
+    <Content Include="Images\nbcsba.jpg" />
+    <Content Include="Images\nbcsca.jpg" />
     <Content Include="Images\nbcsn.JPG" />
     <Content Include="Images\nbcsn2.JPG" />
     <Content Include="Images\nbcsn_hd.JPG" />
@@ -797,6 +799,7 @@
     <Content Include="Images\ss-hd.jpg" />
     <Content Include="Images\ss.jpg" />
     <Content Include="Images\ss_ppv.jpg" />
+    <Content Include="Images\stadium.jpg" />
     <Content Include="Images\sto.jpg" />
     <Content Include="Images\sto_hd.JPG" />
     <Content Include="Images\stv.jpg" />
