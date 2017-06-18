@@ -37,16 +37,18 @@
 </div>
 @section scripts{
     <script async type="text/javascript">
-		$(document).ready(function () {
-			$("#content").css("min-height", $("#SeasonLinks").height());
-			$("#Conference").css("min-height", $("#SeasonLinks").height());
+        $(document).ready(function () {
+            if ($("#content").width() > 640) {
+                $("#content").css("min-height", $("#SeasonLinks").height());
+                $("#Conference").css("min-height", $("#SeasonLinks").height());
+            }
 		});
 </script>
 
 }
 @section styles {
-	<style type="text/css">#SeasonLinks,#Conference{float:left;display:inline}#SeasonLinks{min-height:250px;}#Conference{width:35%;min-height:380px;}#Main{padding-top:42px}.navbar {box-shadow: 0 1px 1px rgba(0,0,0,.1);}</style>
-    <style media="all and (min-width: 641px)" type="text/css">#SeasonLinks{width:55%;}</style>
-    <style type="text/css" media="only screen and (max-width: 640px)">#SeasonLinks{width: 65%;}.DONTPrint a{line-height:13px;}</style>
+	<style type="text/css">#SeasonLinks,#Conference{float:left;display:inline}#SeasonLinks{min-height:250px;}#Main{padding-top:42px}.navbar {box-shadow: 0 1px 1px rgba(0,0,0,.1);}</style>
+    <style media="all and (min-width: 641px)" type="text/css">#SeasonLinks{width:55%;}#Conference {width: 35%;min-height: 380px;}</style>
+    <style type="text/css" media="only screen and (max-width: 640px)">body {font-size: .85em;}#SeasonLinks{width: 100%;}.DONTPrint a{line-height:13px;}</style>
 }
 
