@@ -257,6 +257,9 @@
     <Content Include="Images\asnet.jpg" />
     <Content Include="Images\aspire.jpg" />
     <Content Include="Images\asun_logo.jpg" />
+    <Content Include="Images\attsn-p.jpg" />
+    <Content Include="Images\attsn-rm.jpg" />
+    <Content Include="Images\attsn-sw.jpg" />
     <Content Include="Images\attsn.jpg" />
     <Content Include="Images\audience.jpg" />
     <Content Include="Images\av.jpg" />
@@ -788,6 +791,8 @@
     <Content Include="Images\socon_logo.jpg" />
     <Content Include="Images\sooner.jpg" />
     <Content Include="Images\spectrum-car.jpg" />
+    <Content Include="Images\spectrum-hi-ppv.jpg" />
+    <Content Include="Images\spectrum-hi.jpg" />
     <Content Include="Images\spectrum-ny.jpg" />
     <Content Include="Images\spectrum-oh.jpg" />
     <Content Include="Images\spectrum-tx.jpg" />
@@ -860,6 +865,7 @@
     <Content Include="Images\wane.jpg" />
     <Content Include="Images\waoe.jpg" />
     <Content Include="Images\watchabc.jpg" />
+    <Content Include="Images\watchespn-17.jpg" />
     <Content Include="Images\watchespn.jpg" />
     <Content Include="Images\watm.JPG" />
     <Content Include="Images\wave.jpg" />
@@ -879,6 +885,7 @@
     <Content Include="Images\wcc_logo.jpg" />
     <Content Include="Images\wchs.jpg" />
     <Content Include="Images\wcia.jpg" />
+    <Content Include="Images\wcivmetv.jpg" />
     <Content Include="Images\wcte.JPG" />
     <Content Include="Images\wctr.jpg" />
     <Content Include="Images\wctx.jpg" />
