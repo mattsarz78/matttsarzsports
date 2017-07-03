@@ -608,6 +608,7 @@
     <Content Include="Images\kezi.jpg" />
     <Content Include="Images\kfre.jpg" />
     <Content Include="Images\kfve.jpg" />
+    <Content Include="Images\kfvs.jpg" />
     <Content Include="Images\kfxa.jpg" />
     <Content Include="Images\kgeb.jpg" />
     <Content Include="Images\kgun.JPG" />
@@ -744,6 +745,7 @@
     <Content Include="Images\pac10logo.jpg" />
     <Content Include="Images\pac10logo2.jpg" />
     <Content Include="Images\pac12logo.JPG" />
+    <Content Include="Images\panther.jpg" />
     <Content Include="Images\pcnc.jpg" />
     <Content Include="Images\pfl_logo.jpg" />
     <Content Include="Images\pitt.jpg" />
@@ -969,6 +971,7 @@
     <Content Include="Images\wtvw.jpg" />
     <Content Include="Images\wtvz.jpg" />
     <Content Include="Images\wtwo.jpg" />
+    <Content Include="Images\wuab.jpg" />
     <Content Include="Images\wupa.jpg" />
     <Content Include="Images\wuxp.jpg" />
     <Content Include="Images\wvah.JPG" />
