@@ -179,7 +179,9 @@
     <Content Include="Content\ConferenceXml\2014.xml" />
     <Content Include="Content\ConferenceXml\2016.xml" />
     <Content Include="Content\ConferenceXml\2015.xml" />
-    <Content Include="Content\ConferenceXml\2017.xml" />
+    <Content Include="Content\ConferenceXml\2017.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\FlexScheduleLinks.xml" />
     <Content Include="Content\ImagesForURLs.xml" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -750,6 +752,7 @@
     <Content Include="Images\pcnc.jpg" />
     <Content Include="Images\pfl_logo.jpg" />
     <Content Include="Images\pitt.jpg" />
+    <Content Include="Images\pln.jpg" />
     <Content Include="Images\pl_logo.jpg" />
     <Content Include="Images\pt-12.jpg" />
     <Content Include="Images\pt-hd.jpg" />
@@ -950,6 +953,7 @@
     <Content Include="Images\wowk.jpg" />
     <Content Include="Images\wpch.jpg" />
     <Content Include="Images\wphl.jpg" />
+    <Content Include="Images\wpme.jpg" />
     <Content Include="Images\wpsg.JPG" />
     <Content Include="Images\wpwr.jpg" />
     <Content Include="Images\wpxi.JPG" />

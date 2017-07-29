@@ -13,8 +13,9 @@
 	<Address Link="southland.org/watch" Image="slcdn.jpg" />
 	<Address Link="btn2go.com" Image="btn2go.jpg" />
 	<Address Link="campusinsiders.com" Image="ci.jpg" />
-	<Address Link="patriotleague.tv" Image="ci.jpg" />
-	<Address Link="thew.tv" Image="ci.jpg" />
+	<Address Link="patriotleague.tv" Image="ci.jpg" Yearend="2016|201617" />
+  <Address Link="patriotleague.tv" Image="pln.jpg" />
+  <Address Link="thew.tv" Image="ci.jpg" Yearend="2016|201617" />
 	<Address Link="watchabc.com" Image="watchabc.jpg" />
 	<Address Link="liveextra" Image="nbcle.jpg" Yearend="2015|201516" />
   <Address Link="liveextra" Image="nbcstream.jpg" />
