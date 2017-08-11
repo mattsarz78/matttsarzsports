@@ -47,14 +47,24 @@
     </AmericanDiv>
     <BigTenDiv>
       <![CDATA[<p>
-        The Big Ten has primary television contracts with ESPN and FOX Sports and a secondary TV contract with
-        the Big Ten Network (BTN), a FOX Sports Media Group &amp; Big Ten joint venture. ESPN and FOX Sports each retain the rights to 25 games.  ESPN's games can spread over ABC, ESPN, ESPN2 and ESPNU.  FOX Sports's games will air on FOX broadcast network and FS1, and the conference's championship game will air on FOX each season.</p>
-      <p>
-        For selection order, FOX Sports and ESPN will draft for the weeks they will have the first pick on a given week.  FOX Sports will draft first each year.
-      </p>
+        The Big Ten has primary television contracts with ESPN and FOX Sports and a secondary TV contract with the Big Ten Network (BTN), a FOX Sports Media Group &amp; Big Ten joint venture.</p>
+      <u>ESPN Rights Notes</u>
+      <ul>
+        <li>27 total games.</li>
+        <li>All intraconference games must air on ABC, ESPN or ESPN2.</li>
+        <li>Non-conference games can air on ESPNU.</li>
+        <li>At least six games in primetime on ABC or ESPN.</li>
+      </ul>
+      <u>FOX Sports Rights Notes</u>
+      <ul>
+        <li>24-27 total games to air on FOX &amp; FS1.</li>
+        <li>Up to nine games per season will air in primetime</li>
+        <li>FOX will air the conference championship game every season.</li>
+        <li>FOX Sports will have the first choice of the weeks they want the top choice of games.</li>
+      </ul>
       <p>Every Big Ten school must make two appearances on BTN.  At least one of those appearances must be from a conference game.</p>
 	  <p>The rights deals with ESPN and FOX Sports end after the 2022-23 athletic year.  BTN's rights deal expires after the 2031-32 athletic year.</p>
-			<p>Source: Will update once official announcements are made.</p>]]>
+			<p>Source: <a href="http://mattsarzsports.blogspot.com/2017/07/a-few-content-parameters-for-big-ten.html" target="_blank">MattSarzSports Blog</a></p>]]>
     </BigTenDiv>
     <Big12Div>
       <![CDATA[<p>
@@ -209,7 +219,7 @@
 			" target="_blank">Notre Dame (2025 extension)</a></p>]]>
     </NotreDameDiv>
     <UMassDiv>
-      <![CDATA[<p>Rights to all Massachusetts home games will be announced at a later date.</p>]]>
+      <![CDATA[<p>All Massachusetts home games will be shown on Eleven Sports Network in 2017, with all games simulcast on NESN.</p>]]>
     </UMassDiv>
   </Football2017>
 </Conference>

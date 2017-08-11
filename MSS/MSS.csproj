@@ -230,6 +230,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\24-7.jpg" />
     <Content Include="Images\4sd_hd.jpg" />
+    <Content Include="Images\7comm.jpg" />
     <Content Include="Images\a10tv.jpg" />
     <Content Include="Images\a10tv2.jpg" />
     <Content Include="Images\a10_logo.jpg" />
@@ -317,6 +318,7 @@
     <Content Include="Images\cbssports.jpg" />
     <Content Include="Images\cbsweb.JPG" />
     <Content Include="Images\cbs_hd.jpg" />
+    <Content Include="Images\cet.jpg" />
     <Content Include="Images\chn.jpg" />
     <Content Include="Images\ci.jpg" />
     <Content Include="Images\cincw.jpg" />
@@ -783,6 +785,7 @@
     <Content Include="Images\sec-r-hd.jpg" />
     <Content Include="Images\sec.jpg" />
     <Content Include="Images\seclogo.jpg" />
+    <Content Include="Images\secn-alt.jpg" />
     <Content Include="Images\secn-hd.jpg" />
     <Content Include="Images\secn.JPG" />
     <Content Include="Images\secnet.jpg" />
