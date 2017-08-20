@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -593,6 +594,7 @@
     <Content Include="Images\katv.JPG" />
     <Content Include="Images\kayu.jpg" />
     <Content Include="Images\kazt.JPG" />
+    <Content Include="Images\kbca.jpg" />
     <Content Include="Images\kbci.jpg" />
     <Content Include="Images\kbtv.jpg" />
     <Content Include="Images\kbvo.jpg" />
@@ -628,12 +630,14 @@
     <Content Include="Images\kmtv.jpg" />
     <Content Include="Images\kmys.jpg" />
     <Content Include="Images\kmyu.JPG" />
+    <Content Include="Images\knoedt3.jpg" />
     <Content Include="Images\knva.jpg" />
     <Content Include="Images\kolr.jpg" />
     <Content Include="Images\kozl.jpg" />
     <Content Include="Images\kpax.jpg" />
     <Content Include="Images\kplc.jpg" />
     <Content Include="Images\kplr.jpg" />
+    <Content Include="Images\kpxj.jpg" />
     <Content Include="Images\ksby.jpg" />
     <Content Include="Images\ksbydt2.jpg" />
     <Content Include="Images\ksee.jpg" />
@@ -885,6 +889,7 @@
     <Content Include="Images\wbin.jpg" />
     <Content Include="Images\wbko.jpg" />
     <Content Include="Images\wbma.jpg" />
+    <Content Include="Images\wbrc.jpg" />
     <Content Include="Images\wcau.jpg" />
     <Content Include="Images\wcaxtra.jpg" />
     <Content Include="Images\wcc.jpg" />
@@ -940,6 +945,7 @@
     <Content Include="Images\wlos.jpg" />
     <Content Include="Images\wlvi.jpg" />
     <Content Include="Images\wmbd.jpg" />
+    <Content Include="Images\wmbf-dt2.jpg" />
     <Content Include="Images\wmbf.jpg" />
     <Content Include="Images\wmc.jpg" />
     <Content Include="Images\wmmp.jpg" />
@@ -1587,6 +1593,19 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201617\FSNWeek9.cshtml" />
     <Content Include="Views\Schedule\WeeksTextNavigation.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2017\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
