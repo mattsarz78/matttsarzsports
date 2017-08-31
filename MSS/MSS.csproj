@@ -320,6 +320,7 @@
     <Content Include="Images\cbsweb.JPG" />
     <Content Include="Images\cbs_hd.jpg" />
     <Content Include="Images\cet.jpg" />
+    <Content Include="Images\cfds.jpg" />
     <Content Include="Images\chn.jpg" />
     <Content Include="Images\ci.jpg" />
     <Content Include="Images\cincw.jpg" />
@@ -974,6 +975,7 @@
     <Content Include="Images\wqmy.jpg" />
     <Content Include="Images\wqwq.JPG" />
     <Content Include="Images\wrbj.jpg" />
+    <Content Include="Images\wrde-dt2.jpg" />
     <Content Include="Images\wrwr.JPG" />
     <Content Include="Images\wsav.jpg" />
     <Content Include="Images\wsaz.jpg" />

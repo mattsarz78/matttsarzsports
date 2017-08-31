@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ImagesForURLs>
-	<Address Link="espn3" Image="espn3.jpg" />
+	<Address Link="espn3.com" Image="espn3.jpg" />
+	<Address Link="espn3&amp;type=live" Image="espn3.jpg" />
   <Address Link="accextra" Image="accextra.jpg" />
   <Address Link="watchespn.com" Image="watchespn.jpg" Yearend="2016|201617" />
   <Address Link="watchespn.com" Image="watchespn-17.jpg" />
