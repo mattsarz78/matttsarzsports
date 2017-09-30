@@ -725,6 +725,8 @@
     <Content Include="Images\nbcsn2.JPG" />
     <Content Include="Images\nbcsnw.jpg" />
     <Content Include="Images\nbcsn_hd.JPG" />
+    <Content Include="Images\nbcsphi-plus.jpg" />
+    <Content Include="Images\nbcsphi.jpg" />
     <Content Include="Images\nbcsrn.jpg" />
     <Content Include="Images\nbcstream.jpg" />
     <Content Include="Images\nbcswa-plus.jpg" />
