@@ -717,6 +717,7 @@
     <Content Include="Images\nbcnd.JPG" />
     <Content Include="Images\nbcsba-plus.jpg" />
     <Content Include="Images\nbcsba.jpg" />
+    <Content Include="Images\nbcsbos.jpg" />
     <Content Include="Images\nbcsca-plus.jpg" />
     <Content Include="Images\nbcsca.jpg" />
     <Content Include="Images\nbcschi-plus.jpg" />
@@ -823,6 +824,7 @@
     <Content Include="Images\spectrum-wi.jpg" />
     <Content Include="Images\spectrum.jpg" />
     <Content Include="Images\spectrumsn.jpg" />
+    <Content Include="Images\spidertv.jpg" />
     <Content Include="Images\sportsfever.jpg" />
     <Content Include="Images\sportswest.jpg" />
     <Content Include="Images\ss-12.jpg" />
@@ -942,6 +944,7 @@
     <Content Include="Images\whmb.jpg" />
     <Content Include="Images\whno.jpg" />
     <Content Include="Images\whns.jpg" />
+    <Content Include="Images\whsvdt4.jpg" />
     <Content Include="Images\whut.jpg" />
     <Content Include="Images\wink.jpg" />
     <Content Include="Images\witn.jpg" />
@@ -1014,6 +1017,7 @@
     <Content Include="Images\yes.jpg" />
     <Content Include="Images\yes_hd.JPG" />
     <Content Include="Images\yurviewne.jpg" />
+    <Content Include="Images\yurviewva.jpg" />
     <Content Include="Images\_hcc_thumbs\24-7.jpg-thumb-80.jpg" />
     <Content Include="Images\_hcc_thumbs\4sd_hd.jpg-thumb-80.jpg" />
     <Content Include="Images\_hcc_thumbs\a10tv.jpg-thumb-80.jpg" />
