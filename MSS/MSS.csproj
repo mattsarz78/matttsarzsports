@@ -608,6 +608,7 @@
     <Content Include="Images\kcwy.JPG" />
     <Content Include="Images\kdaf.JPG" />
     <Content Include="Images\kdbc.jpg" />
+    <Content Include="Images\kdf.jpg" />
     <Content Include="Images\kdlt.JPG" />
     <Content Include="Images\kdoc.jpg" />
     <Content Include="Images\kdsm.jpg" />
@@ -842,6 +843,7 @@
     <Content Include="Images\stv.jpg" />
     <Content Include="Images\summit.jpg" />
     <Content Include="Images\sun-12.JPG" />
+    <Content Include="Images\sun-fl-17.jpg" />
     <Content Include="Images\sun-fl.jpg" />
     <Content Include="Images\sun-fl2.JPG" />
     <Content Include="Images\sun-hd.jpg" />
