@@ -180,6 +180,9 @@
     <Content Include="Content\ConferenceXml\2014.xml" />
     <Content Include="Content\ConferenceXml\2016.xml" />
     <Content Include="Content\ConferenceXml\2015.xml" />
+    <Content Include="Content\ConferenceXml\2018.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\ConferenceXml\2017.xml">
       <SubType>Designer</SubType>
     </Content>

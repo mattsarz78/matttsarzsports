@@ -40,6 +40,12 @@
 		<loc>http://mattsarzsports.com/Season/Contents/basketball201516</loc>
 	</url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/basketball201617</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Season/Contents/basketball201718</loc>
+  </url>
+  <url>
 		<loc>http://mattsarzsports.com/Season/Contents/football2005</loc>
 	</url>
 	<url>
@@ -76,9 +82,27 @@
     <loc>http://mattsarzsports.com/Season/Contents/football2016</loc>
   </url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/football2017</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Season/Contents/football2018</loc>
+  </url>
+  <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/basketball201516</loc>
   </url>
   <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/football2016</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/basketball201617</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/football2017</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/basketball201718</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/football2018</loc>
   </url>
 </urlset>
