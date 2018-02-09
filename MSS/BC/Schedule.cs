@@ -94,6 +94,9 @@ namespace MSS.BC
 				var parmValue = rsnGames.Where(x => tvGame.Game.Trim().StartsWith(x.Game));
 				if (parmValue.Any())
 				{
+                    if (parmValue.Count() > 1) {
+                        parmValue = parmValue.Where(x => tvGame.Game.Trim().Equals(x.Game));
+                    }
 					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), string.Format("{0}{1}", sport, year), parmValue.First());
 					string additionalNotes = _cnh.FormatCoverageNotes(year, resultSet["CoverageNotes"].ToString());
 					if (additionalNotes != "<label>&nbsp</label>")

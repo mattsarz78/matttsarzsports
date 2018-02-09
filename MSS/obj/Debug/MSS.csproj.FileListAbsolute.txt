@@ -212,7 +212,6 @@ C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\System.Web.WebPages.xml
 C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\System.Web.WebPages.Deployment.xml
 C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\System.Web.WebPages.Razor.xml
 C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\System.Web.Optimization.xml
-C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csprojResolveAssemblyReference.cache
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csproj.CoreCompileInputs.cache
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.dll
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.pdb
