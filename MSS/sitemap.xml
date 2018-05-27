@@ -46,6 +46,9 @@
     <loc>http://mattsarzsports.com/Season/Contents/basketball201718</loc>
   </url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/basketball201819</loc>
+  </url>
+  <url>
 		<loc>http://mattsarzsports.com/Season/Contents/football2005</loc>
 	</url>
 	<url>
@@ -104,5 +107,8 @@
   </url>
   <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/football2018</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/basketball201819</loc>
   </url>
 </urlset>

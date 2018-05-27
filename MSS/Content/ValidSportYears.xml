@@ -13,6 +13,7 @@
   <basketball201516 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
   <basketball201617 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
   <basketball201718 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+  <basketball201819 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
   <football2005 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
   <football2006 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
   <football2007 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
