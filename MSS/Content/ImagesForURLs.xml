@@ -34,5 +34,5 @@
   <Address Link="wccsports.com" Image="thewtv.jpg" />
   <Address Link="beinsportsconnect.tv" Image="beinconnect.jpg" />
   <Address Link="go90.com/shows/3Qh33oOSYJo" Image="stadiumgo90.jpg" />
-  <Address Link="espnplus.jpg" Image="espn+.jpg" />
+  <Address Link="espnplus&amp;type=live" Image="espn_plus.jpg" />
 </ImagesForURLs>
