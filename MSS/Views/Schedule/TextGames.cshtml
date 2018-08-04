@@ -1,8 +1,8 @@
 ﻿@model MSS.Models.ScheduleModel
 <div id="WeekTextGames">
-    <table class="tableborder rowStyle">
+    <table class="tableborder rowStyle DOPrint">
         <thead>
-            <tr class="DONTPrint">
+            <tr class="DOPrint">
                 <th></th>
                 <th>Game
                 </th>
@@ -20,7 +20,7 @@
         <tbody>
             @foreach (var item in Model.TelevisedGamesList.Where(item => !item.Network.IsEmpty()))
             {
-                <tr class="DONTPrint rowStyle">
+                <tr class="gamerow DONTPrint rowStyle">
                     <td class="tablecell">
                         <input class="checkBoxRow" type="checkbox" />
                     </td>
