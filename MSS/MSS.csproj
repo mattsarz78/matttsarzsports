@@ -403,6 +403,7 @@
     <Content Include="Images\cwmt.jpg" />
     <Content Include="Images\cyclonestv.jpg" />
     <Content Include="Images\eleven.jpg" />
+    <Content Include="Images\elevennext.jpg" />
     <Content Include="Images\espn_plus.jpg" />
     <Content Include="Images\espn.jpg" />
     <Content Include="Images\espn2.jpg" />
@@ -436,6 +437,7 @@
     <Content Include="Images\fios-li.jpg" />
     <Content Include="Images\fios-nj.jpg" />
     <Content Include="Images\flames.JPG" />
+    <Content Include="Images\flosports.jpg" />
     <Content Include="Images\fnet.jpg" />
     <Content Include="Images\fox.jpg" />
     <Content Include="Images\foxbusiness.jpg" />
@@ -627,6 +629,7 @@
     <Content Include="Images\klasdt2.JPG" />
     <Content Include="Images\klsr.jpg" />
     <Content Include="Images\klwb.jpg" />
+    <Content Include="Images\kmax.jpg" />
     <Content Include="Images\kmci.jpg" />
     <Content Include="Images\kmtv.jpg" />
     <Content Include="Images\kmys.jpg" />
@@ -663,6 +666,7 @@
     <Content Include="Images\kwch.jpg" />
     <Content Include="Images\kwwl.jpg" />
     <Content Include="Images\kxjb.jpg" />
+    <Content Include="Images\kxmb.jpg" />
     <Content Include="Images\kytv.JPG" />
     <Content Include="Images\kzjo.jpg" />
     <Content Include="Images\lfsports.jpg" />
@@ -687,6 +691,7 @@
     <Content Include="Images\midconcom.jpg" />
     <Content Include="Images\midcon_logo.jpg" />
     <Content Include="Images\midcosn.jpg" />
+    <Content Include="Images\midcosn2.jpg" />
     <Content Include="Images\ms.jpg" />
     <Content Include="Images\ms2.jpg" />
     <Content Include="Images\msg.jpg" />
@@ -735,6 +740,7 @@
     <Content Include="Images\nbc_hd.jpg" />
     <Content Include="Images\nc5ri.jpg" />
     <Content Include="Images\nec.jpg" />
+    <Content Include="Images\necfrontrow.jpg" />
     <Content Include="Images\necn.JPG" />
     <Content Include="Images\nec_hd.jpg" />
     <Content Include="Images\nec_logo.jpg" />
@@ -752,6 +758,7 @@
     <Content Include="Images\oln.jpg" />
     <Content Include="Images\onn.jpg" />
     <Content Include="Images\osn.jpg" />
+    <Content Include="Images\ovcdn.jpg" />
     <Content Include="Images\ovc_logo.jpg" />
     <Content Include="Images\ows.jpg" />
     <Content Include="Images\ozcw.JPG" />
@@ -771,6 +778,7 @@
     <Content Include="Images\pitt.jpg" />
     <Content Include="Images\pln-17.jpg" />
     <Content Include="Images\pln.jpg" />
+    <Content Include="Images\plutotv.jpg" />
     <Content Include="Images\pl_logo.jpg" />
     <Content Include="Images\pt-12.jpg" />
     <Content Include="Images\pt-hd.jpg" />
@@ -1019,6 +1027,7 @@
     <Content Include="Images\wwor.jpg" />
     <Content Include="Images\wwrd.JPG" />
     <Content Include="Images\wxix.jpg" />
+    <Content Include="Images\wycw.jpg" />
     <Content Include="Images\wyin.jpg" />
     <Content Include="Images\wymt.jpg" />
     <Content Include="Images\yes.jpg" />
@@ -1651,6 +1660,19 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball201718\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201718\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201718\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2018\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
