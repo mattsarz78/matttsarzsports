@@ -59,7 +59,7 @@ namespace MSS.BC
 		private List<TelevisedGame> CreateGamesList(string timeZone, DateTime dateToQuery, string year, string sport)
 		{
 			var startdate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0);
-			var enddate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day + 1, 5, 0, 0);
+            var enddate = startdate.AddDays(1).AddHours(5);
 			List<TelevisedGame> gameList;
 
 			var parmList = new StoredProcParmList
