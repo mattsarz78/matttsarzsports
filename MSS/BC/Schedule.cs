@@ -91,8 +91,17 @@ namespace MSS.BC
 					? _cnh.FormatCoverageNotes(year, resultSet["NetworkJPG"].ToString())
 					: _cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
-				var parmValue = rsnGames.Where(x => tvGame.Game.Trim().StartsWith(x.Game));
-				if (parmValue.Any())
+                IEnumerable<FSNGames> parmValue;
+                if (sport == "football")
+                {
+                    parmValue = rsnGames.Where(x => tvGame.Game.Trim().Equals(x.Game));
+                }
+                else
+                {
+                    parmValue = rsnGames.Where(x => tvGame.Game.Trim().StartsWith(x.Game));
+                }
+
+                if (parmValue.Any())
 				{
                     if (parmValue.Count() > 1) {
                         parmValue = parmValue.Where(x => tvGame.Game.Trim().Equals(x.Game));

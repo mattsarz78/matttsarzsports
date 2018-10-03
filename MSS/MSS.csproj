@@ -295,10 +295,12 @@
     <Content Include="Images\btn2go.jpg" />
     <Content Include="Images\btn2_hd.jpg" />
     <Content Include="Images\btncom.jpg" />
+    <Content Include="Images\btnplus.jpg" />
     <Content Include="Images\btn_hd.jpg" />
     <Content Include="Images\byutv.jpg" />
     <Content Include="Images\byutv_hd.jpg" />
     <Content Include="Images\caa.jpg" />
+    <Content Include="Images\caatv.jpg" />
     <Content Include="Images\caa_logo.jpg" />
     <Content Include="Images\cbs-cs.jpg" />
     <Content Include="Images\cbs-cs_hd.jpg" />
@@ -601,6 +603,7 @@
     <Content Include="Images\kbvo.jpg" />
     <Content Include="Images\kbyu.jpg" />
     <Content Include="Images\kceb.jpg" />
+    <Content Include="Images\kclodt2.jpg" />
     <Content Include="Images\kcoy.jpg" />
     <Content Include="Images\kcsg.jpg" />
     <Content Include="Images\kcwx.JPG" />
@@ -713,6 +716,7 @@
     <Content Include="Images\myfw.jpg" />
     <Content Include="Images\mylc.jpg" />
     <Content Include="Images\myritv.JPG" />
+    <Content Include="Images\myutv.jpg" />
     <Content Include="Images\myvlt.jpg" />
     <Content Include="Images\myytv.JPG" />
     <Content Include="Images\nautv.JPG" />
@@ -932,6 +936,7 @@
     <Content Include="Images\wctx.jpg" />
     <Content Include="Images\wcwj.JPG" />
     <Content Include="Images\wdam.jpg" />
+    <Content Include="Images\wdayxtra.jpg" />
     <Content Include="Images\wdka.jpg" />
     <Content Include="Images\weaccd.jpg" />
     <Content Include="Images\wect.JPG" />
@@ -1017,6 +1022,7 @@
     <Content Include="Images\wtvz.jpg" />
     <Content Include="Images\wtwo.jpg" />
     <Content Include="Images\wuab.jpg" />
+    <Content Include="Images\wuabcw.jpg" />
     <Content Include="Images\wupa.jpg" />
     <Content Include="Images\wuxp.jpg" />
     <Content Include="Images\wvah.JPG" />
