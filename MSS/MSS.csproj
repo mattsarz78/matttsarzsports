@@ -404,6 +404,7 @@
     <Content Include="Images\cwelp.JPG" />
     <Content Include="Images\cwmt.jpg" />
     <Content Include="Images\cyclonestv.jpg" />
+    <Content Include="Images\dishstudio.jpg" />
     <Content Include="Images\eleven.jpg" />
     <Content Include="Images\elevennext.jpg" />
     <Content Include="Images\espn_plus.jpg" />
@@ -599,6 +600,7 @@
     <Content Include="Images\kazt.JPG" />
     <Content Include="Images\kbca.jpg" />
     <Content Include="Images\kbci.jpg" />
+    <Content Include="Images\kbmtld.jpg" />
     <Content Include="Images\kbtv.jpg" />
     <Content Include="Images\kbvo.jpg" />
     <Content Include="Images\kbyu.jpg" />
@@ -956,6 +958,7 @@
     <Content Include="Images\wgem-f.jpg" />
     <Content Include="Images\wgem.jpg" />
     <Content Include="Images\wgn.jpg" />
+    <Content Include="Images\wgrz.jpg" />
     <Content Include="Images\wgsa.JPG" />
     <Content Include="Images\whas.jpg" />
     <Content Include="Images\whio.jpg" />
@@ -1014,6 +1017,7 @@
     <Content Include="Images\wsn.JPG" />
     <Content Include="Images\wtat.jpg" />
     <Content Include="Images\wtol.jpg" />
+    <Content Include="Images\wtta.jpg" />
     <Content Include="Images\wtto.jpg" />
     <Content Include="Images\wtvp.jpg" />
     <Content Include="Images\wtvq.jpg" />
@@ -1036,6 +1040,7 @@
     <Content Include="Images\wycw.jpg" />
     <Content Include="Images\wyin.jpg" />
     <Content Include="Images\wymt.jpg" />
+    <Content Include="Images\wzbj.jpg" />
     <Content Include="Images\yes.jpg" />
     <Content Include="Images\yes_hd.JPG" />
     <Content Include="Images\yurviewaz.jpg" />
