@@ -401,6 +401,7 @@
     <Content Include="Images\ctv-mi.jpg" />
     <Content Include="Images\cusaaa.jpg" />
     <Content Include="Images\cusalogo.jpg" />
+    <Content Include="Images\cusatv.jpg" />
     <Content Include="Images\cwelp.JPG" />
     <Content Include="Images\cwmt.jpg" />
     <Content Include="Images\cyclonestv.jpg" />
@@ -904,6 +905,7 @@
     <Content Include="Images\vs.jpg" />
     <Content Include="Images\vs_hd.jpg" />
     <Content Include="Images\wabi.jpg" />
+    <Content Include="Images\wacdn.jpg" />
     <Content Include="Images\waclogo.jpg" />
     <Content Include="Images\wactv.jpg" />
     <Content Include="Images\wacy.jpg" />
