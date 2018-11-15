@@ -7,6 +7,7 @@ function showRSNItens(e) {
     $(".overlay").height($(document).height()).show();
     $("#RSNLists,.closer").show();
     $("#" + e).show();
+    $(window).scrollTop($('html').offset().top);
 }
 
 function showHideButtonText(e, f, g) {
@@ -27,17 +28,7 @@ function CommonScheduleEvents() {
 
     $(".FSNLink").on("click", function () {
         var e = $(this).attr("class").replace("FSNLink ", "");
-        var rowPosition;
-        rowPosition = $(this).parents('.coverage').get(0) != undefined ? $(this).parents('.coverage').parents('tr').position().top : $(this).parents('.coverageppv').parents('tr').position().top;
-        var multiplier = 1.0;
-        if (rowPosition / $(document).height() <= .95) {
-            $(window).scrollTop(rowPosition - ($(window).height() / 2));
-            showRSNItens(e);
-        } else {
-            showRSNItens(e);
-            multiplier = 1.75;
-        }
-        $("#RSNLists").css("margin-top", rowPosition - ($('#RSNLists').height() * multiplier));
+        showRSNItens(e)
         $("#GooglePartialAd").show();
     });
 
