@@ -48,5 +48,7 @@
   <Address Link="nbcsports.com/boston" Image="nbcstream.jpg" />
   <Address Link="btnplus" Image="btnplus.jpg" />
   <Address Link="cusa.tv" Image="cusatv.jpg" />
+  <Address Link="bigwest.tv" Image="bigwest.jpg" />
+  <Address Link="bigwest.sidearm" Image="bigwest.jpg" />
   <Address Link="wacdigitalnetwork" Image="wacdn.jpg" />
 </ImagesForURLs>
