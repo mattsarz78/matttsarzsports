@@ -284,6 +284,7 @@
     <Content Include="Images\bigsky_logo.jpg" />
     <Content Include="Images\bigsouth.jpg" />
     <Content Include="Images\bigsouth_logo.jpg" />
+    <Content Include="Images\bigwest.jpg" />
     <Content Include="Images\bigwest_logo.jpg" />
     <Content Include="Images\bounce_khou.JPG" />
     <Content Include="Images\bsn.jpg" />
@@ -649,6 +650,7 @@
     <Content Include="Images\kplc.jpg" />
     <Content Include="Images\kplr.jpg" />
     <Content Include="Images\kpxj.jpg" />
+    <Content Include="Images\krisdt2.jpg" />
     <Content Include="Images\ksby.jpg" />
     <Content Include="Images\ksbydt2.jpg" />
     <Content Include="Images\ksee.jpg" />
@@ -755,6 +757,7 @@
     <Content Include="Images\nesn.jpg" />
     <Content Include="Images\nesnplus.jpg" />
     <Content Include="Images\net.jpg" />
+    <Content Include="Images\nexstar.jpg" />
     <Content Include="Images\nfl.jpg" />
     <Content Include="Images\nfl_hd.jpg" />
     <Content Include="Images\nohotlinks.JPG" />
@@ -831,6 +834,7 @@
     <Content Include="Images\socon.jpg" />
     <Content Include="Images\socon_logo.jpg" />
     <Content Include="Images\sooner.jpg" />
+    <Content Include="Images\specnews1oh.jpg" />
     <Content Include="Images\spectrum-car.jpg" />
     <Content Include="Images\spectrum-hi-ppv.jpg" />
     <Content Include="Images\spectrum-hi.jpg" />
@@ -983,6 +987,7 @@
     <Content Include="Images\wlmt.jpg" />
     <Content Include="Images\wlos.jpg" />
     <Content Include="Images\wlvi.jpg" />
+    <Content Include="Images\wlwc.jpg" />
     <Content Include="Images\wmbd.jpg" />
     <Content Include="Images\wmbf-dt2.jpg" />
     <Content Include="Images\wmbf.jpg" />
@@ -1034,6 +1039,7 @@
     <Content Include="Images\wuxp.jpg" />
     <Content Include="Images\wvah.JPG" />
     <Content Include="Images\wvii.jpg" />
+    <Content Include="Images\wvtvdt2.jpg" />
     <Content Include="Images\wway.JPG" />
     <Content Include="Images\wwcp.JPG" />
     <Content Include="Images\wwmb.JPG" />
