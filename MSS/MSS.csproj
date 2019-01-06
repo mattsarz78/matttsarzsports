@@ -171,6 +171,9 @@
     <Content Include="Content\ConferenceXml\2014.xml" />
     <Content Include="Content\ConferenceXml\2016.xml" />
     <Content Include="Content\ConferenceXml\2015.xml" />
+    <Content Include="Content\ConferenceXml\2019.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\ConferenceXml\2018.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -238,6 +241,7 @@
     <Content Include="Images\acc-rsns2.jpg" />
     <Content Include="Images\acc.jpg" />
     <Content Include="Images\accextra.jpg" />
+    <Content Include="Images\accn.jpg" />
     <Content Include="Images\accnet-fsn.JPG" />
     <Content Include="Images\accnet.jpg" />
     <Content Include="Images\accnet2.jpg" />
