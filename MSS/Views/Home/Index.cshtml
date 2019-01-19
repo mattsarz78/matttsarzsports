@@ -39,7 +39,7 @@
             </p>
         </div>
 		<div id="Twitter">
-			<a class="twitter-timeline" href="https://twitter.com/mattsarz" data-widget-id="345373301071298561">
+			<a class="twitter-timeline" href="https://twitter.com/mattsarz" data-height="300">
 				Tweets by @@mattsarz
 			</a>
 			<script type="text/javascript">
@@ -59,8 +59,7 @@
 @section scripts {
     <script async type="text/javascript">
 		$(document).ready(function () {
-			$("#Twitter, #content").css("height", $("#Links").height());
-			$(".twitter-timeline").attr("height", $("#Links").height());
+			$("#content").css("height", $("#Links").height());
 			$("#Facebook").css("max-width", $(window).width - 6);
 		});
 </script>
