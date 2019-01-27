@@ -217,3 +217,4 @@ C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.dll
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.pdb
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csproj.CopyComplete
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csprojAssemblyReference.cache
+C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\Newtonsoft.Json.pdb
