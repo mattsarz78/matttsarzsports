@@ -14,7 +14,7 @@ namespace MSS.BC
 		readonly ISeasonContents _sc;
 
 		public WeeklySchedule(IBools bools, IPageHelper ph, ICoverageNotesHelper cnh, IStoredProcHelper sph, ISeasonContents sc, ITimeZoneHelper tzh) 
-			: base(cnh, sph, tzh)
+			: base(cnh, sph, tzh, bools)
 		{
 			_bools = bools;
 			_ph = ph;

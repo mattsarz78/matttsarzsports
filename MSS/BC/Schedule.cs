@@ -15,14 +15,17 @@ namespace MSS.BC
 		readonly ICoverageNotesHelper _cnh;
 		readonly IStoredProcHelper _sph;
 		readonly ITimeZoneHelper _tzh;
+        readonly IBools _bools;
 
-		public Schedule(ICoverageNotesHelper cnh, IStoredProcHelper sph, ITimeZoneHelper tzh)
+        public Schedule(ICoverageNotesHelper cnh, IStoredProcHelper sph, ITimeZoneHelper tzh, IBools bools)
 		{
 			_cnh = cnh;
 			_sph = sph;
 			_tzh = tzh;
+            _bools = bools;
 		}
-		public class FSNGames
+
+        public class FSNGames
 		{
 			public string Game { get; set; }
 			public string Parm { get; set; }
@@ -92,7 +95,7 @@ namespace MSS.BC
 					: _cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
                 IEnumerable<FSNGames> parmValue;
-                if (sport == "football")
+                if (sport == "football" || !_bools.isConferenceTournament(sport, tvGame.Game))
                 {
                     parmValue = rsnGames.Where(x => tvGame.Game.Trim().Equals(x.Game));
                 }
@@ -124,5 +127,9 @@ namespace MSS.BC
 			return televisedGamesList;
 		}
 
-	}
+        private bool isConferenceTournament()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

@@ -27,5 +27,6 @@ namespace MSS.Shared
         bool CheckIfNIT(int week, List<YearDate> fullYearDates);
         bool CheckIfOtherMBKTourney(int week, List<YearDate> fullYearDates);
         bool CheckIfFirstWeek(int week, List<YearDate> fullYearDates);
+        bool isConferenceTournament(string sport, string game);
     }
 }
