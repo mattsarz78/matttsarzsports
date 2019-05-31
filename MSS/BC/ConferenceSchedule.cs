@@ -52,10 +52,7 @@ namespace MSS.BC
 					        resultSet[Constants.MEDIAINDICATOR].ToString() == "W"
 						        ? _cnh.FormatCoverageNotes(year, resultSet[Constants.NETWORKJPG].ToString())
 						        : _cnh.FormatNetworkJpg(resultSet[Constants.NETWORKJPG].ToString()),
-				        TvType =
-					        resultSet[Constants.MEDIAINDICATOR].ToString() == "T"
-						        ? resultSet[Constants.TVTYPE].ToString()
-						        : string.Empty,
+				        TvType = resultSet[Constants.TVTYPE].ToString(),
 				        Conference = resultSet[Constants.CONFERENCE].ToString()
 			        });
 		        }
