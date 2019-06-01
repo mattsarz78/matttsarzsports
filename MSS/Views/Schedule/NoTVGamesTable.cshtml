@@ -31,7 +31,13 @@
                     {
                         if (item.Game.EndsWith("at Texas"))
                         {
-                            @Html.Raw(item.TVOptions.Replace("Member Retained", "Longhorn Network"));
+                            if (item.TVOptions.Contains("Member Retained")) {
+                                @Html.Raw(item.TVOptions.Replace("Member Retained", "Longhorn Network"));
+                            }
+                            else
+                            {
+                                @Html.Raw(item.TVOptions.Replace(" or FSN", ", FSN or Longhorn Network"));
+                            }
                         }
                         else if (item.Game.EndsWith("at Oklahoma"))
                         {
@@ -49,11 +55,11 @@
                     }
                     else if (item.Conference.Contains("MWC") && !item.Game.Contains("Hawai"))
                     {
-                        @Html.Raw(item.TVOptions.Replace(", Spectrum PPV", ""));
+                    @Html.Raw(item.TVOptions.Replace(", Spectrum PPV", ""));
                     }
                     else
                     {
-                        @Html.Raw(item.TVOptions)
+                    @Html.Raw(item.TVOptions)
                     }
                 </td>
             </tr>
@@ -72,7 +78,14 @@
                     {
                         if (item.Game.EndsWith("at Texas"))
                         {
-                            @Html.Raw(item.TVOptions.Replace("Member Retained", "Longhorn Network"));
+                            if (item.TVOptions.Contains("Member Retained"))
+                            {
+                                @Html.Raw(item.TVOptions.Replace("Member Retained", "Longhorn Network"));
+                            }
+                            else
+                            {
+                                @Html.Raw(item.TVOptions.Replace(" or FSN", ", FSN or Longhorn Network"));
+                            }
                         }
                         else if (item.Game.EndsWith("at Oklahoma"))
                         {
