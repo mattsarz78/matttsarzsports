@@ -9,7 +9,6 @@
 	<div class="container">
 		<div>
 			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("Google/GoogleSearchBar")
 			@Html.Partial("AddThis/AddThisVar")
 		</div>
 		<div style="clear:both; padding-bottom: 5px"></div>
@@ -42,6 +41,7 @@
             <a href="#" class="back-to-top">Back to top</a>
         </p>
     </form>
+    @Html.Partial("Google/GoogleSearchBar")
 </div>
 @section scripts {
 <script type="text/javascript" src="@Scripts.Url("~/bundles/dailytext")" async></script>

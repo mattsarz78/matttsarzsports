@@ -8,7 +8,6 @@
 	<div class="container">
 		<div>
 			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("Google/GoogleSearchBar")
 			@Html.Partial("AddThis/AddThisVar")
 		</div>
 		<div style="clear:both; padding-bottom: 5px"></div>
@@ -42,25 +41,26 @@
 	</div>
 </nav>
 <div id="Main">
-	<form action="@ViewBag.ActionName" id="WeekForm" method="post">
-		<div>
-			@if (Model.ShowRSNPartialView)
-			{
-				@Html.Partial("CoverageNotes/" + Model.SportYear + "/FSNWeek" + Model.Week)
-			}
-			@Html.Partial("DailyBase")
-			@if (!Model.IsBowlWeek)
-			{
-				if (Model.ShowNoTVPartialView)
-				{
-					@Html.Partial("NoTV", Model)
-				}
-			}
-		</div>
-		<p>
-			<a href="#" class="back-to-top">Back to top</a>
-		</p>
-	</form>
+    <form action="@ViewBag.ActionName" id="WeekForm" method="post">
+        <div>
+            @if (Model.ShowRSNPartialView)
+            {
+                @Html.Partial("CoverageNotes/" + Model.SportYear + "/FSNWeek" + Model.Week)
+            }
+            @Html.Partial("DailyBase")
+            @if (!Model.IsBowlWeek)
+            {
+                if (Model.ShowNoTVPartialView)
+                {
+                    @Html.Partial("NoTV", Model)
+                }
+            }
+        </div>
+        <p>
+            <a href="#" class="back-to-top">Back to top</a>
+        </p>
+    </form>
+    @Html.Partial("Google/GoogleSearchBar")
 </div>
 
 @section scripts{

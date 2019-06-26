@@ -15,7 +15,6 @@
 	<div class="container">
 		<div>
 			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("Google/GoogleSearchBar")
 			@Html.Partial("AddThis/AddThisVar")
 		</div>
 		<div style="clear:both; padding-bottom: 5px"></div>
@@ -32,16 +31,17 @@
 	</div>
 </nav>
 <div id="Main">
-	<div id="head">
-		<p>@Html.Label(Model.ConferenceName + " Broadcast Schedule")</p>
-		<p><label id="contract" for="contract">NOTE: This list includes telecasts that fall under the TV contracts for the conference. Any road non-conference games fall under the home team's telecast rights.</label></p>
-		@if (Model.ConferenceName.ToLower() != "independents")
-		{
-			@Html.Raw(Model.ContractTexts.First().ContractXmlText)
-		}
-	</div>
-	@Html.Partial("ConferenceGrid")
-	<p><a href="#" class="back-to-top">Back to top</a></p>
+    <div id="head">
+        <p>@Html.Label(Model.ConferenceName + " Broadcast Schedule")</p>
+        <p><label id="contract" for="contract">NOTE: This list includes telecasts that fall under the TV contracts for the conference. Any road non-conference games fall under the home team's telecast rights.</label></p>
+        @if (Model.ConferenceName.ToLower() != "independents")
+        {
+            @Html.Raw(Model.ContractTexts.First().ContractXmlText)
+        }
+    </div>
+    @Html.Partial("ConferenceGrid")
+    <p><a href="#" class="back-to-top">Back to top</a></p>
+    @Html.Partial("Google/GoogleSearchBar")
 </div>
 
 

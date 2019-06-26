@@ -7,7 +7,6 @@
 	<div class="container">
 		<div>
 			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("Google/GoogleSearchBar")
 			@Html.Partial("AddThis/AddThisVar")
 		</div>
 		<div style="clear:both; padding-bottom: 5px"></div>
@@ -17,23 +16,24 @@
 	</div>
 </nav>
 <div id="Main">
-	<p>@Html.Label(Model.Title)</p>
-	<div id="content">
-		<div id="SeasonLinks" class="DONTPrint">
-			@Html.Partial("YearDates")
-		</div>
-		@if (Model.IsFootball)
-		{
-			@Html.Partial("ConferenceList/" + Model.ConferenceListBase)
-		}
-	</div>
-	<div style="display: inline-block">
-		<p>
-			<span id="Label9">
-				Got a question, complaint, comment or know a game not listed here?
-			</span><a id="HyperLink32" href="mailto:footballsked@gmail.com">Send it here</a>
-		</p>
-	</div>
+    <p>@Html.Label(Model.Title)</p>
+    <div id="content">
+        <div id="SeasonLinks" class="DONTPrint">
+            @Html.Partial("YearDates")
+        </div>
+        @if (Model.IsFootball)
+        {
+            @Html.Partial("ConferenceList/" + Model.ConferenceListBase)
+        }
+    </div>
+    <div style="display: inline-block">
+        <p>
+            <span id="Label9">
+                Got a question, complaint, comment or know a game not listed here?
+            </span><a id="HyperLink32" href="mailto:footballsked@gmail.com">Send it here</a>
+        </p>
+    </div>
+    @Html.Partial("Google/GoogleSearchBar")
 </div>
 @section scripts{
     <script async type="text/javascript">

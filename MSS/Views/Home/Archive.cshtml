@@ -6,14 +6,13 @@
 	<div class="container">
 		<div>
 			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("Google/GoogleSearchBar")
 			@Html.Partial("AddThis/AddThisVar")
 		</div>
 		<div style="clear:both; padding-bottom: 5px"></div>
 	</div>
 </nav>
 <div id="Main">
-	<div id="content">
+    <div id="content">
         <div id="Links">
             <a href="@Url.Content("~/")">Home</a><br />
             <br />
@@ -48,7 +47,8 @@
             <a href="@Url.Content("~/Season/Contents/basketball200506")">2005-06 Men's Basketball</a><br />
             <br />
         </div>
-	</div>
+    </div>
+    @Html.Partial("Google/GoogleSearchBar")
 </div>
 @section styles{
 	<style type="text/css">.navbar{box-shadow: 0 1px 1px rgba(0,0,0,.1)}</style>

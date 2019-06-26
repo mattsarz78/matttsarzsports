@@ -6,17 +6,16 @@
 	<div class="container">
 		<div>
 			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("Google/GoogleSearchBar")
 			@Html.Partial("AddThis/AddThisVar")
 		</div>
 		<div style="clear:both; padding-bottom: 5px"></div>
 	</div>
 </nav>
 <div id="Main">
-	<div>
-		<img alt="Matt's College Sports" id="imgtitle" src="@Url.Content("~/images/logo.jpg")" /><br />
-	</div>
-	<div id="content">
+    <div>
+        <img alt="Matt's College Sports" id="imgtitle" src="@Url.Content("~/images/logo.jpg")" /><br />
+    </div>
+    <div id="content">
         <div id="Links">
             <a href="@Url.Content("~/Season/Contents/football2019")">2019 Football</a><br />
             <br />
@@ -38,22 +37,23 @@
                 college sports and how we're watching the games.
             </p>
         </div>
-		<div id="Twitter">
-			<a class="twitter-timeline" href="https://twitter.com/mattsarz" data-height="300">
-				Tweets by @@mattsarz
-			</a>
-			<script type="text/javascript">
-				!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
-			</script>
-		</div>
-	</div>
-	<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FMatts-College-Sports-on-TV%2F190222480988805&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;colorscheme=light&amp;height=80"
-			id="Facebook" scrolling="no" allowtransparency="true"></iframe>
-	<p>
-		Got a question, complaint, comment or know a game not listed here? <a href="mailto:footballsked@gmail.com">
-			Send it here
-		</a>
-	</p>
+        <div id="Twitter">
+            <a class="twitter-timeline" href="https://twitter.com/mattsarz" data-height="300">
+                Tweets by @@mattsarz
+            </a>
+            <script type="text/javascript">
+                !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+            </script>
+        </div>
+    </div>
+    <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FMatts-College-Sports-on-TV%2F190222480988805&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=recommend&amp;colorscheme=light&amp;height=80"
+            id="Facebook" scrolling="no" allowtransparency="true"></iframe>
+    <p>
+        Got a question, complaint, comment or know a game not listed here? <a href="mailto:footballsked@gmail.com">
+            Send it here
+        </a>
+    </p>
+    @Html.Partial("Google/GoogleSearchBar")
 </div>
 
 @section scripts {
