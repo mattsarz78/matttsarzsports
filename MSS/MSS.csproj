@@ -413,6 +413,7 @@
     <Content Include="Images\dishstudio.jpg" />
     <Content Include="Images\eleven.jpg" />
     <Content Include="Images\elevennext.jpg" />
+    <Content Include="Images\espnapp.jpg" />
     <Content Include="Images\espn_plus.jpg" />
     <Content Include="Images\espn.jpg" />
     <Content Include="Images\espn2.jpg" />
@@ -450,6 +451,7 @@
     <Content Include="Images\fnet.jpg" />
     <Content Include="Images\fox.jpg" />
     <Content Include="Images\foxbusiness.jpg" />
+    <Content Include="Images\foxsports.jpg" />
     <Content Include="Images\foxsportsnet.jpg" />
     <Content Include="Images\foxsynd.jpg" />
     <Content Include="Images\fox_hd.JPG" />
@@ -764,6 +766,7 @@
     <Content Include="Images\net.jpg" />
     <Content Include="Images\nexstar.jpg" />
     <Content Include="Images\nfl.jpg" />
+    <Content Include="Images\nflnetwork.jpg" />
     <Content Include="Images\nfl_hd.jpg" />
     <Content Include="Images\nohotlinks.JPG" />
     <Content Include="Images\ocean.jpg" />
