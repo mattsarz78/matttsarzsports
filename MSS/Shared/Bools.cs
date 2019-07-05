@@ -58,7 +58,7 @@ namespace MSS.Shared
             return coverageNote.Contains("http://assets.espn.go.com/photo/") ||
                    (coverageNote.Contains("espncdn") && !coverageNote.Contains("blackout")) ||
                    coverageNote.Contains("http://www.seminoles.com/blog/Screen%20Shot%202013-11-07%20at%2011.42.17%20AM.png") ||
-                   coverageNote.Contains("http://espnmediazone.com/us/files/2013/08/CF_Oct29_Maps_MZ.pdf");
+                   coverageNote.Contains("https://espnpressroom.com/us/files/2013/08/CF_Oct29_Maps_MZ.pdf");
         }
 
         private bool IsCoverageMapLink(string coverageNote)
