@@ -1719,6 +1719,19 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball201819\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201819\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball201819\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2019\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
