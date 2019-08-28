@@ -234,6 +234,7 @@
     <Content Include="Images\a10_logo.jpg" />
     <Content Include="Images\aac_logo.JPG" />
     <Content Include="Images\abc.JPG" />
+    <Content Include="Images\abcfoxmt.jpg" />
     <Content Include="Images\abc_hd.JPG" />
     <Content Include="Images\acc-fsn-hd.jpg" />
     <Content Include="Images\acc-fsn.JPG" />
@@ -246,6 +247,7 @@
     <Content Include="Images\accnet.jpg" />
     <Content Include="Images\accnet2.jpg" />
     <Content Include="Images\accnet_hd.jpg" />
+    <Content Include="Images\accnx.jpg" />
     <Content Include="Images\accselect.jpg" />
     <Content Include="Images\acc_logo.jpg" />
     <Content Include="Images\aetv.jpg" />
@@ -954,6 +956,7 @@
     <Content Include="Images\wcwj.JPG" />
     <Content Include="Images\wdam.jpg" />
     <Content Include="Images\wdayxtra.jpg" />
+    <Content Include="Images\wdcw.jpg" />
     <Content Include="Images\wdka.jpg" />
     <Content Include="Images\weaccd.jpg" />
     <Content Include="Images\wect.JPG" />
