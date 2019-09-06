@@ -303,6 +303,7 @@
     <Content Include="Images\btn2_hd.jpg" />
     <Content Include="Images\btncom.jpg" />
     <Content Include="Images\btnplus.jpg" />
+    <Content Include="Images\btnplus2.jpg" />
     <Content Include="Images\btn_hd.jpg" />
     <Content Include="Images\byutv.jpg" />
     <Content Include="Images\byutv_hd.jpg" />
@@ -761,6 +762,7 @@
     <Content Include="Images\nec.jpg" />
     <Content Include="Images\necfrontrow.jpg" />
     <Content Include="Images\necn.JPG" />
+    <Content Include="Images\necn2.jpg" />
     <Content Include="Images\nec_hd.jpg" />
     <Content Include="Images\nec_logo.jpg" />
     <Content Include="Images\nesn.jpg" />
