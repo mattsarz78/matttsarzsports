@@ -68,7 +68,7 @@
     }
     if (Model.ConferenceGames.Any(x => x.MediaIndicator.TrimEnd() == "W" && x.TvType.TrimEnd() != "R"))
     {
-        var games = Model.ConferenceGames.Where(x => x.MediaIndicator.TrimEnd() == "W");
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator.TrimEnd() == "W" && x.TvType.TrimEnd() != "R");
         <div id="InternetPPVDiv">
             @Html.Label("Internet Exclusives")
             @Html.Partial("ConferenceTable", games)
