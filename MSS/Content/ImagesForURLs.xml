@@ -43,10 +43,10 @@
   <Address Link="ESPN_PLUS&amp;type=live" Image="espn_plus.jpg" />
   <Address Link="facebook.com/LiveCUSA" Image="cbssn-fb.jpg" />
   <Address Link="facebook.com/CBSSports" Image="cbssn-fb.jpg" />
-  <Address Link="flofootball.com" Image="flosports.jpg" Yearend="2018|201819" />
-  <Address Link="flohoops.com" Image="flosports.jpg" Yearend="2018|201819" />
-  <Address Link="flofootball.com" Image="flofootball.jpg" />
-  <Address Link="flohoops.com" Image="flohoops.jpg" />
+  <Address Link="flofootball.com" Image="flofootball.jpg" Yearend="2018|201819" />
+  <Address Link="flohoops.com" Image="flohoops.jpg" Yearend="2018|201819" />
+  <Address Link="flofootball.com" Image="flosports-19.jpg"  />
+  <Address Link="flohoops.com" Image="flosports-19.jpg"  />
   <Address Link="twitch.tv/elevensportsnext" Image="elevennext.jpg" />
   <Address Link="pluto.tv" Image="plutotv.jpg" />
   <Address Link="necfrontrow" Image="necfrontrow.jpg" />
