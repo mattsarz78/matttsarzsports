@@ -49,6 +49,9 @@
     <loc>http://mattsarzsports.com/Season/Contents/basketball201819</loc>
   </url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/basketball201920</loc>
+  </url>
+  <url>
 		<loc>http://mattsarzsports.com/Season/Contents/football2005</loc>
 	</url>
 	<url>
@@ -91,6 +94,9 @@
     <loc>http://mattsarzsports.com/Season/Contents/football2018</loc>
   </url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/football2019</loc>
+  </url>
+  <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/basketball201516</loc>
   </url>
   <url>
@@ -110,5 +116,11 @@
   </url>
   <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/basketball201819</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/football2019</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/basketball201920</loc>
   </url>
 </urlset>

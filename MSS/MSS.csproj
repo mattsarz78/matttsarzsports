@@ -154,6 +154,7 @@
     <Compile Include="Shared\TimeZoneHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ads.txt" />
     <Content Include="Content\ABCCoverageMapLinks.xml" />
     <Content Include="Content\ASNLinks.xml">
       <SubType>Designer</SubType>
@@ -1200,6 +1201,8 @@
     <Content Include="Images\_hcc_thumbs\wymt.jpg-thumb-80.jpg" />
     <Content Include="Images\_hcc_thumbs\yes.jpg-thumb-80.jpg" />
     <Content Include="Images\_hcc_thumbs\yes_hd.JPG-thumb-80.JPG" />
+    <Content Include="phpinfo.php" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\BackToTop.js" />
     <Content Include="CoverageNotes\Basketball200910\Big12.pdf" />
     <Content Include="CoverageNotes\Basketball200910\SECTourney.pdf" />
