@@ -98,6 +98,16 @@ else
         </div>
         <br />
     }
+    if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "UConn"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "UConn");
+        <div id="NotreDameDiv">
+            @Html.Label("Connecticut telecasts")
+            @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "UConn").Select(y => y.ContractXmlText).First())
+            @Html.Partial("ConferenceTable", games)
+        </div>
+        <br />
+    }
     if (Model.ConferenceGames.Any(x => x.Conference.TrimEnd() == "Idaho"))
     {
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "Idaho");
