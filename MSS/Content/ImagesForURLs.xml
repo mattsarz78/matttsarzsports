@@ -36,8 +36,9 @@
   <Address Link="secsports.com/watch" Image="secplus.jpg" />
   <Address Link="secplus" Image="secplus.jpg" />
   <Address Link="thew.tv" Image="thewtv.jpg" Yearend="2018|201819" />
-  <Address Link="thew.tv" Image="wccnetwork.jpg" />
-  <Address Link="wccsports.com" Image="thewtv.jpg" />
+  <Address Link="thew.tv" Image="wccnetwork.jpg"  />
+  <Address Link="wccsports.com" Image="thewtv.jpg" Yearend="2018|201819" />
+  <Address Link="wccsports.com" Image="wccnetwork.jpg"  />
   <Address Link="beinsportsconnect.tv" Image="beinconnect.jpg" />
   <Address Link="go90.com/shows/3Qh33oOSYJo" Image="stadiumgo90.jpg" />
   <Address Link="ESPN_PLUS&amp;type=live" Image="espn_plus.jpg" />
