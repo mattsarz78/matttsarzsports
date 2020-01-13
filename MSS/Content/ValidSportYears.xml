@@ -30,4 +30,5 @@
   <football2017 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
   <football2018 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass"/>
   <football2019 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass"/>
+  <football2020 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
 </ValidSportYears>

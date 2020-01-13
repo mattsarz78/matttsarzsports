@@ -27,41 +27,60 @@
                     @item.Conference
                 </td>
                 <td class="telecast">
-                    @if (item.Conference.Contains("Big 12"))
+                    @if (item.Conference.Contains("American"))
+                    {
+                        if (item.Game.Contains("at Navy"))
+                        {
+                            @Html.Raw(item.TVOptions.Replace(" or ESPN+", " or CBS Sports Network"));
+                        }
+                        else
+                        {
+                            @Html.Raw(item.TVOptions);
+                        }
+                    }
+                    else if (item.Conference.Contains("Big 12"))
                     {
                         if (item.Game.EndsWith("at Texas"))
                         {
-                            if (item.TVOptions.Contains("Member Retained")) {
-                                @Html.Raw(item.TVOptions.Replace("Member Retained", "Longhorn Network"));
-                            }
-                            else
-                            {
-                                @Html.Raw(item.TVOptions.Replace(" or FSN", ", FSN or Longhorn Network"));
-                            }
+                            @Html.Raw(item.TVOptions.Replace("ESPN+", "Longhorn Network"));
                         }
                         else if (item.Game.EndsWith("at Oklahoma"))
                         {
-                            @Html.Raw(item.TVOptions.Replace("Member Retained", "Sooner Sports TV"));
-                        }
-                        else if (item.Game.EndsWith("at Oklahoma St.") || item.Game.EndsWith("at Baylor")
-                          || item.Game.EndsWith("at Kansas") || item.Game.EndsWith("at Kansas St."))
-                        {
-                            @Html.Raw(item.TVOptions.Replace("Member Retained", "ESPN+"));
+                            @Html.Raw(item.TVOptions.Replace("ESPN+", "Sooner Sports TV"));
                         }
                         else
                         {
                             @Html.Raw(item.TVOptions)
                         }
                     }
-                    else if (item.Conference.Contains("MWC") && !item.Game.Contains("Hawai"))
+                    else if (item.Conference.Contains("MWC"))
                     {
-                    @Html.Raw(item.TVOptions.Replace(", Spectrum PPV", ""));
+                        var tvOptions = item.TVOptions;
+                        if (item.Game.Contains("Hawai"))
+                        {
+                            tvOptions = tvOptions + " or Spectrum PPV";
+                        }
+
+                        if (item.Game.StartsWith("Boise St."))
+                        {
+                            var boiseRoadOptions = tvOptions.Replace(", FOX", "").Replace(", FS1 or FS2", "");
+                            @Html.Raw(boiseRoadOptions);
+                        }
+                        else if (item.Game.EndsWith("at Boise St."))
+                        {
+                            var boiseHomeOptions = tvOptions.Replace("CBS, ", "").Replace(", CBS Sports Network", "");
+                            @Html.Raw(boiseHomeOptions);
+                        }
+                        else
+                        {
+                            @Html.Raw(tvOptions);
+                        }
                     }
                     else
                     {
-                    @Html.Raw(item.TVOptions)
+                        @Html.Raw(item.TVOptions)
                     }
-                </td>
+                        </td>
             </tr>
             }
             else
@@ -74,36 +93,55 @@
                     @item.Conference
                 </td>
                 <td class="telecast">
-                    @if (item.Conference.Contains("Big 12"))
+                    @if (item.Conference.Contains("American"))
+                    {
+                        if (item.Game.Contains("at Navy"))
+                        {
+                            @Html.Raw(item.TVOptions.Replace(" or ESPN+", " or CBS Sports Network"));
+                        }
+                        else
+                        {
+                            @Html.Raw(item.TVOptions);
+                        }
+                    }
+                    else if (item.Conference.Contains("Big 12"))
                     {
                         if (item.Game.EndsWith("at Texas"))
                         {
-                            if (item.TVOptions.Contains("Member Retained"))
-                            {
-                                @Html.Raw(item.TVOptions.Replace("Member Retained", "Longhorn Network"));
-                            }
-                            else
-                            {
-                                @Html.Raw(item.TVOptions.Replace(" or FSN", ", FSN or Longhorn Network"));
-                            }
+                            @Html.Raw(item.TVOptions.Replace("ESPN+", "Longhorn Network"));
                         }
                         else if (item.Game.EndsWith("at Oklahoma"))
                         {
-                            @Html.Raw(item.TVOptions.Replace("Member Retained", "Sooner Sports TV"));
-                        }
-                        else if (item.Game.EndsWith("at Oklahoma St.") || item.Game.EndsWith("at Baylor")
-                          || item.Game.EndsWith("at Kansas") || item.Game.EndsWith("at Kansas St."))
-                        {
-                            @Html.Raw(item.TVOptions.Replace("Member Retained", "ESPN+"));
+                            @Html.Raw(item.TVOptions.Replace("ESPN+", "Sooner Sports TV"));
                         }
                         else
                         {
                             @Html.Raw(item.TVOptions)
                         }
                     }
-                    else if (item.Conference.Contains("MWC") && !item.Game.Contains("Hawai"))
+                    else if (item.Conference.Contains("MWC"))
                     {
-                        @Html.Raw(item.TVOptions.Replace(", Spectrum PPV", ""));
+                        var tvOptions = item.TVOptions;
+                        if (item.Game.Contains("Hawai"))
+                        {
+                            tvOptions = tvOptions + " or Spectrum PPV";
+                        }
+
+                        if (item.Game.StartsWith("Boise St."))
+                        {
+                            var boiseRoadOptions = tvOptions.Replace(", FOX", "").Replace(", FS1 or FS2", "");
+                            @Html.Raw(boiseRoadOptions);
+                        }
+                        else if (item.Game.EndsWith("at Boise St."))
+                        {
+                            var boiseHomeOptions = tvOptions.Replace("CBS, ", "").Replace(", CBS Sports Network", "");
+                            @Html.Raw(boiseHomeOptions);
+                        }
+                        else
+                        {
+                            @Html.Raw(tvOptions);
+                        }
+
                     }
                     else
                     {
