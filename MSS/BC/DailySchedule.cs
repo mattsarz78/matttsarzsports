@@ -40,12 +40,12 @@ namespace MSS.BC
 				WeekDates = new WeekDates
 				{
 					CurrentDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0),
-					StartDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0),
+					StartDate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 5, 0, 0),
 				},
 				SportYear = sportYear,
 				IsFootball = isFootball
 			};
-			weeklyModel.WeekDates.EndDate = weeklyModel.WeekDates.StartDate.AddDays(1).AddHours(5);
+			weeklyModel.WeekDates.EndDate = weeklyModel.WeekDates.StartDate.AddDays(1);
 			if (weeklyModel.TelevisedGamesList.Any())
 			{
 				weeklyModel.Week = weeklyModel.TelevisedGamesList[0].Week;
