@@ -61,12 +61,12 @@
                             tvOptions = tvOptions + " or Spectrum PPV";
                         }
 
-                        if (item.Game.StartsWith("Boise St."))
+                        if (item.Game.StartsWith("Boise State"))
                         {
                             var boiseRoadOptions = tvOptions.Replace(", FOX", "").Replace(", FS1 or FS2", "");
                             @Html.Raw(boiseRoadOptions);
                         }
-                        else if (item.Game.EndsWith("at Boise St."))
+                        else if (item.Game.EndsWith("at Boise State"))
                         {
                             var boiseHomeOptions = tvOptions.Replace("CBS, ", "").Replace(", CBS Sports Network", "");
                             @Html.Raw(boiseHomeOptions);
@@ -127,12 +127,12 @@
                             tvOptions = tvOptions + " or Spectrum PPV";
                         }
 
-                        if (item.Game.StartsWith("Boise St."))
+                        if (item.Game.StartsWith("Boise State"))
                         {
                             var boiseRoadOptions = tvOptions.Replace(", FOX", "").Replace(", FS1 or FS2", "");
                             @Html.Raw(boiseRoadOptions);
                         }
-                        else if (item.Game.EndsWith("at Boise St."))
+                        else if (item.Game.EndsWith("at Boise State"))
                         {
                             var boiseHomeOptions = tvOptions.Replace("CBS, ", "").Replace(", CBS Sports Network", "");
                             @Html.Raw(boiseHomeOptions);
