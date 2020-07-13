@@ -9,7 +9,7 @@ namespace MSS
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute("BaseApiContract", "api/BaseApi/GetGameList/{conference}/{year}",
-                new { controller = "BaseApi", action = "GetGameList", conference = string.Empty, year = 0 });
+                new { controller = "BaseApi", action = "GetGameList", conference = string.Empty, year = string.Empty });
 
             config.Routes.MapHttpRoute("BaseApiWeekly", "api/BaseApi/GetWeekly/{sportYear}/{week}/{timeZoneValue}",
                 new { controller = "BaseApi", action = "GetWeekly", sportYear = string.Empty, week = 0, timeZoneValue = string.Empty });

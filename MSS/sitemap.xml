@@ -100,6 +100,9 @@
     <loc>http://mattsarzsports.com/Season/Contents/football2020</loc>
   </url>
   <url>
+    <loc>http://mattsarzsports.com/Season/Contents/football2020r</loc>
+  </url>
+  <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/basketball201516</loc>
   </url>
   <url>
@@ -128,5 +131,8 @@
   </url>
   <url>
     <loc>http://mattsarzsports.com/Schedule/Daily/football2020</loc>
+  </url>
+  <url>
+    <loc>http://mattsarzsports.com/Schedule/Daily/football2020r</loc>
   </url>
 </urlset>

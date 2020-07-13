@@ -7,7 +7,7 @@ namespace MSS.Controllers
 {
     public class ContractController : Controller
     {
-        public async Task<ActionResult> GameList(string conference, int year)
+        public async Task<ActionResult> GameList(string conference, string year)
         {
             var client = new HttpClient();
             var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetGameList/" + conference + @"/" + year;

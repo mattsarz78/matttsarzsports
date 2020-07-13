@@ -28,7 +28,7 @@ namespace MSS.Controllers
 			_sc = new SeasonContents(new StoredProcHelper());
         }
 
-        public IHttpActionResult GetGameList(string conference, int year)
+        public IHttpActionResult GetGameList(string conference, string year)
         {
             if (_bools.CheckXMLDoc("ConferenceNames", conference.ToLower()) && _bools.CheckXMLDoc("ValidSportYears", "football" + year))
             {
@@ -97,6 +97,10 @@ namespace MSS.Controllers
 
         private string GetYear(string sportYear)
         {
+            if (sportYear.ToLower().Contains("football2020r")) 
+            {
+                return "2020r";
+            }
             return sportYear.ToLower().Contains("football") ? sportYear.Substring(8, 4) : sportYear.Substring(10, 6);
         }
 

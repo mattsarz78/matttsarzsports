@@ -22,7 +22,7 @@ namespace MSS.BC
             _ph = ph;
         }
 
-        public List<ConfGame> CreateIndependentsGameList(int year)
+        public List<ConfGame> CreateIndependentsGameList(string year)
         {
 			var independentsList = _ph.CheckSportYearAttributes(string.Format("football{0}", year), "independents").Split(',').ToList();
         	var indyList = new List<ConfGame>();

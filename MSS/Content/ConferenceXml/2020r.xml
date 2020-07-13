@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Conference>
-  <Football2020>
+  <Football2020r>
     <ACCDiv>
       <![CDATA[<p>
         The ACC has a contract with ABC/ESPN for all of its football television rights.
@@ -202,5 +202,5 @@
       <![CDATA[<p>New Mexico St.'s rights are managed by Learfield Sports, who has worked to sell the television rights to their home games to local, regional and national entities.  Learfield has sold OTT rights to FloSports for a three year period, ending after the 2022 season.</p>
       <p>Source: <a href="https://www.flosports.tv/flosports-to-broadcast-new-mexico-state-university-football/" target="_blank">FloSports</a></p>]]>
     </NMStDiv>
-  </Football2020>
+  </Football2020r>
 </Conference>

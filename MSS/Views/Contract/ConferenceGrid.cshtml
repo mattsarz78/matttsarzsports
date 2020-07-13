@@ -82,7 +82,7 @@ else
     {
         var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.Conference.TrimEnd() == "Army");
         <div id="ArmyDiv">
-            @Html.Label("Army telecasts")
+            @Html.Label("Army West Point telecasts")
             @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "Army").Select(y => y.ContractXmlText).First())
             @Html.Partial("ConferenceTable", games)
         </div>
@@ -102,7 +102,7 @@ else
     {
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "UConn");
         <div id="NotreDameDiv">
-            @Html.Label("Connecticut telecasts")
+            @Html.Label("UConn telecasts")
             @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "UConn").Select(y => y.ContractXmlText).First())
             @Html.Partial("ConferenceTable", games)
         </div>
@@ -132,7 +132,7 @@ else
     {
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "UMass");
         <div id="NavyDiv">
-            @Html.Label("Massachusetts telecasts")
+            @Html.Label("UMass telecasts")
             @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "UMass").Select(y => y.ContractXmlText).First())
             @Html.Partial("ConferenceTable", games)
         </div>
@@ -152,7 +152,7 @@ else
     {
         var games = Model.ConferenceGames.Where(x => x.Conference.TrimEnd() == "NMSt");
         <div id="NewMexicoStDiv">
-            @Html.Label("New Mexico State telecasts")
+            @Html.Label("NM State telecasts")
             @Html.Raw(Model.ContractTexts.Where(x => x.Conference == "NMSt").Select(y => y.ContractXmlText).First())
             @Html.Partial("ConferenceTable", games)
         </div>

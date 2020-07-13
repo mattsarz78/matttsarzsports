@@ -5,7 +5,7 @@ namespace MSS.BC
 {
     public interface IConferenceSchedule
     {
-        List<ConfGame> CreateIndependentsGameList(int year);
+        List<ConfGame> CreateIndependentsGameList(string year);
         List<ConfGame> CreateConferenceGameList(string conference, string year);
     }
 }
