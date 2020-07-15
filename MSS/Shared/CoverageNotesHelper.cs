@@ -165,6 +165,7 @@ namespace MSS.Shared
 
 		private static string SetImageUrl(string year, IEnumerable<XElement> xElements)
 		{
+            year = year == "2020r" ? "2020" : year;
 			string imageUrl = string.Empty;
 			foreach (var item in xElements)
 			{
