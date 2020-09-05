@@ -38,7 +38,7 @@
         <br />
     }
     if (Model.ConferenceGames.Any(x => (x.MediaIndicator == "T" || x.MediaIndicator == "W") && x.TvType.TrimEnd() == "R" &&
-        (x.Conference.Contains("Big 12") && int.Parse(Model.Year) >= 2012)))
+        (x.Conference.Contains("Big 12") && (Model.Year == "2020r" || int.Parse(Model.Year) >= 2012))))
     {
         var games = Model.ConferenceGames.Where(x => (x.MediaIndicator == "T" || x.MediaIndicator == "W") && x.TvType.TrimEnd() == "R");
         <div id="RegionalDiv">
@@ -48,7 +48,7 @@
         <br />
     }
     if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "R" &&
-        (!x.Conference.Contains("Big 12") || (x.Conference.Contains("Big 12") && int.Parse(Model.Year) < 2012))))
+        (!x.Conference.Contains("Big 12") || (x.Conference.Contains("Big 12") && (Model.Year != "2020r" && int.Parse(Model.Year) < 2012)))))
     {
         var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "R");
         <div id="RegionalDiv">
