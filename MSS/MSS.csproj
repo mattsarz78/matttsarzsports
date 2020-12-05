@@ -1817,6 +1817,7 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball202021\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball202021\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball202021\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Football2020r\FSNWeek15.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
