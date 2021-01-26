@@ -89,7 +89,7 @@ namespace MSS.Controllers
                     IsFootball = isFootball,
                     Title = _sc.CreateTitle(sportYear),
                     IsBasketballWithPostseason = !isFootball && _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason"),
-                    ConferenceListBase = isFootball ? _ph.CheckSportYearAttributes(sportYear, "conferenceListBase") : string.Empty
+                    ConferenceListBase = (isFootball && season != "2021s") ? _ph.CheckSportYearAttributes(sportYear, "conferenceListBase") : string.Empty
                 });
             }
             return NotFound();
@@ -101,12 +101,18 @@ namespace MSS.Controllers
             {
                 return "2020r";
             }
+
+            if (sportYear.ToLower().Contains("football2021s"))
+            {
+                return "2021s";
+            }
+
             return sportYear.ToLower().Contains("football") ? sportYear.Substring(8, 4) : sportYear.Substring(10, 6);
         }
 
         private string GetSport(string sportYear)
         {
-            return sportYear.ToLower().Contains("football") ? "football" : "basketball";
+            return sportYear.ToLower().Contains("football") && !sportYear.Contains("2021s") ? "football" : "basketball";
         }
 
         private string AddSpaces(string conference)
