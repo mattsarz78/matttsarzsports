@@ -81,7 +81,7 @@ namespace MSS.Controllers
             if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()))
             {
                 var season = GetYear(sportYear);
-                var isFootball = GetSport(sportYear).Contains("football");
+                var isFootball = GetSport(sportYear).Contains("football") && !sportYear.Contains("2021s");
                 return Ok(new DateModel
                 {
                     YearDatesList = _sc.CreateDateModel(season),
@@ -112,7 +112,7 @@ namespace MSS.Controllers
 
         private string GetSport(string sportYear)
         {
-            return sportYear.ToLower().Contains("football") && !sportYear.Contains("2021s") ? "football" : "basketball";
+            return sportYear.ToLower().Contains("football") ? "football" : "basketball";
         }
 
         private string AddSpaces(string conference)
