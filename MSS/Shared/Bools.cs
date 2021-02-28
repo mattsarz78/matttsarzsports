@@ -76,7 +76,7 @@ namespace MSS.Shared
 
         public bool IsNBC(string coverageNote)
         {
-            return coverageNote.ToLower().Contains("nbcsports.com") && !coverageNote.ToLower().Contains("stream.nbcsports.com");
+            return coverageNote.ToLower().Contains("nbcsports.com") && !coverageNote.ToLower().Contains("stream.nbcsports.com") && coverageNote.ToLower().Contains("/live");
         }
 
         public bool IsBTN(string coverageNote)
