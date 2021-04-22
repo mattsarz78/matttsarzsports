@@ -124,12 +124,16 @@ namespace MSS.BC
 					{
 						noTvGamesList.Add(new NonTelevisedGame
 						{
-							Game = resultSet["Game"].ToString(),
-							Conference = resultSet["Conference"].ToString(),
-							TVOptions = resultSet["TVOptions"].ToString(),
-							Time = Convert.ToDateTime(resultSet["Time"].ToString()),
-							FCS = resultSet["FCS"].ToString() == "Y",
-							DayOfWeek = Convert.ToDateTime(resultSet["Time"].ToString()).DayOfWeek
+							Game = resultSet[Constants.GAME].ToString(),
+							GameTitle = resultSet[Constants.GAMETITLE].ToString(),
+							VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
+							HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+							Location = resultSet[Constants.LOCATION].ToString(),
+							Conference = resultSet[Constants.CONFERENCE].ToString(),
+							TVOptions = resultSet[Constants.TVOPTIONS].ToString(),
+							Time = Convert.ToDateTime(resultSet[Constants.TIME].ToString()),
+							FCS = resultSet[Constants.FCS].ToString() == "Y",
+							DayOfWeek = Convert.ToDateTime(resultSet[Constants.TIME].ToString()).DayOfWeek
 						});
 					}
 				}

@@ -81,13 +81,17 @@ namespace MSS.BC
 				DateTime gameTime = Convert.ToDateTime(resultSet["Time"].ToString());
 				var tvGame = new TelevisedGame
 				{
-					Game = resultSet["Game"].ToString(),
-					PPV = _cnh.FormatCoverageNotes(year, resultSet["PPV"].ToString()),
+					Game = resultSet[Constants.GAME].ToString(),
+					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
+					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
+					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+					Location = resultSet[Constants.LOCATION].ToString(),
+					PPV = _cnh.FormatCoverageNotes(year, resultSet[Constants.PPV].ToString()),
 					Time = FormatTime(gameTime, timeZone),
 					TimeString = _tzh.FormatTelevisedTime(gameTime, "web", timeZone),
 					ShowPPVColumn = showPPVColumn,
-					Mediaindicator = resultSet["Mediaindicator"].ToString(),
-					Week = useWeek ? resultSet["Week"].ToString() : week.ToString()
+					Mediaindicator = resultSet[Constants.MEDIAINDICATOR].ToString(),
+					Week = useWeek ? resultSet[Constants.WEEK].ToString() : week.ToString()
 				};
 
 				tvGame.Network = tvGame.Mediaindicator == "W"

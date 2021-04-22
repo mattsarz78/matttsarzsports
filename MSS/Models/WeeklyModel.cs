@@ -37,11 +37,19 @@ namespace MSS.Models
         public DayOfWeek DayOfWeek { get; set; }
         public DateTime Time { get; set; }
         public bool FCS { get; set; }
+        public string GameTitle { get; set; }
+        public string VisitingTeam { get; set; }
+        public string HomeTeam { get; set; }
+        public string Location { get; set; }
     }
 
     public class TelevisedGame
     {
         public string Game { get; set; }
+        public string GameTitle { get; set; }
+        public string VisitingTeam { get; set; }
+        public string HomeTeam { get; set; }
+        public string Location { get; set; }
         public string Network { get; set; }
         public string CoverageNotes { get; set; }
         public string PPV { get; set; }

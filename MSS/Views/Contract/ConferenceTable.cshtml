@@ -13,9 +13,28 @@
             </th>
         </tr>
         @foreach (var item in Model)
-        {   
+        {
             <tr>
-                <td class="game">@Html.Raw(item.Game)
+                <td class="game">
+                    @if (!String.IsNullOrEmpty(item.GameTitle))
+                    {
+                        <label><b><i>@item.GameTitle</i></b></label><br />
+                    }
+                    @if (!String.IsNullOrEmpty(item.Location))
+                    {
+                        if (!String.IsNullOrEmpty(item.VisitingTeam))
+                        {
+                            <label>@item.VisitingTeam vs. @item.HomeTeam</label><br />
+                        }
+                        <label>(at @item.Location)</label><br />
+                    }
+                    else
+                    {
+                        if (!String.IsNullOrEmpty(item.VisitingTeam))
+                        {
+                            <label>@item.VisitingTeam at @item.HomeTeam</label>
+                        }
+                    }
                 </td>
                 <td class="network">@Html.Raw(item.Network)
                 </td>

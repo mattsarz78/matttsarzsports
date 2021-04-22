@@ -1,6 +1,24 @@
 ﻿@model MSS.Models.TelevisedGame
 <td class="game">
-    @Html.Raw(Model.Game)
+    @if (!String.IsNullOrEmpty(Model.GameTitle))
+    {
+        <label><b><i>@Model.GameTitle</i></b></label><br />
+    }
+    @if (!String.IsNullOrEmpty(Model.Location))
+    {
+        if (!String.IsNullOrEmpty(Model.VisitingTeam))
+        {
+            <label>@Model.VisitingTeam vs. @Model.HomeTeam</label><br />
+        }
+        <label>(at @Model.Location)</label><br />
+    }
+    else
+    {
+        if (!String.IsNullOrEmpty(Model.VisitingTeam))
+        {
+            <label>@Model.VisitingTeam at @Model.HomeTeam</label>
+        }
+    }
 </td>
 <td class="network">
     @Html.Raw(Model.Network)

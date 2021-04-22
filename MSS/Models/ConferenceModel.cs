@@ -15,14 +15,18 @@ namespace MSS.Models
     public class ConfGame
     {
         public string Game { get; set; }
+        public string GameTitle { get; set; }
         public string Network { get; set; }
         public string Time { get; set; }
         public string TvType { get; set; }
         public string MediaIndicator { get; set; }
         public string Conference { get; set; }
+        public string VisitingTeam { get; set; }
+        public string HomeTeam { get; set; }
+        public string Location { get; set; }
     }
 
-	public class ContractText
+    public class ContractText
 	{
 		public string Conference { get; set; }
 		public string ContractXmlText { get; set; }
