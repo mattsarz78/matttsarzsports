@@ -31,7 +31,6 @@ namespace MSS.Models
 
     public class NonTelevisedGame
     {
-        public string Game { get; set; }
         public string Conference { get; set; }
         public string TVOptions { get; set; }
         public DayOfWeek DayOfWeek { get; set; }

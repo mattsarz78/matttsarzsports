@@ -45,7 +45,6 @@ namespace MSS.BC
 		        {
 			        confGames.Add(new ConfGame
 			        {
-				        Game = resultSet[Constants.GAME].ToString(),
                         GameTitle = resultSet[Constants.GAMETITLE].ToString(),
                         VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
                         HomeTeam = resultSet[Constants.HOMETEAM].ToString(),

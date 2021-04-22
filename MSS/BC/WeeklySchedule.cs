@@ -124,7 +124,6 @@ namespace MSS.BC
 					{
 						noTvGamesList.Add(new NonTelevisedGame
 						{
-							Game = resultSet[Constants.GAME].ToString(),
 							GameTitle = resultSet[Constants.GAMETITLE].ToString(),
 							VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
 							HomeTeam = resultSet[Constants.HOMETEAM].ToString(),

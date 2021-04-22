@@ -33,7 +33,10 @@ namespace MSS.BC
 			{
 				gameList.Add(new TelevisedGame
 				{
-					Game = resultSet["Game"].ToString(),
+					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
+					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
+					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+					Location = resultSet[Constants.LOCATION].ToString(),
 					Network = resultSet["Network"].ToString(),
 					PPV =
 						ppvExists && _bools.IsESPNPPV(resultSet["PPV"].ToString(), resultSet["CoverageNotes"].ToString())

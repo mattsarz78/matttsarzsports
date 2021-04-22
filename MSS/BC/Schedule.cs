@@ -81,7 +81,6 @@ namespace MSS.BC
 				DateTime gameTime = Convert.ToDateTime(resultSet["Time"].ToString());
 				var tvGame = new TelevisedGame
 				{
-					Game = resultSet[Constants.GAME].ToString(),
 					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
 					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
 					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),

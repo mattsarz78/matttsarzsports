@@ -14,7 +14,6 @@ namespace MSS.Models
 
     public class ConfGame
     {
-        public string Game { get; set; }
         public string GameTitle { get; set; }
         public string Network { get; set; }
         public string Time { get; set; }
