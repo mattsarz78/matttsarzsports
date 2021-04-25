@@ -27,7 +27,10 @@ namespace MSS.BC
 
         public class FSNGames
 		{
-			public string Game { get; set; }
+			public string GameTitle { get; set; }
+			public string VisitingTeam { get; set; }
+			public string HomeTeam { get; set; }
+			public string Location { get; set; }
 			public string Parm { get; set; }
 		}
 
@@ -62,7 +65,10 @@ namespace MSS.BC
 					{
 						FSNGamesList.Add(new FSNGames
 						{
-							Game = resultSet["Game"].ToString(),
+							GameTitle = resultSet[Constants.GAMETITLE].ToString(),
+							VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
+							HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+							Location = resultSet[Constants.LOCATION].ToString(),
 							Parm = resultSet["KeyValue"].ToString()
 						});
 					}
@@ -81,6 +87,7 @@ namespace MSS.BC
 				DateTime gameTime = Convert.ToDateTime(resultSet["Time"].ToString());
 				var tvGame = new TelevisedGame
 				{
+					Game = resultSet[Constants.GAME].ToString(),
 					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
 					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
 					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
@@ -100,18 +107,22 @@ namespace MSS.BC
                 IEnumerable<FSNGames> parmValue;
                 if (sport == "football" || !_bools.isConferenceTournament(sport, tvGame.Game))
                 {
-                    parmValue = rsnGames.Where(x => tvGame.Game.Trim().Equals(x.Game));
+					parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) && tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam));
                 }
                 else
                 {
-                    parmValue = rsnGames.Where(x => tvGame.Game.Trim().StartsWith(x.Game));
+					parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) && 
+						tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam) && 
+						tvGame.GameTitle.Trim().Equals(x.GameTitle));
                 }
 
                 if (parmValue.Any())
 				{
                     if (parmValue.Count() > 1) {
-                        parmValue = parmValue.Where(x => tvGame.Game.Trim().Equals(x.Game));
-                    }
+						parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) &&
+							tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam) &&
+							tvGame.GameTitle.Trim().Equals(x.GameTitle));
+					}
 					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), string.Format("{0}{1}", sport, year), parmValue.First());
 					string additionalNotes = _cnh.FormatCoverageNotes(year, resultSet["CoverageNotes"].ToString());
 					if (additionalNotes != "<label>&nbsp</label>")
