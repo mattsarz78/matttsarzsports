@@ -87,7 +87,6 @@ namespace MSS.BC
 				DateTime gameTime = Convert.ToDateTime(resultSet["Time"].ToString());
 				var tvGame = new TelevisedGame
 				{
-					Game = resultSet[Constants.GAME].ToString(),
 					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
 					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
 					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
@@ -105,7 +104,7 @@ namespace MSS.BC
 					: _cnh.FormatNetworkJpg(resultSet["NetworkJPG"].ToString());
 
                 IEnumerable<FSNGames> parmValue;
-                if (sport == "football" || !_bools.isConferenceTournament(sport, tvGame.Game))
+                if (sport == "football" || !_bools.isConferenceTournament(sport, tvGame.GameTitle))
                 {
 					parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) && tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam));
                 }
