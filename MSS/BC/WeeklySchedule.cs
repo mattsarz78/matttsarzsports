@@ -26,7 +26,7 @@ namespace MSS.BC
 		{
 			var showTVPartialView = _bools.CheckSportYearAttributesBool(sportYear, "hasNoTVGames");
 			var showPPVColumn = _bools.CheckSportYearAttributesBool(sportYear, "showPPVColumn");
-			var isFootball = sport.ToLower().Contains("football");
+			var isFootball = sport.ToLower().Contains("football") && !sportYear.ToLower().Contains("football2021");
 			var fullYearDates = _sc.CreateDateModel(year);
 			var isBowlWeek = _bools.CheckIfBowlWeek(week, fullYearDates);
 			var isNextWeekBowlWeekOrNIT = _bools.CheckIfBowlWeek(week + 1, fullYearDates);
