@@ -88,8 +88,8 @@ namespace MSS.BC
 				var tvGame = new TelevisedGame
 				{
 					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
-					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
-					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString().Split(',').ToList(),
+					HomeTeam = resultSet[Constants.HOMETEAM].ToString().Split(',').ToList(),
 					Location = resultSet[Constants.LOCATION].ToString(),
 					PPV = _cnh.FormatCoverageNotes(year, resultSet[Constants.PPV].ToString()),
 					Time = FormatTime(gameTime, timeZone),
@@ -105,21 +105,21 @@ namespace MSS.BC
 
                 IEnumerable<FSNGames> parmValue;
                 if (sport == "football" || !_bools.isConferenceTournament(sport, tvGame.GameTitle))
-                {
-					parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) && tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam));
+                {   
+					parmValue = rsnGames.Where(x => tvGame.HomeTeam[0].Trim().Equals(x.HomeTeam) && tvGame.VisitingTeam[0].Trim().Equals(x.VisitingTeam));
                 }
                 else
                 {
-					parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) && 
-						tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam) && 
+					parmValue = rsnGames.Where(x => tvGame.HomeTeam[0].Trim().Equals(x.HomeTeam) && 
+						tvGame.VisitingTeam[0].Trim().Equals(x.VisitingTeam) && 
 						tvGame.GameTitle.Trim().Equals(x.GameTitle));
                 }
 
                 if (parmValue.Any())
 				{
                     if (parmValue.Count() > 1) {
-						parmValue = rsnGames.Where(x => tvGame.HomeTeam.Trim().Equals(x.HomeTeam) &&
-							tvGame.VisitingTeam.Trim().Equals(x.VisitingTeam) &&
+						parmValue = rsnGames.Where(x => tvGame.HomeTeam[0].Trim().Equals(x.HomeTeam) &&
+							tvGame.VisitingTeam[0].Trim().Equals(x.VisitingTeam) &&
 							tvGame.GameTitle.Trim().Equals(x.GameTitle));
 					}
 					tvGame.CoverageNotes = FormatRSNLink(Convert.ToInt16(tvGame.Week), string.Format("{0}{1}", sport, year), parmValue.First());
@@ -139,10 +139,5 @@ namespace MSS.BC
 			}
 			return televisedGamesList;
 		}
-
-        private bool isConferenceTournament()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

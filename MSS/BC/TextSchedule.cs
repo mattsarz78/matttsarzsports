@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using MSS.Models;
 using MSS.Shared;
 
@@ -34,8 +35,8 @@ namespace MSS.BC
 				gameList.Add(new TelevisedGame
 				{
 					GameTitle = resultSet[Constants.GAMETITLE].ToString(),
-					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
-					HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+					VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString().Split(',').ToList(),
+					HomeTeam = resultSet[Constants.HOMETEAM].ToString().Split(',').ToList(),
 					Location = resultSet[Constants.LOCATION].ToString(),
 					Network = resultSet["Network"].ToString(),
 					PPV =

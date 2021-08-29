@@ -46,8 +46,8 @@ namespace MSS.BC
 			        confGames.Add(new ConfGame
 			        {
                         GameTitle = resultSet[Constants.GAMETITLE].ToString(),
-                        VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString(),
-                        HomeTeam = resultSet[Constants.HOMETEAM].ToString(),
+                        VisitingTeam = resultSet[Constants.VISITINGTEAM].ToString().Split(',').ToList(),
+                        HomeTeam = resultSet[Constants.HOMETEAM].ToString().Split(',').ToList(),
                         Location = resultSet[Constants.LOCATION].ToString(),
                         Time = _tzh.FormatTelevisedTime(Convert.ToDateTime(resultSet[Constants.TIME].ToString()), "conference", "Eastern"),
 				        MediaIndicator = resultSet[Constants.MEDIAINDICATOR].ToString(),

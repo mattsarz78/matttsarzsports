@@ -46,8 +46,8 @@ namespace MSS.Models
     {
         public string Game { get; set; }
         public string GameTitle { get; set; }
-        public string VisitingTeam { get; set; }
-        public string HomeTeam { get; set; }
+        public List<string> VisitingTeam { get; set; }
+        public List<string> HomeTeam { get; set; }
         public string Location { get; set; }
         public string Network { get; set; }
         public string CoverageNotes { get; set; }

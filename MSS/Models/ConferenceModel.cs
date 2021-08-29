@@ -20,8 +20,8 @@ namespace MSS.Models
         public string TvType { get; set; }
         public string MediaIndicator { get; set; }
         public string Conference { get; set; }
-        public string VisitingTeam { get; set; }
-        public string HomeTeam { get; set; }
+        public List<string> VisitingTeam { get; set; }
+        public List<string> HomeTeam { get; set; }
         public string Location { get; set; }
     }
 

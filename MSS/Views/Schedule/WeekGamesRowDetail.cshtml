@@ -6,17 +6,39 @@
     }
     @if (!String.IsNullOrEmpty(Model.Location))
     {
-        if (!String.IsNullOrEmpty(Model.VisitingTeam))
+        if (Model.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(Model.VisitingTeam[0]))
         {
-            <label>@Model.VisitingTeam vs. @Model.HomeTeam</label><br />
+            <label>@Model.VisitingTeam[0] vs. @Model.HomeTeam[0]</label><br />
         }
-        <label>(at @Model.Location)</label><br />
+        else
+        {
+            string game = string.Format(@"{0} vs. {1}", Model.VisitingTeam[0], Model.HomeTeam[0]);
+            for (int i = 1; i < Model.VisitingTeam.ToArray().Length; i++)
+            {
+                game = game + string.Format(@"<br>OR {0} vs. {1}", Model.VisitingTeam[i], Model.HomeTeam[i]);
+            }
+            <label>
+                @Html.Raw(game)
+            </label>
+        }
     }
     else
     {
-        if (!String.IsNullOrEmpty(Model.VisitingTeam))
+        if (Model.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(Model.VisitingTeam[0]))
         {
-            <label>@Model.VisitingTeam at @Model.HomeTeam</label>
+            <label>@Model.VisitingTeam[0] at @Model.HomeTeam[0]</label>
+        }
+        else
+        {
+            string game = string.Format(@"{0} at {1}", Model.VisitingTeam[0], Model.HomeTeam[0]);
+            for (int i = 1; i < Model.VisitingTeam.ToArray().Length; i++)
+            {
+                game = game + string.Format(@"<br>OR {0} at {1}", Model.VisitingTeam[i], Model.HomeTeam[i]);
+            }
+            <label>
+                @Html.Raw(game)
+            </label>
+
         }
     }
 </td>

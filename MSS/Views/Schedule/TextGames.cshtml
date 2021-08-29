@@ -31,17 +31,40 @@
                         }
                         @if (!String.IsNullOrEmpty(item.Location))
                         {
-                            if (!String.IsNullOrEmpty(item.VisitingTeam))
+                            if (item.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(item.VisitingTeam[0]))
                             {
-                                <label>@item.VisitingTeam vs. @item.HomeTeam</label><br />
+                                <label>@item.VisitingTeam[0] vs. @item.HomeTeam[0]</label><br />
+                            }
+                            else
+                            {
+                                string game = string.Format(@"{0} vs. {1}", item.VisitingTeam[0], item.HomeTeam[0]);
+                                for (int i = 1; i < item.VisitingTeam.ToArray().Length; i++)
+                                {
+                                    game = game + string.Format(@"<br>OR {0} vs. {1}", item.VisitingTeam[i], item.HomeTeam[i]);
+                                }
+                                <label>
+                                    @Html.Raw(game)
+                                </label>
                             }
                             <label>(at @item.Location)</label><br />
                         }
                         else
                         {
-                            if (!String.IsNullOrEmpty(item.VisitingTeam))
+                            if (item.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(item.VisitingTeam[0]))
                             {
-                                <label>@item.VisitingTeam at @item.HomeTeam</label>
+                                <label>@item.VisitingTeam[0] at @item.HomeTeam[0]</label>
+                            }
+                            else
+                            {
+                                string game = string.Format(@"{0} at {1}", item.VisitingTeam[0], item.HomeTeam[0]);
+                                for (int i = 1; i < item.VisitingTeam.ToArray().Length; i++)
+                                {
+                                    game = game + string.Format(@"<br>OR {0} at {1}", item.VisitingTeam[i], item.HomeTeam[i]);
+                                }
+                                <label>
+                                    @Html.Raw(game)
+                                </label>
+
                             }
                         }
                     </td>

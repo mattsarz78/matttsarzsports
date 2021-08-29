@@ -6,17 +6,17 @@
     }
     @if (!String.IsNullOrEmpty(Model.Location))
     {
-        if (!String.IsNullOrEmpty(Model.VisitingTeam))
+        if (!String.IsNullOrEmpty(Model.VisitingTeam[0]))
         {
-            <label>@Model.VisitingTeam vs. @Model.HomeTeam</label><br />
+            <label>@Model.VisitingTeam[0] vs. @Model.HomeTeam[0]</label><br />
         }
         <label>(at @Model.Location)</label><br />
     }
     else
     {
-        if (!String.IsNullOrEmpty(Model.VisitingTeam))
+        if (!String.IsNullOrEmpty(Model.VisitingTeam[0]))
         {
-            <label>@Model.VisitingTeam at @Model.HomeTeam</label>
+            <label>@Model.VisitingTeam[0] at @Model.HomeTeam[0]</label>
         }
     }
 </td>
