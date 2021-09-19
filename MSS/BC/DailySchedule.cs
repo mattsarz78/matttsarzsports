@@ -29,7 +29,7 @@ namespace MSS.BC
 		{
 			DateTime timeAsEastern = _tzh.GetServerTime();
 			var dateToQuery = (timeAsEastern.Hour <= 4) ? timeAsEastern.AddDays(-1) : timeAsEastern;
-			var isFootball = sport.ToLower().Contains("football") && !sportYear.ToLower().Contains("football2021");
+			var isFootball = sport.ToLower().Contains("football") && !sportYear.ToLower().Contains("football2021s");
 			var fullYearDates = _sc.CreateDateModel(year);
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
 
