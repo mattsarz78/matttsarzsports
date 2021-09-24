@@ -6,7 +6,11 @@
     }
     @if (!String.IsNullOrEmpty(Model.Location))
     {
-        if (Model.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(Model.VisitingTeam[0]))
+        if (Model.VisitingTeam.Count() == 1 && String.IsNullOrEmpty(Model.VisitingTeam[0]))
+        {
+
+        }
+        else if (Model.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(Model.VisitingTeam[0]))
         {
             <label>@Model.VisitingTeam[0] vs. @Model.HomeTeam[0]</label><br />
         }
@@ -24,7 +28,12 @@
     }
     else
     {
-        if (Model.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(Model.VisitingTeam[0]))
+        if (Model.VisitingTeam.Count() == 1 && String.IsNullOrEmpty(Model.VisitingTeam[0]))
+        {
+
+        }
+
+        else if (Model.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(Model.VisitingTeam[0]))
         {
             <label>@Model.VisitingTeam[0] at @Model.HomeTeam[0]</label>
         }

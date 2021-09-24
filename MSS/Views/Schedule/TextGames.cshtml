@@ -31,7 +31,12 @@
                         }
                         @if (!String.IsNullOrEmpty(item.Location))
                         {
-                            if (item.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(item.VisitingTeam[0]))
+                            if (item.VisitingTeam.Count() == 1 && String.IsNullOrEmpty(item.VisitingTeam[0]))
+                            {
+
+                            }
+
+                            else if (item.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(item.VisitingTeam[0]))
                             {
                                 <label>@item.VisitingTeam[0] vs. @item.HomeTeam[0]</label><br />
                             }
@@ -50,7 +55,12 @@
                         }
                         else
                         {
-                            if (item.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(item.VisitingTeam[0]))
+                            if (item.VisitingTeam.Count() == 1 && String.IsNullOrEmpty(item.VisitingTeam[0]))
+                            {
+
+                            }
+
+                            else if (item.VisitingTeam.Count() == 1 && !String.IsNullOrEmpty(item.VisitingTeam[0]))
                             {
                                 <label>@item.VisitingTeam[0] at @item.HomeTeam[0]</label>
                             }
