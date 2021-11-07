@@ -1864,6 +1864,22 @@
     <Content Include="Views\Schedule\CoverageNotes\Football2021\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2021\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2021\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek1.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek10.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek11.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek12.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek13.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek14.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek15.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek16.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek2.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek3.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek4.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek5.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek6.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek7.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek8.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
