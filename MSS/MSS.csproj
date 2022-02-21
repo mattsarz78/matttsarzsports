@@ -155,6 +155,9 @@
     <Compile Include="Shared\TimeZoneHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ConferenceXml\2022.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\ConferenceXml\2021.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -1880,6 +1883,7 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek9.cshtml" />
+    <Content Include="Views\Schedule\CoverageNotes\Basketball202122\FSNWeek17.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">

@@ -76,17 +76,17 @@
                         var tvOptions = item.TVOptions;
                         if (item.HomeTeam.Contains("Hawai") || item.VisitingTeam.Contains("Hawai"))
                         {
-                            tvOptions = tvOptions + " or Spectrum PPV";
+                            tvOptions = tvOptions.Replace("MW Network", "Spectrum PPV");
                         }
 
                         if (item.VisitingTeam.Equals("Boise State"))
                         {
-                            var boiseRoadOptions = tvOptions.Replace(", FOX", "").Replace(", FS1 or FS2", "");
+                            var boiseRoadOptions = "CBS or CBS Sports Network";
                             @Html.Raw(boiseRoadOptions);
                         }
                         else if (item.HomeTeam.Equals("Boise State"))
                         {
-                            var boiseHomeOptions = tvOptions.Replace("CBS, ", "").Replace(", CBS Sports Network", "");
+                            var boiseHomeOptions = "FOX, FS1 or FS2";
                             @Html.Raw(boiseHomeOptions);
                         }
                         else
@@ -160,17 +160,17 @@
                         var tvOptions = item.TVOptions;
                         if (item.HomeTeam.Contains("Hawai") || item.VisitingTeam.Contains("Hawai"))
                         {
-                            tvOptions = tvOptions + " or Spectrum PPV";
+                            tvOptions = tvOptions.Replace("MW Network", "Spectrum PPV");
                         }
 
                         if (item.VisitingTeam.Equals("Boise State"))
                         {
-                            var boiseRoadOptions = tvOptions.Replace(", FOX", "").Replace(", FS1 or FS2", "");
+                            var boiseRoadOptions = "CBS or CBS Sports Network";
                             @Html.Raw(boiseRoadOptions);
                         }
                         else if (item.HomeTeam.Equals("Boise State"))
                         {
-                            var boiseHomeOptions = tvOptions.Replace("CBS, ", "").Replace(", CBS Sports Network", "");
+                            var boiseHomeOptions = "FOX, FS1 or FS2";
                             @Html.Raw(boiseHomeOptions);
                         }
                         else
