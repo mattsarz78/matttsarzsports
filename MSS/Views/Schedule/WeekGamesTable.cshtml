@@ -6,10 +6,7 @@
         <tr class="header">
             <th>Game</th>
             <th>Network</th>
-            @if (!Model.IsBowlWeek && !Model.IsBasketballPostseason)
-            {
-        <th>Coverage Notes / Network Streaming</th>
-            }
+            <th>Coverage Notes / Network Streaming</th>
             @if (!Model.IsBowlWeek && !Model.IsBasketballPostseason)
             {
                 if (Model.ShowPPVColumn)
