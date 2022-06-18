@@ -33,8 +33,7 @@ function CommonScheduleEvents() {
 
     $(".FSNLink").on("click", function () {
         var e = $(this).attr("class").replace("FSNLink ", "");
-        showRSNItens(e)
-        $("#GooglePartialAd").show();
+        showRSNItens(e);
     });
 
     $(".closer").on("click", function () {

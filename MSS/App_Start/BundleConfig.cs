@@ -8,15 +8,13 @@ namespace MSS
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.UseCdn = true;
-            const string jQueryCdn = "https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js";
-			const string modernizerCdn = "https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js";
+            const string jQueryCdn = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
 
             bundles.Add(new ScriptBundle("~/bundles/jquery", jQueryCdn).Include("~/Scripts/jquery-{version}.js"));
 			bundles.Add(new ScriptBundle("~/bundles/weekly").Include("~/Scripts/Schedule.js", "~/Scripts/Weekly.js", "~/Scripts/BackToTop.js"));
 			bundles.Add(new ScriptBundle("~/bundles/weektext").Include("~/Scripts/Text.js", "~/Scripts/WeekText.js", "~/Scripts/BackToTop.js"));
 			bundles.Add(new ScriptBundle("~/bundles/daily").Include("~/Scripts/Schedule.js", "~/Scripts/Daily.js", "~/Scripts/BackToTop.js"));
 			bundles.Add(new ScriptBundle("~/bundles/dailytext").Include("~/Scripts/Text.js", "~/Scripts/DailyText.js", "~/Scripts/BackToTop.js"));
-			bundles.Add(new ScriptBundle("~/bundles/modernizr", modernizerCdn).Include("~/Scripts/modernizr-*"));
 
             BundleTable.EnableOptimizations = true;
         }
