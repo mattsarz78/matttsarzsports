@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿﻿<?xml version="1.0" encoding="utf-8" ?>
 <ImagesForURLs>
 	<Address Link="espn3.com" Image="espn3.jpg" />
 	<Address Link="espn3&amp;type=live" Image="espn3.jpg" />
@@ -69,4 +69,5 @@
 	<Address Link="barstoolsports.com" Image="barstool.jpg" />
 	<Address Link="peacocktv.com" Image="peacock.jpg" />
 	<Address Link="paramountplus.com" Image="paramountplus.jpg" />
+	<Address Link="themw.com/watch" Image="mwdn.jpg" />
 </ImagesForURLs>

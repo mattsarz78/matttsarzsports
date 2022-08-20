@@ -1,40 +1,41 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ValidSportYears>
-  <basketball200506 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball200607 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true"/>
-  <basketball200708 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball200809 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball200910 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball201011 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball201112 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball201213 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball201314 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
-  <basketball201415 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball201516 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball201617 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball201718 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball201819 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball201920 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball202021 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <basketball202122 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
-  <football2005 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
-  <football2006 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
-  <football2007 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
-  <football2008 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame" />
-  <football2009 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
-  <football2010 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
-  <football2011 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase2" independents="Army,BYU,Navy,Notre Dame" />
-  <football2012 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase2" independents="Army,BYU,Navy,Notre Dame"/>
-  <football2013 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase3" independents="Army,BYU,Idaho,Navy,NMSt,Notre Dame"/>
-  <football2014 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Navy,Notre Dame"/>
+	<basketball200506 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball200607 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true"/>
+	<basketball200708 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball200809 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball200910 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball201011 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball201112 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball201213 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball201314 hasPostseason="true" hasNoTVGames="false" showPPVColumn="true" />
+	<basketball201415 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball201516 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball201617 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball201718 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball201819 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball201920 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball202021 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball202122 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball202223 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<football2005 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
+	<football2006 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
+	<football2007 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
+	<football2008 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame" />
+	<football2009 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
+	<football2010 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
+	<football2011 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase2" independents="Army,BYU,Navy,Notre Dame" />
+	<football2012 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase2" independents="Army,BYU,Navy,Notre Dame"/>
+	<football2013 hasPostseason="false" hasNoTVGames="true" showPPVColumn="true" conferenceListBase="ListBase3" independents="Army,BYU,Idaho,Navy,NMSt,Notre Dame"/>
+	<football2014 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Navy,Notre Dame"/>
 	<football2015 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame"/>
-  <football2016 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
-  <football2017 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
-  <football2018 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass"/>
-  <football2019 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass"/>
-  <football2020 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
-  <football2020r hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
-  <football2021s hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" />
-  <football2021 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
-  <football2022 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
+	<football2016 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
+	<football2017 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Notre Dame,UMass"/>
+	<football2018 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass"/>
+	<football2019 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass"/>
+	<football2020 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
+	<football2020r hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
+	<football2021s hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" />
+	<football2021 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
+	<football2022 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
 </ValidSportYears>
