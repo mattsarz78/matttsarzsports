@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MSS",
+    "\\MSS\\Views",
+    "\\MSS\\Views\\Schedule",
+    "\\MSS\\Views\\Schedule\\CoverageNotes",
+    "\\MSS\\Views\\Schedule\\CoverageNotes\\Football2022"
   ],
+  "SelectedNode": "\\MSS\\Views\\Schedule\\CoverageNotes\\Football2022\\FSNWeek1.cshtml",
   "PreviewInSolutionExplorer": false
 }
