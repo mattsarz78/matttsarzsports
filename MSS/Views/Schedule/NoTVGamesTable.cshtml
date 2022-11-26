@@ -62,10 +62,6 @@
                         {
                             @Html.Raw(item.TVOptions.Replace("ESPN+", "Longhorn Network"));
                         }
-                        else if (item.HomeTeam.Equals("Oklahoma"))
-                        {
-                            @Html.Raw(item.TVOptions.Replace("ESPN+", "Sooner Sports TV"));
-                        }
                         else
                         {
                             @Html.Raw(item.TVOptions)
@@ -145,10 +141,6 @@
                         if (item.HomeTeam.Equals("Texas"))
                         {
                             @Html.Raw(item.TVOptions.Replace("ESPN+", "Longhorn Network"));
-                        }
-                        else if (item.HomeTeam.Equals("Oklahoma"))
-                        {
-                            @Html.Raw(item.TVOptions.Replace("ESPN+", "Sooner Sports TV"));
                         }
                         else
                         {
