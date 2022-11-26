@@ -28,7 +28,7 @@ namespace MSS.BC
 		public ScheduleModel GetDailyData(string sportYear, string year, string timeZone, string sport)
 		{
 			DateTime timeAsEastern = _tzh.GetServerTime();
-			var dateToQuery = (timeAsEastern.Hour <= 4) ? timeAsEastern.AddDays(-1) : timeAsEastern;
+            var dateToQuery = (timeAsEastern.Hour <= 4) ? timeAsEastern.AddDays(-1) : timeAsEastern;
 			var isFootball = sport.ToLower().Contains("football") && !sportYear.ToLower().Contains("football2021s");
 			var fullYearDates = _sc.CreateDateModel(year);
 			var hasPostseason = _bools.CheckSportYearAttributesBool(sportYear, "hasPostseason");
@@ -63,7 +63,7 @@ namespace MSS.BC
 
 		private List<TelevisedGame> FormatTelevisedGames(DateTime dateToQuery, string year, string timeZone, string sport)
 		{
-			var startdate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 0, 0, 0);
+			var startdate = new DateTime(dateToQuery.Year, dateToQuery.Month, dateToQuery.Day, 5, 0, 1);
 			var enddate = startdate.AddDays(1).AddHours(5);
 			List<TelevisedGame> televisedGamesList;
 

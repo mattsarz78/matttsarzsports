@@ -1897,7 +1897,6 @@
     <Content Include="Views\Schedule\CoverageNotes\Football2022\FSNWeek7.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2022\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Football2022\FSNWeek9.cshtml" />
-    <Content Include="Views\Schedule\TVWindows.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
