@@ -5,7 +5,9 @@ namespace MSS.Shared
 {
     public interface IPageHelper
     {
-        string CheckForFlexSchedule(string year);
+        bool CheckForFlexSchedule(string year);
+
+        string GetFlexScheduleLink(string year);
         string CheckSportYearAttributes(string p, string attributeName);
         List<ContractText> GetTextFromXml(string conference, string year);
 	}

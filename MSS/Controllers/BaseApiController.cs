@@ -28,6 +28,24 @@ namespace MSS.Controllers
 			_sc = new SeasonContents(new StoredProcHelper());
         }
 
+        public IHttpActionResult GetTVWindows(string sportYear) 
+        {
+            if (_bools.CheckXMLDoc("ValidSportYears", sportYear.ToLower()) && (GetSport(sportYear).Contains("football") && !sportYear.Contains("2021s"))) 
+            {
+                var year = GetYear(sportYear);
+                return Ok(new TVWindowsModel
+                {
+                    SportYear = sportYear,
+                    Year = year,
+                    Link = _ph.GetFlexScheduleLink(year)
+                });
+            
+            }
+            return NotFound();
+
+
+        }
+
         public IHttpActionResult GetGameList(string conference, string year)
         {
             if (_bools.CheckXMLDoc("ConferenceNames", conference.ToLower()) && _bools.CheckXMLDoc("ValidSportYears", "football" + year))

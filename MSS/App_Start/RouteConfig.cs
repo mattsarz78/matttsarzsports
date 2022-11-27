@@ -13,6 +13,8 @@ namespace MSS
             routes.MapRoute("Archive", "{controller}/{action}", new { controller = "Home", action = "Archive" });
             routes.MapRoute("ContractGameList", "Contract/GameList/{conference}/{year}",
                 new { controller = "Contract", action = "GameList", conference = string.Empty, year = 0 });
+            routes.MapRoute("TVWindows", "TVWindows/{sportYear}",
+                new { controller = "Schedule", action = "TVWindows", sportYear = string.Empty });
             routes.MapRoute("WeeklySchedule", "Schedule/Weekly/{sportYear}/{week}",
                 new { controller = "Schedule", action = "Weekly", sportYear = string.Empty, week = 0 });
             routes.MapRoute("WeeklyTextSchedule", "Schedule/WeeklyText/{sportYear}/{week}",

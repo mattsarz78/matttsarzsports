@@ -1,4 +1,5 @@
 ﻿using MSS.Models;
+using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -11,6 +12,13 @@ namespace MSS.Controllers
         public async Task<ActionResult> Weekly(int week, string sportYear)
         {
             var data = await GetWeekly(week, sportYear, "Eastern");
+            return View(data);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> TVWindows(string sportYear)
+        {
+            var data = await GetTVWindows(sportYear);
             return View(data);
         }
 
@@ -63,7 +71,16 @@ namespace MSS.Controllers
 			return PartialView("TextGames", data);
 		}
 
-		private async Task<ScheduleModel> GetWeekly(int week, string sportYear, string timeZoneValue)
+        private async Task<TVWindowsModel> GetTVWindows(string sportYear)
+        {
+            var client = new HttpClient();
+            var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetTVWindows/" + sportYear;
+            var response = await client.GetAsync(urlHost);
+            var data = await response.Content.ReadAsAsync<TVWindowsModel>();
+            return data;
+        }
+
+        private async Task<ScheduleModel> GetWeekly(int week, string sportYear, string timeZoneValue)
         {
             var client = new HttpClient();
             var urlHost = "http://" + Request.Url.Authority + @"/api/BaseApi/GetWeekly/" + sportYear + @"/" + week + @"/" + timeZoneValue;

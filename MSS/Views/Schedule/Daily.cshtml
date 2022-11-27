@@ -21,9 +21,9 @@
 				}
 			</span>
 			<span class="blockspan">
-				@if (!String.IsNullOrWhiteSpace(Model.FlexScheduleLink))
+				@if (Model.FlexScheduleLink)
 			{
-			<a class="mobilespan" href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a>
+			<a class="mobilespan" href="@Url.Content("~/Schedule/TVWindows/" + Model.SportYear)" target="_blank">Available TV Windows</a>
 			}
 				<a class="mobilespan" href="@Url.Content("~/Schedule/DailyText/" + Model.SportYear)">Customizable Daily Text-Only Page</a>
 			</span>

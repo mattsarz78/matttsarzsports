@@ -23,9 +23,9 @@
 				<a class="homelink" href="@Url.Content("~/")">Home</a>
 				<a class="seasonhome" href="@Url.Content("~/Season/Contents/" + Model.SportYear)">Season Home</a>
 			</span>
-			@if (Model.FlexScheduleLink != string.Empty)
+			@if (Model.FlexScheduleLink)
 			{
-			<a href="@Model.FlexScheduleLink" target="_blank">Available TV Windows</a><br />
+			<a href="@Url.Content("~/Schedule/TVWindows/" + Model.SportYear)" target="_blank">Available TV Windows</a><br />
 			}
 		</div>
 	</div>

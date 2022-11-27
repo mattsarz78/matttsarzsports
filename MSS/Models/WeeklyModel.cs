@@ -3,6 +3,15 @@ using System.Collections.Generic;
 
 namespace MSS.Models
 {
+    public class TVWindowsModel 
+    {
+        public string SportYear { get; set; }
+
+        public string Year { get; set; }
+
+        public string Link { get; set; }
+
+    }
     public class ScheduleModel
     {
         public bool IsBasketballPostseason { get; set; }
@@ -21,7 +30,7 @@ namespace MSS.Models
 
         public string Year { get; set; }
 
-        public string FlexScheduleLink { get; set; }
+        public bool FlexScheduleLink { get; set; }
 
 		public bool IsNextWeekBowlWeek { get; set; }
 

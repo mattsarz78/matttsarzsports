@@ -12,7 +12,20 @@ namespace MSS.Shared
     {
 		public PageHelper() {}
 
-        public string CheckForFlexSchedule(string year)
+        public bool CheckForFlexSchedule(string year)
+        {
+            var link = false;
+            var path = HttpContext.Current.Server.MapPath(@"~/Content/FlexScheduleLinks.xml");
+            if (File.Exists(path))
+            {
+                var xElement = XDocument.Load(path).Element("Links").Element("Link" + year);
+                if (xElement != null)
+                    link = true;
+            }
+            return link;
+        }
+
+        public string GetFlexScheduleLink(string year)
         {
             var link = string.Empty;
             var path = HttpContext.Current.Server.MapPath(@"~/Content/FlexScheduleLinks.xml");
@@ -24,7 +37,6 @@ namespace MSS.Shared
             }
             return link;
         }
-
         public List<ContractText> GetTextFromXml(string conference, string year)
         {
         	var confXmlText = new List<ContractText>();

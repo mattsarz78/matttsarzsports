@@ -25,6 +25,9 @@ namespace MSS
 
 			config.Routes.MapHttpRoute("BaseApiDailyText", "api/BaseApi/GetDailyText/{sportYear}/{timeZoneValue}",
 				new { controller = "BaseApi", action = "GetDailyText", sportYear = string.Empty, timeZoneValue = string.Empty });
-		}
-	}
+
+            config.Routes.MapHttpRoute("BaseApiTVWindows", "api/BaseApi/GetTVWindows/{sportYear}",
+                new { controller = "BaseApi", action = "GetTVWindows", sportYear = string.Empty });
+        }
+    }
 }
