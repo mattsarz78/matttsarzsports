@@ -8,7 +8,7 @@ namespace MSS
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.UseCdn = true;
-            const string jQueryCdn = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js";
+            const string jQueryCdn = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js";
 
             bundles.Add(new ScriptBundle("~/bundles/jquery", jQueryCdn).Include("~/Scripts/jquery-{version}.js"));
 			bundles.Add(new ScriptBundle("~/bundles/weekly").Include("~/Scripts/Schedule.js", "~/Scripts/Weekly.js", "~/Scripts/BackToTop.js"));
