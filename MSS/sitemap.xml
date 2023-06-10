@@ -58,6 +58,9 @@
 		<loc>http://mattsarzsports.com/Season/Contents/basketball202122</loc>
 	</url>
 	<url>
+		<loc>http://mattsarzsports.com/Season/Contents/basketball202223</loc>
+	</url>
+	<url>
 		<loc>http://mattsarzsports.com/Season/Contents/football2005</loc>
 	</url>
 	<url>
@@ -115,6 +118,12 @@
 		<loc>http://mattsarzsports.com/Season/Contents/football2021</loc>
 	</url>
 	<url>
+		<loc>http://mattsarzsports.com/Season/Contents/football2022</loc>
+	</url>
+	<url>
+		<loc>http://mattsarzsports.com/Season/Contents/football2023</loc>
+	</url>
+	<url>
 		<loc>http://mattsarzsports.com/Schedule/Daily/basketball201516</loc>
 	</url>
 	<url>
@@ -164,5 +173,8 @@
 	</url>
 	<url>
 		<loc>http://mattsarzsports.com/Schedule/Daily/basketball202223</loc>
+	</url>
+	<url>
+		<loc>http://mattsarzsports.com/Schedule/Daily/football2023</loc>
 	</url>
 </urlset>

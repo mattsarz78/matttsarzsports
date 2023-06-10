@@ -2,21 +2,14 @@
     ViewBag.Title = "Matt's College Sports on TV";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<nav class="navbar DONTPrint">
-	<div class="container">
-		<div>
-			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("AddThis/AddThisVar")
-		</div>
-		<div style="clear:both; padding-bottom: 5px"></div>
-	</div>
-</nav>
 <div id="Main">
     <div>
         <img alt="Matt's College Sports" id="imgtitle" src="@Url.Content("~/images/logo.jpg")" /><br />
     </div>
     <div id="content">
         <div id="Links">
+            <a href="@Url.Content("~/Season/Contents/football2023")">2023 Football</a><br />
+            <br />
             <a href="@Url.Content("~/Season/Contents/football2022")">2022 Football</a><br />
             <a href="@Url.Content("~/Season/Contents/basketball202223")">2022-23 Men's Basketball</a><br />
             <br />
@@ -30,9 +23,6 @@
             <br />
             <a href="@Url.Content("~/Season/Contents/football2019")">2019 Football</a><br />
             <a href="@Url.Content("~/Season/Contents/basketball201920")">2019-20 Men's Basketball</a><br />
-            <br />
-            <a href="@Url.Content("~/Season/Contents/football2018")">2018 Football</a><br />
-            <a href="@Url.Content("~/Season/Contents/basketball201819")">2018-19 Men's Basketball</a><br />
             <br />
             <a href="@Url.Content("~/Home/Archive")">Archived Seasons</a>
             <p>
@@ -69,8 +59,8 @@
 }
 
 @section styles{
-	<style type="text/css">#imgtitle{max-width:100%;padding-bottom:5px}#Links,#Twitter{float:left;display:inline}#Facebook{border:0;overflow:hidden}#Main{padding-top:49px}</style>
+	<style type="text/css">#imgtitle{max-width:100%;padding-bottom:5px}#Links,#Twitter{float:left;display:inline}#Facebook{border:0;overflow:hidden}#Main{padding-top:37px}</style>
 	<style media="all and (min-width: 641px)" type="text/css">#Facebook{height:80px;width:450px;}#Links{width: 45%;min-height:250px}#Twitter{width: 55%;}</style>
-    <style type="text/css" media="only screen and (max-width: 640px)">body{font-size:.85em;}#Facebook{height:100px;width:300px;}#Links {width: 100%;min-height: 250px}#Twitter {width: 100%;}#Main{padding-top:60px}</style>
+    <style type="text/css" media="only screen and (max-width: 640px)">body{font-size:.85em;}#Facebook{height:100px;width:300px;}#Links {width: 100%;min-height: 250px}#Twitter {width: 100%;}#Main{padding-top:48px}</style>
 }
 

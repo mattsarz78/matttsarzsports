@@ -1,9 +1,9 @@
 ﻿$(document).ready(function () {
     if ($(window).width() >= 641) {
-        $("#Main").css("padding-top", $(".navbar").height() + 32);
+        $("#Main").css("padding-top", $(".navbar").height() + 20);
     }
     else {
-        $("#Main").css("padding-top", $(".navbar").height() + 37);
+        $("#Main").css("padding-top", $(".navbar").height() + 25);
     }
 	WireUpEvents();
 });

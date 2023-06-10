@@ -8,16 +8,11 @@
 }
 @section styles{
 	<style type="text/css">.game,.network,.time{border:medium;border-style:solid;border-color:Gray;border-width:thin}.network{text-align:center;}.time{width:60px;text-align:right;padding:2px}.game{width:243px;}.noTVTable{background-color:#fff;border-color:#fff;border-style:ridge;border-width:2px;border-spacing:1px;border-collapse:collapse;font-family:Arial}.back-to-top{position: fixed;bottom: 2em; right: 0;text-decoration: none;padding: 1em;display: none;}.navbar{box-shadow: 0 1px 1px rgba(0,0,0,.1);}</style>
-    <style media="all and (min-width: 641px)" type="text/css">.game{padding:2px;}.network{width:135px;padding:2px;}.imageDimensions{height:40px;width:55px;}.homelink,.seasonhome{display:block;}#Main{padding-top:80px}</style>
+    <style media="all and (min-width: 641px)" type="text/css">.game{padding:2px;}.network{width:135px;padding:2px;}.imageDimensions{height:40px;width:55px;}.homelink,.seasonhome{display:block;}#Main{padding-top:56px}</style>
     <style type="text/css" media="only screen and (max-width: 640px)">.game{padding:1px;}.network{width:90px;padding:0;}.imageDimensions {height: 29px; width: 40px; }.homelink,.seasonhome{display:inline-block;padding-right:10px;}#Main{padding-top:61px}</style>
 }
 <nav class="navbar DONTPrint">
 	<div class="container">
-		<div>
-			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("AddThis/AddThisVar")
-		</div>
-		<div style="clear:both; padding-bottom: 5px"></div>
 		<div>
 			<span>
 				<a class="homelink" href="@Url.Content("~/")">Home</a>

@@ -6,11 +6,6 @@
 <nav class="navbar DONTPrint">
 	<div class="container">
 		<div>
-			@Html.Partial("AddThis/AddThis")
-			@Html.Partial("AddThis/AddThisVar")
-		</div>
-		<div style="clear:both; padding-bottom: 5px"></div>
-		<div>
 			<a href="@Url.Content("~/")">Home</a><br />
 		</div>
 	</div>
@@ -47,7 +42,7 @@
 
 }
 @section styles {
-	<style type="text/css">#SeasonLinks,#Conference{float:left;display:inline}#SeasonLinks{min-height:250px;}#Main{padding-top:41px}.navbar {box-shadow: 0 1px 1px rgba(0,0,0,.1);}</style>
+	<style type="text/css">#SeasonLinks,#Conference{float:left;display:inline}#SeasonLinks{min-height:250px;}#Main{padding-top:29px}.navbar {box-shadow: 0 1px 1px rgba(0,0,0,.1);}</style>
     <style media="all and (min-width: 641px)" type="text/css">#SeasonLinks{width:55%;}#Conference {width: 35%;min-height: 380px;}</style>
     <style type="text/css" media="only screen and (max-width: 640px)">body {font-size: .85em;}#SeasonLinks{width: 100%;}.DONTPrint a{line-height:13px;}</style>
 }
