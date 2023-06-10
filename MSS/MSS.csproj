@@ -1408,8 +1408,6 @@
     </Content>
     <Content Include="Views\Contract\ConferenceGrid.cshtml" />
     <Content Include="Views\Contract\ConferenceTable.cshtml" />
-    <Content Include="Views\Shared\AddThis\AddThis.cshtml" />
-    <Content Include="Views\Shared\AddThis\AddThisVar.cshtml" />
     <Content Include="Views\Shared\Google\GAJava.cshtml" />
     <Content Include="Views\Shared\Google\GoogleBottomBanner.cshtml" />
     <Content Include="Views\Shared\Google\GooglePartialAd.cshtml" />
