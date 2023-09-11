@@ -8,6 +8,10 @@
 	WireUpEvents();
 });
 
+$(window).on("load", function () {
+	$("ins.adsbygoogle,ins.adsbygoogle.adsbygoogle-noablate,.gsc-control-cse").addClass("DONTPrint");
+});
+
 function CommonTextEvents() {
 	$(".checkBoxRow").on("click", function() {
 		if ($(this).is(":checked")) {
