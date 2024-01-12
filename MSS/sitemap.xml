@@ -61,6 +61,9 @@
 		<loc>http://mattsarzsports.com/Season/Contents/basketball202223</loc>
 	</url>
 	<url>
+		<loc>http://mattsarzsports.com/Season/Contents/basketball202324</loc>
+	</url>
+	<url>
 		<loc>http://mattsarzsports.com/Season/Contents/football2005</loc>
 	</url>
 	<url>
@@ -124,6 +127,9 @@
 		<loc>http://mattsarzsports.com/Season/Contents/football2023</loc>
 	</url>
 	<url>
+		<loc>http://mattsarzsports.com/Season/Contents/football2024</loc>
+	</url>
+	<url>
 		<loc>http://mattsarzsports.com/Schedule/Daily/basketball201516</loc>
 	</url>
 	<url>
@@ -176,5 +182,50 @@
 	</url>
 	<url>
 		<loc>http://mattsarzsports.com/Schedule/Daily/football2023</loc>
+	</url>
+	<url>
+		<loc>http://mattsarzsports.com/Schedule/Daily/basketball202324</loc>
+	</url>
+	<url>
+		<loc>http://mattsarzsports.com/Schedule/Daily/football2024</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2012</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2013</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2014</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2015</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2016</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2017</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2018</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2019</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2020</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2021</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2022</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2023</loc>
+	</url>
+	<url>
+		<loc>https://mattsarzsports.com/Schedule/TVWindows/football2024</loc>
 	</url>
 </urlset>

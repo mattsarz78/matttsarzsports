@@ -40,4 +40,5 @@
 	<football2021 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
 	<football2022 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,BYU,Liberty,Notre Dame,NMSt,UMass,UConn"/>
 	<football2023 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Army,Notre Dame,UMass,UConn"/>
+	<football2024 hasPostseason="false" hasNoTVGames="true" showPPVColumn="false" conferenceListBase="ListBase3" independents="Notre Dame,UMass,UConn"/>
 </ValidSportYears>

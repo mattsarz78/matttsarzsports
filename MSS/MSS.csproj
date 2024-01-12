@@ -154,6 +154,9 @@
     <Compile Include="Shared\TimeZoneHelper.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ConferenceXml\2024.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\ConferenceXml\2023.xml">
       <SubType>Designer</SubType>
     </Content>

@@ -47,7 +47,7 @@
                 <td class="telecast">
                     @if (item.Conference.Contains("American"))
                     {
-                        if (item.HomeTeam.Equals("Navy"))
+                        if (item.HomeTeam.Equals("Navy") || item.HomeTeam.Equals("Army West Point"))
                         {
                             @Html.Raw(item.TVOptions.Replace(" or ESPN+", " or CBS Sports Network"));
                         }
@@ -127,7 +127,7 @@
                 <td class="telecast">
                     @if (item.Conference.Contains("American"))
                     {
-                        if (item.HomeTeam.Equals("Navy"))
+                        if (item.HomeTeam.Equals("Navy") || item.HomeTeam.Equals("Army West Point"))
                         {
                             @Html.Raw(item.TVOptions.Replace(" or ESPN+", " or CBS Sports Network"));
                         }

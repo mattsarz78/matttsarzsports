@@ -37,6 +37,15 @@
         </div>
         <br />
     }
+    if (Model.ConferenceGames.Any(x => x.MediaIndicator == "T" && x.TvType == "AR"))
+    {
+        var games = Model.ConferenceGames.Where(x => x.MediaIndicator == "T" && x.TvType.TrimEnd() == "AR");
+        <div id="WidelySyndicatedDiv">
+            @Html.Label("Army West Point Telecasts")
+            @Html.Partial("ConferenceTable", games)
+        </div>
+        <br />
+    }
     if (Model.ConferenceGames.Any(x => (x.MediaIndicator == "T" || x.MediaIndicator == "W") && x.TvType.TrimEnd() == "R" &&
         (x.Conference.Contains("Big 12") && (Model.Year == "2020r" || int.Parse(Model.Year) >= 2012))))
     {
