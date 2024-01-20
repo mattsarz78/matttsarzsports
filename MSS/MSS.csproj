@@ -1919,6 +1919,7 @@
     <Content Include="Views\Schedule\CoverageNotes\Basketball202223\FSNWeek8.cshtml" />
     <Content Include="Views\Schedule\CoverageNotes\Basketball202223\FSNWeek9.cshtml" />
     <Content Include="Views\Schedule\TVWindows.cshtml" />
+    <Content Include="Images\cw-24.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -1955,6 +1956,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
