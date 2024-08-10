@@ -19,6 +19,7 @@
 	<basketball202122 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
 	<basketball202223 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
 	<basketball202324 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
+	<basketball202425 hasPostseason="true" hasNoTVGames="false" showPPVColumn="false" />
 	<football2005 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
 	<football2006 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame,Temple"/>
 	<football2007 hasPostseason="false" hasNoTVGames="false" showPPVColumn="true" conferenceListBase="ListBase1" independents="Army,Navy,Notre Dame"/>
