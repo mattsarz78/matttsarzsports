@@ -29,6 +29,6 @@ C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\System.Web.WebPages.Razor.xm
 C:\Users\matt_\source\repos\matttsarzsports\MSS\bin\System.Web.Optimization.xml
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csproj.AssemblyReference.cache
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csproj.CoreCompileInputs.cache
-C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csproj.CopyComplete
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.dll
 C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.pdb
+C:\Users\matt_\source\repos\matttsarzsports\MSS\obj\Debug\MSS.csproj.Up2Date
