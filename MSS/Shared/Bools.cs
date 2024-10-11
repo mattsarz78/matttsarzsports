@@ -70,7 +70,7 @@ namespace MSS.Shared
         public bool IsSyndAffiliates(string coverageNote)
         {
             return coverageNote.Contains("acctourney.theacc.com") || coverageNote.Contains("theacc.com/live") || coverageNote.Contains("raycomsports")
-                || coverageNote.Contains("SECNetWk") || coverageNote.Contains("Big12NetWk") || (coverageNote.Contains("wacsports") && !coverageNote.ToLower().Contains("wacsports.com/live")) || coverageNote.Contains("theacc.com/news")
+                || coverageNote.Contains("SECNetWk") || coverageNote.Contains("Big12NetWk") || (coverageNote.Contains("wacsports") && !coverageNote.ToLower().Contains("wacsports.com/live") && !coverageNote.ToLower().Contains("swacsports")) || coverageNote.Contains("theacc.com/news")
                 || coverageNote.Contains("BigEastWk") || coverageNote.Contains("http://tinyurl.com/slctvstations") || coverageNote.Contains("theacc.com/sports") || IsASNLink(coverageNote);
         }
 
